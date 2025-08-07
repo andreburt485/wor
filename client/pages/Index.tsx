@@ -395,8 +395,8 @@ export default function Index() {
     { id: "about", title: "About Us", component: "about" },
     { id: "what-we-do", title: "What we do", component: "what-we-do" },
     { id: "services", title: "Services", component: "services" },
-    { id: "pricing", title: "Pricing", component: "pricing" },
     { id: "portfolio", title: "Portfolio", component: "portfolio" },
+    { id: "pricing", title: "Pricing", component: "pricing" },
     { id: "contact", title: "Contact Us", component: "contact" },
   ];
 
@@ -856,7 +856,7 @@ export default function Index() {
 ��█�� �����█╔����█��╔═══���█╗██�����══�����╗
 █████╔╝ ██║   ██║███�������█╔��
 █��╔�����█╗ █���║   ██║██╔══█��╗
-█���║  ██��╚█���█������█╔╝�����║  ██║
+█���║  ██��╚█�����█������█╔╝�����║  ██║
 �������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
@@ -4176,9 +4176,7 @@ export default function Index() {
           <Tooltip>
             <TooltipTrigger asChild>
               <motion.button
-                onClick={() =>
-                  currentSection === 0 ? scrollToSection(1) : scrollToSection(0)
-                }
+                onClick={() => scrollToSection(0)}
                 className={`group absolute z-[99999] p-2 sm:p-2.5 md:p-2.5 lg:p-3 w-10 h-10 sm:w-11 sm:h-11 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full border-2 backdrop-blur-lg hover-120hz performance-optimized flex items-center justify-center ${
                   isMobileSafari || isIOS
                     ? "bottom-20 left-6 sm:left-8 md:left-10 lg:left-12" // Above Safari search bar, matching nav positioning
@@ -4199,23 +4197,15 @@ export default function Index() {
                 }}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{
-                  opacity: 1, // Always visible
-                  scale: 1, // Always visible
+                  opacity: currentSection === 0 ? 0 : 1, // Hidden on home section
+                  scale: currentSection === 0 ? 0 : 1, // Hidden on home section
                 }}
                 transition={{ duration: 0.3 }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                {/* Up arrow for non-home sections, down arrow for home section */}
-                {currentSection === 0 ? (
-                  <ChevronDown
-                    className={`w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-5 lg:h-5 transition-colors duration-300 ${
-                      theme === "light"
-                        ? "text-blue-600 group-hover:text-blue-700"
-                        : "text-white group-hover:text-blue-300"
-                    }`}
-                  />
-                ) : (
+                {/* Always show up arrow since this is only visible when not on home */}
+                {
                   <svg
                     className={`w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-5 lg:h-5 transition-colors duration-300 ${
                       theme === "light"
@@ -4234,12 +4224,12 @@ export default function Index() {
                     {/* Arrow head */}
                     <polyline points="5,12 12,5 19,12" />
                   </svg>
-                )}
+                }
               </motion.button>
             </TooltipTrigger>
             <TooltipContent side="right">
               <span>
-                {currentSection === 0 ? "Scroll down" : "Back to top"}
+                Back to top
               </span>
             </TooltipContent>
           </Tooltip>
