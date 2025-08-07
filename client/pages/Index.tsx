@@ -8204,7 +8204,7 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
           </motion.div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 py-20">
+        <div className="relative z-10 container mx-auto px-6 py-20 pt-32">
           {/* Header Section */}
           <motion.div
             className="text-center mb-20"
@@ -8226,7 +8226,7 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              {"What We Do".split("").map((letter, i) => (
+              {"Our Process".split("").map((letter, i) => (
                 <motion.span
                   key={i}
                   className="inline-block animate-letter-float"
