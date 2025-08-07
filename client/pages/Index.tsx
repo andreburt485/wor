@@ -393,7 +393,7 @@ export default function Index() {
   const sections = [
     { id: "home", title: "Home", component: "home" },
     { id: "about", title: "About Us", component: "about" },
-    { id: "what-we-do", title: "What we do", component: "what-we-do" },
+    { id: "what-we-do", title: "Our Process", component: "what-we-do" },
     { id: "services", title: "Services", component: "services" },
     { id: "portfolio", title: "Portfolio", component: "portfolio" },
     { id: "pricing", title: "Pricing", component: "pricing" },
@@ -2002,7 +2002,7 @@ export default function Index() {
           {currentSection < sections.length - 1 &&
             !isHelpModalOpen &&
             !isMobileMenuOpen && (
-              <Tooltip>
+              <Tooltip disabled={currentSection === 0}>
                 <TooltipTrigger asChild>
                   <button
                     onClick={(e) => {
