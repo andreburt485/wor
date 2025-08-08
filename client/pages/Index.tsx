@@ -925,7 +925,7 @@ export default function Index() {
                       className="text-xs text-green-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      CPU: ���██���█████���███��██���█���███████���███����█████
+                      CPU: ���██���█████���███����█���█���███████���███����█████
                       60%
                     </div>
                     <div
@@ -3706,27 +3706,7 @@ export default function Index() {
                         }}
                       />
 
-                      {/* Optimized floating energy particles around text */}
-                      {!isPinkActive &&
-                        [...Array(8)].map((_, i) => (
-                          <div
-                            key={`energy-${i}`}
-                            className="absolute rounded-full pointer-events-none gpu-accelerated"
-                            style={{
-                              left: `${20 + ((i * 80) % 160)}%`,
-                              top: `${30 + ((i * 50) % 60)}%`,
-                              width: `${4 + (i % 2)}px`,
-                              height: `${4 + (i % 2)}px`,
-                              background:
-                                theme === "light"
-                                  ? `rgba(${59 + ((i * 30) % 60)}, ${130 + ((i * 20) % 50)}, 246, ${0.7 + (i % 2) * 0.2})`
-                                  : `rgba(${73 + ((i * 20) % 50)}, ${146 + ((i * 10) % 30)}, 255, ${0.7 + (i % 2) * 0.2})`,
-                              animation: `energy-float ${4 + (i % 2)}s ease-in-out infinite ${i * 0.5}s`,
-                              willChange: "transform, opacity",
-                              transform: "translateZ(0)",
-                            }}
-                          />
-                        ))}
+                      {/* Removed floating energy particles */}
 
                       {/* Pink Theme Floating Bubbles with Pink Outlines */}
                       {isPinkActive &&
@@ -3851,15 +3831,7 @@ export default function Index() {
                                   <div
                                     className="w-6 h-6"
                                     style={{
-                                      background: (() => {
-                                        const colors = [
-                                          "radial-gradient(circle, rgba(255, 100, 150, 0.8) 0%, rgba(255, 180, 100, 0.5) 70%, transparent 90%)", // Pink-Orange
-                                          "radial-gradient(circle, rgba(100, 255, 200, 0.8) 0%, rgba(100, 200, 255, 0.5) 70%, transparent 90%)", // Mint-Blue
-                                          "radial-gradient(circle, rgba(200, 100, 255, 0.8) 0%, rgba(255, 150, 200, 0.5) 70%, transparent 90%)", // Purple-Pink
-                                          "radial-gradient(circle, rgba(255, 200, 100, 0.8) 0%, rgba(200, 255, 150, 0.5) 70%, transparent 90%)", // Orange-Green
-                                        ];
-                                        return colors[i % colors.length];
-                                      })(),
+                                      background: "radial-gradient(circle, rgba(73, 146, 255, 0.8) 0%, rgba(34, 211, 238, 0.5) 70%, transparent 90%)",
                                       clipPath:
                                         "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
                                       animation:
@@ -3873,15 +3845,7 @@ export default function Index() {
                                   <div
                                     className="w-4 h-4"
                                     style={{
-                                      background: (() => {
-                                        const colors = [
-                                          "linear-gradient(45deg, rgba(255, 100, 200, 0.7), rgba(100, 255, 150, 0.6))", // Pink-Green
-                                          "linear-gradient(45deg, rgba(150, 100, 255, 0.7), rgba(255, 200, 100, 0.6))", // Purple-Orange
-                                          "linear-gradient(45deg, rgba(100, 200, 255, 0.7), rgba(255, 150, 100, 0.6))", // Blue-Orange
-                                          "linear-gradient(45deg, rgba(200, 255, 100, 0.7), rgba(255, 100, 150, 0.6))", // Green-Pink
-                                        ];
-                                        return colors[i % colors.length];
-                                      })(),
+                                      background: "linear-gradient(45deg, rgba(73, 146, 255, 0.7), rgba(34, 211, 238, 0.6))",
                                       clipPath:
                                         "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
                                       animation:
@@ -3895,15 +3859,7 @@ export default function Index() {
                                   <div
                                     className="w-5 h-5"
                                     style={{
-                                      background: (() => {
-                                        const colors = [
-                                          "conic-gradient(from 0deg, rgba(255, 150, 100, 0.7), rgba(100, 255, 200, 0.6), rgba(200, 100, 255, 0.7), rgba(255, 200, 150, 0.6))", // Warm Rainbow
-                                          "conic-gradient(from 90deg, rgba(100, 255, 150, 0.7), rgba(255, 100, 200, 0.6), rgba(150, 200, 255, 0.7), rgba(255, 180, 100, 0.6))", // Cool Rainbow
-                                          "conic-gradient(from 180deg, rgba(200, 150, 255, 0.7), rgba(255, 200, 100, 0.6), rgba(100, 255, 180, 0.7), rgba(255, 150, 200, 0.6))", // Pastel Rainbow
-                                          "conic-gradient(from 270deg, rgba(255, 200, 150, 0.7), rgba(150, 255, 200, 0.6), rgba(200, 150, 255, 0.7), rgba(255, 180, 150, 0.6))", // Sunset Rainbow
-                                        ];
-                                        return colors[i % colors.length];
-                                      })(),
+                                      background: "conic-gradient(from 0deg, rgba(73, 146, 255, 0.7), rgba(34, 211, 238, 0.6), rgba(57, 135, 227, 0.7), rgba(63, 186, 255, 0.6))",
                                       clipPath:
                                         "polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%)",
                                       animation:
