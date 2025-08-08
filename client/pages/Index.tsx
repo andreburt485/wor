@@ -393,10 +393,10 @@ export default function Index() {
   const sections = [
     { id: "home", title: "Home", component: "home" },
     { id: "about", title: "About Us", component: "about" },
-    { id: "what-we-do", title: "What we do", component: "what-we-do" },
+    { id: "what-we-do", title: "Our Process", component: "what-we-do" },
     { id: "services", title: "Services", component: "services" },
-    { id: "pricing", title: "Pricing", component: "pricing" },
     { id: "portfolio", title: "Portfolio", component: "portfolio" },
+    { id: "pricing", title: "Pricing", component: "pricing" },
     { id: "contact", title: "Contact Us", component: "contact" },
   ];
 
@@ -856,7 +856,7 @@ export default function Index() {
 ��█�� �����█╔����█��╔═══���█╗██�����══�����╗
 █████╔╝ ██║   ██║███�������█╔��
 █��╔�����█╗ █���║   ██║██╔══█��╗
-█���║  ██��╚█���█������█╔╝�����║  ██║
+█���║  ██��╚█�������█������█╔╝�����║  ██║
 �������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
@@ -932,7 +932,7 @@ export default function Index() {
                       className="text-xs text-amber-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      RAM: ������█�����██���██���███���██����███████��█ 50%
+                      RAM: ������█�����██���██�����███���██����███████��█ 50%
                     </div>
                     <div className="text-xs text-green-400 mt-1">
                       NETWORK: {systemStats.networkUp}GB/s ↑ |{" "}
@@ -2001,7 +2001,45 @@ export default function Index() {
           {/* Next Section Button */}
           {currentSection < sections.length - 1 &&
             !isHelpModalOpen &&
-            !isMobileMenuOpen && (
+            !isMobileMenuOpen &&
+            (currentSection === 0 ? (
+              // On home section: button without tooltip
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  if (isScrolling) return;
+                  protectedScrollToSection(currentSection + 1);
+                  setShowNavigationHints(false);
+                }}
+                disabled={isScrolling || isMobileMenuOpen}
+                className={`group relative p-2 sm:p-2.5 md:p-2.5 lg:p-3 w-10 h-10 sm:w-11 sm:h-11 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full border-2 backdrop-blur-lg hover-120hz performance-optimized flex items-center justify-center ${
+                  isScrolling || isMobileMenuOpen
+                    ? "pointer-events-none opacity-60"
+                    : ""
+                } ${
+                  theme === "light"
+                    ? "border-blue-400/40 bg-white/80 hover:bg-white/90"
+                    : "border-blue-300/30 bg-blue-400/10 hover:bg-blue-400/20"
+                }`}
+                style={{
+                  background:
+                    theme === "light"
+                      ? `linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 50%, transparent 100%)`
+                      : `linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 50%, transparent 100%)`,
+                  boxShadow: "0 0 20px rgba(73, 146, 255, 0.3)",
+                }}
+              >
+                <ChevronDown
+                  className={`w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-5 lg:h-5 transition-colors duration-300 ${
+                    theme === "light"
+                      ? "text-blue-600 group-hover:text-blue-700"
+                      : "text-white group-hover:text-blue-300"
+                  }`}
+                />
+              </button>
+            ) : (
+              // On other sections: button with tooltip
               <Tooltip>
                 <TooltipTrigger asChild>
                   <button
@@ -2043,7 +2081,7 @@ export default function Index() {
                   <span>Go to next section</span>
                 </TooltipContent>
               </Tooltip>
-            )}
+            ))}
 
           {/* Always-visible navigation hint for home page - to the right of the down button */}
           {currentSection === 0 && !isHelpModalOpen && !isMobileMenuOpen && (
@@ -3208,7 +3246,7 @@ export default function Index() {
                 {/* Simplified central orb */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div
-                    className="w-64 h-64 rounded-full opacity-50"
+                    className="w-72 h-72 rounded-full opacity-50"
                     style={{
                       background:
                         "radial-gradient(circle, rgba(73, 146, 255, 0.4) 0%, rgba(73, 146, 255, 0.1) 40%, transparent 70%)",
@@ -4176,9 +4214,7 @@ export default function Index() {
           <Tooltip>
             <TooltipTrigger asChild>
               <motion.button
-                onClick={() =>
-                  currentSection === 0 ? scrollToSection(1) : scrollToSection(0)
-                }
+                onClick={() => scrollToSection(0)}
                 className={`group absolute z-[99999] p-2 sm:p-2.5 md:p-2.5 lg:p-3 w-10 h-10 sm:w-11 sm:h-11 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full border-2 backdrop-blur-lg hover-120hz performance-optimized flex items-center justify-center ${
                   isMobileSafari || isIOS
                     ? "bottom-20 left-6 sm:left-8 md:left-10 lg:left-12" // Above Safari search bar, matching nav positioning
@@ -4199,23 +4235,15 @@ export default function Index() {
                 }}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{
-                  opacity: 1, // Always visible
-                  scale: 1, // Always visible
+                  opacity: currentSection === 0 ? 0 : 1, // Hidden on home section
+                  scale: currentSection === 0 ? 0 : 1, // Hidden on home section
                 }}
                 transition={{ duration: 0.3 }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                {/* Up arrow for non-home sections, down arrow for home section */}
-                {currentSection === 0 ? (
-                  <ChevronDown
-                    className={`w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-5 lg:h-5 transition-colors duration-300 ${
-                      theme === "light"
-                        ? "text-blue-600 group-hover:text-blue-700"
-                        : "text-white group-hover:text-blue-300"
-                    }`}
-                  />
-                ) : (
+                {/* Always show up arrow since this is only visible when not on home */}
+                {
                   <svg
                     className={`w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-5 lg:h-5 transition-colors duration-300 ${
                       theme === "light"
@@ -4234,13 +4262,11 @@ export default function Index() {
                     {/* Arrow head */}
                     <polyline points="5,12 12,5 19,12" />
                   </svg>
-                )}
+                }
               </motion.button>
             </TooltipTrigger>
             <TooltipContent side="right">
-              <span>
-                {currentSection === 0 ? "Scroll down" : "Back to top"}
-              </span>
+              <span>Back to top</span>
             </TooltipContent>
           </Tooltip>
 
@@ -8214,7 +8240,7 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
           </motion.div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 py-20">
+        <div className="relative z-10 container mx-auto px-6 py-20 pt-32">
           {/* Header Section */}
           <motion.div
             className="text-center mb-20"
@@ -8236,7 +8262,7 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              {"What We Do".split("").map((letter, i) => (
+              {"Our Process".split("").map((letter, i) => (
                 <motion.span
                   key={i}
                   className="inline-block animate-letter-float"
