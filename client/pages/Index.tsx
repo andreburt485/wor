@@ -932,7 +932,7 @@ export default function Index() {
                       className="text-xs text-amber-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      RAM: ������█�����██���██���███���██����███████��█ 50%
+                      RAM: ������█�����██���██�����███���██����███████��█ 50%
                     </div>
                     <div className="text-xs text-green-400 mt-1">
                       NETWORK: {systemStats.networkUp}GB/s ↑ |{" "}
@@ -3247,7 +3247,7 @@ export default function Index() {
                 {/* Simplified central orb */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div
-                    className="w-64 h-64 rounded-full opacity-50"
+                    className="w-72 h-72 rounded-full opacity-50"
                     style={{
                       background:
                         "radial-gradient(circle, rgba(73, 146, 255, 0.4) 0%, rgba(73, 146, 255, 0.1) 40%, transparent 70%)",
