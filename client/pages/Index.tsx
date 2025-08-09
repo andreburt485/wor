@@ -4074,7 +4074,7 @@ export default function Index() {
           >
             <div
               ref={navbarRef}
-              className="relative flex items-center gap-3 md:gap-2 lg:gap-4 px-4 py-2 md:px-3 md:py-1.5 lg:px-6 lg:py-3 rounded-full backdrop-blur-xs hover:bg-white/15 transition-all duration-500 hover:scale-105 overflow-hidden"
+              className="relative flex items-center gap-3 md:gap-2 lg:gap-4 px-4 py-2 md:px-3 md:py-1.5 lg:px-6 lg:py-3 rounded-full backdrop-blur-xs hover:bg-white/15 transition-all duration-500 hover:scale-105 overflow-hidden max-w-fit mx-auto"
               style={{
                 background: "rgba(255, 255, 255, 0.1)",
                 border: "2px solid transparent",
@@ -12494,7 +12494,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-5">
           {[
             { icon: "���️", delay: 0, x: 15, y: 20, size: 24, duration: 8 },
-            { icon: "📧", delay: 2, x: 85, y: 15, size: 20, duration: 6 },
+            { icon: "����", delay: 2, x: 85, y: 15, size: 20, duration: 6 },
             { icon: "��", delay: 4, x: 25, y: 80, size: 22, duration: 7 },
             { icon: "🌐", delay: 1, x: 75, y: 70, size: 26, duration: 9 },
             {
