@@ -855,7 +855,7 @@ export default function Index() {
                   {`��█╗  █���������� █████����� ██������������██╗
 ��█�� �����█╔����█��╔═══���█╗██�����══�����╗
 █████╔╝ ██║   ██║███�������█╔��
-█��╔�����█╗ █���║   ██║██╔══█��╗
+█��╔�����█╗ █���║   █��║██╔══█��╗
 █���║  ██��╚█�������█������█╔╝�����║  ██║
 �������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
                 </pre>
@@ -932,7 +932,7 @@ export default function Index() {
                       className="text-xs text-amber-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      RAM: ������█�����██���██�����███���██����███████��█ 50%
+                      RAM: ������█�����██���██�����███���██����██████�����█ 50%
                     </div>
                     <div className="text-xs text-green-400 mt-1">
                       NETWORK: {systemStats.networkUp}GB/s ↑ |{" "}
@@ -4112,12 +4112,12 @@ export default function Index() {
               </div>
 
               {/* Navigation Pills */}
-              <div className="hidden sm:flex items-center gap-2">
+              <div className="hidden md:flex items-center gap-2 lg:gap-2">
                 {sections.map((section, index) => (
                   <motion.button
                     key={section.id}
                     onClick={() => scrollToSection(index)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 relative overflow-hidden animate-textGlow ${
+                    className={`px-2 md:px-2.5 lg:px-3 py-1 md:py-1.5 rounded-full text-xs font-medium transition-all duration-300 relative overflow-hidden animate-textGlow ${
                       currentSection === index
                         ? "text-white"
                         : theme === "light"
@@ -12494,7 +12494,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-5">
           {[
             { icon: "���️", delay: 0, x: 15, y: 20, size: 24, duration: 8 },
-            { icon: "����", delay: 2, x: 85, y: 15, size: 20, duration: 6 },
+            { icon: "📧", delay: 2, x: 85, y: 15, size: 20, duration: 6 },
             { icon: "��", delay: 4, x: 25, y: 80, size: 22, duration: 7 },
             { icon: "🌐", delay: 1, x: 75, y: 70, size: 26, duration: 9 },
             {
