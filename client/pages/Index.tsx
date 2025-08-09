@@ -855,7 +855,7 @@ export default function Index() {
                   {`��█╗  █���������� █████����� ██������������██╗
 ��█�� �����█╔����█��╔═══���█╗██�����══�����╗
 █████╔╝ ██║   ██║███�������█╔��
-█��╔�����█╗ █���║   █��║██╔══█��╗
+█��╔�����█╗ █���║   ██║██╔══█��╗
 █���║  ██��╚█�������█������█╔╝�����║  ██║
 �������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
                 </pre>
@@ -932,7 +932,7 @@ export default function Index() {
                       className="text-xs text-amber-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      RAM: ������█�����██���██�����███���██����██████�����█ 50%
+                      RAM: ������█�����██���██�����███���██����███████��█ 50%
                     </div>
                     <div className="text-xs text-green-400 mt-1">
                       NETWORK: {systemStats.networkUp}GB/s ↑ |{" "}
@@ -4135,7 +4135,7 @@ export default function Index() {
               </div>
 
               {/* Mobile Menu Indicator */}
-              <div className="sm:hidden flex items-center gap-2">
+              <div className="md:hidden flex items-center gap-2">
                 <div className="text-xs text-gray-300 font-medium">
                   {sections[currentSection]?.title}
                 </div>
