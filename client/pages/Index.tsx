@@ -60,7 +60,18 @@ export default function Index() {
     useUnifiedNotifications();
   const { isSafari, isMobileSafari, isIOS } = useBrowserDetection();
 
-  // Performance optimizations
+  // Performance optimizations and device detection
+  const {
+    performanceSettings,
+    getPerformanceClasses,
+    shouldRunAnimation,
+    shouldRenderParticles,
+    getAnimationDuration,
+    isLowEndDevice,
+    deviceCategory
+  } = usePerformanceOptimization();
+
+  // Motion preferences
   const prefersReducedMotion = useReducedMotion();
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -854,7 +865,7 @@ export default function Index() {
                   }}
                 >
                   {`��█╗  █���������� █████����� ██������������██╗
-��█�� �����█╔����█��╔═══���█╗██�����══�����╗
+��█�� �����█╔����█��╔═══���█╗██�����═�������╗
 █████╔╝ ██║   ██║███�������█╔��
 █��╔�����█╗ █���║   ██║██╔══█��╗
 █���║  ██��╚█�������█������█╔╝�����║  █��║
