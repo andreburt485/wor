@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import App from "./App";
-import "./performance-optimizations.css";
+import "./performance-optimization.css";
 
 // Performance monitoring
 if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
