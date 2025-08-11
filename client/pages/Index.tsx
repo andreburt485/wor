@@ -869,7 +869,7 @@ export default function Index() {
 █████╔╝ ██║   ██║███�������█╔��
 █��╔�����█╗ █���║   ██║██╔══█��╗
 █���║  ██��╚█�������█������█╔╝�����║  █��║
-�������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
+��������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
               </motion.div>
@@ -2502,7 +2502,7 @@ export default function Index() {
           </AnimatePresence>
 
           {/* Sections Container */}
-          <div className="h-full">
+          <div className={`h-full ${getPerformanceClasses()}`}>
             {/* Home Section */}
             <motion.div
               ref={(el) => (sectionsRef.current[0] = el!)}
@@ -8175,7 +8175,7 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               ease: "easeInOut",
             }}
           >
-            excellence • delivery
+            excellence �� delivery
           </motion.div>
         </div>
 
