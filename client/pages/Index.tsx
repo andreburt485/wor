@@ -6330,35 +6330,6 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
             ))}
           </div>
 
-          {/* Falling Digital Rain */}
-          <div className="absolute inset-0">
-            {[...Array(isMobileOrTablet ? 8 : 15)].map((_, i) => (
-              <motion.div
-                key={`rain-${i}`}
-                className="absolute text-xs sm:text-sm font-mono text-green-400 opacity-40"
-                style={{
-                  left: `${i * (isMobileOrTablet ? 12 : 7)}%`,
-                  top: "-10%",
-                  writingMode: "vertical-rl",
-                  textOrientation: "mixed",
-                }}
-                animate={{
-                  y: ["0vh", "110vh"],
-                  opacity: [0, 0.8, 0],
-                }}
-                transition={{
-                  duration: 4 + (i % 3),
-                  repeat: Infinity,
-                  delay: i * 0.3,
-                  ease: "linear",
-                }}
-              >
-                {Array.from({ length: 20 }, () =>
-                  Math.random() > 0.5 ? "1" : "0",
-                ).join("")}
-              </motion.div>
-            ))}
-          </div>
 
           {/* Glowing Geometric Shapes */}
           <div className="absolute inset-0">
