@@ -44,6 +44,7 @@ import {
   SPAM_PROTECTION_PRESETS,
 } from "../hooks/use-spam-protection";
 import { useHelpModal } from "../hooks/use-help-modal";
+import { usePerformanceOptimization } from "../hooks/use-performance-optimization";
 import {
   Tooltip,
   TooltipContent,
@@ -856,7 +857,7 @@ export default function Index() {
 ��█�� �����█╔����█��╔═══���█╗██�����══�����╗
 █████╔╝ ██║   ██║███�������█╔��
 █��╔�����█╗ █���║   ██║██╔══█��╗
-█���║  ██��╚█�������█������█╔╝�����║  ██║
+█���║  ██��╚█�������█������█╔╝�����║  █��║
 �������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
