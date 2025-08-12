@@ -2633,22 +2633,6 @@ export default function Index() {
               {/* Aurora effects removed as requested */}
               <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-70 sm:opacity-60 lg:opacity-60">
                 {/* Aurora effects removed */}
-                <div
-                  className="absolute aurora-curtain-1"
-                  style={{
-                    top: "20%",
-                    left: "-15%",
-                    right: "-15%",
-                    height: "120px",
-                    background: isPinkActive
-                      ? "linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.4) 15%, rgba(244, 114, 182, 0.5) 30%, rgba(251, 113, 133, 0.4) 50%, rgba(236, 72, 153, 0.5) 70%, rgba(244, 114, 182, 0.4) 85%, transparent 100%)"
-                      : "linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.4) 15%, rgba(20, 184, 166, 0.5) 30%, rgba(34, 197, 94, 0.4) 50%, rgba(6, 182, 212, 0.5) 70%, rgba(20, 184, 166, 0.4) 85%, transparent 100%)",
-                    borderRadius: "40% 60% 80% 20% / 60% 40% 80% 20%",
-                    filter: "blur(15px)",
-                    animation: "aurora-wave-subtle-1 28s ease-in-out infinite",
-                    transform: "skewY(-1deg)",
-                  }}
-                />
                 {/* Secondary aurora curtain - Middle layer */}
                 <div
                   className="absolute aurora-curtain-2"
