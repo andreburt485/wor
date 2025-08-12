@@ -71,6 +71,7 @@ export const usePerformanceOptimization = () => {
       ? 'iOS device'
       : 'device';
 
+    // Use showWithAction for mobile (with action button) or showWarning for desktop
     if (notifications.showWithAction) {
       notifications.showWithAction(
         "Performance Notice",
@@ -79,7 +80,16 @@ export const usePerformanceOptimization = () => {
         () => {},
         "warning"
       );
+    } else if (notifications.show) {
+      // For desktop floating notifications
+      notifications.show({
+        title: "Performance Notice",
+        description: `We've detected you're using a ${deviceTypeText} with limited resources. Some animations may appear slower than intended.`,
+        type: "warning",
+        duration: 8000
+      });
     } else {
+      // Fallback to basic warning
       notifications.showWarning?.(
         "Performance Notice",
         `We've detected you're using a ${deviceTypeText} with limited resources. Some animations may appear slower than intended.`,
