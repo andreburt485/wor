@@ -3,10 +3,10 @@
    Responsive styles for low-end devices
    ======================================== */
 
-/* Reduced motion for devices that prefer it or low-end devices */
-.reduce-motion *,
-.reduce-motion *::before,
-.reduce-motion *::after {
+/* Reduced motion for devices that prefer it or low-end devices but preserve aurora */
+.reduce-motion *:not([class*="aurora"]):not([style*="aurora"]),
+.reduce-motion *:not([class*="aurora"]):not([style*="aurora"])::before,
+.reduce-motion *:not([class*="aurora"]):not([style*="aurora"])::after {
   animation-duration: 0.3s !important;
   animation-delay: 0s !important;
   animation-iteration-count: 1 !important;
