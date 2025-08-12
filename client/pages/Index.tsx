@@ -5233,12 +5233,6 @@ const contactAnimationsCSS = `
       opacity: 0.02 !important;
     }
 
-    .animate-aurora-wave-subtle,
-    .animate-aurora-wave-subtle-1,
-    .animate-aurora-wave-subtle-2 {
-      animation-duration: 60s !important;
-      opacity: 0.3 !important;
-    }
 
     .animate-geometric-pulse {
       animation-duration: 12s !important;
@@ -5268,13 +5262,6 @@ const contactAnimationsCSS = `
       animation-duration: 20s !important;
     }
 
-    /* Further reduce animations on mobile */
-    .animate-aurora,
-    .animate-aurora-1,
-    .animate-aurora-2 {
-      animation: none !important;
-      opacity: 0.05 !important;
-    }
   }
 
   @keyframes bubble-bounce-enhanced {
