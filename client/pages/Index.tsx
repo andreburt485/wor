@@ -2630,8 +2630,8 @@ export default function Index() {
                 }}
               />
 
-              {/* Enhanced Spectacular Full-Width Wavy Aurora Curtains - Desktop Only (992px+) */}
-              <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-60 sm:opacity-50 lg:opacity-55">
+              {/* Background effects container */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
                 {/* Primary aurora curtain - Top layer */}
                 <div
                   className="absolute aurora-curtain-1"
