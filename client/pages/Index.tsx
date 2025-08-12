@@ -44,6 +44,7 @@ import {
   SPAM_PROTECTION_PRESETS,
 } from "../hooks/use-spam-protection";
 import { useHelpModal } from "../hooks/use-help-modal";
+import { usePerformanceOptimization } from "../hooks/use-performance-optimization";
 import {
   Tooltip,
   TooltipContent,
@@ -59,7 +60,18 @@ export default function Index() {
     useUnifiedNotifications();
   const { isSafari, isMobileSafari, isIOS } = useBrowserDetection();
 
-  // Performance optimizations
+  // Performance optimizations and device detection
+  const {
+    performanceSettings,
+    getPerformanceClasses,
+    shouldRunAnimation,
+    shouldRenderParticles,
+    getAnimationDuration,
+    isLowEndDevice,
+    deviceCategory
+  } = usePerformanceOptimization();
+
+  // Motion preferences
   const prefersReducedMotion = useReducedMotion();
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -853,11 +865,11 @@ export default function Index() {
                   }}
                 >
                   {`��█╗  █���������� █████����� ██������������██╗
-��█�� �����█╔����█��╔═══���█╗██�����══�����╗
-█████╔╝ ██║   ██║███�������█╔��
+��█�� �����█╔����█��╔═══���█╗██�����═�������╗
+█████╔╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██╔══█��╗
-█���║  ██��╚█�������█������█╔╝�����║  ██║
-�������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
+█���║  ██��╚█�������█������█╔╝�����║  █��║
+��������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
               </motion.div>
@@ -925,7 +937,7 @@ export default function Index() {
                       className="text-xs text-green-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      CPU: ���██���█████���███��██���█���███████���███����█████
+                      CPU: ���██���█████���███����█���█���███████���███����█████
                       60%
                     </div>
                     <div
@@ -1004,7 +1016,7 @@ export default function Index() {
 
                 <div className="continue-prompt">
                   <span className="text-cyan-400">[SYSTEM READY]</span>
-                  <span className="text-green-400 ml-4">��◆����◄�����◆◆◆</span>
+                  <span className="text-green-400 ml-4">��◆�����◄�����◆◆◆</span>
                 </div>
 
                 <div className="loading-indicators">
@@ -2490,7 +2502,7 @@ export default function Index() {
           </AnimatePresence>
 
           {/* Sections Container */}
-          <div className="h-full">
+          <div className={`h-full ${getPerformanceClasses()}`}>
             {/* Home Section */}
             <motion.div
               ref={(el) => (sectionsRef.current[0] = el!)}
@@ -2618,75 +2630,18 @@ export default function Index() {
                 }}
               />
 
-              {/* Enhanced Spectacular Full-Width Wavy Aurora Curtains - Desktop Only (992px+) */}
-              <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-70 sm:opacity-60 lg:opacity-60">
-                {/* Primary aurora curtain - Top layer */}
+              {/* Background effects container */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+                {/* Simple background element */}
                 <div
-                  className="absolute aurora-curtain-1"
-                  style={{
-                    top: "20%",
-                    left: "-15%",
-                    right: "-15%",
-                    height: "120px",
-                    background: isPinkActive
-                      ? "linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.4) 15%, rgba(244, 114, 182, 0.5) 30%, rgba(251, 113, 133, 0.4) 50%, rgba(236, 72, 153, 0.5) 70%, rgba(244, 114, 182, 0.4) 85%, transparent 100%)"
-                      : "linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.4) 15%, rgba(20, 184, 166, 0.5) 30%, rgba(34, 197, 94, 0.4) 50%, rgba(6, 182, 212, 0.5) 70%, rgba(20, 184, 166, 0.4) 85%, transparent 100%)",
-                    borderRadius: "40% 60% 80% 20% / 60% 40% 80% 20%",
-                    filter: "blur(15px)",
-                    animation: "aurora-wave-subtle-1 28s ease-in-out infinite",
-                    transform: "skewY(-1deg)",
-                  }}
-                />
-                {/* Secondary aurora curtain - Middle layer */}
-                <div
-                  className="absolute aurora-curtain-2"
-                  style={{
-                    top: "45%",
-                    left: "-20%",
-                    right: "-20%",
-                    height: "140px",
-                    background: isPinkActive
-                      ? "linear-gradient(90deg, transparent 0%, rgba(251, 113, 133, 0.35) 10%, rgba(236, 72, 153, 0.45) 25%, rgba(244, 114, 182, 0.4) 40%, rgba(190, 24, 93, 0.45) 60%, rgba(251, 113, 133, 0.4) 75%, rgba(236, 72, 153, 0.35) 90%, transparent 100%)"
-                      : "linear-gradient(90deg, transparent 0%, rgba(34, 197, 94, 0.35) 10%, rgba(6, 182, 212, 0.45) 25%, rgba(16, 185, 129, 0.4) 40%, rgba(20, 184, 166, 0.45) 60%, rgba(34, 197, 94, 0.4) 75%, rgba(6, 182, 212, 0.35) 90%, transparent 100%)",
-                    borderRadius: "30% 70% 40% 60% / 70% 30% 60% 40%",
-                    filter: "blur(18px)",
-                    animation: "aurora-wave-subtle-2 34s ease-in-out infinite",
-                    transform: "skewY(0.5deg)",
-                  }}
-                />
-                {/* Tertiary aurora curtain - Back layer */}
-                <div
-                  className="absolute aurora-curtain-3"
-                  style={{
-                    top: "70%",
-                    left: "-25%",
-                    right: "-25%",
-                    height: "100px",
-                    background: isPinkActive
-                      ? "linear-gradient(90deg, transparent 0%, rgba(244, 114, 182, 0.3) 20%, rgba(251, 113, 133, 0.4) 35%, rgba(236, 72, 153, 0.35) 50%, rgba(244, 114, 182, 0.4) 65%, rgba(190, 24, 93, 0.3) 80%, transparent 100%)"
-                      : "linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.3) 20%, rgba(34, 197, 94, 0.4) 35%, rgba(6, 182, 212, 0.35) 50%, rgba(16, 185, 129, 0.4) 65%, rgba(20, 184, 166, 0.3) 80%, transparent 100%)",
-                    borderRadius: "60% 40% 80% 20% / 40% 60% 20% 80%",
-                    filter: "blur(20px)",
-                    animation: "aurora-wave-subtle-3 40s ease-in-out infinite",
-                    transform: "skewY(-0.5deg)",
-                  }}
-                />
-                {/* Ultra-wide flowing base curtain */}
-                <div
-                  className="absolute aurora-base-flow"
+                  className="absolute"
                   style={{
                     top: "30%",
-                    left: "-30%",
-                    right: "-30%",
-                    height: "160px",
-                    background: isPinkActive
-                      ? "linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.25) 12%, rgba(251, 113, 133, 0.3) 25%, rgba(244, 114, 182, 0.28) 37%, rgba(190, 24, 93, 0.3) 50%, rgba(236, 72, 153, 0.28) 62%, rgba(251, 113, 133, 0.25) 75%, rgba(244, 114, 182, 0.22) 87%, transparent 100%)"
-                      : "linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.25) 12%, rgba(34, 197, 94, 0.3) 25%, rgba(20, 184, 166, 0.28) 37%, rgba(16, 185, 129, 0.3) 50%, rgba(6, 182, 212, 0.28) 62%, rgba(34, 197, 94, 0.25) 75%, rgba(20, 184, 166, 0.22) 87%, transparent 100%)",
-                    borderRadius: "50% 80% 30% 70% / 80% 20% 70% 30%",
-                    filter: "blur(25px)",
-                    animation:
-                      "aurora-base-flow-subtle 46s ease-in-out infinite",
-                    transform: "skewY(0.3deg)",
+                    left: "10%",
+                    right: "10%",
+                    height: "40%",
+                    background: "radial-gradient(ellipse at center, rgba(59, 130, 246, 0.1), transparent)",
+                    filter: "blur(60px)",
                   }}
                 />
 
@@ -3634,7 +3589,7 @@ export default function Index() {
                 >
                   {/* Kor - mobile: 50px left + 30px down + bigger, desktop: moved further to the left */}
                   <div
-                    className="text-center transform -translate-x-[50px] translate-y-[30px] sm:-translate-x-6 sm:translate-y-0 md:-translate-x-12 lg:-translate-x-16 xl:-translate-x-20"
+                    className="text-center transform -translate-x-[50px] translate-y-[30px] sm:-translate-x-6 sm:translate-y-0 lg:-translate-x-16 xl:-translate-x-20 kor-tablet-positioning"
                     style={{ marginLeft: "-5px" }}
                   >
                     <h1
@@ -3706,27 +3661,7 @@ export default function Index() {
                         }}
                       />
 
-                      {/* Optimized floating energy particles around text */}
-                      {!isPinkActive &&
-                        [...Array(8)].map((_, i) => (
-                          <div
-                            key={`energy-${i}`}
-                            className="absolute rounded-full pointer-events-none gpu-accelerated"
-                            style={{
-                              left: `${20 + ((i * 80) % 160)}%`,
-                              top: `${30 + ((i * 50) % 60)}%`,
-                              width: `${4 + (i % 2)}px`,
-                              height: `${4 + (i % 2)}px`,
-                              background:
-                                theme === "light"
-                                  ? `rgba(${59 + ((i * 30) % 60)}, ${130 + ((i * 20) % 50)}, 246, ${0.7 + (i % 2) * 0.2})`
-                                  : `rgba(${73 + ((i * 20) % 50)}, ${146 + ((i * 10) % 30)}, 255, ${0.7 + (i % 2) * 0.2})`,
-                              animation: `energy-float ${4 + (i % 2)}s ease-in-out infinite ${i * 0.5}s`,
-                              willChange: "transform, opacity",
-                              transform: "translateZ(0)",
-                            }}
-                          />
-                        ))}
+                      {/* Removed floating energy particles */}
 
                       {/* Pink Theme Floating Bubbles with Pink Outlines */}
                       {isPinkActive &&
@@ -3851,15 +3786,7 @@ export default function Index() {
                                   <div
                                     className="w-6 h-6"
                                     style={{
-                                      background: (() => {
-                                        const colors = [
-                                          "radial-gradient(circle, rgba(255, 100, 150, 0.8) 0%, rgba(255, 180, 100, 0.5) 70%, transparent 90%)", // Pink-Orange
-                                          "radial-gradient(circle, rgba(100, 255, 200, 0.8) 0%, rgba(100, 200, 255, 0.5) 70%, transparent 90%)", // Mint-Blue
-                                          "radial-gradient(circle, rgba(200, 100, 255, 0.8) 0%, rgba(255, 150, 200, 0.5) 70%, transparent 90%)", // Purple-Pink
-                                          "radial-gradient(circle, rgba(255, 200, 100, 0.8) 0%, rgba(200, 255, 150, 0.5) 70%, transparent 90%)", // Orange-Green
-                                        ];
-                                        return colors[i % colors.length];
-                                      })(),
+                                      background: "radial-gradient(circle, rgba(73, 146, 255, 0.8) 0%, rgba(34, 211, 238, 0.5) 70%, transparent 90%)",
                                       clipPath:
                                         "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
                                       animation:
@@ -3873,15 +3800,7 @@ export default function Index() {
                                   <div
                                     className="w-4 h-4"
                                     style={{
-                                      background: (() => {
-                                        const colors = [
-                                          "linear-gradient(45deg, rgba(255, 100, 200, 0.7), rgba(100, 255, 150, 0.6))", // Pink-Green
-                                          "linear-gradient(45deg, rgba(150, 100, 255, 0.7), rgba(255, 200, 100, 0.6))", // Purple-Orange
-                                          "linear-gradient(45deg, rgba(100, 200, 255, 0.7), rgba(255, 150, 100, 0.6))", // Blue-Orange
-                                          "linear-gradient(45deg, rgba(200, 255, 100, 0.7), rgba(255, 100, 150, 0.6))", // Green-Pink
-                                        ];
-                                        return colors[i % colors.length];
-                                      })(),
+                                      background: "linear-gradient(45deg, rgba(73, 146, 255, 0.7), rgba(34, 211, 238, 0.6))",
                                       clipPath:
                                         "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
                                       animation:
@@ -3895,15 +3814,7 @@ export default function Index() {
                                   <div
                                     className="w-5 h-5"
                                     style={{
-                                      background: (() => {
-                                        const colors = [
-                                          "conic-gradient(from 0deg, rgba(255, 150, 100, 0.7), rgba(100, 255, 200, 0.6), rgba(200, 100, 255, 0.7), rgba(255, 200, 150, 0.6))", // Warm Rainbow
-                                          "conic-gradient(from 90deg, rgba(100, 255, 150, 0.7), rgba(255, 100, 200, 0.6), rgba(150, 200, 255, 0.7), rgba(255, 180, 100, 0.6))", // Cool Rainbow
-                                          "conic-gradient(from 180deg, rgba(200, 150, 255, 0.7), rgba(255, 200, 100, 0.6), rgba(100, 255, 180, 0.7), rgba(255, 150, 200, 0.6))", // Pastel Rainbow
-                                          "conic-gradient(from 270deg, rgba(255, 200, 150, 0.7), rgba(150, 255, 200, 0.6), rgba(200, 150, 255, 0.7), rgba(255, 180, 150, 0.6))", // Sunset Rainbow
-                                        ];
-                                        return colors[i % colors.length];
-                                      })(),
+                                      background: "conic-gradient(from 0deg, rgba(73, 146, 255, 0.7), rgba(34, 211, 238, 0.6), rgba(57, 135, 227, 0.7), rgba(63, 186, 255, 0.6))",
                                       clipPath:
                                         "polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%)",
                                       animation:
@@ -4118,7 +4029,7 @@ export default function Index() {
           >
             <div
               ref={navbarRef}
-              className="relative flex items-center gap-3 md:gap-2 lg:gap-4 px-4 py-2 md:px-3 md:py-1.5 lg:px-6 lg:py-3 rounded-full backdrop-blur-xs hover:bg-white/15 transition-all duration-500 hover:scale-105 overflow-hidden"
+              className="relative flex items-center gap-3 md:gap-2 lg:gap-4 px-4 py-2 md:px-3 md:py-1.5 lg:px-6 lg:py-3 rounded-full backdrop-blur-xs hover:bg-white/15 transition-all duration-500 hover:scale-105 overflow-hidden max-w-fit mx-auto"
               style={{
                 background: "rgba(255, 255, 255, 0.1)",
                 border: "2px solid transparent",
@@ -4156,12 +4067,12 @@ export default function Index() {
               </div>
 
               {/* Navigation Pills */}
-              <div className="hidden sm:flex items-center gap-2">
+              <div className="hidden md:flex items-center gap-2 lg:gap-2">
                 {sections.map((section, index) => (
                   <motion.button
                     key={section.id}
                     onClick={() => scrollToSection(index)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 relative overflow-hidden animate-textGlow ${
+                    className={`px-2 md:px-2.5 lg:px-3 py-1 md:py-1.5 rounded-full text-xs font-medium transition-all duration-300 relative overflow-hidden animate-textGlow ${
                       currentSection === index
                         ? "text-white"
                         : theme === "light"
@@ -4179,7 +4090,7 @@ export default function Index() {
               </div>
 
               {/* Mobile Menu Indicator */}
-              <div className="sm:hidden flex items-center gap-2">
+              <div className="md:hidden flex items-center gap-2">
                 <div className="text-xs text-gray-300 font-medium">
                   {sections[currentSection]?.title}
                 </div>
@@ -6374,35 +6285,6 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
             ))}
           </div>
 
-          {/* Falling Digital Rain */}
-          <div className="absolute inset-0">
-            {[...Array(isMobileOrTablet ? 8 : 15)].map((_, i) => (
-              <motion.div
-                key={`rain-${i}`}
-                className="absolute text-xs sm:text-sm font-mono text-green-400 opacity-40"
-                style={{
-                  left: `${i * (isMobileOrTablet ? 12 : 7)}%`,
-                  top: "-10%",
-                  writingMode: "vertical-rl",
-                  textOrientation: "mixed",
-                }}
-                animate={{
-                  y: ["0vh", "110vh"],
-                  opacity: [0, 0.8, 0],
-                }}
-                transition={{
-                  duration: 4 + (i % 3),
-                  repeat: Infinity,
-                  delay: i * 0.3,
-                  ease: "linear",
-                }}
-              >
-                {Array.from({ length: 20 }, () =>
-                  Math.random() > 0.5 ? "1" : "0",
-                ).join("")}
-              </motion.div>
-            ))}
-          </div>
 
           {/* Glowing Geometric Shapes */}
           <div className="absolute inset-0">
@@ -8236,7 +8118,7 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               ease: "easeInOut",
             }}
           >
-            excellence • delivery
+            excellence �� delivery
           </motion.div>
         </div>
 
