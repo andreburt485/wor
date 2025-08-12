@@ -2644,41 +2644,6 @@ export default function Index() {
                     filter: "blur(60px)",
                   }}
                 />
-                {/* Tertiary aurora curtain - Back layer */}
-                <div
-                  className="absolute aurora-curtain-3"
-                  style={{
-                    top: "70%",
-                    left: "-25%",
-                    right: "-25%",
-                    height: "100px",
-                    background: isPinkActive
-                      ? "linear-gradient(90deg, transparent 0%, rgba(244, 114, 182, 0.3) 20%, rgba(251, 113, 133, 0.4) 35%, rgba(236, 72, 153, 0.35) 50%, rgba(244, 114, 182, 0.4) 65%, rgba(190, 24, 93, 0.3) 80%, transparent 100%)"
-                      : "linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.3) 20%, rgba(34, 197, 94, 0.4) 35%, rgba(6, 182, 212, 0.35) 50%, rgba(16, 185, 129, 0.4) 65%, rgba(20, 184, 166, 0.3) 80%, transparent 100%)",
-                    borderRadius: "60% 40% 80% 20% / 40% 60% 20% 80%",
-                    filter: "blur(16px)",
-                    animation: "aurora-wave-subtle-3 40s ease-in-out infinite",
-                    transform: "skewY(-0.5deg)",
-                  }}
-                />
-                {/* Ultra-wide flowing base curtain */}
-                <div
-                  className="absolute aurora-base-flow"
-                  style={{
-                    top: "30%",
-                    left: "-30%",
-                    right: "-30%",
-                    height: "160px",
-                    background: isPinkActive
-                      ? "linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.25) 12%, rgba(251, 113, 133, 0.3) 25%, rgba(244, 114, 182, 0.28) 37%, rgba(190, 24, 93, 0.3) 50%, rgba(236, 72, 153, 0.28) 62%, rgba(251, 113, 133, 0.25) 75%, rgba(244, 114, 182, 0.22) 87%, transparent 100%)"
-                      : "linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.25) 12%, rgba(34, 197, 94, 0.3) 25%, rgba(20, 184, 166, 0.28) 37%, rgba(16, 185, 129, 0.3) 50%, rgba(6, 182, 212, 0.28) 62%, rgba(34, 197, 94, 0.25) 75%, rgba(20, 184, 166, 0.22) 87%, transparent 100%)",
-                    borderRadius: "50% 80% 30% 70% / 80% 20% 70% 30%",
-                    filter: "blur(25px)",
-                    animation:
-                      "aurora-base-flow-subtle 46s ease-in-out infinite",
-                    transform: "skewY(0.3deg)",
-                  }}
-                />
 
                 {/* NEW DESKTOP EYE CANDY - Enhanced Effects */}
 
