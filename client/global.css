@@ -3194,3 +3194,10 @@ body > div {
     visibility: visible !important;
   }
 }
+
+/* Custom tablet positioning for Kor text - move 50px left on tablet breakpoint */
+@media (min-width: 641px) and (max-width: 991px) {
+  .kor-tablet-positioning {
+    transform: translateX(-56px) translateY(0px) !important;
+  }
+}
