@@ -866,7 +866,7 @@ export default function Index() {
                 >
                   {`��█╗  █���������� █████����� ██������������██╗
 ��█�� �����█╔����█��╔═══���█╗██�����═�������╗
-█████╔╝ ██║   ██║███�������█╔��
+█████╔╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██╔══█��╗
 █���║  ██��╚█�������█������█╔╝�����║  █��║
 ��������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
@@ -2630,10 +2630,28 @@ export default function Index() {
                 }}
               />
 
-              {/* Aurora effects removed as requested */}
-              <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-70 sm:opacity-60 lg:opacity-60">
-                {/* Aurora effects removed */}
+              {/* Enhanced Spectacular Full-Width Wavy Aurora Curtains - Desktop Only (992px+) */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-60 sm:opacity-50 lg:opacity-55">
+                {/* Primary aurora curtain - Top layer */}
                 <div
+                  className="absolute aurora-curtain-1"
+                  style={{
+                    top: "20%",
+                    left: "-15%",
+                    right: "-15%",
+                    height: "120px",
+                    background: isPinkActive
+                      ? "linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.4) 15%, rgba(244, 114, 182, 0.5) 30%, rgba(251, 113, 133, 0.4) 50%, rgba(236, 72, 153, 0.5) 70%, rgba(244, 114, 182, 0.4) 85%, transparent 100%)"
+                      : "linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.45) 15%, rgba(20, 184, 166, 0.55) 30%, rgba(34, 197, 94, 0.45) 50%, rgba(6, 182, 212, 0.55) 70%, rgba(20, 184, 166, 0.45) 85%, transparent 100%)",
+                    borderRadius: "40% 60% 80% 20% / 60% 40% 80% 20%",
+                    filter: "blur(12px)",
+                    animation: "aurora-wave-subtle-1 28s ease-in-out infinite",
+                    transform: "skewY(-1deg)",
+                  }}
+                />
+                {/* Secondary aurora curtain - Middle layer */}
+                <div
+                  className="absolute aurora-curtain-2"
                   style={{
                     top: "45%",
                     left: "-20%",
@@ -2641,13 +2659,16 @@ export default function Index() {
                     height: "140px",
                     background: isPinkActive
                       ? "linear-gradient(90deg, transparent 0%, rgba(251, 113, 133, 0.35) 10%, rgba(236, 72, 153, 0.45) 25%, rgba(244, 114, 182, 0.4) 40%, rgba(190, 24, 93, 0.45) 60%, rgba(251, 113, 133, 0.4) 75%, rgba(236, 72, 153, 0.35) 90%, transparent 100%)"
-                      : "linear-gradient(90deg, transparent 0%, rgba(34, 197, 94, 0.35) 10%, rgba(6, 182, 212, 0.45) 25%, rgba(16, 185, 129, 0.4) 40%, rgba(20, 184, 166, 0.45) 60%, rgba(34, 197, 94, 0.4) 75%, rgba(6, 182, 212, 0.35) 90%, transparent 100%)",
+                      : "linear-gradient(90deg, transparent 0%, rgba(34, 197, 94, 0.4) 10%, rgba(6, 182, 212, 0.5) 25%, rgba(16, 185, 129, 0.45) 40%, rgba(20, 184, 166, 0.5) 60%, rgba(34, 197, 94, 0.45) 75%, rgba(6, 182, 212, 0.4) 90%, transparent 100%)",
                     borderRadius: "30% 70% 40% 60% / 70% 30% 60% 40%",
-                    filter: "blur(18px)",
+                    filter: "blur(14px)",
+                    animation: "aurora-wave-subtle-2 34s ease-in-out infinite",
                     transform: "skewY(0.5deg)",
                   }}
                 />
+                {/* Tertiary aurora curtain - Back layer */}
                 <div
+                  className="absolute aurora-curtain-3"
                   style={{
                     top: "70%",
                     left: "-25%",
@@ -2657,12 +2678,14 @@ export default function Index() {
                       ? "linear-gradient(90deg, transparent 0%, rgba(244, 114, 182, 0.3) 20%, rgba(251, 113, 133, 0.4) 35%, rgba(236, 72, 153, 0.35) 50%, rgba(244, 114, 182, 0.4) 65%, rgba(190, 24, 93, 0.3) 80%, transparent 100%)"
                       : "linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.3) 20%, rgba(34, 197, 94, 0.4) 35%, rgba(6, 182, 212, 0.35) 50%, rgba(16, 185, 129, 0.4) 65%, rgba(20, 184, 166, 0.3) 80%, transparent 100%)",
                     borderRadius: "60% 40% 80% 20% / 40% 60% 20% 80%",
-                    filter: "blur(20px)",
+                    filter: "blur(16px)",
+                    animation: "aurora-wave-subtle-3 40s ease-in-out infinite",
                     transform: "skewY(-0.5deg)",
                   }}
                 />
                 {/* Ultra-wide flowing base curtain */}
                 <div
+                  className="absolute aurora-base-flow"
                   style={{
                     top: "30%",
                     left: "-30%",
@@ -2674,6 +2697,7 @@ export default function Index() {
                     borderRadius: "50% 80% 30% 70% / 80% 20% 70% 30%",
                     filter: "blur(25px)",
                     animation:
+                      "aurora-base-flow-subtle 46s ease-in-out infinite",
                     transform: "skewY(0.3deg)",
                   }}
                 />
@@ -2790,6 +2814,7 @@ export default function Index() {
                   <div className="opacity-80 sm:opacity-70 lg:opacity-70">
                     {[...Array(4)].map((_, i) => (
                       <div
+                        key={`pink-aurora-${i}`}
                         className="absolute"
                         style={{
                           top: `${15 + i * 20}%`,
@@ -3115,6 +3140,31 @@ export default function Index() {
                 />
               </div>
 
+              {/* Aurora-like Moving Background */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div
+                  className="absolute w-96 h-96 rounded-full opacity-15"
+                  style={{
+                    left: "10%",
+                    top: "20%",
+                    background:
+                      "linear-gradient(45deg, rgba(73, 146, 255, 0.4), rgba(63, 186, 255, 0.2))",
+                    filter: "blur(60px)",
+                    animation: "aurora 12s ease-in-out infinite",
+                  }}
+                />
+                <div
+                  className="absolute w-80 h-80 rounded-full opacity-10"
+                  style={{
+                    right: "15%",
+                    bottom: "25%",
+                    background:
+                      "linear-gradient(-45deg, rgba(57, 135, 227, 0.3), rgba(73, 146, 255, 0.1))",
+                    filter: "blur(80px)",
+                    animation: "aurora 15s ease-in-out infinite 3s",
+                  }}
+                />
+              </div>
 
               {/* Interactive Glass Badge at Top */}
               <div
@@ -4443,6 +4493,7 @@ export default function Index() {
           }
         }
 
+        @keyframes aurora {
           0%,
           100% {
             opacity: 0.4;
@@ -4755,24 +4806,28 @@ export default function Index() {
           animation: mobile-wiggle 3s ease-in-out infinite;
         }
 
+        @keyframes aurora-wave-subtle-1 {
           0%, 100% { transform: translateX(-15%) translateY(0%) skewY(-1deg) scale(1); }
           25% { transform: translateX(-12%) translateY(-2%) skewY(-0.5deg) scale(1.05); }
           50% { transform: translateX(-10%) translateY(1%) skewY(0deg) scale(1.1); }
           75% { transform: translateX(-13%) translateY(-1%) skewY(-0.8deg) scale(1.02); }
         }
 
+        @keyframes aurora-wave-subtle-2 {
           0%, 100% { transform: translateX(-20%) translateY(0%) skewY(0.5deg) scale(1); }
           25% { transform: translateX(-18%) translateY(1%) skewY(1deg) scale(1.03); }
           50% { transform: translateX(-15%) translateY(-1%) skewY(0.2deg) scale(1.08); }
           75% { transform: translateX(-22%) translateY(0.5%) skewY(0.8deg) scale(1.01); }
         }
 
+        @keyframes aurora-wave-subtle-3 {
           0%, 100% { transform: translateX(-25%) translateY(0%) skewY(-0.5deg) scale(1); }
           25% { transform: translateX(-20%) translateY(-1%) skewY(0deg) scale(1.02); }
           50% { transform: translateX(-28%) translateY(1%) skewY(-1deg) scale(1.06); }
           75% { transform: translateX(-23%) translateY(-0.5%) skewY(-0.3deg) scale(1.01); }
         }
 
+        @keyframes aurora-base-flow-subtle {
           0%, 100% { transform: translateX(-30%) translateY(0%) skewY(0.3deg) scale(1); }
           25% { transform: translateX(-25%) translateY(-1%) skewY(0.6deg) scale(1.04); }
           50% { transform: translateX(-35%) translateY(0.5%) skewY(0deg) scale(1.08); }
@@ -5222,6 +5277,9 @@ const contactAnimationsCSS = `
       opacity: 0.02 !important;
     }
 
+    .animate-aurora-wave-subtle,
+    .animate-aurora-wave-subtle-1,
+    .animate-aurora-wave-subtle-2 {
       animation-duration: 60s !important;
       opacity: 0.3 !important;
     }
@@ -5255,6 +5313,9 @@ const contactAnimationsCSS = `
     }
 
     /* Further reduce animations on mobile */
+    .animate-aurora,
+    .animate-aurora-1,
+    .animate-aurora-2 {
       animation: none !important;
       opacity: 0.05 !important;
     }
@@ -5871,7 +5932,7 @@ const ORB_BUTTON_CONFIG = {
 // Change: angle: 125  →  angle: -90
 //
 // To make buttons grow more on hover:
-// Change: hoverScale: 1.05  ————���——→  hoverScale: 1.15
+// Change: hoverScale: 1.05  ————��——→  hoverScale: 1.15
 //
 // ========================================
 
@@ -6659,6 +6720,7 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         {/* Desktop Aurora Curtains */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-70 sm:opacity-60 lg:opacity-60">
           <div
+            className="absolute aurora-curtain-1"
             style={{
               top: "20%",
               left: "-15%",
@@ -6668,10 +6730,12 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                 "linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.4) 15%, rgba(20, 184, 166, 0.5) 30%, rgba(34, 197, 94, 0.4) 50%, rgba(6, 182, 212, 0.5) 70%, rgba(20, 184, 166, 0.4) 85%, transparent 100%)",
               borderRadius: "40% 60% 80% 20% / 60% 40% 80% 20%",
               filter: "blur(15px)",
+              animation: "aurora-wave-subtle-1 28s ease-in-out infinite",
               transform: "skewY(-1deg)",
             }}
           />
           <div
+            className="absolute aurora-curtain-2"
             style={{
               top: "45%",
               left: "-20%",
@@ -6681,6 +6745,7 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                 "linear-gradient(90deg, transparent 0%, rgba(34, 197, 94, 0.35) 10%, rgba(6, 182, 212, 0.45) 25%, rgba(16, 185, 129, 0.4) 40%, rgba(20, 184, 166, 0.45) 60%, rgba(34, 197, 94, 0.4) 75%, rgba(6, 182, 212, 0.35) 90%, transparent 100%)",
               borderRadius: "30% 70% 40% 60% / 70% 30% 60% 40%",
               filter: "blur(18px)",
+              animation: "aurora-wave-subtle-2 34s ease-in-out infinite",
               transform: "skewY(0.5deg)",
             }}
           />
@@ -6914,6 +6979,7 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
               background:
                 "linear-gradient(45deg, rgba(73, 146, 255, 0.4), rgba(63, 186, 255, 0.2))",
               filter: "blur(60px)",
+              animation: "aurora 12s ease-in-out infinite",
             }}
           />
           <div
@@ -6924,6 +6990,7 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
               background:
                 "linear-gradient(-45deg, rgba(57, 135, 227, 0.3), rgba(73, 146, 255, 0.1))",
               filter: "blur(80px)",
+              animation: "aurora 15s ease-in-out infinite 3s",
             }}
           />
         </div>
@@ -7531,6 +7598,7 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
         {/* Aurora Curtains - exactly like home page */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-70 sm:opacity-60 lg:opacity-60">
           <div
+            className="absolute aurora-curtain-1"
             style={{
               top: "20%",
               left: "-15%",
@@ -7541,10 +7609,12 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               borderRadius: "40% 60% 80% 20% / 60% 40% 80% 20%",
               filter: "blur(15px)",
               animation:
+                "28s ease-in-out 0s infinite normal none running aurora-wave-subtle-1",
               transform: "skewY(-1deg)",
             }}
           />
           <div
+            className="absolute aurora-curtain-2"
             style={{
               top: "45%",
               left: "-20%",
@@ -7555,10 +7625,12 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               borderRadius: "30% 70% 40% 60% / 70% 30% 60% 40%",
               filter: "blur(18px)",
               animation:
+                "34s ease-in-out 0s infinite normal none running aurora-wave-subtle-2",
               transform: "skewY(0.5deg)",
             }}
           />
           <div
+            className="absolute aurora-curtain-3"
             style={{
               top: "70%",
               left: "-25%",
@@ -7569,6 +7641,7 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               borderRadius: "60% 40% 80% 20% / 40% 60% 20% 80%",
               filter: "blur(20px)",
               animation:
+                "40s ease-in-out 0s infinite normal none running aurora-wave-subtle-3",
               transform: "skewY(-0.5deg)",
             }}
           />
@@ -9220,6 +9293,7 @@ const ServicesSection = React.forwardRef<HTMLDivElement, SectionProps>(
               background:
                 "linear-gradient(45deg, rgba(73, 146, 255, 0.4), rgba(63, 186, 255, 0.2))",
               filter: "blur(60px)",
+              animation: "aurora 12s ease-in-out infinite",
             }}
           />
           <div
@@ -9230,6 +9304,7 @@ const ServicesSection = React.forwardRef<HTMLDivElement, SectionProps>(
               background:
                 "linear-gradient(-45deg, rgba(57, 135, 227, 0.3), rgba(73, 146, 255, 0.1))",
               filter: "blur(80px)",
+              animation: "aurora 15s ease-in-out infinite 3s",
             }}
           />
         </div>
@@ -11536,6 +11611,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
               background:
                 "linear-gradient(45deg, rgba(73, 146, 255, 0.4), rgba(63, 186, 255, 0.2))",
               filter: "blur(60px)",
+              animation: "aurora 12s ease-in-out infinite",
             }}
           />
           <div
@@ -11546,6 +11622,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
               background:
                 "linear-gradient(-45deg, rgba(57, 135, 227, 0.3), rgba(73, 146, 255, 0.1))",
               filter: "blur(80px)",
+              animation: "aurora 15s ease-in-out infinite 3s",
             }}
           />
         </div>
@@ -12699,6 +12776,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
               background:
                 "linear-gradient(45deg, rgba(73, 146, 255, 0.4), rgba(63, 186, 255, 0.2))",
               filter: "blur(60px)",
+              animation: "aurora 12s ease-in-out infinite",
             }}
           />
           <div
@@ -12709,6 +12787,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
               background:
                 "linear-gradient(-45deg, rgba(57, 135, 227, 0.3), rgba(73, 146, 255, 0.1))",
               filter: "blur(80px)",
+              animation: "aurora 15s ease-in-out infinite 3s",
             }}
           />
         </div>
