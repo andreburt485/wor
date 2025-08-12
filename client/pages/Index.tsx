@@ -3646,7 +3646,7 @@ export default function Index() {
                 >
                   {/* Kor - mobile: 50px left + 30px down + bigger, desktop: moved further to the left */}
                   <div
-                    className="text-center transform -translate-x-[50px] translate-y-[30px] sm:-translate-x-6 sm:translate-y-0 md:-translate-x-24 lg:-translate-x-16 xl:-translate-x-20"
+                    className="text-center transform -translate-x-[50px] translate-y-[30px] sm:-translate-x-6 sm:translate-y-0 md:-translate-x-[146px] lg:-translate-x-16 xl:-translate-x-20"
                     style={{ marginLeft: "-5px" }}
                   >
                     <h1
