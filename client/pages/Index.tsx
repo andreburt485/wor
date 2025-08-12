@@ -868,7 +868,7 @@ export default function Index() {
 ��█�� �����█╔����█��╔═══���█╗██�����═�������╗
 █████╔╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██╔══█��╗
-█�����║  ██��╚█�������█������█╔╝�����║  █��║
+█�������║  ██��╚█�������█������█╔╝�����║  █��║
 ��������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
@@ -2630,7 +2630,7 @@ export default function Index() {
                 }}
               />
 
-              {/* Enhanced Spectacular Full-Width Wavy Aurora Curtains - Desktop Only (992px+) */}
+              {/* AURORA SECTION REMOVED */}
               <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-60 sm:opacity-50 lg:opacity-55">
                 {/* Primary aurora curtain - Top layer */}
                 <div
