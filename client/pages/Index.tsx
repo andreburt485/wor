@@ -865,8 +865,8 @@ export default function Index() {
                   }}
                 >
                   {`��█╗  █���������� █████����� ██������������██╗
-��█�� �����█╔����█��╔═══���█╗██�������═�������╗
-█████╔╝ ██║   ██║███�������█╔���
+��█�� �����█╔����█��╔═══���█╗██�����═�������╗
+█████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██╔══█��╗
 █���║  ██��╚█�������█������█╔╝�����║  █��║
 ��������������╝  ╚═╝ ���������������════╝ ╚���╝  ����═╝`}
@@ -6894,17 +6894,7 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         {/* Aurora-like Moving Background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
-          <div
-            className="absolute w-80 h-80 rounded-full opacity-10"
-            style={{
-              right: "15%",
-              bottom: "25%",
-              background:
-                "linear-gradient(-45deg, rgba(57, 135, 227, 0.3), rgba(73, 146, 255, 0.1))",
-              filter: "blur(80px)",
-              animation: "aurora 15s ease-in-out infinite 3s",
-            }}
-          />
+
         </div>
 
         {/* Main Content Container */}
@@ -9198,17 +9188,7 @@ const ServicesSection = React.forwardRef<HTMLDivElement, SectionProps>(
         {/* Aurora-like Moving Background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
-          <div
-            className="absolute w-80 h-80 rounded-full opacity-10"
-            style={{
-              right: "15%",
-              bottom: "25%",
-              background:
-                "linear-gradient(-45deg, rgba(57, 135, 227, 0.3), rgba(73, 146, 255, 0.1))",
-              filter: "blur(80px)",
-              animation: "aurora 15s ease-in-out infinite 3s",
-            }}
-          />
+
         </div>
 
         {/* Main Content Container */}
@@ -11506,17 +11486,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
         {/* Aurora-like Moving Background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
-          <div
-            className="absolute w-80 h-80 rounded-full opacity-10"
-            style={{
-              right: "15%",
-              bottom: "25%",
-              background:
-                "linear-gradient(-45deg, rgba(57, 135, 227, 0.3), rgba(73, 146, 255, 0.1))",
-              filter: "blur(80px)",
-              animation: "aurora 15s ease-in-out infinite 3s",
-            }}
-          />
+
         </div>
 
         {/* Main Content Container */}
@@ -12661,17 +12631,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         {/* Aurora-like Moving Background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
-          <div
-            className="absolute w-80 h-80 rounded-full opacity-10"
-            style={{
-              right: "15%",
-              bottom: "25%",
-              background:
-                "linear-gradient(-45deg, rgba(57, 135, 227, 0.3), rgba(73, 146, 255, 0.1))",
-              filter: "blur(80px)",
-              animation: "aurora 15s ease-in-out infinite 3s",
-            }}
-          />
+
         </div>
 
         {/* Main Content Container */}
@@ -13292,7 +13252,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                         name: "Email",
                         subtitle: "contact@kor.dev",
                         url: "mailto:contact@kor.dev",
-                        icon: "✉️",
+                        icon: "✉���",
                         color: "from-emerald-500 via-green-500 to-lime-500",
                         shadowColor: "rgba(16, 185, 129, 0.3)",
                       },
