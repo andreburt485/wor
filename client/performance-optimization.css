@@ -72,8 +72,8 @@
   animation-duration: 0.5s !important;
 }
 
-/* Hide complex particle systems and effects on low-end devices */
-.low-end-mode .complex-animation,
+/* Hide complex particle systems and effects on low-end devices but preserve aurora */
+.low-end-mode .complex-animation:not([class*="aurora"]):not([style*="aurora"]),
 .low-end-mode .particle-system,
 .low-end-mode .matrix-background,
 .low-end-mode .floating-orbs {
