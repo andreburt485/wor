@@ -202,12 +202,23 @@
   }
 }
 
+/* Aurora effects preservation - ensure they always look good */
+[class*="aurora-curtain"],
+[class*="aurora-base"],
+[style*="aurora"] {
+  /* Preserve aurora animations even in reduced mode */
+  animation-iteration-count: infinite !important;
+  animation-duration: inherit !important;
+  filter: inherit !important;
+  opacity: inherit !important;
+}
+
 /* High contrast mode optimizations */
 @media (prefers-contrast: high) {
   .low-end-mode [class*="opacity-"] {
     opacity: 1 !important;
   }
-  
+
   .low-end-mode [class*="bg-gradient-"] {
     background: var(--foreground) !important;
   }
