@@ -2632,7 +2632,7 @@ export default function Index() {
 
               {/* Aurora effects removed as requested */}
               <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-70 sm:opacity-60 lg:opacity-60">
-                {/* Primary aurora curtain - Top layer */}
+                {/* Aurora effects removed */}
                 <div
                   className="absolute aurora-curtain-1"
                   style={{
