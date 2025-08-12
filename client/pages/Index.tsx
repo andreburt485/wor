@@ -1016,7 +1016,7 @@ export default function Index() {
 
                 <div className="continue-prompt">
                   <span className="text-cyan-400">[SYSTEM READY]</span>
-                  <span className="text-green-400 ml-4">��◆����◄�����◆◆◆</span>
+                  <span className="text-green-400 ml-4">��◆�����◄�����◆◆◆</span>
                 </div>
 
                 <div className="loading-indicators">
@@ -3646,7 +3646,7 @@ export default function Index() {
                 >
                   {/* Kor - mobile: 50px left + 30px down + bigger, desktop: moved further to the left */}
                   <div
-                    className="text-center transform -translate-x-[50px] translate-y-[30px] sm:-translate-x-6 sm:translate-y-0 md:-translate-x-12 lg:-translate-x-16 xl:-translate-x-20"
+                    className="text-center transform -translate-x-[50px] translate-y-[30px] sm:-translate-x-6 sm:translate-y-0 md:-translate-x-24 lg:-translate-x-16 xl:-translate-x-20"
                     style={{ marginLeft: "-5px" }}
                   >
                     <h1
