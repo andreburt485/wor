@@ -85,9 +85,9 @@
   background: var(--primary) !important;
 }
 
-/* Reduce filter effects */
-.low-end-mode [style*="filter: blur"] {
-  filter: none !important;
+/* Reduce filter effects but preserve aurora blur */
+.low-end-mode [style*="filter: blur"]:not([class*="aurora"]):not([style*="aurora"]) {
+  filter: blur(2px) !important;
 }
 
 /* Optimize transforms for better performance */
