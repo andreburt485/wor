@@ -866,9 +866,9 @@ export default function Index() {
                 >
                   {`��█╗  █���������� █████����� ██������������██╗
 ��█�� �����█╔����█��╔═══���█╗██�����═�������╗
-█████╔╝ ██║   ██║███�������█╔���
+█████╔╝ ██║   ██║███�������█╔��
 █��╔�����█╗ █���║   ██║██╔══█��╗
-█�������║  ██��╚█�������█������█╔╝�����║  █��║
+█���║  ██��╚█�������█������█╔╝�����║  █��║
 ��������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
@@ -2630,8 +2630,8 @@ export default function Index() {
                 }}
               />
 
-              {/* AURORA SECTION REMOVED */}
-              <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-60 sm:opacity-50 lg:opacity-55">
+              {/* Enhanced Spectacular Full-Width Wavy Aurora Curtains - Desktop Only (992px+) */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-70 sm:opacity-60 lg:opacity-60">
                 {/* Primary aurora curtain - Top layer */}
                 <div
                   className="absolute aurora-curtain-1"
@@ -2642,9 +2642,9 @@ export default function Index() {
                     height: "120px",
                     background: isPinkActive
                       ? "linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.4) 15%, rgba(244, 114, 182, 0.5) 30%, rgba(251, 113, 133, 0.4) 50%, rgba(236, 72, 153, 0.5) 70%, rgba(244, 114, 182, 0.4) 85%, transparent 100%)"
-                      : "linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.45) 15%, rgba(20, 184, 166, 0.55) 30%, rgba(34, 197, 94, 0.45) 50%, rgba(6, 182, 212, 0.55) 70%, rgba(20, 184, 166, 0.45) 85%, transparent 100%)",
+                      : "linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.4) 15%, rgba(20, 184, 166, 0.5) 30%, rgba(34, 197, 94, 0.4) 50%, rgba(6, 182, 212, 0.5) 70%, rgba(20, 184, 166, 0.4) 85%, transparent 100%)",
                     borderRadius: "40% 60% 80% 20% / 60% 40% 80% 20%",
-                    filter: "blur(12px)",
+                    filter: "blur(15px)",
                     animation: "aurora-wave-subtle-1 28s ease-in-out infinite",
                     transform: "skewY(-1deg)",
                   }}
@@ -2659,9 +2659,9 @@ export default function Index() {
                     height: "140px",
                     background: isPinkActive
                       ? "linear-gradient(90deg, transparent 0%, rgba(251, 113, 133, 0.35) 10%, rgba(236, 72, 153, 0.45) 25%, rgba(244, 114, 182, 0.4) 40%, rgba(190, 24, 93, 0.45) 60%, rgba(251, 113, 133, 0.4) 75%, rgba(236, 72, 153, 0.35) 90%, transparent 100%)"
-                      : "linear-gradient(90deg, transparent 0%, rgba(34, 197, 94, 0.4) 10%, rgba(6, 182, 212, 0.5) 25%, rgba(16, 185, 129, 0.45) 40%, rgba(20, 184, 166, 0.5) 60%, rgba(34, 197, 94, 0.45) 75%, rgba(6, 182, 212, 0.4) 90%, transparent 100%)",
+                      : "linear-gradient(90deg, transparent 0%, rgba(34, 197, 94, 0.35) 10%, rgba(6, 182, 212, 0.45) 25%, rgba(16, 185, 129, 0.4) 40%, rgba(20, 184, 166, 0.45) 60%, rgba(34, 197, 94, 0.4) 75%, rgba(6, 182, 212, 0.35) 90%, transparent 100%)",
                     borderRadius: "30% 70% 40% 60% / 70% 30% 60% 40%",
-                    filter: "blur(14px)",
+                    filter: "blur(18px)",
                     animation: "aurora-wave-subtle-2 34s ease-in-out infinite",
                     transform: "skewY(0.5deg)",
                   }}
@@ -2678,7 +2678,7 @@ export default function Index() {
                       ? "linear-gradient(90deg, transparent 0%, rgba(244, 114, 182, 0.3) 20%, rgba(251, 113, 133, 0.4) 35%, rgba(236, 72, 153, 0.35) 50%, rgba(244, 114, 182, 0.4) 65%, rgba(190, 24, 93, 0.3) 80%, transparent 100%)"
                       : "linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.3) 20%, rgba(34, 197, 94, 0.4) 35%, rgba(6, 182, 212, 0.35) 50%, rgba(16, 185, 129, 0.4) 65%, rgba(20, 184, 166, 0.3) 80%, transparent 100%)",
                     borderRadius: "60% 40% 80% 20% / 40% 60% 20% 80%",
-                    filter: "blur(16px)",
+                    filter: "blur(20px)",
                     animation: "aurora-wave-subtle-3 40s ease-in-out infinite",
                     transform: "skewY(-0.5deg)",
                   }}
@@ -4493,6 +4493,23 @@ export default function Index() {
           }
         }
 
+        @keyframes aurora {
+          0%,
+          100% {
+            opacity: 0.4;
+            transform: translateX(-50%) translateY(-50%) rotate(0deg) scale(1);
+          }
+          33% {
+            opacity: 0.7;
+            transform: translateX(-45%) translateY(-55%) rotate(120deg)
+              scale(1.2);
+          }
+          66% {
+            opacity: 0.5;
+            transform: translateX(-55%) translateY(-45%) rotate(240deg)
+              scale(0.9);
+          }
+        }
 
         @keyframes ambient-glow {
           0%,
@@ -4789,6 +4806,33 @@ export default function Index() {
           animation: mobile-wiggle 3s ease-in-out infinite;
         }
 
+        @keyframes aurora-wave-subtle-1 {
+          0%, 100% { transform: translateX(-15%) translateY(0%) skewY(-1deg) scale(1); }
+          25% { transform: translateX(-12%) translateY(-2%) skewY(-0.5deg) scale(1.05); }
+          50% { transform: translateX(-10%) translateY(1%) skewY(0deg) scale(1.1); }
+          75% { transform: translateX(-13%) translateY(-1%) skewY(-0.8deg) scale(1.02); }
+        }
+
+        @keyframes aurora-wave-subtle-2 {
+          0%, 100% { transform: translateX(-20%) translateY(0%) skewY(0.5deg) scale(1); }
+          25% { transform: translateX(-18%) translateY(1%) skewY(1deg) scale(1.03); }
+          50% { transform: translateX(-15%) translateY(-1%) skewY(0.2deg) scale(1.08); }
+          75% { transform: translateX(-22%) translateY(0.5%) skewY(0.8deg) scale(1.01); }
+        }
+
+        @keyframes aurora-wave-subtle-3 {
+          0%, 100% { transform: translateX(-25%) translateY(0%) skewY(-0.5deg) scale(1); }
+          25% { transform: translateX(-20%) translateY(-1%) skewY(0deg) scale(1.02); }
+          50% { transform: translateX(-28%) translateY(1%) skewY(-1deg) scale(1.06); }
+          75% { transform: translateX(-23%) translateY(-0.5%) skewY(-0.3deg) scale(1.01); }
+        }
+
+        @keyframes aurora-base-flow-subtle {
+          0%, 100% { transform: translateX(-30%) translateY(0%) skewY(0.3deg) scale(1); }
+          25% { transform: translateX(-25%) translateY(-1%) skewY(0.6deg) scale(1.04); }
+          50% { transform: translateX(-35%) translateY(0.5%) skewY(0deg) scale(1.08); }
+          75% { transform: translateX(-28%) translateY(-0.3%) skewY(0.4deg) scale(1.02); }
+        }
 
         @keyframes desktop-wave-1 {
           0%, 100% { transform: translateX(0px) translateY(0px) skewY(-1.5deg) rotate(0deg); }
@@ -5233,6 +5277,12 @@ const contactAnimationsCSS = `
       opacity: 0.02 !important;
     }
 
+    .animate-aurora-wave-subtle,
+    .animate-aurora-wave-subtle-1,
+    .animate-aurora-wave-subtle-2 {
+      animation-duration: 60s !important;
+      opacity: 0.3 !important;
+    }
 
     .animate-geometric-pulse {
       animation-duration: 12s !important;
@@ -5262,6 +5312,13 @@ const contactAnimationsCSS = `
       animation-duration: 20s !important;
     }
 
+    /* Further reduce animations on mobile */
+    .animate-aurora,
+    .animate-aurora-1,
+    .animate-aurora-2 {
+      animation: none !important;
+      opacity: 0.05 !important;
+    }
   }
 
   @keyframes bubble-bounce-enhanced {

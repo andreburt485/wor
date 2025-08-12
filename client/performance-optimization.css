@@ -3,10 +3,10 @@
    Responsive styles for low-end devices
    ======================================== */
 
-/* Reduced motion for devices that prefer it or low-end devices but preserve aurora */
-.reduce-motion *:not([class*="aurora"]):not([style*="aurora"]),
-.reduce-motion *:not([class*="aurora"]):not([style*="aurora"])::before,
-.reduce-motion *:not([class*="aurora"]):not([style*="aurora"])::after {
+/* Reduced motion for devices that prefer it or low-end devices */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
   animation-duration: 0.3s !important;
   animation-delay: 0s !important;
   animation-iteration-count: 1 !important;
@@ -66,14 +66,14 @@
   box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Simplify animations but preserve aurora effects */
-.reduced-effects [class*="animate-"]:not([style*="aurora"]):not([class*="aurora"]) {
+/* Simplify animations */
+.reduced-effects [class*="animate-"] {
   animation-iteration-count: 1 !important;
   animation-duration: 0.5s !important;
 }
 
-/* Hide complex particle systems and effects on low-end devices but preserve aurora */
-.low-end-mode .complex-animation:not([class*="aurora"]):not([style*="aurora"]),
+/* Hide complex particle systems and effects on low-end devices */
+.low-end-mode .complex-animation,
 .low-end-mode .particle-system,
 .low-end-mode .matrix-background,
 .low-end-mode .floating-orbs {
@@ -85,9 +85,9 @@
   background: var(--primary) !important;
 }
 
-/* Reduce filter effects but preserve aurora blur */
-.low-end-mode [style*="filter: blur"]:not([class*="aurora"]):not([style*="aurora"]) {
-  filter: blur(2px) !important;
+/* Reduce filter effects */
+.low-end-mode [style*="filter: blur"] {
+  filter: none !important;
 }
 
 /* Optimize transforms for better performance */
@@ -202,23 +202,12 @@
   }
 }
 
-/* Aurora effects preservation - ensure they always look good */
-[class*="aurora-curtain"],
-[class*="aurora-base"],
-[style*="aurora"] {
-  /* Preserve aurora animations even in reduced mode */
-  animation-iteration-count: infinite !important;
-  animation-duration: inherit !important;
-  filter: inherit !important;
-  opacity: inherit !important;
-}
-
 /* High contrast mode optimizations */
 @media (prefers-contrast: high) {
   .low-end-mode [class*="opacity-"] {
     opacity: 1 !important;
   }
-
+  
   .low-end-mode [class*="bg-gradient-"] {
     background: var(--foreground) !important;
   }
