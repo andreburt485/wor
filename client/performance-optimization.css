@@ -66,8 +66,8 @@
   box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Simplify animations */
-.reduced-effects [class*="animate-"] {
+/* Simplify animations but preserve aurora effects */
+.reduced-effects [class*="animate-"]:not([style*="aurora"]):not([class*="aurora"]) {
   animation-iteration-count: 1 !important;
   animation-duration: 0.5s !important;
 }
