@@ -868,7 +868,7 @@ export default function Index() {
 ��█�� �����█╔����█��╔═══���█╗██�����═�������╗
 █████╔╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██╔══█��╗
-█���║  ██��╚█�������█������█╔╝�����║  █��║
+█�����║  ██��╚█�������█������█╔╝�����║  █��║
 ��������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
@@ -944,7 +944,7 @@ export default function Index() {
                       className="text-xs text-amber-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      RAM: ������█�����██���██�����███���██����███████���█ 50%
+                      RAM: ������█�����██���██�����███���██����███████��█ 50%
                     </div>
                     <div className="text-xs text-green-400 mt-1">
                       NETWORK: {systemStats.networkUp}GB/s ↑ |{" "}
@@ -4789,33 +4789,6 @@ export default function Index() {
           animation: mobile-wiggle 3s ease-in-out infinite;
         }
 
-        @keyframes aurora-wave-subtle-1 {
-          0%, 100% { transform: translateX(-15%) translateY(0%) skewY(-1deg) scale(1); }
-          25% { transform: translateX(-12%) translateY(-2%) skewY(-0.5deg) scale(1.05); }
-          50% { transform: translateX(-10%) translateY(1%) skewY(0deg) scale(1.1); }
-          75% { transform: translateX(-13%) translateY(-1%) skewY(-0.8deg) scale(1.02); }
-        }
-
-        @keyframes aurora-wave-subtle-2 {
-          0%, 100% { transform: translateX(-20%) translateY(0%) skewY(0.5deg) scale(1); }
-          25% { transform: translateX(-18%) translateY(1%) skewY(1deg) scale(1.03); }
-          50% { transform: translateX(-15%) translateY(-1%) skewY(0.2deg) scale(1.08); }
-          75% { transform: translateX(-22%) translateY(0.5%) skewY(0.8deg) scale(1.01); }
-        }
-
-        @keyframes aurora-wave-subtle-3 {
-          0%, 100% { transform: translateX(-25%) translateY(0%) skewY(-0.5deg) scale(1); }
-          25% { transform: translateX(-20%) translateY(-1%) skewY(0deg) scale(1.02); }
-          50% { transform: translateX(-28%) translateY(1%) skewY(-1deg) scale(1.06); }
-          75% { transform: translateX(-23%) translateY(-0.5%) skewY(-0.3deg) scale(1.01); }
-        }
-
-        @keyframes aurora-base-flow-subtle {
-          0%, 100% { transform: translateX(-30%) translateY(0%) skewY(0.3deg) scale(1); }
-          25% { transform: translateX(-25%) translateY(-1%) skewY(0.6deg) scale(1.04); }
-          50% { transform: translateX(-35%) translateY(0.5%) skewY(0deg) scale(1.08); }
-          75% { transform: translateX(-28%) translateY(-0.3%) skewY(0.4deg) scale(1.02); }
-        }
 
         @keyframes desktop-wave-1 {
           0%, 100% { transform: translateX(0px) translateY(0px) skewY(-1.5deg) rotate(0deg); }
