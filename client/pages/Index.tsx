@@ -937,7 +937,7 @@ export default function Index() {
                       className="text-xs text-green-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      CPU: ���██���█████���███����█���█���███████���███����█████
+                      CPU: �����██���█████���███����█���█���███████���███����█████
                       60%
                     </div>
                     <div
@@ -2642,7 +2642,7 @@ export default function Index() {
                     height: "120px",
                     background: isPinkActive
                       ? "linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.4) 15%, rgba(244, 114, 182, 0.5) 30%, rgba(251, 113, 133, 0.4) 50%, rgba(236, 72, 153, 0.5) 70%, rgba(244, 114, 182, 0.4) 85%, transparent 100%)"
-                      : "linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.4) 15%, rgba(20, 184, 166, 0.5) 30%, rgba(34, 197, 94, 0.4) 50%, rgba(6, 182, 212, 0.5) 70%, rgba(20, 184, 166, 0.4) 85%, transparent 100%)",
+                      : "linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.45) 15%, rgba(20, 184, 166, 0.55) 30%, rgba(34, 197, 94, 0.45) 50%, rgba(6, 182, 212, 0.55) 70%, rgba(20, 184, 166, 0.45) 85%, transparent 100%)",
                     borderRadius: "40% 60% 80% 20% / 60% 40% 80% 20%",
                     filter: "blur(15px)",
                     animation: "aurora-wave-subtle-1 28s ease-in-out infinite",
