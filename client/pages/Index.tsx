@@ -866,7 +866,7 @@ export default function Index() {
                 >
                   {`��█╗  █���������� █████����� ██������������██╗
 ��█�� �����█╔����█��╔═══���█╗██�����═�������╗
-█████╔╝ ██║   ██║███�������█╔��
+█████╔╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██╔══█��╗
 █���║  ██��╚█�������█������█╔╝�����║  █��║
 ��������������╝  ╚═╝ ���������������════╝ ╚���╝  ��═╝`}
@@ -2678,7 +2678,7 @@ export default function Index() {
                       ? "linear-gradient(90deg, transparent 0%, rgba(244, 114, 182, 0.3) 20%, rgba(251, 113, 133, 0.4) 35%, rgba(236, 72, 153, 0.35) 50%, rgba(244, 114, 182, 0.4) 65%, rgba(190, 24, 93, 0.3) 80%, transparent 100%)"
                       : "linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.3) 20%, rgba(34, 197, 94, 0.4) 35%, rgba(6, 182, 212, 0.35) 50%, rgba(16, 185, 129, 0.4) 65%, rgba(20, 184, 166, 0.3) 80%, transparent 100%)",
                     borderRadius: "60% 40% 80% 20% / 40% 60% 20% 80%",
-                    filter: "blur(20px)",
+                    filter: "blur(16px)",
                     animation: "aurora-wave-subtle-3 40s ease-in-out infinite",
                     transform: "skewY(-0.5deg)",
                   }}
