@@ -71,15 +71,21 @@ export const usePerformanceOptimization = () => {
       ? 'iOS device'
       : 'device';
 
-    notifications.showWarning?.({
-      title: "Performance Notice",
-      message: `We've detected you're using a ${deviceTypeText} with limited resources. Some animations may appear slower than intended. You can disable effects in settings if needed.`,
-      duration: 8000, // Show for 8 seconds
-      action: {
-        label: "Got it",
-        onClick: () => {}
-      }
-    });
+    if (notifications.showWithAction) {
+      notifications.showWithAction(
+        "Performance Notice",
+        `We've detected you're using a ${deviceTypeText} with limited resources. Some animations may appear slower than intended. You can disable effects in settings if needed.`,
+        "Got it",
+        () => {},
+        "warning"
+      );
+    } else {
+      notifications.showWarning?.(
+        "Performance Notice",
+        `We've detected you're using a ${deviceTypeText} with limited resources. Some animations may appear slower than intended.`,
+        8000
+      );
+    }
   }, [notifications]);
 
   // Toggle performance mode manually
