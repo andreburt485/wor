@@ -1022,7 +1022,7 @@ export default function Index() {
                 <div className="loading-indicators">
                   <span>█��▒��</span>
                   <span className="text-amber-400">PROCESSING...</span>
-                  <span>░▒���█</span>
+                  <span>░▒������</span>
                 </div>
               </motion.div>
 
@@ -2473,6 +2473,7 @@ export default function Index() {
                   isOpen={isMobileMenuOpen}
                   setIsOpen={setIsMobileMenuOpen}
                   theme={theme}
+                  isHomePage={true}
                 />
               </div>
             </div>
