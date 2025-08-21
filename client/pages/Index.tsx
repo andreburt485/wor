@@ -869,7 +869,7 @@ export default function Index() {
 █████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██╔══█��╗
 █���║  ██��╚█�������█������█╔╝�����║  █��║
-��������������╝  ╚═╝ ���������������════╝ ╚���╝  ����═╝`}
+��������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
               </motion.div>
@@ -5532,14 +5532,18 @@ function MobileHamburgerMenu({
     <>
       {/* Hamburger Button - MOBILE ONLY */}
       <div
-        className="pointer-events-auto absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 sm:hidden"
-        style={{
+        className={`pointer-events-auto z-50 sm:hidden ${
+          isHomePage
+            ? "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            : "relative"
+        }`}
+        style={isHomePage ? {
           marginLeft: "40px", // Mobile: moved left 30px from 70px
           marginTop: "-100px", // Mobile: moved down 30px from -130px
           animationDelay: "0.2s",
           animation:
             "gentleFloat 4s ease-in-out infinite 0.2s, button-drift 8s ease-in-out infinite 0.3s, bubble-pop-in 0.6s ease-out forwards",
-        }}
+        } : {}}
       >
         <Tooltip>
           <TooltipTrigger asChild>
