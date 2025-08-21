@@ -5490,7 +5490,7 @@ function MobileHamburgerMenu({
   // Calculate safe menu position to avoid screen overflow
   const calculateMenuPosition = () => {
     const menuWidth = 200; // Approximate menu width
-    const menuHeight = 280; // Increased height for button-style items
+    const menuHeight = 320; // Increased height for button-style items (now with Home button)
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
     const buttonX = viewportWidth / 2 + 70; // Button position
