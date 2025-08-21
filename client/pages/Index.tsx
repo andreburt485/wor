@@ -1022,7 +1022,7 @@ export default function Index() {
                 <div className="loading-indicators">
                   <span>█��▒��</span>
                   <span className="text-amber-400">PROCESSING...</span>
-                  <span>░▒������</span>
+                  <span>░▒���█</span>
                 </div>
               </motion.div>
 
@@ -4088,14 +4088,15 @@ export default function Index() {
             </div>
           </motion.div>
 
-          {/* Mobile Hamburger Menu - Consistent across all sections */}
+          {/* Mobile Hamburger Menu - Top right corner for non-home pages */}
           {currentSection !== 0 && (
-            <div className="fixed inset-0 flex items-center justify-center z-[100] pointer-events-none">
+            <div className="fixed top-4 right-4 z-[100] pointer-events-none sm:hidden">
               <div className="relative pointer-events-auto">
                 <MobileHamburgerMenu
                   isOpen={isMobileMenuOpen}
                   setIsOpen={setIsMobileMenuOpen}
                   theme={theme}
+                  isHomePage={false}
                 />
               </div>
             </div>
