@@ -865,10 +865,10 @@ export default function Index() {
                   }}
                 >
                   {`��█╗  █���������� █████����� ██������������██╗
-��█�� �����█╔����█��╔═══���█╗█���������═�������╗
+��█�� �����█╔����█��╔═══���█╗█���������═��������╗
 █████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██╔══█��╗
-█���║  ██��╚█�������█������█╔╝�����║  █��║
+█���║  ██��╚█��������█������█╔╝�����║  █��║
 ��������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
@@ -2232,7 +2232,7 @@ export default function Index() {
                   onClick={() => setShowNavigationHints(false)}
                   className="ml-2 text-xs opacity-60 hover:opacity-100"
                 >
-                  ��
+                  ���
                 </button>
               </div>
             </div>
@@ -4090,7 +4090,7 @@ export default function Index() {
 
           {/* Mobile Hamburger Menu - Top right corner for non-home pages */}
           {currentSection !== 0 && (
-            <div className="fixed top-4 right-4 z-[100] pointer-events-none sm:hidden">
+            <div className="fixed top-6 right-6 z-[9999] pointer-events-none sm:hidden">
               <div className="relative pointer-events-auto">
                 <MobileHamburgerMenu
                   isOpen={isMobileMenuOpen}
