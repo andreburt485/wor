@@ -68,7 +68,7 @@ export default function Index() {
     shouldRenderParticles,
     getAnimationDuration,
     isLowEndDevice,
-    deviceCategory
+    deviceCategory,
   } = usePerformanceOptimization();
 
   // Motion preferences
@@ -2641,7 +2641,8 @@ export default function Index() {
                     left: "10%",
                     right: "10%",
                     height: "40%",
-                    background: "radial-gradient(ellipse at center, rgba(59, 130, 246, 0.1), transparent)",
+                    background:
+                      "radial-gradient(ellipse at center, rgba(59, 130, 246, 0.1), transparent)",
                     filter: "blur(60px)",
                   }}
                 />
@@ -3766,7 +3767,8 @@ export default function Index() {
                                   <div
                                     className="w-6 h-6"
                                     style={{
-                                      background: "radial-gradient(circle, rgba(73, 146, 255, 0.8) 0%, rgba(34, 211, 238, 0.5) 70%, transparent 90%)",
+                                      background:
+                                        "radial-gradient(circle, rgba(73, 146, 255, 0.8) 0%, rgba(34, 211, 238, 0.5) 70%, transparent 90%)",
                                       clipPath:
                                         "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
                                       animation:
@@ -3780,7 +3782,8 @@ export default function Index() {
                                   <div
                                     className="w-4 h-4"
                                     style={{
-                                      background: "linear-gradient(45deg, rgba(73, 146, 255, 0.7), rgba(34, 211, 238, 0.6))",
+                                      background:
+                                        "linear-gradient(45deg, rgba(73, 146, 255, 0.7), rgba(34, 211, 238, 0.6))",
                                       clipPath:
                                         "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
                                       animation:
@@ -3794,7 +3797,8 @@ export default function Index() {
                                   <div
                                     className="w-5 h-5"
                                     style={{
-                                      background: "conic-gradient(from 0deg, rgba(73, 146, 255, 0.7), rgba(34, 211, 238, 0.6), rgba(57, 135, 227, 0.7), rgba(63, 186, 255, 0.6))",
+                                      background:
+                                        "conic-gradient(from 0deg, rgba(73, 146, 255, 0.7), rgba(34, 211, 238, 0.6), rgba(57, 135, 227, 0.7), rgba(63, 186, 255, 0.6))",
                                       clipPath:
                                         "polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%)",
                                       animation:
@@ -5538,18 +5542,22 @@ function MobileHamburgerMenu({
             ? "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             : "relative"
         }`}
-        style={isHomePage ? {
-          marginLeft: "40px", // Mobile: moved left 30px from 70px
-          marginTop: "-100px", // Mobile: moved down 30px from -130px
-          animationDelay: "0.2s",
-          animation:
-            "gentleFloat 4s ease-in-out infinite 0.2s, button-drift 8s ease-in-out infinite 0.3s, bubble-pop-in 0.6s ease-out forwards",
-        } : {
-          // For non-home pages, ensure proper positioning
-          position: "static",
-          transform: "none",
-          animation: "none"
-        }}
+        style={
+          isHomePage
+            ? {
+                marginLeft: "40px", // Mobile: moved left 30px from 70px
+                marginTop: "-100px", // Mobile: moved down 30px from -130px
+                animationDelay: "0.2s",
+                animation:
+                  "gentleFloat 4s ease-in-out infinite 0.2s, button-drift 8s ease-in-out infinite 0.3s, bubble-pop-in 0.6s ease-out forwards",
+              }
+            : {
+                // For non-home pages, ensure proper positioning
+                position: "static",
+                transform: "none",
+                animation: "none",
+              }
+        }
       >
         <Tooltip>
           <TooltipTrigger asChild>
@@ -6278,7 +6286,6 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
             ))}
           </div>
 
-
           {/* Glowing Geometric Shapes */}
           <div className="absolute inset-0">
             {[...Array(isMobileOrTablet ? 5 : 8)].map((_, i) => (
@@ -6906,10 +6913,7 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         </div>
 
         {/* Aurora-like Moving Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-
-
-        </div>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden"></div>
 
         {/* Main Content Container */}
         <div className="relative min-h-screen py-4 sm:py-6 lg:py-8 section-container">
@@ -9200,10 +9204,7 @@ const ServicesSection = React.forwardRef<HTMLDivElement, SectionProps>(
         </div>
 
         {/* Aurora-like Moving Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-
-
-        </div>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden"></div>
 
         {/* Main Content Container */}
         <div className="relative w-full py-4 sm:py-6 lg:py-8 section-container">
@@ -11498,10 +11499,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
         </div>
 
         {/* Aurora-like Moving Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-
-
-        </div>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden"></div>
 
         {/* Main Content Container */}
         <div className="relative min-h-screen py-4 sm:py-6 lg:py-8 section-container">
@@ -12643,10 +12641,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         </div>
 
         {/* Aurora-like Moving Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-
-
-        </div>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden"></div>
 
         {/* Main Content Container */}
         <div className="relative min-h-screen py-2 sm:py-4 lg:py-6 section-container">
