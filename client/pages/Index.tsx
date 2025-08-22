@@ -865,10 +865,10 @@ export default function Index() {
                   }}
                 >
                   {`��█╗  █���������� █████����� ██������������██╗
-��█�� �����█╔����█��╔═══���█╗█���������═��������╗
+������� �����█╔����█��╔═══���█╗█���������═�������╗
 █████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██╔══█��╗
-█���║  ██��╚█��������█������█╔╝�����║  █��║
+█���║  ██��╚█�������█������█╔╝�����║  █��║
 ��������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
@@ -2232,7 +2232,7 @@ export default function Index() {
                   onClick={() => setShowNavigationHints(false)}
                   className="ml-2 text-xs opacity-60 hover:opacity-100"
                 >
-                  ���
+                  ��
                 </button>
               </div>
             </div>
@@ -5544,7 +5544,12 @@ function MobileHamburgerMenu({
           animationDelay: "0.2s",
           animation:
             "gentleFloat 4s ease-in-out infinite 0.2s, button-drift 8s ease-in-out infinite 0.3s, bubble-pop-in 0.6s ease-out forwards",
-        } : {}}
+        } : {
+          // For non-home pages, ensure proper positioning
+          position: "static",
+          transform: "none",
+          animation: "none"
+        }}
       >
         <Tooltip>
           <TooltipTrigger asChild>
