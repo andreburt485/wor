@@ -17,7 +17,7 @@ import { ErrorBoundary } from "@/components/ui/error-boundary";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
-// Optimized QueryClient with performance settingszzs
+// Optimized QueryClient with performance settingss uhhh update pr
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
