@@ -2,6 +2,8 @@
 @import "./cinematic-transitions.css";
 @import "./performance-120hz.css";
 @import "./sticky-navigation.css";
+@import "./mobile-optimized.css";
+@import "./mobile-visual-enhancements.css";
 
 @tailwind base;
 @tailwind components;
