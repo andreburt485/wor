@@ -41,6 +41,10 @@ import {
   MapPin,
   Clock,
   TrendingUp,
+  Sparkles,
+  Hexagon,
+  Triangle,
+  Circle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -57,7 +61,37 @@ export default function Index() {
   const [currentProjectPage, setCurrentProjectPage] = useState(0);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [selectedBudget, setSelectedBudget] = useState<string>("");
+  const [counters, setCounters] = useState({ projects: 0, clients: 0, years: 0 });
+  const [isCounterVisible, setIsCounterVisible] = useState(false);
   const hasShownWelcomeRef = useRef(false);
+
+  // Animated counters effect
+  useEffect(() => {
+    if (isCounterVisible) {
+      const animateCounter = (target: number, key: keyof typeof counters, duration: number) => {
+        const start = Date.now();
+        const increment = target / (duration / 16);
+        
+        const updateCounter = () => {
+          const elapsed = Date.now() - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const current = Math.floor(target * progress);
+          
+          setCounters(prev => ({ ...prev, [key]: current }));
+          
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          }
+        };
+        
+        updateCounter();
+      };
+
+      setTimeout(() => animateCounter(100, 'projects', 2000), 200);
+      setTimeout(() => animateCounter(50, 'clients', 2000), 600);
+      setTimeout(() => animateCounter(5, 'years', 2000), 1000);
+    }
+  }, [isCounterVisible]);
 
   // Welcome notification - shows once
   useEffect(() => {
@@ -66,29 +100,37 @@ export default function Index() {
       setTimeout(() => {
         showInfo(
           "Welcome to KOR!",
-          "Mobile-optimized experience ready. Tap X to dismiss.",
+          "Premium mobile experience ready. Tap X to dismiss.",
           0
         );
       }, 1000);
     }
   }, [showInfo]);
 
-  // Mobile-optimized animations
-  const mobileVariants = {
-    hidden: { opacity: 0, y: 20 },
+  // Enhanced mobile animations
+  const premiumVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: prefersReducedMotion ? 0.01 : 0.3 }
+      scale: 1,
+      transition: { 
+        duration: prefersReducedMotion ? 0.01 : 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
     }
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
+  const floatingVariants = {
+    hidden: { opacity: 0, y: 50, rotate: 0 },
     visible: { 
       opacity: 1, 
-      scale: 1,
-      transition: { duration: prefersReducedMotion ? 0.01 : 0.25 }
+      y: 0,
+      rotate: 360,
+      transition: { 
+        duration: prefersReducedMotion ? 0.01 : 1.2,
+        ease: "easeOut"
+      }
     }
   };
 
@@ -102,7 +144,7 @@ export default function Index() {
     { id: "contact", label: "Contact", icon: Phone },
   ];
 
-  // Content data from desktop version
+  // Content data (same as before but enhanced presentation)
   const processSteps = [
     {
       number: "01",
@@ -110,7 +152,8 @@ export default function Index() {
       category: "ANALYZE",
       description: "We conduct comprehensive analysis of your business requirements, market position, and technical needs to develop a strategic roadmap that ensures project success from day one.",
       features: ["Business Analysis", "Market Research", "Technical Planning", "Strategy Development"],
-      metric: { value: "100%", label: "Requirements Clarity" }
+      metric: { value: "100%", label: "Requirements Clarity" },
+      color: "from-blue-500 to-cyan-500"
     },
     {
       number: "02", 
@@ -118,7 +161,8 @@ export default function Index() {
       category: "CREATE",
       description: "Our design team creates intuitive, user-centered interfaces that balance aesthetic excellence with functional efficiency, ensuring optimal user experience across all platforms.",
       features: ["UI/UX Design", "Brand Integration", "Prototype Development", "User Testing"],
-      metric: { value: "99%", label: "User Satisfaction Rate" }
+      metric: { value: "99%", label: "User Satisfaction Rate" },
+      color: "from-purple-500 to-pink-500"
     },
     {
       number: "03",
@@ -126,7 +170,8 @@ export default function Index() {
       category: "BUILD",
       description: "We build robust, scalable solutions using industry-leading technologies and best practices, ensuring your application performs flawlessly under any load conditions.",
       features: ["Full-Stack Development", "Cloud Architecture", "Performance Optimization", "Security Implementation"],
-      metric: { value: "<0.5s", label: "Load Time Average" }
+      metric: { value: "<0.5s", label: "Load Time Average" },
+      color: "from-green-500 to-emerald-500"
     },
     {
       number: "04",
@@ -134,34 +179,35 @@ export default function Index() {
       category: "DEPLOY", 
       description: "We ensure seamless deployment and provide ongoing maintenance, monitoring, and optimization services to keep your solution running at peak performance as your business grows.",
       features: ["Production Deployment", "Performance Monitoring", "24/7 Technical Support", "Continuous Optimization"],
-      metric: { value: "99.9%", label: "Uptime Guarantee" }
+      metric: { value: "99.9%", label: "Uptime Guarantee" },
+      color: "from-orange-500 to-red-500"
     }
   ];
 
   const allServices = [
-    { icon: Globe, title: "Web Development", description: "Modern, responsive websites built with cutting-edge technologies", color: "text-blue-400" },
-    { icon: Smartphone, title: "Mobile Apps", description: "Native and cross-platform mobile applications", color: "text-green-400" },
-    { icon: Palette, title: "UI/UX Design", description: "Beautiful, intuitive designs that engage and convert", color: "text-purple-400" },
-    { icon: Zap, title: "AI Integration", description: "Smart solutions powered by artificial intelligence", color: "text-yellow-400" },
-    { icon: TrendingUp, title: "SEO Optimization", description: "Boost your search rankings and drive organic traffic", color: "text-pink-400" },
-    { icon: Settings, title: "Custom Solutions", description: "Tailored software solutions for unique business needs", color: "text-cyan-400" },
-    { icon: Users, title: "Consulting Services", description: "Strategic technology consulting and digital transformation", color: "text-orange-400" },
-    { icon: Shield, title: "Cybersecurity", description: "Comprehensive security solutions to protect your digital assets", color: "text-red-400" },
-    { icon: Cloud, title: "Cloud Solutions", description: "Scalable cloud infrastructure and migration services", color: "text-indigo-400" },
-    { icon: BarChart3, title: "Data Analytics", description: "Transform raw data into actionable business insights", color: "text-emerald-400" },
-    { icon: Code, title: "API Development", description: "Robust APIs for seamless system integrations", color: "text-violet-400" },
-    { icon: Database, title: "DevOps & CI/CD", description: "Streamlined development and deployment pipelines", color: "text-teal-400" }
+    { icon: Globe, title: "Web Development", description: "Modern, responsive websites built with cutting-edge technologies", color: "text-blue-400", gradient: "from-blue-500/20 to-cyan-500/20" },
+    { icon: Smartphone, title: "Mobile Apps", description: "Native and cross-platform mobile applications", color: "text-green-400", gradient: "from-green-500/20 to-emerald-500/20" },
+    { icon: Palette, title: "UI/UX Design", description: "Beautiful, intuitive designs that engage and convert", color: "text-purple-400", gradient: "from-purple-500/20 to-pink-500/20" },
+    { icon: Zap, title: "AI Integration", description: "Smart solutions powered by artificial intelligence", color: "text-yellow-400", gradient: "from-yellow-500/20 to-orange-500/20" },
+    { icon: TrendingUp, title: "SEO Optimization", description: "Boost your search rankings and drive organic traffic", color: "text-pink-400", gradient: "from-pink-500/20 to-rose-500/20" },
+    { icon: Settings, title: "Custom Solutions", description: "Tailored software solutions for unique business needs", color: "text-cyan-400", gradient: "from-cyan-500/20 to-blue-500/20" },
+    { icon: Users, title: "Consulting Services", description: "Strategic technology consulting and digital transformation", color: "text-orange-400", gradient: "from-orange-500/20 to-red-500/20" },
+    { icon: Shield, title: "Cybersecurity", description: "Comprehensive security solutions to protect your digital assets", color: "text-red-400", gradient: "from-red-500/20 to-pink-500/20" },
+    { icon: Cloud, title: "Cloud Solutions", description: "Scalable cloud infrastructure and migration services", color: "text-indigo-400", gradient: "from-indigo-500/20 to-purple-500/20" },
+    { icon: BarChart3, title: "Data Analytics", description: "Transform raw data into actionable business insights", color: "text-emerald-400", gradient: "from-emerald-500/20 to-green-500/20" },
+    { icon: Code, title: "API Development", description: "Robust APIs for seamless system integrations", color: "text-violet-400", gradient: "from-violet-500/20 to-purple-500/20" },
+    { icon: Database, title: "DevOps & CI/CD", description: "Streamlined development and deployment pipelines", color: "text-teal-400", gradient: "from-teal-500/20 to-cyan-500/20" }
   ];
 
   const portfolioProjects = [
-    { title: "E-Commerce Platform", description: "Modern shopping experience with AI recommendations", tech: ["React", "Node.js", "AI/ML"] },
-    { title: "Healthcare App", description: "Telemedicine platform connecting patients and doctors", tech: ["React Native", "Firebase", "WebRTC"] },
-    { title: "FinTech Dashboard", description: "Real-time financial analytics and trading platform", tech: ["Vue.js", "Python", "WebSocket"] },
-    { title: "Smart IoT System", description: "Connected devices management platform", tech: ["Angular", "IoT", "Cloud"] },
-    { title: "AI Analytics Suite", description: "Machine learning powered business intelligence platform", tech: ["Python", "TensorFlow", "React"] },
-    { title: "Blockchain Wallet", description: "Secure cryptocurrency wallet with DeFi integration", tech: ["Solidity", "Web3.js", "Next.js"] },
-    { title: "Video Streaming App", description: "High-performance video platform with live streaming", tech: ["React Native", "WebRTC", "Node.js"] },
-    { title: "Cloud Monitoring Tool", description: "Real-time infrastructure monitoring and alerting system", tech: ["Go", "Docker", "Kubernetes"] }
+    { title: "E-Commerce Platform", description: "Modern shopping experience with AI recommendations", tech: ["React", "Node.js", "AI/ML"], gradient: "from-blue-500/10 to-purple-500/10" },
+    { title: "Healthcare App", description: "Telemedicine platform connecting patients and doctors", tech: ["React Native", "Firebase", "WebRTC"], gradient: "from-green-500/10 to-blue-500/10" },
+    { title: "FinTech Dashboard", description: "Real-time financial analytics and trading platform", tech: ["Vue.js", "Python", "WebSocket"], gradient: "from-yellow-500/10 to-orange-500/10" },
+    { title: "Smart IoT System", description: "Connected devices management platform", tech: ["Angular", "IoT", "Cloud"], gradient: "from-purple-500/10 to-pink-500/10" },
+    { title: "AI Analytics Suite", description: "Machine learning powered business intelligence platform", tech: ["Python", "TensorFlow", "React"], gradient: "from-cyan-500/10 to-blue-500/10" },
+    { title: "Blockchain Wallet", description: "Secure cryptocurrency wallet with DeFi integration", tech: ["Solidity", "Web3.js", "Next.js"], gradient: "from-orange-500/10 to-red-500/10" },
+    { title: "Video Streaming App", description: "High-performance video platform with live streaming", tech: ["React Native", "WebRTC", "Node.js"], gradient: "from-red-500/10 to-pink-500/10" },
+    { title: "Cloud Monitoring Tool", description: "Real-time infrastructure monitoring and alerting system", tech: ["Go", "Docker", "Kubernetes"], gradient: "from-teal-500/10 to-green-500/10" }
   ];
 
   const pricingPlans = [
@@ -170,6 +216,7 @@ export default function Index() {
       price: "$100",
       maxPrice: "Unlimited",
       popular: false,
+      gradient: "from-gray-500/10 to-slate-500/10",
       perks: [
         "Tailored to your needs",
         "Full source code", 
@@ -184,6 +231,7 @@ export default function Index() {
       price: "$150",
       maxPrice: "Unlimited",
       popular: true,
+      gradient: "from-blue-500/20 to-purple-500/20",
       perks: [
         "Fully built & deployed",
         "Professional design",
@@ -198,6 +246,7 @@ export default function Index() {
       price: "$50", 
       maxPrice: "$500",
       popular: false,
+      gradient: "from-indigo-500/10 to-blue-500/10",
       perks: [
         "Custom commands",
         "Database integration",
@@ -227,7 +276,10 @@ export default function Index() {
   );
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden mobile-gradient-bg">
+      {/* Enhanced Background Effects */}
+      <div className="fixed inset-0 mobile-mesh-bg pointer-events-none z-0" />
+      
       {/* Mobile Navigation Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
@@ -236,45 +288,50 @@ export default function Index() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 z-40"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.nav
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
-              transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 left-0 w-80 h-full bg-card/95 backdrop-blur-lg border-r border-border z-50 p-6"
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed top-0 left-0 w-80 h-full mobile-premium-card z-50 p-6"
             >
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                <h2 className="text-xl font-bold mobile-premium-text">
                   KOR DIGITAL
                 </h2>
-                <button
+                <motion.button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="p-2 rounded-lg hover:bg-accent transition-colors"
+                  className="p-2 rounded-lg hover:bg-accent transition-colors mobile-tilt-card"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   <X className="w-6 h-6" />
-                </button>
+                </motion.button>
               </div>
               
-              <div className="space-y-4">
-                {navItems.map((item) => {
+              <div className="space-y-3">
+                {navItems.map((item, index) => {
                   const IconComponent = item.icon;
                   return (
                     <motion.a
                       key={item.id}
                       href={`#${item.id}`}
-                      className="flex items-center space-x-3 p-3 rounded-lg hover:bg-accent transition-colors"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-center space-x-3 p-3 rounded-lg mobile-premium-card hover:bg-accent transition-all duration-300"
                       onClick={() => {
                         setActiveSection(item.id);
                         setIsMobileMenuOpen(false);
                       }}
-                      whileHover={{ x: 4 }}
+                      whileHover={{ x: 8, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
                       <IconComponent className="w-5 h-5 text-blue-400" />
-                      <span>{item.label}</span>
+                      <span className="font-medium">{item.label}</span>
                     </motion.a>
                   );
                 })}
@@ -290,7 +347,7 @@ export default function Index() {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-muted-foreground">Performance</span>
-                  <span className="text-sm text-green-400 font-medium">MOBILE</span>
+                  <span className="text-sm text-green-400 font-medium mobile-stat-counter">PREMIUM</span>
                 </div>
               </div>
             </motion.nav>
@@ -298,101 +355,149 @@ export default function Index() {
         )}
       </AnimatePresence>
 
-      {/* Mobile Header */}
-      <header className="fixed top-0 left-0 right-0 z-30 bg-background/80 backdrop-blur-lg border-b border-border">
+      {/* Enhanced Mobile Header */}
+      <header className="fixed top-0 left-0 right-0 z-30 mobile-premium-card">
         <div className="flex items-center justify-between px-4 py-3">
-          <button
+          <motion.button
             onClick={() => setIsMobileMenuOpen(true)}
-            className="p-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border hover:bg-accent transition-colors"
+            className="p-2 rounded-lg mobile-premium-card mobile-tilt-card"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             <Menu className="w-6 h-6" />
-          </button>
+          </motion.button>
           
-          <h1 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-lg font-bold mobile-premium-text">
             KOR DIGITAL
           </h1>
           
           <div className="flex items-center space-x-2">
-            <button className="p-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border hover:bg-accent transition-colors">
+            <motion.button 
+              className="p-2 rounded-lg mobile-premium-card mobile-tilt-card"
+              whileHover={{ scale: 1.05, rotate: 12 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Moon className="w-5 h-5 text-blue-400" />
-            </button>
-            <button className="p-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border hover:bg-accent transition-colors">
+            </motion.button>
+            <motion.button 
+              className="p-2 rounded-lg mobile-premium-card mobile-tilt-card"
+              whileHover={{ scale: 1.05, rotate: -12 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Zap className="w-5 h-5 text-green-400" />
-            </button>
+            </motion.button>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="pt-16">
-        {/* Hero Section */}
+      <main className="pt-16 relative z-10">
+        {/* Enhanced Hero Section */}
         <section id="home" className="min-h-screen flex items-center justify-center px-4 py-8 relative overflow-hidden">
-          {/* Mobile Particles - Very Lightweight */}
+          {/* Premium Floating Shapes */}
           {!prefersReducedMotion && (
             <>
-              <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400/60 rounded-full animate-bounce" style={{ animationDelay: "0s", animationDuration: "3s" }} />
-              <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-green-400/50 rounded-full animate-bounce" style={{ animationDelay: "1s", animationDuration: "4s" }} />
-              <div className="absolute top-2/3 left-1/3 w-2 h-2 bg-purple-400/40 rounded-full animate-bounce" style={{ animationDelay: "2s", animationDuration: "5s" }} />
+              <div className="mobile-floating-shape mobile-pulse-orb" style={{ top: '15%', left: '10%', animationDelay: '0s' }} />
+              <div className="mobile-floating-shape" style={{ top: '25%', right: '15%', animationDelay: '2s' }}>
+                <Hexagon className="w-8 h-8 text-blue-400/60" />
+              </div>
+              <div className="mobile-floating-shape" style={{ top: '70%', left: '20%', animationDelay: '4s' }}>
+                <Triangle className="w-6 h-6 text-green-400/60" />
+              </div>
+              <div className="mobile-floating-shape" style={{ top: '60%', right: '25%', animationDelay: '6s' }}>
+                <Circle className="w-7 h-7 text-purple-400/60" />
+              </div>
             </>
           )}
           
           <motion.div
-            variants={mobileVariants}
+            variants={premiumVariants}
             initial="hidden"
             animate="visible"
             className="relative z-10 text-center max-w-md mx-auto"
           >
-            <div className="mb-4 inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-sm text-blue-400">
+            <motion.div 
+              className="mb-6 inline-block px-6 py-3 mobile-floating-badge rounded-full text-sm font-medium"
+              variants={floatingVariants}
+            >
+              <Sparkles className="w-4 h-4 inline mr-2" />
               Future-Ready Solutions, Custom-Built
-            </div>
+            </motion.div>
+            
             <motion.h1 
-              className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent"
-              style={{ textShadow: "0 0 30px rgba(59, 130, 246, 0.5)" }}
+              className="text-4xl md:text-5xl font-bold mb-4 mobile-premium-text"
+              variants={premiumVariants}
             >
               KOR DIGITAL
             </motion.h1>
+            
             <motion.p 
-              className="text-xl mb-2 text-muted-foreground"
-              variants={mobileVariants}
+              className="text-xl mb-2 text-muted-foreground font-semibold"
+              variants={premiumVariants}
             >
               Development Services
             </motion.p>
+            
             <motion.p 
               className="text-base mb-8 text-muted-foreground leading-relaxed"
-              variants={mobileVariants}
+              variants={premiumVariants}
             >
               Cutting-edge web development, mobile apps, and cloud solutions that drive your business forward.
             </motion.p>
             
-            {/* System Status Terminal Preview */}
+            {/* Enhanced Terminal Preview */}
             <motion.div 
-              className="mb-8 p-4 bg-black/50 border border-green-400/30 rounded-lg text-left text-sm font-mono text-green-400"
-              variants={mobileVariants}
+              className="mb-8 p-6 mobile-terminal-enhanced rounded-xl text-left text-sm font-mono text-green-400"
+              variants={premiumVariants}
             >
-              <div className="mb-2 text-green-300">SYSTEM STATUS: OPERATIONAL</div>
-              <div className="space-y-1 text-xs">
-                <div>[ACTIVE] CUSTOM SOFTWARE SOLUTIONS</div>
-                <div>[ACTIVE] WEB APPLICATION DEVELOPMENT</div>
-                <div>[ACTIVE] AI/ML INTEGRATION SERVICES</div>
-                <div>[PRIORITY] LEGACY SYSTEM MODERNIZATION</div>
+              <div className="mb-3 text-green-300 font-bold">SYSTEM STATUS: OPERATIONAL</div>
+              <div className="space-y-2 text-xs">
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1, duration: 0.5 }}
+                >
+                  [ACTIVE] CUSTOM SOFTWARE SOLUTIONS
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.2, duration: 0.5 }}
+                >
+                  [ACTIVE] WEB APPLICATION DEVELOPMENT
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.4, duration: 0.5 }}
+                >
+                  [ACTIVE] AI/ML INTEGRATION SERVICES
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.6, duration: 0.5 }}
+                  className="text-yellow-400"
+                >
+                  [PRIORITY] LEGACY SYSTEM MODERNIZATION
+                </motion.div>
               </div>
             </motion.div>
             
             <motion.div 
               className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
-              variants={mobileVariants}
+              variants={premiumVariants}
             >
               <motion.button
-                className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
-                style={{ boxShadow: "0 0 20px rgba(59, 130, 246, 0.4)" }}
-                whileHover={{ y: -2 }}
+                className="mobile-glow-button px-8 py-4 rounded-xl text-primary-foreground font-semibold relative overflow-hidden"
+                whileHover={{ y: -3, scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Get Started
+                <span className="relative z-10">Get Started</span>
               </motion.button>
               <motion.button
-                className="px-8 py-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border text-foreground font-semibold hover:bg-accent transition-colors"
-                whileHover={{ y: -2 }}
+                className="px-8 py-4 rounded-xl mobile-premium-card mobile-tilt-card text-foreground font-semibold"
+                whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
               >
                 View Portfolio
@@ -401,12 +506,12 @@ export default function Index() {
           </motion.div>
         </section>
 
-        {/* About Us Section */}
-        <section id="about" className="px-4 py-16 bg-gradient-to-b from-background to-muted/20">
+        {/* Enhanced About Us Section */}
+        <section id="about" className="px-4 py-16 relative">
           <div className="max-w-md mx-auto">
             <motion.h2 
-              className="text-3xl font-bold text-center mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
-              variants={mobileVariants}
+              className="text-3xl font-bold text-center mb-4 mobile-premium-text"
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -415,7 +520,7 @@ export default function Index() {
             </motion.h2>
             <motion.h3 
               className="text-xl font-semibold text-center mb-8 text-muted-foreground"
-              variants={mobileVariants}
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -425,7 +530,7 @@ export default function Index() {
             
             <motion.div 
               className="space-y-6 mb-12"
-              variants={mobileVariants}
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -438,36 +543,43 @@ export default function Index() {
               </p>
             </motion.div>
 
-            {/* Company Stats */}
+            {/* Enhanced Company Stats with Animated Counters */}
             <motion.div 
               className="grid grid-cols-3 gap-4 mb-8"
-              variants={mobileVariants}
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
+              onViewportEnter={() => setIsCounterVisible(true)}
             >
-              <div className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border">
-                <div className="text-2xl font-bold text-blue-400 mb-1">100+</div>
+              <div className="text-center p-6 mobile-premium-card mobile-tilt-card">
+                <div className="text-3xl font-bold mobile-stat-counter mb-2">
+                  {counters.projects}+
+                </div>
                 <div className="text-sm text-muted-foreground">Projects</div>
               </div>
-              <div className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border">
-                <div className="text-2xl font-bold text-green-400 mb-1">50+</div>
+              <div className="text-center p-6 mobile-premium-card mobile-tilt-card">
+                <div className="text-3xl font-bold mobile-stat-counter mb-2">
+                  {counters.clients}+
+                </div>
                 <div className="text-sm text-muted-foreground">Clients</div>
               </div>
-              <div className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border">
-                <div className="text-2xl font-bold text-purple-400 mb-1">5+</div>
+              <div className="text-center p-6 mobile-premium-card mobile-tilt-card">
+                <div className="text-3xl font-bold mobile-stat-counter mb-2">
+                  {counters.years}+
+                </div>
                 <div className="text-sm text-muted-foreground">Years</div>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Our Process Section */}
-        <section id="process" className="px-4 py-16 bg-muted/20">
+        {/* Enhanced Process Section */}
+        <section id="process" className="px-4 py-16 relative">
           <div className="max-w-md mx-auto">
             <motion.h2 
-              className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
-              variants={mobileVariants}
+              className="text-3xl font-bold text-center mb-8 mobile-premium-text"
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -479,40 +591,42 @@ export default function Index() {
               {processSteps.map((step, index) => (
                 <motion.div
                   key={step.number}
-                  variants={cardVariants}
+                  variants={premiumVariants}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border"
+                  transition={{ delay: index * 0.2 }}
+                  className="mobile-premium-card mobile-tilt-card p-6 rounded-xl relative overflow-hidden"
                 >
-                  <div className="flex items-start mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-primary/20 border border-primary/40 rounded-lg flex items-center justify-center mr-4">
-                      <span className="font-bold text-primary">{step.number}</span>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-5`} />
+                  
+                  <div className="flex items-start mb-4 relative z-10">
+                    <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${step.color} rounded-xl flex items-center justify-center mr-4 shadow-lg`}>
+                      <span className="font-bold text-white">{step.number}</span>
                     </div>
                     <div className="flex-1">
-                      <div className="text-xs text-muted-foreground mb-1">{step.category}</div>
+                      <div className="text-xs text-muted-foreground mb-1 font-semibold tracking-wider">{step.category}</div>
                       <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
                     </div>
                   </div>
                   
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed relative z-10">
                     {step.description}
                   </p>
                   
-                  <div className="mb-4">
+                  <div className="mb-4 relative z-10">
                     <div className="flex flex-wrap gap-2">
                       {step.features.map((feature, i) => (
-                        <span key={i} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
+                        <span key={i} className="text-xs px-3 py-1 bg-primary/15 text-primary rounded-full font-medium">
                           {feature}
                         </span>
                       ))}
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-between pt-4 border-t border-border">
+                  <div className="flex items-center justify-between pt-4 border-t border-border relative z-10">
                     <span className="text-xs text-muted-foreground">{step.metric.label}</span>
-                    <span className="text-sm font-bold text-primary">{step.metric.value}</span>
+                    <span className="text-lg font-bold mobile-stat-counter">{step.metric.value}</span>
                   </div>
                 </motion.div>
               ))}
@@ -520,12 +634,12 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section id="services" className="px-4 py-16 bg-gradient-to-b from-background to-muted/20">
+        {/* Enhanced Services Section */}
+        <section id="services" className="px-4 py-16 relative">
           <div className="max-w-md mx-auto">
             <motion.h2 
-              className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
-              variants={mobileVariants}
+              className="text-3xl font-bold text-center mb-8 mobile-premium-text"
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -541,23 +655,31 @@ export default function Index() {
                 return (
                   <motion.div
                     key={service.title}
-                    variants={cardVariants}
+                    variants={premiumVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="rounded-xl bg-card/50 backdrop-blur-sm border border-border overflow-hidden"
+                    className="mobile-premium-card mobile-tilt-card rounded-xl overflow-hidden relative"
                   >
-                    <button
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-50`} />
+                    
+                    <motion.button
                       onClick={() => setExpandedService(isExpanded ? null : index)}
-                      className="w-full p-4 flex items-center justify-between hover:bg-accent/50 transition-colors"
+                      className="w-full p-4 flex items-center justify-between hover:bg-accent/30 transition-all duration-300 relative z-10"
+                      whileHover={{ x: 4 }}
                     >
                       <div className="flex items-center">
                         <IconComponent className={cn("w-6 h-6 mr-3", service.color)} />
                         <h3 className="font-semibold text-left">{service.title}</h3>
                       </div>
-                      <ChevronDown className={cn("w-4 h-4 transition-transform", isExpanded && "rotate-180")} />
-                    </button>
+                      <motion.div
+                        animate={{ rotate: isExpanded ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <ChevronDown className="w-4 h-4" />
+                      </motion.div>
+                    </motion.button>
                     
                     <AnimatePresence>
                       {isExpanded && (
@@ -565,12 +687,16 @@ export default function Index() {
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          className="px-4 pb-4"
+                          transition={{ duration: 0.3 }}
+                          className="px-4 pb-4 relative z-10"
                         >
                           <p className="text-sm text-muted-foreground mb-3">{service.description}</p>
-                          <button className="text-blue-400 text-sm font-medium flex items-center">
+                          <motion.button 
+                            className="text-blue-400 text-sm font-medium flex items-center hover:text-blue-300 transition-colors"
+                            whileHover={{ x: 4 }}
+                          >
                             Learn More <ArrowRight className="w-3 h-3 ml-1" />
-                          </button>
+                          </motion.button>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -581,12 +707,12 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Portfolio Section */}
-        <section id="portfolio" className="px-4 py-16 bg-muted/20">
+        {/* Enhanced Portfolio Section */}
+        <section id="portfolio" className="px-4 py-16 relative">
           <div className="max-w-md mx-auto">
             <motion.h2 
-              className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
-              variants={mobileVariants}
+              className="text-3xl font-bold text-center mb-8 mobile-premium-text"
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -598,57 +724,65 @@ export default function Index() {
               {currentProjects.map((project, index) => (
                 <motion.div
                   key={project.title}
-                  variants={cardVariants}
+                  variants={premiumVariants}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-300"
+                  className="mobile-premium-card mobile-tilt-card p-6 rounded-xl relative overflow-hidden"
                 >
-                  <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, i) => (
-                      <span key={i} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
-                        {tech}
-                      </span>
-                    ))}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-30`} />
+                  
+                  <div className="relative z-10">
+                    <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, i) => (
+                        <span key={i} className="text-xs px-3 py-1 bg-primary/15 text-primary rounded-full font-medium">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            {/* Portfolio Pagination */}
+            {/* Enhanced Portfolio Pagination */}
             {totalPages > 1 && (
               <div className="flex items-center justify-center space-x-4">
-                <button
+                <motion.button
                   onClick={() => setCurrentProjectPage(Math.max(0, currentProjectPage - 1))}
                   disabled={currentProjectPage === 0}
-                  className="px-4 py-2 rounded-lg bg-card/50 border border-border disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-4 py-2 rounded-lg mobile-premium-card disabled:opacity-50 disabled:cursor-not-allowed mobile-tilt-card"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Previous
-                </button>
-                <span className="text-sm text-muted-foreground">
+                </motion.button>
+                <span className="text-sm text-muted-foreground font-medium">
                   {currentProjectPage + 1} of {totalPages}
                 </span>
-                <button
+                <motion.button
                   onClick={() => setCurrentProjectPage(Math.min(totalPages - 1, currentProjectPage + 1))}
                   disabled={currentProjectPage === totalPages - 1}
-                  className="px-4 py-2 rounded-lg bg-card/50 border border-border disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-4 py-2 rounded-lg mobile-premium-card disabled:opacity-50 disabled:cursor-not-allowed mobile-tilt-card"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Next
-                </button>
+                </motion.button>
               </div>
             )}
           </div>
         </section>
 
-        {/* Pricing Section */}
-        <section id="pricing" className="px-4 py-16 bg-background">
+        {/* Enhanced Pricing Section */}
+        <section id="pricing" className="px-4 py-16 relative">
           <div className="max-w-md mx-auto">
             <motion.h2 
-              className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
-              variants={mobileVariants}
+              className="text-3xl font-bold text-center mb-8 mobile-premium-text"
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -660,58 +794,74 @@ export default function Index() {
               {pricingPlans.map((plan, index) => (
                 <motion.div
                   key={plan.name}
-                  variants={cardVariants}
+                  variants={premiumVariants}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className={cn(
-                    "p-6 rounded-xl border relative",
-                    plan.popular 
-                      ? "bg-primary/5 border-primary/30" 
-                      : "bg-card/50 border-border"
+                    "mobile-premium-card mobile-tilt-card p-6 rounded-xl relative overflow-hidden",
+                    plan.popular && "ring-2 ring-primary/50"
                   )}
                 >
+                  <div className={`absolute inset-0 bg-gradient-to-br ${plan.gradient} opacity-40`} />
+                  
                   {plan.popular && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium">
+                    <motion.div 
+                      className="absolute -top-3 left-1/2 transform -translate-x-1/2"
+                      initial={{ scale: 0, rotate: -12 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ delay: 0.5, type: "spring" }}
+                    >
+                      <span className="mobile-floating-badge px-4 py-1 rounded-full text-xs font-bold">
+                        <Star className="w-3 h-3 inline mr-1" />
                         Most Popular
                       </span>
-                    </div>
+                    </motion.div>
                   )}
                   
-                  <div className="text-center mb-6">
+                  <div className="text-center mb-6 relative z-10">
                     <h3 className="text-lg font-semibold mb-2">{plan.name}</h3>
                     <div className="flex items-baseline justify-center mb-2">
-                      <span className="text-2xl font-bold">{plan.price}</span>
+                      <span className="text-3xl font-bold mobile-stat-counter">{plan.price}</span>
                       <span className="text-sm text-muted-foreground ml-1"> - {plan.maxPrice}</span>
                     </div>
                   </div>
                   
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-3 mb-6 relative z-10">
                     {plan.perks.map((perk, i) => (
-                      <div key={i} className="flex items-center">
+                      <motion.div 
+                        key={i} 
+                        className="flex items-center"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.1 }}
+                      >
                         <CheckCircle2 className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
                         <span className="text-sm">{perk}</span>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                   
-                  <button className={cn(
-                    "w-full py-3 rounded-lg font-semibold transition-colors",
-                    plan.popular
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                      : "bg-card border border-border hover:bg-accent"
-                  )}>
+                  <motion.button 
+                    className={cn(
+                      "w-full py-4 rounded-lg font-semibold transition-all duration-300 relative z-10",
+                      plan.popular
+                        ? "mobile-glow-button text-primary-foreground"
+                        : "mobile-premium-card border border-border hover:bg-accent"
+                    )}
+                    whileHover={{ y: -2, scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
                     Get Started
-                  </button>
+                  </motion.button>
                 </motion.div>
               ))}
             </div>
 
             <motion.p 
               className="text-xs text-center text-muted-foreground"
-              variants={mobileVariants}
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -721,12 +871,12 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="px-4 py-16 bg-muted/20">
+        {/* Enhanced Contact Section */}
+        <section id="contact" className="px-4 py-16 relative">
           <div className="max-w-md mx-auto">
             <motion.h2 
-              className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
-              variants={mobileVariants}
+              className="text-3xl font-bold text-center mb-8 mobile-premium-text"
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -734,73 +884,58 @@ export default function Index() {
               Get In Touch
             </motion.h2>
             
-            {/* Quick Contact Options */}
+            {/* Enhanced Quick Contact Options */}
             <motion.div 
               className="grid grid-cols-2 gap-4 mb-8"
-              variants={mobileVariants}
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <a 
-                href="mailto:contact@kor.dev"
-                className="p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/50 transition-colors text-center"
-              >
-                <Mail className="w-6 h-6 text-blue-400 mx-auto mb-2" />
-                <div className="text-sm font-medium">Email</div>
-                <div className="text-xs text-muted-foreground">contact@kor.dev</div>
-              </a>
-              
-              <a 
-                href="#"
-                className="p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/50 transition-colors text-center"
-              >
-                <Instagram className="w-6 h-6 text-pink-400 mx-auto mb-2" />
-                <div className="text-sm font-medium">Instagram</div>
-                <div className="text-xs text-muted-foreground">@kor.dev</div>
-              </a>
-              
-              <a 
-                href="#"
-                className="p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/50 transition-colors text-center"
-              >
-                <MessageCircle className="w-6 h-6 text-blue-500 mx-auto mb-2" />
-                <div className="text-sm font-medium">Discord</div>
-                <div className="text-xs text-muted-foreground">Join Server</div>
-              </a>
-              
-              <a 
-                href="#"
-                className="p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/50 transition-colors text-center"
-              >
-                <Send className="w-6 h-6 text-blue-400 mx-auto mb-2" />
-                <div className="text-sm font-medium">Telegram</div>
-                <div className="text-xs text-muted-foreground">@kor_dev</div>
-              </a>
+              {[
+                { icon: Mail, label: "Email", detail: "contact@kor.dev", href: "mailto:contact@kor.dev", color: "text-blue-400" },
+                { icon: Instagram, label: "Instagram", detail: "@kor.dev", href: "#", color: "text-pink-400" },
+                { icon: MessageCircle, label: "Discord", detail: "Join Server", href: "#", color: "text-blue-500" },
+                { icon: Send, label: "Telegram", detail: "@kor_dev", href: "#", color: "text-blue-400" }
+              ].map((contact, index) => (
+                <motion.a
+                  key={contact.label}
+                  href={contact.href}
+                  className="mobile-premium-card mobile-tilt-card p-4 rounded-xl text-center hover:border-primary/50 transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -4, scale: 1.02 }}
+                >
+                  <contact.icon className={cn("w-6 h-6 mx-auto mb-2", contact.color)} />
+                  <div className="text-sm font-medium">{contact.label}</div>
+                  <div className="text-xs text-muted-foreground">{contact.detail}</div>
+                </motion.a>
+              ))}
             </motion.div>
 
-            {/* Status Indicators */}
+            {/* Enhanced Status Indicators */}
             <motion.div 
-              className="flex items-center justify-center space-x-4 mb-8 text-sm"
-              variants={mobileVariants}
+              className="flex items-center justify-center space-x-6 mb-8 text-sm"
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+              <div className="flex items-center mobile-premium-card px-3 py-2 rounded-full">
+                <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
                 <span className="text-muted-foreground">Online</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center mobile-premium-card px-3 py-2 rounded-full">
                 <Clock className="w-4 h-4 text-blue-400 mr-1" />
                 <span className="text-muted-foreground">Response: &lt; 24h</span>
               </div>
             </motion.div>
 
-            {/* Full Contact Form */}
+            {/* Enhanced Contact Form */}
             <motion.form 
               className="space-y-4"
-              variants={mobileVariants}
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -810,7 +945,7 @@ export default function Index() {
                   <label className="block text-sm font-medium mb-2 text-muted-foreground">First Name</label>
                   <input 
                     type="text" 
-                    className="w-full px-3 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                    className="w-full px-3 py-3 rounded-lg mobile-premium-card text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                     placeholder="John"
                   />
                 </div>
@@ -818,7 +953,7 @@ export default function Index() {
                   <label className="block text-sm font-medium mb-2 text-muted-foreground">Last Name</label>
                   <input 
                     type="text" 
-                    className="w-full px-3 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                    className="w-full px-3 py-3 rounded-lg mobile-premium-card text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                     placeholder="Doe"
                   />
                 </div>
@@ -829,7 +964,7 @@ export default function Index() {
                 <input 
                   type="email" 
                   required
-                  className="w-full px-3 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                  className="w-full px-3 py-3 rounded-lg mobile-premium-card text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                   placeholder="john@example.com"
                 />
               </div>
@@ -838,17 +973,17 @@ export default function Index() {
                 <label className="block text-sm font-medium mb-2 text-muted-foreground">Phone Number</label>
                 <input 
                   type="tel" 
-                  className="w-full px-3 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                  className="w-full px-3 py-3 rounded-lg mobile-premium-card text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300"
                   placeholder="+1 (555) 123-4567"
                 />
               </div>
 
-              {/* Interest Selection */}
+              {/* Enhanced Interest Selection */}
               <div>
                 <label className="block text-sm font-medium mb-3 text-muted-foreground">What interests you?</label>
                 <div className="grid grid-cols-2 gap-2">
                   {interestOptions.map((interest) => (
-                    <button
+                    <motion.button
                       key={interest}
                       type="button"
                       onClick={() => {
@@ -859,36 +994,40 @@ export default function Index() {
                         );
                       }}
                       className={cn(
-                        "p-2 rounded-lg text-xs border transition-colors",
+                        "p-3 rounded-lg text-xs border transition-all duration-300",
                         selectedInterests.includes(interest)
-                          ? "bg-primary text-primary-foreground border-primary"
-                          : "bg-card/50 border-border hover:border-primary/50"
+                          ? "mobile-glow-button text-primary-foreground border-primary"
+                          : "mobile-premium-card border-border hover:border-primary/50"
                       )}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       {interest}
-                    </button>
+                    </motion.button>
                   ))}
                 </div>
               </div>
 
-              {/* Budget Selection */}
+              {/* Enhanced Budget Selection */}
               <div>
                 <label className="block text-sm font-medium mb-3 text-muted-foreground">Budget Range</label>
                 <div className="grid grid-cols-3 gap-2">
                   {budgetOptions.map((budget) => (
-                    <button
+                    <motion.button
                       key={budget}
                       type="button"
                       onClick={() => setSelectedBudget(budget)}
                       className={cn(
-                        "p-2 rounded-lg text-xs border transition-colors",
+                        "p-3 rounded-lg text-xs border transition-all duration-300",
                         selectedBudget === budget
-                          ? "bg-primary text-primary-foreground border-primary"
-                          : "bg-card/50 border-border hover:border-primary/50"
+                          ? "mobile-glow-button text-primary-foreground border-primary"
+                          : "mobile-premium-card border-border hover:border-primary/50"
                       )}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       {budget}
-                    </button>
+                    </motion.button>
                   ))}
                 </div>
               </div>
@@ -897,26 +1036,27 @@ export default function Index() {
                 <label className="block text-sm font-medium mb-2 text-muted-foreground">Project Description</label>
                 <textarea 
                   rows={4} 
-                  className="w-full px-3 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                  className="w-full px-3 py-3 rounded-lg mobile-premium-card text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-none"
                   placeholder="Something about your great idea..."
                 />
               </div>
               
               <motion.button 
                 type="submit" 
-                className="w-full px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center"
-                style={{ boxShadow: "0 0 20px rgba(59, 130, 246, 0.4)" }}
-                whileHover={{ y: -2 }}
+                className="w-full mobile-glow-button px-8 py-4 rounded-xl text-primary-foreground font-semibold flex items-center justify-center relative overflow-hidden"
+                whileHover={{ y: -3, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Submit Your Request
-                <Send className="w-4 h-4 ml-2" />
+                <span className="relative z-10 flex items-center">
+                  Submit Your Request
+                  <Send className="w-4 h-4 ml-2" />
+                </span>
               </motion.button>
             </motion.form>
 
             <motion.p 
-              className="text-center text-sm text-muted-foreground mt-4"
-              variants={mobileVariants}
+              className="text-center text-sm text-muted-foreground mt-6"
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -926,24 +1066,24 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="px-4 py-8 bg-background border-t border-border">
+        {/* Enhanced Footer */}
+        <footer className="px-4 py-8 mobile-premium-card border-t border-border relative">
           <div className="max-w-md mx-auto text-center">
             <motion.div 
               className="mb-4"
-              variants={mobileVariants}
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              <h3 className="text-lg font-bold mobile-premium-text">
                 KOR DIGITAL
               </h3>
             </motion.div>
             
             <motion.div 
               className="flex justify-center space-x-6 mb-6"
-              variants={mobileVariants}
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -959,9 +1099,12 @@ export default function Index() {
                 <motion.a
                   key={index}
                   href={href}
-                  className="text-muted-foreground hover:text-blue-400 transition-colors"
-                  whileHover={{ y: -2 }}
+                  className="text-muted-foreground hover:text-blue-400 transition-colors mobile-tilt-card p-2 rounded-lg"
+                  whileHover={{ y: -4, scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
                 >
                   <Icon className="w-5 h-5" />
                 </motion.a>
@@ -970,7 +1113,7 @@ export default function Index() {
             
             <motion.div 
               className="text-xs text-muted-foreground space-y-1"
-              variants={mobileVariants}
+              variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
