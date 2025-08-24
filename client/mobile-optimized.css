@@ -1,6 +1,37 @@
 /* Mobile-Optimized KOR Digital Styles */
 /* Preserves dark theme while optimizing for mobile performance */
 
+/* Responsive behavior - ensure mobile styles only apply on mobile devices */
+.mobile-version {
+  display: none;
+}
+
+.desktop-version {
+  display: block;
+}
+
+/* Show mobile version only on mobile devices (≤768px) */
+@media (max-width: 768px) {
+  .mobile-version {
+    display: block !important;
+  }
+
+  .desktop-version {
+    display: none !important;
+  }
+}
+
+/* Ensure desktop version shows on tablets and larger */
+@media (min-width: 769px) {
+  .mobile-version {
+    display: none !important;
+  }
+
+  .desktop-version {
+    display: block !important;
+  }
+}
+
 /* Core mobile optimizations */
 @media (max-width: 768px) {
   /* Disable heavy animations on mobile */
