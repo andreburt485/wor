@@ -4,11 +4,11 @@
 /* Animated Gradient Backgrounds */
 .mobile-gradient-bg {
   background: linear-gradient(
-    135deg, 
+    135deg,
     hsl(var(--background)) 0%,
     hsl(var(--background)) 25%,
     rgba(59, 130, 246, 0.05) 50%,
-    rgba(34, 197, 94, 0.03) 75%,
+    rgba(147, 51, 234, 0.03) 75%,
     hsl(var(--background)) 100%
   );
   background-size: 400% 400%;
@@ -230,9 +230,9 @@
 
 /* Mesh Gradient Backgrounds */
 .mobile-mesh-bg {
-  background: 
+  background:
     radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 60% 80%, rgba(239, 68, 68, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 90% 90%, rgba(59, 130, 246, 0.12) 0%, transparent 50%);
