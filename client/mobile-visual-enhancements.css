@@ -512,12 +512,12 @@
   }
 }
 
-/* Print styles */
+/* Print styles - Most elements already hidden */
 @media print {
-  .mobile-floating-shape,
-  .mobile-pulse-orb,
-  .mobile-gradient-bg,
-  .mobile-mesh-bg {
-    display: none !important;
+  .mobile-premium-card,
+  .mobile-glow-button {
+    box-shadow: none !important;
+    background: white !important;
+    border: 1px solid black !important;
   }
 }
