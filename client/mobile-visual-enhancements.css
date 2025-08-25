@@ -385,21 +385,9 @@
   opacity: 1;
 }
 
-/* Pulsing Orbs */
+/* Pulsing Orbs - Disabled */
 .mobile-pulse-orb {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 30% 30%,
-    rgba(59, 130, 246, 0.8) 0%,
-    rgba(59, 130, 246, 0.4) 50%,
-    rgba(59, 130, 246, 0.1) 100%
-  );
-  animation: mobile-orb-pulse 3s ease-in-out infinite;
-  filter: blur(2px);
-  position: absolute;
-  pointer-events: none;
+  display: none; /* Completely hide pulse orbs */
 }
 
 @keyframes mobile-orb-pulse {
