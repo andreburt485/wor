@@ -1000,12 +1000,12 @@ export default function Index() {
 
                   {plan.popular && (
                     <motion.div
-                      className="absolute -top-3 left-1/2 transform -translate-x-1/2"
+                      className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-20"
                       initial={{ scale: 0, rotate: -12 }}
                       animate={{ scale: 1, rotate: 0 }}
                       transition={{ delay: 0.5, type: "spring" }}
                     >
-                      <span className="mobile-floating-badge px-4 py-1 rounded-full text-xs font-bold">
+                      <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg border border-blue-300">
                         <Star className="w-3 h-3 inline mr-1" />
                         Most Popular
                       </span>
