@@ -1229,19 +1229,21 @@ export default function Index() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 }}
-                  className="mobile-premium-card mobile-tilt-card p-6 rounded-xl relative overflow-hidden"
+                  className="mobile-premium-card mobile-tilt-card mobile-touch-feedback mobile-button-enhanced p-6 rounded-xl relative overflow-hidden"
                   whileHover={{
-                    scale: 1.02,
-                    y: -5,
-                    rotateY: 2,
-                    boxShadow: "0 20px 40px rgba(73, 146, 255, 0.3)",
+                    scale: 1.05,
+                    y: -8,
+                    rotateY: 4,
+                    rotateX: 2,
+                    boxShadow: "0 25px 50px rgba(73, 146, 255, 0.4)",
                   }}
                   animate={{
-                    y: [0, -2, 0],
+                    y: [0, -3, 0],
+                    rotateZ: [0, 0.5, 0],
                     boxShadow: [
-                      "0 0 30px rgba(73, 146, 255, 0.15)",
-                      "0 0 40px rgba(73, 146, 255, 0.25)",
-                      "0 0 30px rgba(73, 146, 255, 0.15)",
+                      "0 5px 35px rgba(73, 146, 255, 0.2)",
+                      "0 10px 45px rgba(73, 146, 255, 0.35)",
+                      "0 5px 35px rgba(73, 146, 255, 0.2)",
                     ],
                   }}
                   transition={{
