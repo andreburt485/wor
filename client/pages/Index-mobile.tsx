@@ -431,9 +431,8 @@ export default function Index() {
   );
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden mobile-gradient-bg">
-      {/* Enhanced Background Effects */}
-      <div className="fixed inset-0 mobile-mesh-bg pointer-events-none z-0" />
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Simple background without moving gradients */}
 
       {/* Mobile Navigation Overlay */}
       <AnimatePresence>
