@@ -552,34 +552,51 @@ export default function Index() {
             animate="visible"
             className="relative z-10 text-center max-w-md mx-auto"
           >
+            {/* Enhanced floating badge with glow */}
             <motion.div
-              className="mb-6 inline-block px-6 py-3 mobile-floating-badge rounded-full text-sm font-medium"
+              className="mb-8 inline-block px-6 py-3 mobile-floating-badge rounded-full text-sm font-medium relative"
               variants={floatingVariants}
+              style={{
+                boxShadow: "0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1)"
+              }}
             >
-              <Sparkles className="w-4 h-4 inline mr-2" />
+              <Sparkles className="w-4 h-4 inline mr-2 animate-pulse" />
               Future-Ready Solutions, Custom-Built
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 animate-pulse" />
             </motion.div>
 
+            {/* Enhanced main title with multiple gradient layers */}
             <motion.h1
-              className="text-4xl md:text-5xl font-bold mb-4 mobile-premium-text"
+              className="text-5xl md:text-6xl font-bold mb-6 mobile-premium-text relative"
               variants={premiumVariants}
+              style={{
+                textShadow: "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(168, 85, 247, 0.3)"
+              }}
             >
-              KOR DIGITAL
+              <span className="relative z-10">KOR DIGITAL</span>
+              <div className="absolute inset-0 blur-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent opacity-30 animate-pulse" />
             </motion.h1>
 
+            {/* Enhanced subtitle with glow */}
             <motion.p
-              className="text-xl mb-2 text-muted-foreground font-semibold"
+              className="text-xl mb-3 text-muted-foreground font-semibold relative"
               variants={premiumVariants}
+              style={{
+                textShadow: "0 0 20px rgba(59, 130, 246, 0.2)"
+              }}
             >
-              Development Services
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Development Services
+              </span>
             </motion.p>
 
+            {/* Enhanced description with better spacing */}
             <motion.p
-              className="text-base mb-8 text-muted-foreground leading-relaxed"
+              className="text-base mb-10 text-muted-foreground leading-relaxed px-4"
               variants={premiumVariants}
             >
               Cutting-edge web development, mobile apps, and cloud solutions
-              that drive your business forward.
+              that drive your business forward with modern AI integration.
             </motion.p>
 
             {/* Removed terminal section */}
