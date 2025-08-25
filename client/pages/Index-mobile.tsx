@@ -1,9 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { RetroToggle } from "@/components/ui/retro-toggle";
-import { useTheme } from "@/hooks/use-theme";
-import { useRetroMode } from "@/hooks/use-retro-mode";
 import { useUnifiedNotifications } from "@/components/ui/unified-notification";
 import { useBrowserDetection } from "@/hooks/use-browser-detection";
 import {
