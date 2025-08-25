@@ -1,10 +1,20 @@
 /* Premium Mobile Visual Enhancements */
 /* High-end eye candy while maintaining 60fps performance */
 
-/* Static Gradient Backgrounds - No animation */
+/* Beautiful Animated Gradient Backgrounds */
 .mobile-gradient-bg {
-  background: hsl(var(--background));
-  /* Removed animated gradient and animation */
+  background: linear-gradient(
+    135deg,
+    hsl(var(--background)) 0%,
+    rgba(59, 130, 246, 0.03) 15%,
+    rgba(168, 85, 247, 0.02) 35%,
+    hsl(var(--background)) 50%,
+    rgba(34, 197, 94, 0.02) 65%,
+    rgba(236, 72, 153, 0.03) 85%,
+    hsl(var(--background)) 100%
+  );
+  background-size: 400% 400%;
+  animation: mobile-gradient-shift 15s ease infinite;
 }
 
 @keyframes mobile-gradient-shift {
