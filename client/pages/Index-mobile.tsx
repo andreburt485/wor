@@ -1364,12 +1364,10 @@ export default function Index() {
               viewport={{ once: true }}
             >
               {[
-                { Icon: Github, href: "#" },
                 { Icon: Twitter, href: "#" },
-                { Icon: Linkedin, href: "#" },
-                { Icon: Mail, href: "mailto:contact@kor.dev" },
                 { Icon: Instagram, href: "#" },
                 { Icon: MessageCircle, href: "#" },
+                { Icon: Mail, href: "mailto:contact@kor.dev" },
               ].map(({ Icon, href }, index) => (
                 <motion.a
                   key={index}
@@ -1386,21 +1384,6 @@ export default function Index() {
               ))}
             </motion.div>
 
-            <motion.div
-              className="text-xs text-muted-foreground space-y-1"
-              variants={premiumVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              <div>COPYRIGHT (C) 2024 KOR SYSTEMS - ALL RIGHTS RESERVED</div>
-              <div>
-                contact@kor.dev •{" "}
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Privacy Policy
-                </a>
-              </div>
-            </motion.div>
           </div>
         </footer>
       </main>
