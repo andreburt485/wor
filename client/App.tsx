@@ -16,6 +16,7 @@ import { UnifiedNotificationProvider } from "@/components/ui/unified-notificatio
 import { ErrorBoundary } from "@/components/ui/error-boundary";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import RibbonTest from "./pages/RibbonTest";
 
 // Optimized QueryClient with performance settingss uhhh update pr
 const queryClient = new QueryClient({
