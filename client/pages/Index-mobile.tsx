@@ -580,8 +580,8 @@ export default function Index() {
                   "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(37, 99, 235, 0.3)",
               }}
             >
-              <span className="relative z-10">kor</span>
-              <div className="absolute inset-0 blur-lg bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent opacity-30 animate-pulse" />
+              <span className="relative z-10 text-white">KOR</span>
+              <div className="absolute inset-0 blur-lg bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent opacity-20 animate-pulse" />
             </motion.h1>
 
             {/* Enhanced subtitle with glow */}
