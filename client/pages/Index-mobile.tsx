@@ -539,33 +539,7 @@ export default function Index() {
           id="home"
           className="min-h-screen flex items-center justify-center px-4 py-8 relative overflow-hidden"
         >
-          {/* Premium Floating Shapes */}
-          {!prefersReducedMotion && (
-            <>
-              <div
-                className="mobile-floating-shape mobile-pulse-orb"
-                style={{ top: "15%", left: "10%", animationDelay: "0s" }}
-              />
-              <div
-                className="mobile-floating-shape"
-                style={{ top: "25%", right: "15%", animationDelay: "2s" }}
-              >
-                <Hexagon className="w-8 h-8 text-blue-400/60" />
-              </div>
-              <div
-                className="mobile-floating-shape"
-                style={{ top: "70%", left: "20%", animationDelay: "4s" }}
-              >
-                <Triangle className="w-6 h-6 text-green-400/60" />
-              </div>
-              <div
-                className="mobile-floating-shape"
-                style={{ top: "60%", right: "25%", animationDelay: "6s" }}
-              >
-                <Circle className="w-7 h-7 text-purple-400/60" />
-              </div>
-            </>
-          )}
+          {/* Removed floating shapes */}
 
           <motion.div
             variants={premiumVariants}
