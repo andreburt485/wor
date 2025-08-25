@@ -679,9 +679,9 @@
 .corner-ribbon span {
   position: absolute;
   top: 20px;
-  right: -28px;
+  right: -45px;
   display: inline-block;
-  width: 120px;
+  width: 160px;
   padding: 8px 0;
   background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
   box-shadow:
