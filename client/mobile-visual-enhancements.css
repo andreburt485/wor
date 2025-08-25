@@ -479,12 +479,7 @@
 
   /* Respect reduced motion preferences */
   @media (prefers-reduced-motion: reduce) {
-    .mobile-gradient-bg,
-    .mobile-floating-shape,
-    .mobile-mesh-bg,
-    .mobile-text-shimmer,
-    .mobile-orb-pulse,
-    .mobile-terminal-scan {
+    .mobile-text-shimmer {
       animation: none !important;
     }
 
