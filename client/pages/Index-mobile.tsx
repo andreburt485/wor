@@ -622,6 +622,9 @@ export default function Index() {
               variants={premiumVariants}
             >
               <motion.button
+                onClick={() => {
+                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="mobile-glow-button px-10 py-4 rounded-2xl text-primary-foreground font-bold relative overflow-hidden group"
                 whileHover={{
                   y: -5,
@@ -644,6 +647,9 @@ export default function Index() {
               </motion.button>
 
               <motion.button
+                onClick={() => {
+                  document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="px-10 py-4 rounded-2xl mobile-premium-card text-foreground font-bold border-2 border-transparent relative overflow-hidden group"
                 whileHover={{
                   y: -5,
