@@ -888,7 +888,7 @@ export default function Index() {
                     .getElementById("about")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="font-poppins px-12 py-5 rounded-2xl text-white font-bold relative overflow-hidden group shadow-2xl"
+                className="font-poppins px-12 py-5 rounded-2xl text-white font-bold relative overflow-hidden group shadow-2xl mobile-button-enhanced mobile-fab mobile-touch-feedback"
                 whileHover={{
                   y: -12,
                   scale: 1.08,
