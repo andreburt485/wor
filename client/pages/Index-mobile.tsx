@@ -545,7 +545,7 @@ export default function Index() {
         {/* Enhanced Hero Section */}
         <section
           id="home"
-          className="min-h-screen flex items-center justify-center px-4 pt-16 pb-8 relative overflow-hidden mobile-ambient-glow"
+          className="min-h-screen flex items-start justify-center px-4 pt-8 pb-8 relative overflow-hidden mobile-ambient-glow"
         >
           {/* Removed floating shapes */}
 
