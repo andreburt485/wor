@@ -732,14 +732,46 @@ export default function Index() {
               </div>
             </motion.div>
 
-            {/* Enhanced description with better spacing */}
-            <motion.p
-              className="text-base mb-10 text-muted-foreground leading-relaxed px-4"
+            {/* Enhanced description with sophisticated typography */}
+            <motion.div
+              className="mb-10 px-4 relative"
               variants={premiumVariants}
             >
-              Cutting-edge web development, mobile apps, and cloud solutions
-              that drive your business forward with modern AI integration.
-            </motion.p>
+              <p className="font-poppins text-lg sm:text-xl text-center leading-relaxed relative z-10">
+                <span
+                  className="text-white/90"
+                  style={{
+                    textShadow: "0 0 15px rgba(59, 130, 246, 0.3), 0 0 30px rgba(34, 211, 238, 0.2)",
+                    filter: "drop-shadow(0 0 8px rgba(73, 146, 255, 0.4))"
+                  }}
+                >
+                  Cutting-edge web development, mobile apps, and cloud solutions
+                  that drive your business forward with modern{" "}
+                  <span
+                    className="warm-glow-text font-semibold"
+                    style={{
+                      background: "linear-gradient(135deg, #60a5fa 0%, #34d399 50%, #a78bfa 100%)",
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      animation: "gentle-pulse 3s ease-in-out infinite"
+                    }}
+                  >
+                    AI integration
+                  </span>
+                  .
+                </span>
+              </p>
+
+              {/* Subtle background glow */}
+              <div
+                className="absolute inset-0 blur-2xl opacity-20"
+                style={{
+                  background: "radial-gradient(ellipse, rgba(73, 146, 255, 0.3) 0%, transparent 70%)",
+                  transform: "scale(1.2)"
+                }}
+              />
+            </motion.div>
 
             {/* Removed terminal section */}
 
