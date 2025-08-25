@@ -527,22 +527,8 @@ export default function Index() {
 
           <h1 className="text-lg font-bold mobile-premium-text">KOR DIGITAL</h1>
 
-          <div className="flex items-center space-x-2">
-            <motion.button
-              className="p-2 rounded-lg mobile-premium-card mobile-tilt-card"
-              whileHover={{ scale: 1.05, rotate: 12 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Moon className="w-5 h-5 text-blue-400" />
-            </motion.button>
-            <motion.button
-              className="p-2 rounded-lg mobile-premium-card mobile-tilt-card"
-              whileHover={{ scale: 1.05, rotate: -12 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Zap className="w-5 h-5 text-green-400" />
-            </motion.button>
-          </div>
+          {/* Header right side - removed night/retro mode buttons */}
+          <div className="w-12 h-8"></div>
         </div>
       </header>
 
