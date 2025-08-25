@@ -635,6 +635,76 @@
   }
 }
 
+/* Corner Ribbon for Most Popular */
+.corner-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  overflow: hidden;
+  width: 90px;
+  height: 90px;
+  text-align: right;
+}
+
+.corner-ribbon span {
+  position: absolute;
+  top: 19px;
+  right: -21px;
+  display: inline-block;
+  width: 100px;
+  padding: 7px 0;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(45deg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.corner-ribbon span::before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #1d4ed8;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #1d4ed8;
+}
+
+.corner-ribbon span::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #1d4ed8;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #1d4ed8;
+}
+
+/* Ribbon animation */
+@keyframes ribbon-entrance {
+  0% {
+    transform: rotate(45deg) translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(45deg) translateX(0);
+    opacity: 1;
+  }
+}
+
+.corner-ribbon span {
+  animation: ribbon-entrance 0.6s ease-out 0.3s both;
+}
+
 /* Interactive Tilt Effects */
 .mobile-tilt-card {
   transform-style: preserve-3d;
