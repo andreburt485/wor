@@ -577,46 +577,7 @@ export default function Index() {
               that drive your business forward.
             </motion.p>
 
-            {/* Enhanced Terminal Preview */}
-            <motion.div
-              className="mb-8 p-6 mobile-terminal-enhanced rounded-xl text-left text-sm font-mono text-green-400"
-              variants={premiumVariants}
-            >
-              <div className="mb-3 text-green-300 font-bold">
-                SYSTEM STATUS: OPERATIONAL
-              </div>
-              <div className="space-y-2 text-xs">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1, duration: 0.5 }}
-                >
-                  [ACTIVE] CUSTOM SOFTWARE SOLUTIONS
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.2, duration: 0.5 }}
-                >
-                  [ACTIVE] WEB APPLICATION DEVELOPMENT
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.4, duration: 0.5 }}
-                >
-                  [ACTIVE] AI/ML INTEGRATION SERVICES
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.6, duration: 0.5 }}
-                  className="text-yellow-400"
-                >
-                  [PRIORITY] LEGACY SYSTEM MODERNIZATION
-                </motion.div>
-              </div>
-            </motion.div>
+            {/* Removed terminal section */}
 
             <motion.div
               className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
