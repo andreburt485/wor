@@ -935,7 +935,7 @@ export default function Index() {
                     .getElementById("portfolio")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="font-poppins px-12 py-5 rounded-2xl font-bold border-2 relative overflow-hidden group backdrop-blur-xl"
+                className="font-poppins px-12 py-5 rounded-2xl font-bold border-2 relative overflow-hidden group backdrop-blur-xl mobile-button-enhanced mobile-fab mobile-touch-feedback"
                 whileHover={{
                   y: -12,
                   scale: 1.05,
