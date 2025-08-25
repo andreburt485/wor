@@ -481,13 +481,10 @@ export default function Index() {
               className="fixed top-0 left-0 w-80 h-full mobile-premium-card z-50 p-6"
             >
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-xl font-bold mobile-premium-text">
-                  KOR DIGITAL
-                </h2>
+                <h2 className="text-xl font-bold mobile-premium-text">kor</h2>
                 <motion.button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 rounded-lg hover:bg-accent transition-colors mobile-tilt-card"
-                  whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <X className="w-6 h-6" />
@@ -509,7 +506,6 @@ export default function Index() {
                         setActiveSection(item.id);
                         setIsMobileMenuOpen(false);
                       }}
-                      whileHover={{ x: 8, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
                       <IconComponent className="w-5 h-5 text-blue-400" />
@@ -535,26 +531,17 @@ export default function Index() {
       </AnimatePresence>
 
       {/* Enhanced Mobile Header */}
-      <header className="fixed top-0 left-0 right-0 z-30 mobile-premium-card">
-        <div className="flex items-center justify-between px-4 py-3">
-          <motion.button
-            onClick={() => setIsMobileMenuOpen(true)}
-            className="p-2 rounded-lg mobile-premium-card mobile-tilt-card"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Menu className="w-6 h-6" />
-          </motion.button>
-
-          <h1 className="text-lg font-bold mobile-premium-text">KOR DIGITAL</h1>
-
-          {/* Header right side - removed night/retro mode buttons */}
-          <div className="w-12 h-8"></div>
-        </div>
-      </header>
+      {/* Menu button in corner */}
+      <motion.button
+        onClick={() => setIsMobileMenuOpen(true)}
+        className="fixed top-4 left-4 z-30 p-2 rounded-lg mobile-premium-card mobile-tilt-card"
+        whileTap={{ scale: 0.95 }}
+      >
+        <Menu className="w-6 h-6" />
+      </motion.button>
 
       {/* Main Content */}
-      <main className="pt-16 relative z-10">
+      <main className="relative z-10">
         {/* Enhanced Hero Section */}
         <section
           id="home"
@@ -591,8 +578,8 @@ export default function Index() {
                   "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(37, 99, 235, 0.3)",
               }}
             >
-              <span className="relative z-10">KOR DIGITAL</span>
-              <div className="absolute inset-0 blur-lg bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent opacity-30 animate-pulse" />
+              <span className="relative z-10 text-white">KOR</span>
+              <div className="absolute inset-0 blur-lg bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent opacity-20 animate-pulse" />
             </motion.h1>
 
             {/* Enhanced subtitle with glow */}
@@ -625,6 +612,11 @@ export default function Index() {
               variants={premiumVariants}
             >
               <motion.button
+                onClick={() => {
+                  document
+                    .getElementById("about")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="mobile-glow-button px-10 py-4 rounded-2xl text-primary-foreground font-bold relative overflow-hidden group"
                 whileHover={{
                   y: -5,
@@ -647,6 +639,11 @@ export default function Index() {
               </motion.button>
 
               <motion.button
+                onClick={() => {
+                  document
+                    .getElementById("portfolio")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="px-10 py-4 rounded-2xl mobile-premium-card text-foreground font-bold border-2 border-transparent relative overflow-hidden group"
                 whileHover={{
                   y: -5,
@@ -1348,9 +1345,7 @@ export default function Index() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-bold mobile-premium-text">
-                KOR DIGITAL
-              </h3>
+              <h3 className="text-lg font-bold mobile-premium-text">kor</h3>
             </motion.div>
 
             <motion.div
@@ -1361,12 +1356,10 @@ export default function Index() {
               viewport={{ once: true }}
             >
               {[
-                { Icon: Github, href: "#" },
                 { Icon: Twitter, href: "#" },
-                { Icon: Linkedin, href: "#" },
-                { Icon: Mail, href: "mailto:contact@kor.dev" },
                 { Icon: Instagram, href: "#" },
                 { Icon: MessageCircle, href: "#" },
+                { Icon: Mail, href: "mailto:contact@kor.dev" },
               ].map(({ Icon, href }, index) => (
                 <motion.a
                   key={index}
@@ -1381,22 +1374,6 @@ export default function Index() {
                   <Icon className="w-5 h-5" />
                 </motion.a>
               ))}
-            </motion.div>
-
-            <motion.div
-              className="text-xs text-muted-foreground space-y-1"
-              variants={premiumVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              <div>COPYRIGHT (C) 2024 KOR SYSTEMS - ALL RIGHTS RESERVED</div>
-              <div>
-                contact@kor.dev •{" "}
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Privacy Policy
-                </a>
-              </div>
             </motion.div>
           </div>
         </footer>
