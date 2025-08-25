@@ -460,12 +460,12 @@ export default function Index() {
               width: `${3 + Math.random() * 4}px`,
               height: `${3 + Math.random() * 4}px`,
               background: [
-                'radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, transparent 70%)',
-                'radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, transparent 70%)',
-                'radial-gradient(circle, rgba(34, 197, 94, 0.7) 0%, transparent 70%)',
-                'radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, transparent 70%)',
-                'radial-gradient(circle, rgba(34, 211, 238, 0.6) 0%, transparent 70%)'
-              ][i % 5]
+                "radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(34, 197, 94, 0.7) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(34, 211, 238, 0.6) 0%, transparent 70%)",
+              ][i % 5],
             }}
           />
         ))}
@@ -478,21 +478,21 @@ export default function Index() {
             key={`orb-${i}`}
             className="absolute rounded-full"
             style={{
-              left: `${20 + (i * 15) % 60}%`,
-              top: `${30 + (i * 20) % 40}%`,
-              width: `${100 + (i * 50)}px`,
-              height: `${100 + (i * 50)}px`,
+              left: `${20 + ((i * 15) % 60)}%`,
+              top: `${30 + ((i * 20) % 40)}%`,
+              width: `${100 + i * 50}px`,
+              height: `${100 + i * 50}px`,
               background: [
-                'radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)',
-                'radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%)',
-                'radial-gradient(circle, rgba(34, 197, 94, 0.09) 0%, transparent 70%)',
-                'radial-gradient(circle, rgba(236, 72, 153, 0.07) 0%, transparent 70%)',
-                'radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, transparent 70%)',
-                'radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 70%)'
+                "radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(34, 197, 94, 0.09) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(236, 72, 153, 0.07) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 70%)",
               ][i],
-              filter: 'blur(30px)',
-              animation: `gentle-breath ${8 + (i * 2)}s ease-in-out infinite ${i * 1.5}s`,
-              transform: 'translateZ(0)'
+              filter: "blur(30px)",
+              animation: `gentle-breath ${8 + i * 2}s ease-in-out infinite ${i * 1.5}s`,
+              transform: "translateZ(0)",
             }}
           />
         ))}
@@ -574,7 +574,7 @@ export default function Index() {
         whileHover={{
           scale: 1.1,
           rotate: 5,
-          boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)"
+          boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)",
         }}
         whileTap={{ scale: 0.9, rotate: -5 }}
         animate={{
@@ -582,13 +582,13 @@ export default function Index() {
           boxShadow: [
             "0 5px 15px rgba(59, 130, 246, 0.2)",
             "0 8px 20px rgba(59, 130, 246, 0.3)",
-            "0 5px 15px rgba(59, 130, 246, 0.2)"
-          ]
+            "0 5px 15px rgba(59, 130, 246, 0.2)",
+          ],
         }}
         transition={{
           duration: 3,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: "easeInOut",
         }}
       >
         <Menu className="w-6 h-6" />
@@ -597,7 +597,7 @@ export default function Index() {
         <div
           className="absolute inset-0 rounded-xl border border-blue-400/30"
           style={{
-            animation: 'border-pulse 2s ease-in-out infinite'
+            animation: "border-pulse 2s ease-in-out infinite",
           }}
         />
       </motion.button>
@@ -625,7 +625,7 @@ export default function Index() {
                 background: "rgba(255, 255, 255, 0.1)",
                 border: "2px solid transparent",
                 backgroundClip: "padding-box",
-                boxShadow: "0 0 30px rgba(59, 130, 246, 0.2)"
+                boxShadow: "0 0 30px rgba(59, 130, 246, 0.2)",
               }}
               animate={{
                 y: [0, -8, 0],
@@ -633,30 +633,32 @@ export default function Index() {
                 boxShadow: [
                   "0 0 30px rgba(59, 130, 246, 0.2)",
                   "0 0 40px rgba(59, 130, 246, 0.4)",
-                  "0 0 30px rgba(59, 130, 246, 0.2)"
-                ]
+                  "0 0 30px rgba(59, 130, 246, 0.2)",
+                ],
               }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 0 50px rgba(59, 130, 246, 0.5)"
+                boxShadow: "0 0 50px rgba(59, 130, 246, 0.5)",
               }}
             >
               {/* Dynamic Border Effect */}
               <div
                 className="absolute inset-0 rounded-full pointer-events-none"
                 style={{
-                  background: "conic-gradient(from 0deg, rgba(255, 255, 255, 0.2) 0deg, rgba(73, 146, 255, 0.4) 90deg, rgba(255, 255, 255, 0.2) 180deg, rgba(73, 146, 255, 0.4) 270deg, rgba(255, 255, 255, 0.2) 360deg)",
+                  background:
+                    "conic-gradient(from 0deg, rgba(255, 255, 255, 0.2) 0deg, rgba(73, 146, 255, 0.4) 90deg, rgba(255, 255, 255, 0.2) 180deg, rgba(73, 146, 255, 0.4) 270deg, rgba(255, 255, 255, 0.2) 360deg)",
                   padding: "2px",
                   borderRadius: "inherit",
                   mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
                   maskComposite: "xor",
-                  WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                  WebkitMaskComposite: "xor"
+                  WebkitMask:
+                    "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                  WebkitMaskComposite: "xor",
                 }}
               />
 
@@ -714,8 +716,10 @@ export default function Index() {
               className="font-poppins text-6xl sm:text-7xl md:text-8xl font-bold mb-6 relative text-white tracking-tight"
               variants={premiumVariants}
               style={{
-                filter: "drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))",
-                textShadow: "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(37, 99, 235, 0.4)"
+                filter:
+                  "drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))",
+                textShadow:
+                  "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(37, 99, 235, 0.4)",
               }}
             >
               {/* Individual letter animations with enhanced liveliness */}
@@ -724,18 +728,18 @@ export default function Index() {
                 animate={{
                   y: [0, -5, 0],
                   rotateZ: [0, 2, 0],
-                  scale: [1, 1.05, 1]
+                  scale: [1, 1.05, 1],
                 }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 0
+                  delay: 0,
                 }}
                 whileHover={{
                   scale: 1.2,
                   rotateZ: 10,
-                  textShadow: "0 0 50px rgba(59, 130, 246, 1)"
+                  textShadow: "0 0 50px rgba(59, 130, 246, 1)",
                 }}
               >
                 K
@@ -745,18 +749,18 @@ export default function Index() {
                 animate={{
                   y: [0, -8, 0],
                   rotateZ: [0, -2, 0],
-                  scale: [1, 1.08, 1]
+                  scale: [1, 1.08, 1],
                 }}
                 transition={{
                   duration: 3.5,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 0.3
+                  delay: 0.3,
                 }}
                 whileHover={{
                   scale: 1.2,
                   rotateZ: -10,
-                  textShadow: "0 0 50px rgba(168, 85, 247, 1)"
+                  textShadow: "0 0 50px rgba(168, 85, 247, 1)",
                 }}
               >
                 o
@@ -766,18 +770,18 @@ export default function Index() {
                 animate={{
                   y: [0, -6, 0],
                   rotateZ: [0, 3, 0],
-                  scale: [1, 1.06, 1]
+                  scale: [1, 1.06, 1],
                 }}
                 transition={{
                   duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 0.6
+                  delay: 0.6,
                 }}
                 whileHover={{
                   scale: 1.2,
                   rotateZ: 15,
-                  textShadow: "0 0 50px rgba(34, 197, 94, 1)"
+                  textShadow: "0 0 50px rgba(34, 197, 94, 1)",
                 }}
               >
                 r
@@ -785,16 +789,14 @@ export default function Index() {
             </motion.h1>
 
             {/* Enhanced subtitle with sophisticated desktop-level styling */}
-            <motion.div
-              className="relative mb-4"
-              variants={premiumVariants}
-            >
+            <motion.div className="relative mb-4" variants={premiumVariants}>
               {/* Background glow effect */}
               <div
                 className="absolute inset-0 blur-3xl opacity-30 animate-pulse"
                 style={{
-                  background: "radial-gradient(ellipse, rgba(73, 146, 255, 0.6) 0%, rgba(34, 211, 238, 0.4) 50%, transparent 70%)",
-                  transform: "scale(1.5)"
+                  background:
+                    "radial-gradient(ellipse, rgba(73, 146, 255, 0.6) 0%, rgba(34, 211, 238, 0.4) 50%, transparent 70%)",
+                  transform: "scale(1.5)",
                 }}
               />
 
@@ -802,7 +804,8 @@ export default function Index() {
                 <span
                   className="relative inline-block text-white"
                   style={{
-                    filter: "drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))"
+                    filter:
+                      "drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))",
                   }}
                 >
                   <span className="warm-glow-text animate-warm-glow-pulse">
@@ -812,7 +815,7 @@ export default function Index() {
                         className="inline-block"
                         style={{
                           animationDelay: `${i * 0.1}s`,
-                          animation: "gentle-float 4s ease-in-out infinite"
+                          animation: "gentle-float 4s ease-in-out infinite",
                         }}
                       >
                         {letter === " " ? "\u00A0" : letter}
@@ -832,8 +835,9 @@ export default function Index() {
                 <span
                   className="text-white/90"
                   style={{
-                    textShadow: "0 0 15px rgba(59, 130, 246, 0.3), 0 0 30px rgba(34, 211, 238, 0.2)",
-                    filter: "drop-shadow(0 0 8px rgba(73, 146, 255, 0.4))"
+                    textShadow:
+                      "0 0 15px rgba(59, 130, 246, 0.3), 0 0 30px rgba(34, 211, 238, 0.2)",
+                    filter: "drop-shadow(0 0 8px rgba(73, 146, 255, 0.4))",
                   }}
                 >
                   Cutting-edge web development, mobile apps, and cloud solutions
@@ -845,8 +849,9 @@ export default function Index() {
               <div
                 className="absolute inset-0 blur-2xl opacity-20"
                 style={{
-                  background: "radial-gradient(ellipse, rgba(73, 146, 255, 0.3) 0%, transparent 70%)",
-                  transform: "scale(1.2)"
+                  background:
+                    "radial-gradient(ellipse, rgba(73, 146, 255, 0.3) 0%, transparent 70%)",
+                  transform: "scale(1.2)",
                 }}
               />
             </motion.div>
@@ -868,8 +873,9 @@ export default function Index() {
                 whileHover={{
                   y: -12,
                   scale: 1.08,
-                  boxShadow: "0 30px 60px rgba(59, 130, 246, 0.6), 0 0 100px rgba(59, 130, 246, 0.5)",
-                  rotateX: 5
+                  boxShadow:
+                    "0 30px 60px rgba(59, 130, 246, 0.6), 0 0 100px rgba(59, 130, 246, 0.5)",
+                  rotateX: 5,
                 }}
                 whileTap={{ scale: 0.95, rotateX: -5 }}
                 animate={{
@@ -877,19 +883,21 @@ export default function Index() {
                   boxShadow: [
                     "0 15px 35px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)",
                     "0 20px 45px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.3)",
-                    "0 15px 35px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)"
-                  ]
+                    "0 15px 35px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)",
+                  ],
                 }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
                 style={{
-                  background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
-                  boxShadow: "0 15px 35px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)",
+                  background:
+                    "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
+                  boxShadow:
+                    "0 15px 35px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)",
                   filter: "drop-shadow(0 0 15px rgba(59, 130, 246, 0.3))",
-                  border: "1px solid rgba(59, 130, 246, 0.3)"
+                  border: "1px solid rgba(59, 130, 246, 0.3)",
                 }}
               >
                 <span className="relative z-10 flex items-center justify-center text-lg">
@@ -900,7 +908,6 @@ export default function Index() {
                 {/* Multiple layer effects */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
               </motion.button>
 
               <motion.button
@@ -914,8 +921,9 @@ export default function Index() {
                   y: -12,
                   scale: 1.05,
                   borderColor: "rgba(59, 130, 246, 0.8)",
-                  boxShadow: "0 25px 50px rgba(59, 130, 246, 0.3), 0 0 80px rgba(59, 130, 246, 0.2)",
-                  rotateX: 5
+                  boxShadow:
+                    "0 25px 50px rgba(59, 130, 246, 0.3), 0 0 80px rgba(59, 130, 246, 0.2)",
+                  rotateX: 5,
                 }}
                 whileTap={{ scale: 0.95, rotateX: -5 }}
                 animate={{
@@ -923,36 +931,38 @@ export default function Index() {
                   borderColor: [
                     "rgba(59, 130, 246, 0.3)",
                     "rgba(59, 130, 246, 0.5)",
-                    "rgba(59, 130, 246, 0.3)"
+                    "rgba(59, 130, 246, 0.3)",
                   ],
                   boxShadow: [
                     "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
                     "0 15px 40px rgba(59, 130, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)",
-                    "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
-                  ]
+                    "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                  ],
                 }}
                 transition={{
                   duration: 4,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
                 style={{
                   background: "rgba(255, 255, 255, 0.08)",
                   backdropFilter: "blur(25px)",
-                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                  boxShadow:
+                    "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
                   borderColor: "rgba(59, 130, 246, 0.3)",
-                  filter: "drop-shadow(0 0 10px rgba(59, 130, 246, 0.2))"
+                  filter: "drop-shadow(0 0 10px rgba(59, 130, 246, 0.2))",
                 }}
               >
                 <span className="relative z-10 text-lg">
                   <span
                     className="warm-glow-text font-semibold"
                     style={{
-                      background: "linear-gradient(135deg, #60a5fa 0%, #34d399 50%, #a78bfa 100%)",
+                      background:
+                        "linear-gradient(135deg, #60a5fa 0%, #34d399 50%, #a78bfa 100%)",
                       backgroundClip: "text",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
-                      textShadow: "0 0 20px rgba(59, 130, 246, 0.5)"
+                      textShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
                     }}
                   >
                     View Portfolio
@@ -964,12 +974,15 @@ export default function Index() {
                 <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-50" />
 
                 {/* Border glow effect */}
-                <div className="absolute inset-0 rounded-2xl border border-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                     style={{
-                       background: "linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(34, 211, 238, 0.3)) border-box",
-                       mask: "linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)",
-                       maskComposite: "subtract"
-                     }} />
+                <div
+                  className="absolute inset-0 rounded-2xl border border-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(34, 211, 238, 0.3)) border-box",
+                    mask: "linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)",
+                    maskComposite: "subtract",
+                  }}
+                />
               </motion.button>
             </motion.div>
           </motion.div>
@@ -1034,21 +1047,21 @@ export default function Index() {
                 whileHover={{
                   scale: 1.05,
                   y: -5,
-                  boxShadow: "0 15px 30px rgba(59, 130, 246, 0.3)"
+                  boxShadow: "0 15px 30px rgba(59, 130, 246, 0.3)",
                 }}
                 animate={{
                   y: [0, -3, 0],
                   boxShadow: [
                     "0 8px 20px rgba(59, 130, 246, 0.2)",
                     "0 12px 25px rgba(59, 130, 246, 0.3)",
-                    "0 8px 20px rgba(59, 130, 246, 0.2)"
-                  ]
+                    "0 8px 20px rgba(59, 130, 246, 0.2)",
+                  ],
                 }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 0
+                  delay: 0,
                 }}
               >
                 <motion.div
@@ -1058,13 +1071,13 @@ export default function Index() {
                     color: [
                       "rgb(59, 130, 246)",
                       "rgb(168, 85, 247)",
-                      "rgb(59, 130, 246)"
-                    ]
+                      "rgb(59, 130, 246)",
+                    ],
                   }}
                   transition={{
                     duration: 2,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: "easeInOut",
                   }}
                 >
                   {counters.projects}+
@@ -1079,21 +1092,21 @@ export default function Index() {
                 whileHover={{
                   scale: 1.05,
                   y: -5,
-                  boxShadow: "0 15px 30px rgba(168, 85, 247, 0.3)"
+                  boxShadow: "0 15px 30px rgba(168, 85, 247, 0.3)",
                 }}
                 animate={{
                   y: [0, -4, 0],
                   boxShadow: [
                     "0 8px 20px rgba(168, 85, 247, 0.2)",
                     "0 12px 25px rgba(168, 85, 247, 0.3)",
-                    "0 8px 20px rgba(168, 85, 247, 0.2)"
-                  ]
+                    "0 8px 20px rgba(168, 85, 247, 0.2)",
+                  ],
                 }}
                 transition={{
                   duration: 3.5,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 0.5
+                  delay: 0.5,
                 }}
               >
                 <motion.div
@@ -1103,20 +1116,23 @@ export default function Index() {
                     color: [
                       "rgb(168, 85, 247)",
                       "rgb(34, 197, 94)",
-                      "rgb(168, 85, 247)"
-                    ]
+                      "rgb(168, 85, 247)",
+                    ],
                   }}
                   transition={{
                     duration: 2.5,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: 0.3
+                    delay: 0.3,
                   }}
                 >
                   {counters.clients}+
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Clients</div>
-                <div className="absolute inset-0 border border-purple-400/30 rounded-lg animate-pulse" style={{ animationDelay: '0.5s' }} />
+                <div
+                  className="absolute inset-0 border border-purple-400/30 rounded-lg animate-pulse"
+                  style={{ animationDelay: "0.5s" }}
+                />
               </motion.div>
 
               <motion.div
@@ -1124,21 +1140,21 @@ export default function Index() {
                 whileHover={{
                   scale: 1.05,
                   y: -5,
-                  boxShadow: "0 15px 30px rgba(34, 197, 94, 0.3)"
+                  boxShadow: "0 15px 30px rgba(34, 197, 94, 0.3)",
                 }}
                 animate={{
                   y: [0, -2, 0],
                   boxShadow: [
                     "0 8px 20px rgba(34, 197, 94, 0.2)",
                     "0 12px 25px rgba(34, 197, 94, 0.3)",
-                    "0 8px 20px rgba(34, 197, 94, 0.2)"
-                  ]
+                    "0 8px 20px rgba(34, 197, 94, 0.2)",
+                  ],
                 }}
                 transition={{
                   duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 1
+                  delay: 1,
                 }}
               >
                 <motion.div
@@ -1148,20 +1164,23 @@ export default function Index() {
                     color: [
                       "rgb(34, 197, 94)",
                       "rgb(236, 72, 153)",
-                      "rgb(34, 197, 94)"
-                    ]
+                      "rgb(34, 197, 94)",
+                    ],
                   }}
                   transition={{
                     duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: 0.6
+                    delay: 0.6,
                   }}
                 >
                   {counters.years}+
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Years</div>
-                <div className="absolute inset-0 border border-green-400/30 rounded-lg animate-pulse" style={{ animationDelay: '1s' }} />
+                <div
+                  className="absolute inset-0 border border-green-400/30 rounded-lg animate-pulse"
+                  style={{ animationDelay: "1s" }}
+                />
               </motion.div>
             </motion.div>
           </div>
@@ -1194,21 +1213,21 @@ export default function Index() {
                     scale: 1.02,
                     y: -5,
                     rotateY: 2,
-                    boxShadow: "0 20px 40px rgba(73, 146, 255, 0.3)"
+                    boxShadow: "0 20px 40px rgba(73, 146, 255, 0.3)",
                   }}
                   animate={{
                     y: [0, -2, 0],
                     boxShadow: [
                       "0 0 30px rgba(73, 146, 255, 0.15)",
                       "0 0 40px rgba(73, 146, 255, 0.25)",
-                      "0 0 30px rgba(73, 146, 255, 0.15)"
-                    ]
+                      "0 0 30px rgba(73, 146, 255, 0.15)",
+                    ],
                   }}
                   transition={{
                     duration: 4 + index,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: index * 0.5
+                    delay: index * 0.5,
                   }}
                 >
                   <div
@@ -1298,21 +1317,21 @@ export default function Index() {
                       scale: 1.03,
                       y: -8,
                       boxShadow: "0 15px 30px rgba(73, 146, 255, 0.2)",
-                      rotateX: 3
+                      rotateX: 3,
                     }}
                     animate={{
                       y: [0, -1, 0],
                       borderColor: [
                         "rgba(73, 146, 255, 0.2)",
                         "rgba(168, 85, 247, 0.2)",
-                        "rgba(73, 146, 255, 0.2)"
-                      ]
+                        "rgba(73, 146, 255, 0.2)",
+                      ],
                     }}
                     transition={{
                       duration: 5 + (index % 3),
                       repeat: Infinity,
                       ease: "easeInOut",
-                      delay: index * 0.3
+                      delay: index * 0.3,
                     }}
                   >
                     <div
@@ -1391,7 +1410,7 @@ export default function Index() {
                     scale: 1.05,
                     y: -10,
                     rotateY: 5,
-                    boxShadow: "0 25px 50px rgba(73, 146, 255, 0.4)"
+                    boxShadow: "0 25px 50px rgba(73, 146, 255, 0.4)",
                   }}
                   animate={{
                     y: [0, -3, 0],
@@ -1399,14 +1418,14 @@ export default function Index() {
                     boxShadow: [
                       "0 10px 25px rgba(73, 146, 255, 0.2)",
                       "0 15px 35px rgba(73, 146, 255, 0.3)",
-                      "0 10px 25px rgba(73, 146, 255, 0.2)"
-                    ]
+                      "0 10px 25px rgba(73, 146, 255, 0.2)",
+                    ],
                   }}
                   transition={{
                     duration: 4 + (index % 2),
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: index * 0.4
+                    delay: index * 0.4,
                   }}
                 >
                   <div
@@ -1516,7 +1535,7 @@ export default function Index() {
                     rotateY: plan.popular ? 8 : 5,
                     boxShadow: plan.popular
                       ? "0 30px 60px rgba(59, 130, 246, 0.5)"
-                      : "0 20px 40px rgba(73, 146, 255, 0.3)"
+                      : "0 20px 40px rgba(73, 146, 255, 0.3)",
                   }}
                   animate={{
                     y: [0, plan.popular ? -5 : -2, 0],
@@ -1525,19 +1544,19 @@ export default function Index() {
                       ? [
                           "0 15px 30px rgba(59, 130, 246, 0.4)",
                           "0 20px 40px rgba(59, 130, 246, 0.6)",
-                          "0 15px 30px rgba(59, 130, 246, 0.4)"
+                          "0 15px 30px rgba(59, 130, 246, 0.4)",
                         ]
                       : [
                           "0 10px 20px rgba(73, 146, 255, 0.2)",
                           "0 15px 30px rgba(73, 146, 255, 0.3)",
-                          "0 10px 20px rgba(73, 146, 255, 0.2)"
-                        ]
+                          "0 10px 20px rgba(73, 146, 255, 0.2)",
+                        ],
                   }}
                   transition={{
                     duration: plan.popular ? 3 : 4,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: index * 0.5
+                    delay: index * 0.5,
                   }}
                 >
                   <div
@@ -1673,7 +1692,7 @@ export default function Index() {
                     y: -8,
                     scale: 1.05,
                     rotateZ: 2,
-                    boxShadow: "0 15px 30px rgba(73, 146, 255, 0.3)"
+                    boxShadow: "0 15px 30px rgba(73, 146, 255, 0.3)",
                   }}
                   animate={{
                     y: [0, -2, 0],
@@ -1681,14 +1700,14 @@ export default function Index() {
                     boxShadow: [
                       "0 5px 15px rgba(73, 146, 255, 0.2)",
                       "0 8px 20px rgba(73, 146, 255, 0.3)",
-                      "0 5px 15px rgba(73, 146, 255, 0.2)"
-                    ]
+                      "0 5px 15px rgba(73, 146, 255, 0.2)",
+                    ],
                   }}
                   transition={{
                     duration: 3 + (index % 2),
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: index * 0.4
+                    delay: index * 0.4,
                   }}
                 >
                   <contact.icon
@@ -1904,7 +1923,7 @@ export default function Index() {
                     y: -8,
                     scale: 1.2,
                     rotateZ: 5,
-                    color: "rgb(59, 130, 246)"
+                    color: "rgb(59, 130, 246)",
                   }}
                   whileTap={{ scale: 0.8, rotateZ: -5 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -1913,13 +1932,13 @@ export default function Index() {
                   animate={{
                     y: [0, -3, 0],
                     rotateZ: [0, 2, 0],
-                    scale: [1, 1.05, 1]
+                    scale: [1, 1.05, 1],
                   }}
                   transition={{
                     duration: 4 + index,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: index * 0.6
+                    delay: index * 0.6,
                   }}
                 >
                   <Icon className="w-5 h-5" />

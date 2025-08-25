@@ -56,19 +56,26 @@ body > div {
 
 /* Enhanced warm glow pulse animation */
 @keyframes animate-warm-glow-pulse {
-  0%, 100% {
-    text-shadow: 0 0 5px rgba(73, 146, 255, 0.3), 0 0 15px rgba(59, 130, 246, 0.2);
+  0%,
+  100% {
+    text-shadow:
+      0 0 5px rgba(73, 146, 255, 0.3),
+      0 0 15px rgba(59, 130, 246, 0.2);
     filter: brightness(1);
   }
   50% {
-    text-shadow: 0 0 10px rgba(73, 146, 255, 0.6), 0 0 25px rgba(59, 130, 246, 0.4), 0 0 35px rgba(34, 211, 238, 0.3);
+    text-shadow:
+      0 0 10px rgba(73, 146, 255, 0.6),
+      0 0 25px rgba(59, 130, 246, 0.4),
+      0 0 35px rgba(34, 211, 238, 0.3);
     filter: brightness(1.2);
   }
 }
 
 /* Gentle pulse animation */
 @keyframes gentle-pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.8;
   }
@@ -80,7 +87,8 @@ body > div {
 
 /* Gentle breath animation for background orbs */
 @keyframes gentle-breath {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1) translateZ(0);
     opacity: 0.6;
   }
@@ -92,7 +100,8 @@ body > div {
 
 /* Border pulse animation */
 @keyframes border-pulse {
-  0%, 100% {
+  0%,
+  100% {
     border-color: rgba(59, 130, 246, 0.3);
     box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.3);
   }
@@ -104,7 +113,8 @@ body > div {
 
 /* Lively float animation */
 @keyframes lively-float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg) translateZ(0);
   }
   25% {
@@ -120,7 +130,8 @@ body > div {
 
 /* Color shift animation */
 @keyframes color-shift {
-  0%, 100% {
+  0%,
+  100% {
     filter: hue-rotate(0deg) brightness(1);
   }
   25% {
