@@ -300,56 +300,64 @@ export default function Index() {
       description: "Modern shopping experience with AI recommendations",
       tech: ["React", "Node.js", "AI/ML"],
       gradient: "from-blue-500/10 to-purple-500/10",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=240&fit=crop&crop=center",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "Healthcare App",
       description: "Telemedicine platform connecting patients and doctors",
       tech: ["React Native", "Firebase", "WebRTC"],
       gradient: "from-green-500/10 to-blue-500/10",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=240&fit=crop&crop=center",
+      image:
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "FinTech Dashboard",
       description: "Real-time financial analytics and trading platform",
       tech: ["Vue.js", "Python", "WebSocket"],
       gradient: "from-yellow-500/10 to-orange-500/10",
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=240&fit=crop&crop=center",
+      image:
+        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "Smart IoT System",
       description: "Connected devices management platform",
       tech: ["Angular", "IoT", "Cloud"],
       gradient: "from-purple-500/10 to-pink-500/10",
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=240&fit=crop&crop=center",
+      image:
+        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "AI Analytics Suite",
       description: "Machine learning powered business intelligence platform",
       tech: ["Python", "TensorFlow", "React"],
       gradient: "from-cyan-500/10 to-blue-500/10",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=240&fit=crop&crop=center",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "Blockchain Wallet",
       description: "Secure cryptocurrency wallet with DeFi integration",
       tech: ["Solidity", "Web3.js", "Next.js"],
       gradient: "from-orange-500/10 to-red-500/10",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=240&fit=crop&crop=center",
+      image:
+        "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "Video Streaming App",
       description: "High-performance video platform with live streaming",
       tech: ["React Native", "WebRTC", "Node.js"],
       gradient: "from-red-500/10 to-pink-500/10",
-      image: "https://images.unsplash.com/photo-1626544827763-d516dce335e2?w=400&h=240&fit=crop&crop=center",
+      image:
+        "https://images.unsplash.com/photo-1626544827763-d516dce335e2?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "Cloud Monitoring Tool",
       description: "Real-time infrastructure monitoring and alerting system",
       tech: ["Go", "Docker", "Kubernetes"],
       gradient: "from-teal-500/10 to-green-500/10",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=240&fit=crop&crop=center",
+      image:
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=240&fit=crop&crop=center",
     },
   ];
 
@@ -565,7 +573,8 @@ export default function Index() {
               className="mb-8 inline-block px-6 py-3 mobile-floating-badge rounded-full text-sm font-medium relative"
               variants={floatingVariants}
               style={{
-                boxShadow: "0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1)"
+                boxShadow:
+                  "0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1)",
               }}
             >
               <Sparkles className="w-4 h-4 inline mr-2 animate-pulse" />
@@ -578,7 +587,8 @@ export default function Index() {
               className="text-5xl md:text-6xl font-bold mb-6 mobile-premium-text relative"
               variants={premiumVariants}
               style={{
-                textShadow: "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(37, 99, 235, 0.3)"
+                textShadow:
+                  "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(37, 99, 235, 0.3)",
               }}
             >
               <span className="relative z-10">KOR DIGITAL</span>
@@ -590,7 +600,7 @@ export default function Index() {
               className="text-xl mb-3 text-muted-foreground font-semibold relative"
               variants={premiumVariants}
               style={{
-                textShadow: "0 0 20px rgba(59, 130, 246, 0.2)"
+                textShadow: "0 0 20px rgba(59, 130, 246, 0.2)",
               }}
             >
               <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
@@ -619,12 +629,14 @@ export default function Index() {
                 whileHover={{
                   y: -5,
                   scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)"
+                  boxShadow:
+                    "0 20px 40px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
                 }}
                 whileTap={{ scale: 0.98 }}
                 style={{
-                  background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
-                  boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
+                  background:
+                    "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
+                  boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
                 }}
               >
                 <span className="relative z-10 flex items-center justify-center">
@@ -639,13 +651,13 @@ export default function Index() {
                 whileHover={{
                   y: -5,
                   scale: 1.02,
-                  borderColor: "rgba(59, 130, 246, 0.5)"
+                  borderColor: "rgba(59, 130, 246, 0.5)",
                 }}
                 whileTap={{ scale: 0.98 }}
                 style={{
                   background: "rgba(255, 255, 255, 0.05)",
                   backdropFilter: "blur(20px)",
-                  boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
+                  boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)",
                 }}
               >
                 <span className="relative z-10 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
@@ -658,7 +670,10 @@ export default function Index() {
         </section>
 
         {/* Enhanced About Us Section */}
-        <section id="about" className="px-4 py-16 relative mobile-section-enhanced">
+        <section
+          id="about"
+          className="px-4 py-16 relative mobile-section-enhanced"
+        >
           <div className="max-w-md mx-auto">
             <motion.h2
               className="text-3xl font-bold text-center mb-4 mobile-premium-text"
@@ -808,7 +823,10 @@ export default function Index() {
         </section>
 
         {/* Enhanced Services Section */}
-        <section id="services" className="px-4 py-16 relative mobile-section-enhanced">
+        <section
+          id="services"
+          className="px-4 py-16 relative mobile-section-enhanced"
+        >
           <div className="max-w-md mx-auto">
             <motion.h2
               className="text-3xl font-bold text-center mb-8 mobile-premium-text"
@@ -1005,7 +1023,8 @@ export default function Index() {
                   transition={{ delay: index * 0.1 }}
                   className={cn(
                     "mobile-premium-card mobile-tilt-card p-6 rounded-xl relative",
-                    plan.popular && "ring-2 ring-blue-500/50 mt-4 overflow-hidden",
+                    plan.popular &&
+                      "ring-2 ring-blue-500/50 mt-4 overflow-hidden",
                     !plan.popular && "overflow-hidden",
                   )}
                 >
