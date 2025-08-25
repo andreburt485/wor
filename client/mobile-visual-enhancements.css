@@ -580,8 +580,8 @@
   background: radial-gradient(
     circle,
     rgba(59, 130, 246, 0.03) 0%,
-    rgba(168, 85, 247, 0.02) 25%,
-    rgba(236, 72, 153, 0.015) 50%,
+    rgba(37, 99, 235, 0.02) 25%,
+    rgba(29, 78, 216, 0.015) 50%,
     transparent 70%
   );
   transform: translate(-50%, -50%);
