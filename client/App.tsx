@@ -16,6 +16,7 @@ import { UnifiedNotificationProvider } from "@/components/ui/unified-notificatio
 import { ErrorBoundary } from "@/components/ui/error-boundary";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import RibbonExtendedTest from "./pages/RibbonExtendedTest";
 
 // Optimized QueryClient with performance settingss uhhh update pr
 const queryClient = new QueryClient({
@@ -72,6 +73,7 @@ const App = () => (
                         <Route path="/services" element={<Index />} />
                         <Route path="/portfolio" element={<Index />} />
                         <Route path="/contact" element={<Index />} />
+                        <Route path="/ribbon-extended-test" element={<RibbonExtendedTest />} />
                         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                         <Route path="*" element={<NotFound />} />
                       </Routes>
