@@ -447,16 +447,52 @@ export default function Index() {
         <div className="mobile-orbit"></div>
       </div>
 
-      {/* Floating Particles */}
+      {/* Enhanced Floating Particles with More Life */}
       <div className="mobile-floating-particles fixed inset-0 z-0">
-        {Array.from({ length: 5 }).map((_, i) => (
+        {Array.from({ length: 12 }).map((_, i) => (
           <div
             key={i}
             className="mobile-particle"
             style={{
               left: `${Math.random() * 100}%`,
-              animationDelay: `${i * -4}s`,
-              animationDuration: `${20 + Math.random() * 10}s`,
+              animationDelay: `${i * -2}s`,
+              animationDuration: `${15 + Math.random() * 8}s`,
+              width: `${3 + Math.random() * 4}px`,
+              height: `${3 + Math.random() * 4}px`,
+              background: [
+                "radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(34, 197, 94, 0.7) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(34, 211, 238, 0.6) 0%, transparent 70%)",
+              ][i % 5],
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Breathing Background Orbs */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div
+            key={`orb-${i}`}
+            className="absolute rounded-full"
+            style={{
+              left: `${20 + ((i * 15) % 60)}%`,
+              top: `${30 + ((i * 20) % 40)}%`,
+              width: `${100 + i * 50}px`,
+              height: `${100 + i * 50}px`,
+              background: [
+                "radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(34, 197, 94, 0.09) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(236, 72, 153, 0.07) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 70%)",
+              ][i],
+              filter: "blur(30px)",
+              animation: `gentle-breath ${8 + i * 2}s ease-in-out infinite ${i * 1.5}s`,
+              transform: "translateZ(0)",
             }}
           />
         ))}
@@ -531,13 +567,39 @@ export default function Index() {
       </AnimatePresence>
 
       {/* Enhanced Mobile Header */}
-      {/* Menu button in corner */}
+      {/* Animated Menu button in corner */}
       <motion.button
         onClick={() => setIsMobileMenuOpen(true)}
-        className="fixed top-4 left-4 z-30 p-2 rounded-lg mobile-premium-card mobile-tilt-card"
-        whileTap={{ scale: 0.95 }}
+        className="fixed top-4 left-4 z-30 p-3 rounded-xl mobile-premium-card mobile-tilt-card"
+        whileHover={{
+          scale: 1.1,
+          rotate: 5,
+          boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)",
+        }}
+        whileTap={{ scale: 0.9, rotate: -5 }}
+        animate={{
+          y: [0, -2, 0],
+          boxShadow: [
+            "0 5px 15px rgba(59, 130, 246, 0.2)",
+            "0 8px 20px rgba(59, 130, 246, 0.3)",
+            "0 5px 15px rgba(59, 130, 246, 0.2)",
+          ],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
       >
         <Menu className="w-6 h-6" />
+
+        {/* Breathing border effect */}
+        <div
+          className="absolute inset-0 rounded-xl border border-blue-400/30"
+          style={{
+            animation: "border-pulse 2s ease-in-out infinite",
+          }}
+        />
       </motion.button>
 
       {/* Main Content */}
@@ -545,7 +607,7 @@ export default function Index() {
         {/* Enhanced Hero Section */}
         <section
           id="home"
-          className="min-h-screen flex items-center justify-center px-4 py-8 relative overflow-hidden mobile-ambient-glow"
+          className="min-h-screen flex items-start justify-center px-4 pt-8 pb-8 relative overflow-hidden mobile-ambient-glow"
         >
           {/* Removed floating shapes */}
 
@@ -553,62 +615,252 @@ export default function Index() {
             variants={premiumVariants}
             initial="hidden"
             animate="visible"
-            className="relative z-10 text-center max-w-md mx-auto"
+            className="relative z-10 text-center max-w-md mx-auto mt-8"
           >
-            {/* Enhanced floating badge with glow */}
+            {/* Enhanced floating badge with lively animations */}
             <motion.div
-              className="mb-8 inline-block px-6 py-3 mobile-floating-badge rounded-full text-sm font-medium relative"
+              className="mb-8 inline-flex items-center gap-2 px-4 py-3 rounded-full backdrop-blur-sm relative overflow-hidden"
               variants={floatingVariants}
               style={{
-                boxShadow:
-                  "0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1)",
+                background: "rgba(255, 255, 255, 0.1)",
+                border: "2px solid transparent",
+                backgroundClip: "padding-box",
+                boxShadow: "0 0 30px rgba(59, 130, 246, 0.2)",
+              }}
+              animate={{
+                y: [0, -8, 0],
+                scale: [1, 1.02, 1],
+                boxShadow: [
+                  "0 0 30px rgba(59, 130, 246, 0.2)",
+                  "0 0 40px rgba(59, 130, 246, 0.4)",
+                  "0 0 30px rgba(59, 130, 246, 0.2)",
+                ],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 50px rgba(59, 130, 246, 0.5)",
               }}
             >
-              <Sparkles className="w-4 h-4 inline mr-2 animate-pulse" />
-              Future-Ready Solutions, Custom-Built
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-blue-600/20 animate-pulse" />
+              {/* Dynamic Border Effect */}
+              <div
+                className="absolute inset-0 rounded-full pointer-events-none"
+                style={{
+                  background:
+                    "conic-gradient(from 0deg, rgba(255, 255, 255, 0.2) 0deg, rgba(73, 146, 255, 0.4) 90deg, rgba(255, 255, 255, 0.2) 180deg, rgba(73, 146, 255, 0.4) 270deg, rgba(255, 255, 255, 0.2) 360deg)",
+                  padding: "2px",
+                  borderRadius: "inherit",
+                  mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                  maskComposite: "xor",
+                  WebkitMask:
+                    "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                  WebkitMaskComposite: "xor",
+                }}
+              />
+
+              {/* Animated Sparkle Icon */}
+              <svg
+                className="w-4 h-4 flex-shrink-0 animate-sparkle"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 3.5L10.088 9.313C9.99015 9.61051 9.82379 9.88088 9.60234 10.1023C9.38088 10.3238 9.11051 10.4901 8.813 10.588L3 12.5L8.813 14.412C9.11051 14.5099 9.38088 14.6762 9.60234 14.8977C9.82379 15.1191 9.99015 15.3895 10.088 15.687L12 21.5L13.912 15.687C14.0099 15.3895 14.1762 15.1191 14.3977 14.8977C14.6191 14.6762 14.8895 14.5099 15.187 14.412L21 12.5L15.187 10.588C14.8895 10.4901 14.6191 10.3238 14.3977 10.1023C14.1762 9.88088 14.0099 9.61051 13.912 9.313L12 3.5Z"
+                  stroke="#22D3EE"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M5 3.5V7.5"
+                  stroke="#22D3EE"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M19 17.5V21.5"
+                  stroke="#22D3EE"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M3 5.5H7"
+                  stroke="#22D3EE"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M17 19.5H21"
+                  stroke="#22D3EE"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+
+              <span className="font-inter text-sm font-normal text-center text-white/80">
+                Future-Ready Solutions, Custom-Built
+              </span>
             </motion.div>
 
-            {/* Enhanced main title with multiple gradient layers */}
+            {/* Enhanced main title with lively animations */}
             <motion.h1
-              className="text-5xl md:text-6xl font-bold mb-6 mobile-premium-text relative"
+              className="font-poppins text-6xl sm:text-7xl md:text-8xl font-bold mb-6 relative text-white tracking-tight"
               variants={premiumVariants}
               style={{
+                filter:
+                  "drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))",
                 textShadow:
-                  "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(37, 99, 235, 0.3)",
+                  "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(37, 99, 235, 0.4)",
               }}
             >
-              <span className="relative z-10 text-white">KOR</span>
-              <div className="absolute inset-0 blur-lg bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent opacity-20 animate-pulse" />
+              {/* Individual letter animations with enhanced liveliness */}
+              <motion.span
+                className="inline-block relative warm-glow-text"
+                animate={{
+                  y: [0, -5, 0],
+                  rotateZ: [0, 2, 0],
+                  scale: [1, 1.05, 1],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0,
+                }}
+                whileHover={{
+                  scale: 1.2,
+                  rotateZ: 10,
+                  textShadow: "0 0 50px rgba(59, 130, 246, 1)",
+                }}
+              >
+                K
+              </motion.span>
+              <motion.span
+                className="inline-block relative warm-glow-text"
+                animate={{
+                  y: [0, -8, 0],
+                  rotateZ: [0, -2, 0],
+                  scale: [1, 1.08, 1],
+                }}
+                transition={{
+                  duration: 3.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.3,
+                }}
+                whileHover={{
+                  scale: 1.2,
+                  rotateZ: -10,
+                  textShadow: "0 0 50px rgba(168, 85, 247, 1)",
+                }}
+              >
+                o
+              </motion.span>
+              <motion.span
+                className="inline-block relative warm-glow-text"
+                animate={{
+                  y: [0, -6, 0],
+                  rotateZ: [0, 3, 0],
+                  scale: [1, 1.06, 1],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.6,
+                }}
+                whileHover={{
+                  scale: 1.2,
+                  rotateZ: 15,
+                  textShadow: "0 0 50px rgba(34, 197, 94, 1)",
+                }}
+              >
+                r
+              </motion.span>
             </motion.h1>
 
-            {/* Enhanced subtitle with glow */}
-            <motion.p
-              className="text-xl mb-3 text-muted-foreground font-semibold relative"
-              variants={premiumVariants}
-              style={{
-                textShadow: "0 0 20px rgba(59, 130, 246, 0.2)",
-              }}
-            >
-              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                Development Services
-              </span>
-            </motion.p>
+            {/* Enhanced subtitle with sophisticated desktop-level styling */}
+            <motion.div className="relative mb-4" variants={premiumVariants}>
+              {/* Background glow effect */}
+              <div
+                className="absolute inset-0 blur-3xl opacity-30 animate-pulse"
+                style={{
+                  background:
+                    "radial-gradient(ellipse, rgba(73, 146, 255, 0.6) 0%, rgba(34, 211, 238, 0.4) 50%, transparent 70%)",
+                  transform: "scale(1.5)",
+                }}
+              />
 
-            {/* Enhanced description with better spacing */}
-            <motion.p
-              className="text-base mb-10 text-muted-foreground leading-relaxed px-4"
+              <div className="font-poppins text-xl sm:text-2xl md:text-3xl font-bold relative z-10">
+                <span
+                  className="relative inline-block text-white"
+                  style={{
+                    filter:
+                      "drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))",
+                  }}
+                >
+                  <span className="warm-glow-text animate-warm-glow-pulse">
+                    {"Development Services".split("").map((letter, i) => (
+                      <span
+                        key={i}
+                        className="inline-block"
+                        style={{
+                          animationDelay: `${i * 0.1}s`,
+                          animation: "gentle-float 4s ease-in-out infinite",
+                        }}
+                      >
+                        {letter === " " ? "\u00A0" : letter}
+                      </span>
+                    ))}
+                  </span>
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Enhanced description with sophisticated typography */}
+            <motion.div
+              className="mb-10 px-4 relative"
               variants={premiumVariants}
             >
-              Cutting-edge web development, mobile apps, and cloud solutions
-              that drive your business forward with modern AI integration.
-            </motion.p>
+              <p className="font-poppins text-lg sm:text-xl text-center leading-relaxed relative z-10">
+                <span
+                  className="text-white/90"
+                  style={{
+                    textShadow:
+                      "0 0 15px rgba(59, 130, 246, 0.3), 0 0 30px rgba(34, 211, 238, 0.2)",
+                    filter: "drop-shadow(0 0 8px rgba(73, 146, 255, 0.4))",
+                  }}
+                >
+                  Cutting-edge web development, mobile apps, and cloud solutions
+                  that drive your business forward with modern technology.
+                </span>
+              </p>
+
+              {/* Subtle background glow */}
+              <div
+                className="absolute inset-0 blur-2xl opacity-20"
+                style={{
+                  background:
+                    "radial-gradient(ellipse, rgba(73, 146, 255, 0.3) 0%, transparent 70%)",
+                  transform: "scale(1.2)",
+                }}
+              />
+            </motion.div>
 
             {/* Removed terminal section */}
 
-            {/* Enhanced action buttons with better animations */}
+            {/* Enhanced action buttons with sophisticated desktop-level styling */}
             <motion.div
-              className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+              className="flex flex-col space-y-6 sm:flex-row sm:space-y-0 sm:space-x-6"
               variants={premiumVariants}
             >
               <motion.button
@@ -617,25 +869,45 @@ export default function Index() {
                     .getElementById("about")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="mobile-glow-button px-10 py-4 rounded-2xl text-primary-foreground font-bold relative overflow-hidden group"
+                className="font-poppins px-12 py-5 rounded-2xl text-white font-bold relative overflow-hidden group shadow-2xl"
                 whileHover={{
-                  y: -5,
-                  scale: 1.05,
+                  y: -12,
+                  scale: 1.08,
                   boxShadow:
-                    "0 20px 40px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
+                    "0 30px 60px rgba(59, 130, 246, 0.6), 0 0 100px rgba(59, 130, 246, 0.5)",
+                  rotateX: 5,
                 }}
-                whileTap={{ scale: 0.98 }}
+                whileTap={{ scale: 0.95, rotateX: -5 }}
+                animate={{
+                  y: [0, -3, 0],
+                  boxShadow: [
+                    "0 15px 35px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)",
+                    "0 20px 45px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.3)",
+                    "0 15px 35px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)",
+                  ],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 style={{
                   background:
                     "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
-                  boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
+                  boxShadow:
+                    "0 15px 35px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)",
+                  filter: "drop-shadow(0 0 15px rgba(59, 130, 246, 0.3))",
+                  border: "1px solid rgba(59, 130, 246, 0.3)",
                 }}
               >
-                <span className="relative z-10 flex items-center justify-center">
-                  Get Started
-                  <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+                <span className="relative z-10 flex items-center justify-center text-lg">
+                  <span className="warm-glow-text">Get Started</span>
+                  <ArrowRight className="w-6 h-6 ml-3 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+
+                {/* Multiple layer effects */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
 
               <motion.button
@@ -644,23 +916,73 @@ export default function Index() {
                     .getElementById("portfolio")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="px-10 py-4 rounded-2xl mobile-premium-card text-foreground font-bold border-2 border-transparent relative overflow-hidden group"
+                className="font-poppins px-12 py-5 rounded-2xl font-bold border-2 relative overflow-hidden group backdrop-blur-xl"
                 whileHover={{
-                  y: -5,
-                  scale: 1.02,
-                  borderColor: "rgba(59, 130, 246, 0.5)",
+                  y: -12,
+                  scale: 1.05,
+                  borderColor: "rgba(59, 130, 246, 0.8)",
+                  boxShadow:
+                    "0 25px 50px rgba(59, 130, 246, 0.3), 0 0 80px rgba(59, 130, 246, 0.2)",
+                  rotateX: 5,
                 }}
-                whileTap={{ scale: 0.98 }}
+                whileTap={{ scale: 0.95, rotateX: -5 }}
+                animate={{
+                  y: [0, -2, 0],
+                  borderColor: [
+                    "rgba(59, 130, 246, 0.3)",
+                    "rgba(59, 130, 246, 0.5)",
+                    "rgba(59, 130, 246, 0.3)",
+                  ],
+                  boxShadow: [
+                    "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                    "0 15px 40px rgba(59, 130, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)",
+                    "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                  ],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 style={{
-                  background: "rgba(255, 255, 255, 0.05)",
-                  backdropFilter: "blur(20px)",
-                  boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)",
+                  background: "rgba(255, 255, 255, 0.08)",
+                  backdropFilter: "blur(25px)",
+                  boxShadow:
+                    "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                  borderColor: "rgba(59, 130, 246, 0.3)",
+                  filter: "drop-shadow(0 0 10px rgba(59, 130, 246, 0.2))",
                 }}
               >
-                <span className="relative z-10 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                  View Portfolio
+                <span className="relative z-10 text-lg">
+                  <span
+                    className="warm-glow-text font-semibold"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #60a5fa 0%, #34d399 50%, #a78bfa 100%)",
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      textShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
+                    }}
+                  >
+                    View Portfolio
+                  </span>
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                {/* Glass effect layers */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-50" />
+
+                {/* Border glow effect */}
+                <div
+                  className="absolute inset-0 rounded-2xl border border-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(34, 211, 238, 0.3)) border-box",
+                    mask: "linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)",
+                    maskComposite: "subtract",
+                  }}
+                />
               </motion.button>
             </motion.div>
           </motion.div>
@@ -720,24 +1042,146 @@ export default function Index() {
               viewport={{ once: true }}
               onViewportEnter={() => setIsCounterVisible(true)}
             >
-              <div className="text-center p-6 mobile-premium-card mobile-tilt-card">
-                <div className="text-3xl font-bold mobile-stat-counter mb-2">
+              <motion.div
+                className="text-center p-6 mobile-premium-card mobile-tilt-card relative overflow-hidden"
+                whileHover={{
+                  scale: 1.05,
+                  y: -5,
+                  boxShadow: "0 15px 30px rgba(59, 130, 246, 0.3)",
+                }}
+                animate={{
+                  y: [0, -3, 0],
+                  boxShadow: [
+                    "0 8px 20px rgba(59, 130, 246, 0.2)",
+                    "0 12px 25px rgba(59, 130, 246, 0.3)",
+                    "0 8px 20px rgba(59, 130, 246, 0.2)",
+                  ],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0,
+                }}
+              >
+                <motion.div
+                  className="text-3xl font-bold mobile-stat-counter mb-2"
+                  animate={{
+                    scale: [1, 1.1, 1],
+                    color: [
+                      "rgb(59, 130, 246)",
+                      "rgb(168, 85, 247)",
+                      "rgb(59, 130, 246)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
                   {counters.projects}+
-                </div>
+                </motion.div>
                 <div className="text-sm text-muted-foreground">Projects</div>
-              </div>
-              <div className="text-center p-6 mobile-premium-card mobile-tilt-card">
-                <div className="text-3xl font-bold mobile-stat-counter mb-2">
+                {/* Animated border */}
+                <div className="absolute inset-0 border border-blue-400/30 rounded-lg animate-pulse" />
+              </motion.div>
+
+              <motion.div
+                className="text-center p-6 mobile-premium-card mobile-tilt-card relative overflow-hidden"
+                whileHover={{
+                  scale: 1.05,
+                  y: -5,
+                  boxShadow: "0 15px 30px rgba(168, 85, 247, 0.3)",
+                }}
+                animate={{
+                  y: [0, -4, 0],
+                  boxShadow: [
+                    "0 8px 20px rgba(168, 85, 247, 0.2)",
+                    "0 12px 25px rgba(168, 85, 247, 0.3)",
+                    "0 8px 20px rgba(168, 85, 247, 0.2)",
+                  ],
+                }}
+                transition={{
+                  duration: 3.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
+              >
+                <motion.div
+                  className="text-3xl font-bold mobile-stat-counter mb-2"
+                  animate={{
+                    scale: [1, 1.15, 1],
+                    color: [
+                      "rgb(168, 85, 247)",
+                      "rgb(34, 197, 94)",
+                      "rgb(168, 85, 247)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.3,
+                  }}
+                >
                   {counters.clients}+
-                </div>
+                </motion.div>
                 <div className="text-sm text-muted-foreground">Clients</div>
-              </div>
-              <div className="text-center p-6 mobile-premium-card mobile-tilt-card">
-                <div className="text-3xl font-bold mobile-stat-counter mb-2">
+                <div
+                  className="absolute inset-0 border border-purple-400/30 rounded-lg animate-pulse"
+                  style={{ animationDelay: "0.5s" }}
+                />
+              </motion.div>
+
+              <motion.div
+                className="text-center p-6 mobile-premium-card mobile-tilt-card relative overflow-hidden"
+                whileHover={{
+                  scale: 1.05,
+                  y: -5,
+                  boxShadow: "0 15px 30px rgba(34, 197, 94, 0.3)",
+                }}
+                animate={{
+                  y: [0, -2, 0],
+                  boxShadow: [
+                    "0 8px 20px rgba(34, 197, 94, 0.2)",
+                    "0 12px 25px rgba(34, 197, 94, 0.3)",
+                    "0 8px 20px rgba(34, 197, 94, 0.2)",
+                  ],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1,
+                }}
+              >
+                <motion.div
+                  className="text-3xl font-bold mobile-stat-counter mb-2"
+                  animate={{
+                    scale: [1, 1.12, 1],
+                    color: [
+                      "rgb(34, 197, 94)",
+                      "rgb(236, 72, 153)",
+                      "rgb(34, 197, 94)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.6,
+                  }}
+                >
                   {counters.years}+
-                </div>
+                </motion.div>
                 <div className="text-sm text-muted-foreground">Years</div>
-              </div>
+                <div
+                  className="absolute inset-0 border border-green-400/30 rounded-lg animate-pulse"
+                  style={{ animationDelay: "1s" }}
+                />
+              </motion.div>
             </motion.div>
           </div>
         </section>
@@ -765,6 +1209,26 @@ export default function Index() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 }}
                   className="mobile-premium-card mobile-tilt-card p-6 rounded-xl relative overflow-hidden"
+                  whileHover={{
+                    scale: 1.02,
+                    y: -5,
+                    rotateY: 2,
+                    boxShadow: "0 20px 40px rgba(73, 146, 255, 0.3)",
+                  }}
+                  animate={{
+                    y: [0, -2, 0],
+                    boxShadow: [
+                      "0 0 30px rgba(73, 146, 255, 0.15)",
+                      "0 0 40px rgba(73, 146, 255, 0.25)",
+                      "0 0 30px rgba(73, 146, 255, 0.15)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 4 + index,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.5,
+                  }}
                 >
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-5`}
@@ -849,6 +1313,26 @@ export default function Index() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
                     className="mobile-premium-card mobile-tilt-card rounded-xl overflow-hidden relative"
+                    whileHover={{
+                      scale: 1.03,
+                      y: -8,
+                      boxShadow: "0 15px 30px rgba(73, 146, 255, 0.2)",
+                      rotateX: 3,
+                    }}
+                    animate={{
+                      y: [0, -1, 0],
+                      borderColor: [
+                        "rgba(73, 146, 255, 0.2)",
+                        "rgba(168, 85, 247, 0.2)",
+                        "rgba(73, 146, 255, 0.2)",
+                      ],
+                    }}
+                    transition={{
+                      duration: 5 + (index % 3),
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: index * 0.3,
+                    }}
                   >
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-50`}
@@ -922,6 +1406,27 @@ export default function Index() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className="mobile-premium-card mobile-tilt-card rounded-xl relative overflow-hidden"
+                  whileHover={{
+                    scale: 1.05,
+                    y: -10,
+                    rotateY: 5,
+                    boxShadow: "0 25px 50px rgba(73, 146, 255, 0.4)",
+                  }}
+                  animate={{
+                    y: [0, -3, 0],
+                    rotateZ: [0, 0.5, 0],
+                    boxShadow: [
+                      "0 10px 25px rgba(73, 146, 255, 0.2)",
+                      "0 15px 35px rgba(73, 146, 255, 0.3)",
+                      "0 10px 25px rgba(73, 146, 255, 0.2)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 4 + (index % 2),
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.4,
+                  }}
                 >
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-30`}
@@ -1024,6 +1529,35 @@ export default function Index() {
                       "ring-2 ring-blue-500/50 mt-4 overflow-hidden",
                     !plan.popular && "overflow-hidden",
                   )}
+                  whileHover={{
+                    scale: plan.popular ? 1.08 : 1.05,
+                    y: plan.popular ? -15 : -10,
+                    rotateY: plan.popular ? 8 : 5,
+                    boxShadow: plan.popular
+                      ? "0 30px 60px rgba(59, 130, 246, 0.5)"
+                      : "0 20px 40px rgba(73, 146, 255, 0.3)",
+                  }}
+                  animate={{
+                    y: [0, plan.popular ? -5 : -2, 0],
+                    scale: [1, plan.popular ? 1.02 : 1.01, 1],
+                    boxShadow: plan.popular
+                      ? [
+                          "0 15px 30px rgba(59, 130, 246, 0.4)",
+                          "0 20px 40px rgba(59, 130, 246, 0.6)",
+                          "0 15px 30px rgba(59, 130, 246, 0.4)",
+                        ]
+                      : [
+                          "0 10px 20px rgba(73, 146, 255, 0.2)",
+                          "0 15px 30px rgba(73, 146, 255, 0.3)",
+                          "0 10px 20px rgba(73, 146, 255, 0.2)",
+                        ],
+                  }}
+                  transition={{
+                    duration: plan.popular ? 3 : 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.5,
+                  }}
                 >
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${plan.gradient} opacity-40`}
@@ -1154,7 +1688,27 @@ export default function Index() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -4, scale: 1.02 }}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.05,
+                    rotateZ: 2,
+                    boxShadow: "0 15px 30px rgba(73, 146, 255, 0.3)",
+                  }}
+                  animate={{
+                    y: [0, -2, 0],
+                    scale: [1, 1.01, 1],
+                    boxShadow: [
+                      "0 5px 15px rgba(73, 146, 255, 0.2)",
+                      "0 8px 20px rgba(73, 146, 255, 0.3)",
+                      "0 5px 15px rgba(73, 146, 255, 0.2)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 3 + (index % 2),
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.4,
+                  }}
                 >
                   <contact.icon
                     className={cn("w-6 h-6 mx-auto mb-2", contact.color)}
@@ -1365,11 +1919,27 @@ export default function Index() {
                   key={index}
                   href={href}
                   className="text-muted-foreground hover:text-blue-400 transition-colors mobile-tilt-card p-2 rounded-lg"
-                  whileHover={{ y: -4, scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.2,
+                    rotateZ: 5,
+                    color: "rgb(59, 130, 246)",
+                  }}
+                  whileTap={{ scale: 0.8, rotateZ: -5 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
+                  animate={{
+                    y: [0, -3, 0],
+                    rotateZ: [0, 2, 0],
+                    scale: [1, 1.05, 1],
+                  }}
+                  transition={{
+                    duration: 4 + index,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.6,
+                  }}
                 >
                   <Icon className="w-5 h-5" />
                 </motion.a>
