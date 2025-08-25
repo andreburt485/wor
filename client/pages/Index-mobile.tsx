@@ -553,7 +553,7 @@ export default function Index() {
             variants={premiumVariants}
             initial="hidden"
             animate="visible"
-            className="relative z-10 text-center max-w-md mx-auto"
+            className="relative z-10 text-center max-w-md mx-auto mt-8"
           >
             {/* Enhanced floating badge with glow */}
             <motion.div
