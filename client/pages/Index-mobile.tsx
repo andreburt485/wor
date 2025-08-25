@@ -562,7 +562,7 @@ export default function Index() {
             >
               <Sparkles className="w-4 h-4 inline mr-2 animate-pulse" />
               Future-Ready Solutions, Custom-Built
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 animate-pulse" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-blue-600/20 animate-pulse" />
             </motion.div>
 
             {/* Enhanced main title with multiple gradient layers */}
