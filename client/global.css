@@ -78,6 +78,62 @@ body > div {
   }
 }
 
+/* Gentle breath animation for background orbs */
+@keyframes gentle-breath {
+  0%, 100% {
+    transform: scale(1) translateZ(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2) translateZ(0);
+    opacity: 0.9;
+  }
+}
+
+/* Border pulse animation */
+@keyframes border-pulse {
+  0%, 100% {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  }
+}
+
+/* Lively float animation */
+@keyframes lively-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) translateZ(0);
+  }
+  25% {
+    transform: translateY(-8px) rotate(1deg) translateZ(0);
+  }
+  50% {
+    transform: translateY(-15px) rotate(0deg) translateZ(0);
+  }
+  75% {
+    transform: translateY(-8px) rotate(-1deg) translateZ(0);
+  }
+}
+
+/* Color shift animation */
+@keyframes color-shift {
+  0%, 100% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  25% {
+    filter: hue-rotate(15deg) brightness(1.1);
+  }
+  50% {
+    filter: hue-rotate(30deg) brightness(1.2);
+  }
+  75% {
+    filter: hue-rotate(15deg) brightness(1.1);
+  }
+}
+
 .animate-nav-hint-bounce {
   animation: nav-hint-bounce 2s ease-in-out infinite;
 }
