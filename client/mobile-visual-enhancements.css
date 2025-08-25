@@ -33,9 +33,82 @@
   }
 }
 
-/* Floating Geometric Shapes - Disabled */
-.mobile-floating-shape {
-  display: none; /* Completely hide floating shapes */
+/* Beautiful Floating Particles */
+.mobile-floating-particles {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mobile-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: mobile-particle-float 20s linear infinite;
+}
+
+.mobile-particle:nth-child(2) {
+  animation-delay: -2s;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, transparent 70%);
+}
+
+.mobile-particle:nth-child(3) {
+  animation-delay: -4s;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.7) 0%, transparent 70%);
+}
+
+.mobile-particle:nth-child(4) {
+  animation-delay: -6s;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, transparent 70%);
+}
+
+.mobile-particle:nth-child(5) {
+  animation-delay: -8s;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.6) 0%, transparent 70%);
+}
+
+/* Orbital Background Elements */
+.mobile-orbital-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.mobile-orbit {
+  position: absolute;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  border-radius: 50%;
+  animation: mobile-orbit-rotate 30s linear infinite;
+}
+
+.mobile-orbit:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 20%;
+  animation-duration: 25s;
+}
+
+.mobile-orbit:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 15%;
+  animation-duration: 35s;
+  animation-direction: reverse;
+  border-color: rgba(168, 85, 247, 0.08);
+}
+
+.mobile-orbit:nth-child(3) {
+  width: 300px;
+  height: 300px;
+  top: 40%;
+  left: -50px;
+  animation-duration: 40s;
+  border-color: rgba(34, 197, 94, 0.06);
 }
 
 .mobile-floating-shape:nth-child(1) {
