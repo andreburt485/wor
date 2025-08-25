@@ -1029,24 +1029,140 @@ export default function Index() {
               viewport={{ once: true }}
               onViewportEnter={() => setIsCounterVisible(true)}
             >
-              <div className="text-center p-6 mobile-premium-card mobile-tilt-card">
-                <div className="text-3xl font-bold mobile-stat-counter mb-2">
+              <motion.div
+                className="text-center p-6 mobile-premium-card mobile-tilt-card relative overflow-hidden"
+                whileHover={{
+                  scale: 1.05,
+                  y: -5,
+                  boxShadow: "0 15px 30px rgba(59, 130, 246, 0.3)"
+                }}
+                animate={{
+                  y: [0, -3, 0],
+                  boxShadow: [
+                    "0 8px 20px rgba(59, 130, 246, 0.2)",
+                    "0 12px 25px rgba(59, 130, 246, 0.3)",
+                    "0 8px 20px rgba(59, 130, 246, 0.2)"
+                  ]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0
+                }}
+              >
+                <motion.div
+                  className="text-3xl font-bold mobile-stat-counter mb-2"
+                  animate={{
+                    scale: [1, 1.1, 1],
+                    color: [
+                      "rgb(59, 130, 246)",
+                      "rgb(168, 85, 247)",
+                      "rgb(59, 130, 246)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
                   {counters.projects}+
-                </div>
+                </motion.div>
                 <div className="text-sm text-muted-foreground">Projects</div>
-              </div>
-              <div className="text-center p-6 mobile-premium-card mobile-tilt-card">
-                <div className="text-3xl font-bold mobile-stat-counter mb-2">
+                {/* Animated border */}
+                <div className="absolute inset-0 border border-blue-400/30 rounded-lg animate-pulse" />
+              </motion.div>
+
+              <motion.div
+                className="text-center p-6 mobile-premium-card mobile-tilt-card relative overflow-hidden"
+                whileHover={{
+                  scale: 1.05,
+                  y: -5,
+                  boxShadow: "0 15px 30px rgba(168, 85, 247, 0.3)"
+                }}
+                animate={{
+                  y: [0, -4, 0],
+                  boxShadow: [
+                    "0 8px 20px rgba(168, 85, 247, 0.2)",
+                    "0 12px 25px rgba(168, 85, 247, 0.3)",
+                    "0 8px 20px rgba(168, 85, 247, 0.2)"
+                  ]
+                }}
+                transition={{
+                  duration: 3.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
+              >
+                <motion.div
+                  className="text-3xl font-bold mobile-stat-counter mb-2"
+                  animate={{
+                    scale: [1, 1.15, 1],
+                    color: [
+                      "rgb(168, 85, 247)",
+                      "rgb(34, 197, 94)",
+                      "rgb(168, 85, 247)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.3
+                  }}
+                >
                   {counters.clients}+
-                </div>
+                </motion.div>
                 <div className="text-sm text-muted-foreground">Clients</div>
-              </div>
-              <div className="text-center p-6 mobile-premium-card mobile-tilt-card">
-                <div className="text-3xl font-bold mobile-stat-counter mb-2">
+                <div className="absolute inset-0 border border-purple-400/30 rounded-lg animate-pulse" style={{ animationDelay: '0.5s' }} />
+              </motion.div>
+
+              <motion.div
+                className="text-center p-6 mobile-premium-card mobile-tilt-card relative overflow-hidden"
+                whileHover={{
+                  scale: 1.05,
+                  y: -5,
+                  boxShadow: "0 15px 30px rgba(34, 197, 94, 0.3)"
+                }}
+                animate={{
+                  y: [0, -2, 0],
+                  boxShadow: [
+                    "0 8px 20px rgba(34, 197, 94, 0.2)",
+                    "0 12px 25px rgba(34, 197, 94, 0.3)",
+                    "0 8px 20px rgba(34, 197, 94, 0.2)"
+                  ]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+              >
+                <motion.div
+                  className="text-3xl font-bold mobile-stat-counter mb-2"
+                  animate={{
+                    scale: [1, 1.12, 1],
+                    color: [
+                      "rgb(34, 197, 94)",
+                      "rgb(236, 72, 153)",
+                      "rgb(34, 197, 94)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.6
+                  }}
+                >
                   {counters.years}+
-                </div>
+                </motion.div>
                 <div className="text-sm text-muted-foreground">Years</div>
-              </div>
+                <div className="absolute inset-0 border border-green-400/30 rounded-lg animate-pulse" style={{ animationDelay: '1s' }} />
+              </motion.div>
             </motion.div>
           </div>
         </section>
@@ -1074,6 +1190,26 @@ export default function Index() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 }}
                   className="mobile-premium-card mobile-tilt-card p-6 rounded-xl relative overflow-hidden"
+                  whileHover={{
+                    scale: 1.02,
+                    y: -5,
+                    rotateY: 2,
+                    boxShadow: "0 20px 40px rgba(73, 146, 255, 0.3)"
+                  }}
+                  animate={{
+                    y: [0, -2, 0],
+                    boxShadow: [
+                      "0 0 30px rgba(73, 146, 255, 0.15)",
+                      "0 0 40px rgba(73, 146, 255, 0.25)",
+                      "0 0 30px rgba(73, 146, 255, 0.15)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 4 + index,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.5
+                  }}
                 >
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-5`}
@@ -1158,6 +1294,26 @@ export default function Index() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
                     className="mobile-premium-card mobile-tilt-card rounded-xl overflow-hidden relative"
+                    whileHover={{
+                      scale: 1.03,
+                      y: -8,
+                      boxShadow: "0 15px 30px rgba(73, 146, 255, 0.2)",
+                      rotateX: 3
+                    }}
+                    animate={{
+                      y: [0, -1, 0],
+                      borderColor: [
+                        "rgba(73, 146, 255, 0.2)",
+                        "rgba(168, 85, 247, 0.2)",
+                        "rgba(73, 146, 255, 0.2)"
+                      ]
+                    }}
+                    transition={{
+                      duration: 5 + (index % 3),
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: index * 0.3
+                    }}
                   >
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-50`}
@@ -1231,6 +1387,27 @@ export default function Index() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className="mobile-premium-card mobile-tilt-card rounded-xl relative overflow-hidden"
+                  whileHover={{
+                    scale: 1.05,
+                    y: -10,
+                    rotateY: 5,
+                    boxShadow: "0 25px 50px rgba(73, 146, 255, 0.4)"
+                  }}
+                  animate={{
+                    y: [0, -3, 0],
+                    rotateZ: [0, 0.5, 0],
+                    boxShadow: [
+                      "0 10px 25px rgba(73, 146, 255, 0.2)",
+                      "0 15px 35px rgba(73, 146, 255, 0.3)",
+                      "0 10px 25px rgba(73, 146, 255, 0.2)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 4 + (index % 2),
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.4
+                  }}
                 >
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-30`}
@@ -1333,6 +1510,35 @@ export default function Index() {
                       "ring-2 ring-blue-500/50 mt-4 overflow-hidden",
                     !plan.popular && "overflow-hidden",
                   )}
+                  whileHover={{
+                    scale: plan.popular ? 1.08 : 1.05,
+                    y: plan.popular ? -15 : -10,
+                    rotateY: plan.popular ? 8 : 5,
+                    boxShadow: plan.popular
+                      ? "0 30px 60px rgba(59, 130, 246, 0.5)"
+                      : "0 20px 40px rgba(73, 146, 255, 0.3)"
+                  }}
+                  animate={{
+                    y: [0, plan.popular ? -5 : -2, 0],
+                    scale: [1, plan.popular ? 1.02 : 1.01, 1],
+                    boxShadow: plan.popular
+                      ? [
+                          "0 15px 30px rgba(59, 130, 246, 0.4)",
+                          "0 20px 40px rgba(59, 130, 246, 0.6)",
+                          "0 15px 30px rgba(59, 130, 246, 0.4)"
+                        ]
+                      : [
+                          "0 10px 20px rgba(73, 146, 255, 0.2)",
+                          "0 15px 30px rgba(73, 146, 255, 0.3)",
+                          "0 10px 20px rgba(73, 146, 255, 0.2)"
+                        ]
+                  }}
+                  transition={{
+                    duration: plan.popular ? 3 : 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.5
+                  }}
                 >
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${plan.gradient} opacity-40`}
@@ -1463,7 +1669,27 @@ export default function Index() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -4, scale: 1.02 }}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.05,
+                    rotateZ: 2,
+                    boxShadow: "0 15px 30px rgba(73, 146, 255, 0.3)"
+                  }}
+                  animate={{
+                    y: [0, -2, 0],
+                    scale: [1, 1.01, 1],
+                    boxShadow: [
+                      "0 5px 15px rgba(73, 146, 255, 0.2)",
+                      "0 8px 20px rgba(73, 146, 255, 0.3)",
+                      "0 5px 15px rgba(73, 146, 255, 0.2)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 3 + (index % 2),
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.4
+                  }}
                 >
                   <contact.icon
                     className={cn("w-6 h-6 mx-auto mb-2", contact.color)}
@@ -1674,11 +1900,27 @@ export default function Index() {
                   key={index}
                   href={href}
                   className="text-muted-foreground hover:text-blue-400 transition-colors mobile-tilt-card p-2 rounded-lg"
-                  whileHover={{ y: -4, scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.2,
+                    rotateZ: 5,
+                    color: "rgb(59, 130, 246)"
+                  }}
+                  whileTap={{ scale: 0.8, rotateZ: -5 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
+                  animate={{
+                    y: [0, -3, 0],
+                    rotateZ: [0, 2, 0],
+                    scale: [1, 1.05, 1]
+                  }}
+                  transition={{
+                    duration: 4 + index,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.6
+                  }}
                 >
                   <Icon className="w-5 h-5" />
                 </motion.a>
