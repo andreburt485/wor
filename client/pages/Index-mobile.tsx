@@ -863,15 +863,9 @@ export default function Index() {
                           transition={{ duration: 0.3 }}
                           className="px-4 pb-4 relative z-10"
                         >
-                          <p className="text-sm text-muted-foreground mb-3">
+                          <p className="text-sm text-muted-foreground">
                             {service.description}
                           </p>
-                          <motion.button
-                            className="text-blue-400 text-sm font-medium flex items-center hover:text-blue-300 transition-colors"
-                            whileHover={{ x: 4 }}
-                          >
-                            Learn More <ArrowRight className="w-3 h-3 ml-1" />
-                          </motion.button>
                         </motion.div>
                       )}
                     </AnimatePresence>
