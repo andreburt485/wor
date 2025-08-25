@@ -493,13 +493,6 @@ export default function Index() {
 
               <div className="absolute bottom-8 left-6 right-6 border-t border-border pt-6 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Theme</span>
-                  <div className="flex items-center space-x-2">
-                    <ThemeToggle />
-                    <RetroToggle />
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
                   <span className="text-sm text-muted-foreground">
                     Performance
                   </span>
