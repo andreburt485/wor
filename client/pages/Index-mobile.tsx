@@ -569,36 +569,168 @@ export default function Index() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-blue-600/20 animate-pulse" />
             </motion.div>
 
-            {/* Enhanced main title with multiple gradient layers */}
+            {/* Enhanced main title with sophisticated desktop-level styling */}
             <motion.h1
-              className="text-5xl md:text-6xl font-bold mb-6 relative text-white"
+              className="font-poppins text-6xl sm:text-7xl md:text-8xl font-bold mb-6 relative text-white tracking-tight"
               variants={premiumVariants}
               style={{
-                background: "linear-gradient(135deg, #ffffff 0%, #93c5fd 20%, #60a5fa 40%, #3b82f6 60%, #2563eb 80%, #1d4ed8 100%)",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                color: "#ffffff", // Fallback color
-                textShadow: "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(37, 99, 235, 0.3)",
-                filter: "drop-shadow(0 0 10px rgba(59, 130, 246, 0.3))"
+                filter: "drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))",
+                textShadow: "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(37, 99, 235, 0.4)"
               }}
             >
-              KOR
-              <div className="absolute inset-0 blur-lg bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent opacity-20 animate-pulse" />
+              {/* Individual letter animations with warm glow */}
+              <span
+                className="inline-block relative warm-glow-text animate-warm-glow-pulse"
+                style={{ animationDelay: "0s" }}
+              >
+                K
+              </span>
+              <span
+                className="inline-block relative warm-glow-text animate-warm-glow-pulse"
+                style={{ animationDelay: "0.3s" }}
+              >
+                o
+              </span>
+              <span
+                className="inline-block relative warm-glow-text animate-warm-glow-pulse"
+                style={{ animationDelay: "0.6s" }}
+              >
+                r
+              </span>
+
+              {/* Enhanced sparkle effects */}
+              {[
+                { x: 50, y: -25, size: 0.8, type: "star" },
+                { x: 30, y: -8, size: 0.6, type: "diamond" },
+                { x: 70, y: 30, size: 0.7, type: "plus" },
+                { x: 45, y: 50, size: 0.9, type: "star" },
+                { x: 10, y: 55, size: 0.5, type: "diamond" },
+                { x: -20, y: 35, size: 0.6, type: "plus" }
+              ].map((sparkle, i) => (
+                <div
+                  key={`sparkle-${i}`}
+                  className="absolute pointer-events-none"
+                  style={{
+                    left: `calc(50% + ${sparkle.x}px)`,
+                    top: `calc(50% + ${sparkle.y}px)`,
+                    animation: `sparkle ${6 + (i % 3)}s ease-in-out infinite ${i * 0.5}s`,
+                    transform: `translateZ(0) scale(${sparkle.size})`,
+                    opacity: 0.6,
+                    zIndex: -1
+                  }}
+                >
+                  {sparkle.type === "star" && (
+                    <div
+                      className="w-4 h-4"
+                      style={{
+                        background: [
+                          "radial-gradient(circle, rgba(100, 255, 150, 0.8) 0%, rgba(150, 200, 255, 0.5) 70%, transparent 90%)",
+                          "radial-gradient(circle, rgba(255, 100, 200, 0.8) 0%, rgba(100, 255, 180, 0.5) 70%, transparent 90%)",
+                          "radial-gradient(circle, rgba(200, 150, 255, 0.8) 0%, rgba(255, 100, 150, 0.5) 70%, transparent 90%)"
+                        ][i % 3],
+                        clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
+                        filter: "drop-shadow(0 0 5px currentColor)"
+                      }}
+                    />
+                  )}
+                  {sparkle.type === "diamond" && (
+                    <div
+                      className="w-3 h-3"
+                      style={{
+                        background: [
+                          "linear-gradient(45deg, rgba(100, 255, 200, 0.7), rgba(255, 150, 100, 0.6))",
+                          "linear-gradient(45deg, rgba(200, 100, 255, 0.7), rgba(100, 255, 150, 0.6))",
+                          "linear-gradient(45deg, rgba(255, 200, 100, 0.7), rgba(100, 150, 255, 0.6))"
+                        ][i % 3],
+                        clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+                        filter: "drop-shadow(0 0 3px currentColor)"
+                      }}
+                    />
+                  )}
+                  {sparkle.type === "plus" && (
+                    <div
+                      className="w-3 h-3"
+                      style={{
+                        background: [
+                          "conic-gradient(from 45deg, rgba(100, 255, 180, 0.7), rgba(255, 100, 150, 0.6), rgba(150, 200, 255, 0.7), rgba(255, 180, 100, 0.6))",
+                          "conic-gradient(from 135deg, rgba(255, 150, 100, 0.7), rgba(100, 200, 255, 0.6), rgba(200, 100, 255, 0.7), rgba(100, 255, 150, 0.6))"
+                        ][i % 2],
+                        clipPath: "polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%)",
+                        filter: "drop-shadow(0 0 4px currentColor)"
+                      }}
+                    />
+                  )}
+                </div>
+              ))}
             </motion.h1>
 
-            {/* Enhanced subtitle with glow */}
-            <motion.p
-              className="text-xl mb-3 text-muted-foreground font-semibold relative"
+            {/* Enhanced subtitle with sophisticated desktop-level styling */}
+            <motion.div
+              className="relative mb-4"
               variants={premiumVariants}
-              style={{
-                textShadow: "0 0 20px rgba(59, 130, 246, 0.2)",
-              }}
             >
-              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                Development Services
-              </span>
-            </motion.p>
+              {/* Background glow effect */}
+              <div
+                className="absolute inset-0 blur-3xl opacity-30 animate-pulse"
+                style={{
+                  background: "radial-gradient(ellipse, rgba(73, 146, 255, 0.6) 0%, rgba(34, 211, 238, 0.4) 50%, transparent 70%)",
+                  transform: "scale(1.5)"
+                }}
+              />
+
+              <div className="font-poppins text-xl sm:text-2xl md:text-3xl font-bold relative z-10">
+                <span
+                  className="relative inline-block text-white"
+                  style={{
+                    filter: "drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))"
+                  }}
+                >
+                  <span className="warm-glow-text animate-warm-glow-pulse">
+                    {"Development Services".split("").map((letter, i) => (
+                      <span
+                        key={i}
+                        className="inline-block"
+                        style={{
+                          animationDelay: `${i * 0.1}s`,
+                          animation: "gentle-float 4s ease-in-out infinite"
+                        }}
+                      >
+                        {letter === " " ? "\u00A0" : letter}
+                      </span>
+                    ))}
+                  </span>
+
+                  {/* Sparkles around subtitle */}
+                  {[
+                    { x: 80, y: -20, size: 0.6 },
+                    { x: 60, y: -5, size: 0.4 },
+                    { x: 100, y: 25, size: 0.5 },
+                    { x: 20, y: 30, size: 0.7 },
+                    { x: -15, y: 10, size: 0.4 }
+                  ].map((sparkle, i) => (
+                    <div
+                      key={`subtitle-sparkle-${i}`}
+                      className="absolute pointer-events-none"
+                      style={{
+                        left: `calc(50% + ${sparkle.x}px)`,
+                        top: `calc(50% + ${sparkle.y}px)`,
+                        animation: `sparkle ${4 + (i % 2)}s ease-in-out infinite ${i * 0.8}s`,
+                        transform: `translateZ(0) scale(${sparkle.size})`,
+                        opacity: 0.4
+                      }}
+                    >
+                      <div
+                        className="w-2 h-2"
+                        style={{
+                          background: "radial-gradient(circle, rgba(73, 146, 255, 0.8) 0%, transparent 70%)",
+                          clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"
+                        }}
+                      />
+                    </div>
+                  ))}
+                </span>
+              </div>
+            </motion.div>
 
             {/* Enhanced description with better spacing */}
             <motion.p
