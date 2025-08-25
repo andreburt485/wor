@@ -54,6 +54,30 @@ body > div {
   }
 }
 
+/* Enhanced warm glow pulse animation */
+@keyframes animate-warm-glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(73, 146, 255, 0.3), 0 0 15px rgba(59, 130, 246, 0.2);
+    filter: brightness(1);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(73, 146, 255, 0.6), 0 0 25px rgba(59, 130, 246, 0.4), 0 0 35px rgba(34, 211, 238, 0.3);
+    filter: brightness(1.2);
+  }
+}
+
+/* Gentle pulse animation */
+@keyframes gentle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
 .animate-nav-hint-bounce {
   animation: nav-hint-bounce 2s ease-in-out infinite;
 }
