@@ -555,18 +555,78 @@ export default function Index() {
             animate="visible"
             className="relative z-10 text-center max-w-md mx-auto mt-8"
           >
-            {/* Enhanced floating badge with glow */}
+            {/* Enhanced floating badge matching desktop design */}
             <motion.div
-              className="mb-8 inline-block px-6 py-3 mobile-floating-badge rounded-full text-sm font-medium relative"
+              className="mb-8 inline-flex items-center gap-2 px-4 py-3 rounded-full backdrop-blur-sm relative overflow-hidden"
               variants={floatingVariants}
               style={{
-                boxShadow:
-                  "0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1)",
+                background: "rgba(255, 255, 255, 0.1)",
+                border: "2px solid transparent",
+                backgroundClip: "padding-box",
+                boxShadow: "0 0 30px rgba(59, 130, 246, 0.2)"
               }}
             >
-              <Sparkles className="w-4 h-4 inline mr-2 animate-pulse" />
-              Future-Ready Solutions, Custom-Built
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-blue-600/20 animate-pulse" />
+              {/* Dynamic Border Effect */}
+              <div
+                className="absolute inset-0 rounded-full pointer-events-none"
+                style={{
+                  background: "conic-gradient(from 0deg, rgba(255, 255, 255, 0.2) 0deg, rgba(73, 146, 255, 0.4) 90deg, rgba(255, 255, 255, 0.2) 180deg, rgba(73, 146, 255, 0.4) 270deg, rgba(255, 255, 255, 0.2) 360deg)",
+                  padding: "2px",
+                  borderRadius: "inherit",
+                  mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                  maskComposite: "xor",
+                  WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                  WebkitMaskComposite: "xor"
+                }}
+              />
+
+              {/* Animated Sparkle Icon */}
+              <svg
+                className="w-4 h-4 flex-shrink-0 animate-sparkle"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 3.5L10.088 9.313C9.99015 9.61051 9.82379 9.88088 9.60234 10.1023C9.38088 10.3238 9.11051 10.4901 8.813 10.588L3 12.5L8.813 14.412C9.11051 14.5099 9.38088 14.6762 9.60234 14.8977C9.82379 15.1191 9.99015 15.3895 10.088 15.687L12 21.5L13.912 15.687C14.0099 15.3895 14.1762 15.1191 14.3977 14.8977C14.6191 14.6762 14.8895 14.5099 15.187 14.412L21 12.5L15.187 10.588C14.8895 10.4901 14.6191 10.3238 14.3977 10.1023C14.1762 9.88088 14.0099 9.61051 13.912 9.313L12 3.5Z"
+                  stroke="#22D3EE"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M5 3.5V7.5"
+                  stroke="#22D3EE"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M19 17.5V21.5"
+                  stroke="#22D3EE"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M3 5.5H7"
+                  stroke="#22D3EE"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M17 19.5H21"
+                  stroke="#22D3EE"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+
+              <span className="font-inter text-sm font-normal text-center text-white/80">
+                Future-Ready Solutions, Custom-Built
+              </span>
             </motion.div>
 
             {/* Enhanced main title with sophisticated desktop-level styling */}
@@ -597,71 +657,6 @@ export default function Index() {
               >
                 r
               </span>
-
-              {/* Enhanced sparkle effects */}
-              {[
-                { x: 50, y: -25, size: 0.8, type: "star" },
-                { x: 30, y: -8, size: 0.6, type: "diamond" },
-                { x: 70, y: 30, size: 0.7, type: "plus" },
-                { x: 45, y: 50, size: 0.9, type: "star" },
-                { x: 10, y: 55, size: 0.5, type: "diamond" },
-                { x: -20, y: 35, size: 0.6, type: "plus" }
-              ].map((sparkle, i) => (
-                <div
-                  key={`sparkle-${i}`}
-                  className="absolute pointer-events-none"
-                  style={{
-                    left: `calc(50% + ${sparkle.x}px)`,
-                    top: `calc(50% + ${sparkle.y}px)`,
-                    animation: `sparkle ${6 + (i % 3)}s ease-in-out infinite ${i * 0.5}s`,
-                    transform: `translateZ(0) scale(${sparkle.size})`,
-                    opacity: 0.6,
-                    zIndex: -1
-                  }}
-                >
-                  {sparkle.type === "star" && (
-                    <div
-                      className="w-4 h-4"
-                      style={{
-                        background: [
-                          "radial-gradient(circle, rgba(100, 255, 150, 0.8) 0%, rgba(150, 200, 255, 0.5) 70%, transparent 90%)",
-                          "radial-gradient(circle, rgba(255, 100, 200, 0.8) 0%, rgba(100, 255, 180, 0.5) 70%, transparent 90%)",
-                          "radial-gradient(circle, rgba(200, 150, 255, 0.8) 0%, rgba(255, 100, 150, 0.5) 70%, transparent 90%)"
-                        ][i % 3],
-                        clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-                        filter: "drop-shadow(0 0 5px currentColor)"
-                      }}
-                    />
-                  )}
-                  {sparkle.type === "diamond" && (
-                    <div
-                      className="w-3 h-3"
-                      style={{
-                        background: [
-                          "linear-gradient(45deg, rgba(100, 255, 200, 0.7), rgba(255, 150, 100, 0.6))",
-                          "linear-gradient(45deg, rgba(200, 100, 255, 0.7), rgba(100, 255, 150, 0.6))",
-                          "linear-gradient(45deg, rgba(255, 200, 100, 0.7), rgba(100, 150, 255, 0.6))"
-                        ][i % 3],
-                        clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-                        filter: "drop-shadow(0 0 3px currentColor)"
-                      }}
-                    />
-                  )}
-                  {sparkle.type === "plus" && (
-                    <div
-                      className="w-3 h-3"
-                      style={{
-                        background: [
-                          "conic-gradient(from 45deg, rgba(100, 255, 180, 0.7), rgba(255, 100, 150, 0.6), rgba(150, 200, 255, 0.7), rgba(255, 180, 100, 0.6))",
-                          "conic-gradient(from 135deg, rgba(255, 150, 100, 0.7), rgba(100, 200, 255, 0.6), rgba(200, 100, 255, 0.7), rgba(100, 255, 150, 0.6))"
-                        ][i % 2],
-                        clipPath: "polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%)",
-                        filter: "drop-shadow(0 0 4px currentColor)"
-                      }}
-                    />
-                  )}
-                </div>
-              ))}
             </motion.h1>
 
             {/* Enhanced subtitle with sophisticated desktop-level styling */}
@@ -699,35 +694,6 @@ export default function Index() {
                       </span>
                     ))}
                   </span>
-
-                  {/* Sparkles around subtitle */}
-                  {[
-                    { x: 80, y: -20, size: 0.6 },
-                    { x: 60, y: -5, size: 0.4 },
-                    { x: 100, y: 25, size: 0.5 },
-                    { x: 20, y: 30, size: 0.7 },
-                    { x: -15, y: 10, size: 0.4 }
-                  ].map((sparkle, i) => (
-                    <div
-                      key={`subtitle-sparkle-${i}`}
-                      className="absolute pointer-events-none"
-                      style={{
-                        left: `calc(50% + ${sparkle.x}px)`,
-                        top: `calc(50% + ${sparkle.y}px)`,
-                        animation: `sparkle ${4 + (i % 2)}s ease-in-out infinite ${i * 0.8}s`,
-                        transform: `translateZ(0) scale(${sparkle.size})`,
-                        opacity: 0.4
-                      }}
-                    >
-                      <div
-                        className="w-2 h-2"
-                        style={{
-                          background: "radial-gradient(circle, rgba(73, 146, 255, 0.8) 0%, transparent 70%)",
-                          clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"
-                        }}
-                      />
-                    </div>
-                  ))}
                 </span>
               </div>
             </motion.div>
@@ -746,20 +712,7 @@ export default function Index() {
                   }}
                 >
                   Cutting-edge web development, mobile apps, and cloud solutions
-                  that drive your business forward with modern{" "}
-                  <span
-                    className="warm-glow-text font-semibold"
-                    style={{
-                      background: "linear-gradient(135deg, #60a5fa 0%, #34d399 50%, #a78bfa 100%)",
-                      backgroundClip: "text",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      animation: "gentle-pulse 3s ease-in-out infinite"
-                    }}
-                  >
-                    AI integration
-                  </span>
-                  .
+                  that drive your business forward with modern technology.
                 </span>
               </p>
 
@@ -809,9 +762,6 @@ export default function Index() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                {/* Subtle sparkle effect */}
-                <div className="absolute top-2 right-4 w-2 h-2 bg-white/60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
-                <div className="absolute bottom-3 left-6 w-1 h-1 bg-blue-200/80 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" style={{ animationDelay: "0.2s" }} />
               </motion.button>
 
               <motion.button
