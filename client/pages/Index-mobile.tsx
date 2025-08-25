@@ -601,23 +601,49 @@ export default function Index() {
 
             {/* Removed terminal section */}
 
+            {/* Enhanced action buttons with better animations */}
             <motion.div
               className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
               variants={premiumVariants}
             >
               <motion.button
-                className="mobile-glow-button px-8 py-4 rounded-xl text-primary-foreground font-semibold relative overflow-hidden"
-                whileHover={{ y: -3, scale: 1.05 }}
+                className="mobile-glow-button px-10 py-4 rounded-2xl text-primary-foreground font-bold relative overflow-hidden group"
+                whileHover={{
+                  y: -5,
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)"
+                }}
                 whileTap={{ scale: 0.98 }}
+                style={{
+                  background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
+                  boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
+                }}
               >
-                <span className="relative z-10">Get Started</span>
+                <span className="relative z-10 flex items-center justify-center">
+                  Get Started
+                  <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
               </motion.button>
+
               <motion.button
-                className="px-8 py-4 rounded-xl mobile-premium-card mobile-tilt-card text-foreground font-semibold"
-                whileHover={{ y: -3 }}
+                className="px-10 py-4 rounded-2xl mobile-premium-card text-foreground font-bold border-2 border-transparent relative overflow-hidden group"
+                whileHover={{
+                  y: -5,
+                  scale: 1.02,
+                  borderColor: "rgba(59, 130, 246, 0.5)"
+                }}
                 whileTap={{ scale: 0.98 }}
+                style={{
+                  background: "rgba(255, 255, 255, 0.05)",
+                  backdropFilter: "blur(20px)",
+                  boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
+                }}
               >
-                View Portfolio
+                <span className="relative z-10 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  View Portfolio
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
             </motion.div>
           </motion.div>
