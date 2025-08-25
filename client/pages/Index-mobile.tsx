@@ -45,8 +45,6 @@ import {
 import { cn } from "@/lib/utils";
 
 export default function Index() {
-  const { theme } = useTheme();
-  const { mode } = useRetroMode();
   const { showInfo } = useUnifiedNotifications();
   const { isMobileSafari, isIOS } = useBrowserDetection();
   const prefersReducedMotion = useReducedMotion();
