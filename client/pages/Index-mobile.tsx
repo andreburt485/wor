@@ -19,8 +19,6 @@ import {
   Twitter,
   Linkedin,
   ArrowRight,
-  Zap,
-  Moon,
   Star,
   Users,
   Code,
