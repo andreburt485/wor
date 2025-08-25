@@ -542,7 +542,7 @@ export default function Index() {
         {/* Enhanced Hero Section */}
         <section
           id="home"
-          className="min-h-screen flex items-center justify-center px-4 py-8 relative overflow-hidden"
+          className="min-h-screen flex items-center justify-center px-4 py-8 relative overflow-hidden mobile-ambient-glow"
         >
           {/* Removed floating shapes */}
 
