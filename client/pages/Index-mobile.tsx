@@ -487,7 +487,6 @@ export default function Index() {
                 <motion.button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 rounded-lg hover:bg-accent transition-colors mobile-tilt-card"
-                  whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <X className="w-6 h-6" />
@@ -509,7 +508,6 @@ export default function Index() {
                         setActiveSection(item.id);
                         setIsMobileMenuOpen(false);
                       }}
-                      whileHover={{ x: 8, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
                       <IconComponent className="w-5 h-5 text-blue-400" />
@@ -540,7 +538,6 @@ export default function Index() {
           <motion.button
             onClick={() => setIsMobileMenuOpen(true)}
             className="p-2 rounded-lg mobile-premium-card mobile-tilt-card"
-            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <Menu className="w-6 h-6" />
