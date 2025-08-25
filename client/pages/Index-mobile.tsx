@@ -906,13 +906,25 @@ export default function Index() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="mobile-premium-card mobile-tilt-card p-6 rounded-xl relative overflow-hidden"
+                  className="mobile-premium-card mobile-tilt-card rounded-xl relative overflow-hidden"
                 >
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-30`}
                   />
 
-                  <div className="relative z-10">
+                  {/* Project Image */}
+                  <div className="relative">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover rounded-t-xl"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-t-xl" />
+                  </div>
+
+                  {/* Project Content */}
+                  <div className="relative z-10 p-6">
                     <h3 className="text-lg font-semibold mb-2">
                       {project.title}
                     </h3>
