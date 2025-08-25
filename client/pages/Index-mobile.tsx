@@ -420,8 +420,31 @@ export default function Index() {
   );
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Simple background without moving gradients */}
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden mobile-gradient-bg">
+      {/* Beautiful Animated Background */}
+      <div className="fixed inset-0 mobile-mesh-bg pointer-events-none z-0" />
+
+      {/* Orbital Background Elements */}
+      <div className="mobile-orbital-bg fixed inset-0 z-0">
+        <div className="mobile-orbit"></div>
+        <div className="mobile-orbit"></div>
+        <div className="mobile-orbit"></div>
+      </div>
+
+      {/* Floating Particles */}
+      <div className="mobile-floating-particles fixed inset-0 z-0">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <div
+            key={i}
+            className="mobile-particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${i * -4}s`,
+              animationDuration: `${20 + Math.random() * 10}s`,
+            }}
+          />
+        ))}
+      </div>
 
       {/* Mobile Navigation Overlay */}
       <AnimatePresence>
