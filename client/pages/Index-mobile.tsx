@@ -436,7 +436,35 @@ export default function Index() {
   );
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden mobile-gradient-bg">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden mobile-gradient-bg mobile-optimized-animations">
+      {/* Floating scroll indicator */}
+      <motion.div
+        className="fixed bottom-8 right-4 z-20 p-3 rounded-full mobile-premium-card mobile-fab mobile-scroll-hint"
+        animate={{
+          y: [0, -10, 0],
+          boxShadow: [
+            "0 4px 15px rgba(59, 130, 246, 0.3)",
+            "0 8px 25px rgba(59, 130, 246, 0.5)",
+            "0 4px 15px rgba(59, 130, 246, 0.3)",
+          ],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        whileHover={{
+          scale: 1.1,
+          rotate: 10,
+        }}
+        whileTap={{ scale: 0.9 }}
+        onClick={() => {
+          window.scrollTo({ top: window.scrollY + 400, behavior: "smooth" });
+        }}
+      >
+        <ChevronDown className="w-5 h-5 text-blue-400" />
+        <div className="mobile-pulse-ring" />
+      </motion.div>
       {/* Beautiful Animated Background */}
       <div className="fixed inset-0 mobile-mesh-bg pointer-events-none z-0" />
 
