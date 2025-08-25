@@ -758,7 +758,7 @@
 /* Enhanced 3D Ribbon animation */
 @keyframes ribbon-entrance {
   0% {
-    transform: rotate(45deg) perspective(100px) rotateY(-15deg) translateX(120px) scale(0.8);
+    transform: rotate(45deg) perspective(100px) rotateY(-15deg) translateX(160px) scale(0.8);
     opacity: 0;
     filter: blur(2px);
   }
