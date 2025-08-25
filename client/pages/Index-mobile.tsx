@@ -1054,7 +1054,7 @@ export default function Index() {
 
             {/* Enhanced Company Stats with Animated Counters */}
             <motion.div
-              className="grid grid-cols-3 gap-4 mb-8"
+              className="grid grid-cols-3 gap-4 mb-8 mobile-grid-enhanced mobile-optimized-animations"
               variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
