@@ -82,6 +82,14 @@ body > div {
   animation: nav-hint-bounce 2s ease-in-out infinite;
 }
 
+.animate-warm-glow-pulse {
+  animation: animate-warm-glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
+
 /* Hamburger menu performance optimizations */
 .mobile-menu-backdrop {
   will-change: opacity;
