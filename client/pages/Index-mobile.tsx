@@ -1062,22 +1062,24 @@ export default function Index() {
               onViewportEnter={() => setIsCounterVisible(true)}
             >
               <motion.div
-                className="text-center p-6 mobile-premium-card mobile-tilt-card relative overflow-hidden"
+                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-touch-feedback mobile-fab relative overflow-hidden"
                 whileHover={{
-                  scale: 1.05,
-                  y: -5,
-                  boxShadow: "0 15px 30px rgba(59, 130, 246, 0.3)",
+                  scale: 1.08,
+                  y: -8,
+                  rotateY: 5,
+                  boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)",
                 }}
                 animate={{
-                  y: [0, -3, 0],
+                  y: [0, -4, 0],
+                  rotateZ: [0, 1, 0],
                   boxShadow: [
-                    "0 8px 20px rgba(59, 130, 246, 0.2)",
-                    "0 12px 25px rgba(59, 130, 246, 0.3)",
-                    "0 8px 20px rgba(59, 130, 246, 0.2)",
+                    "0 10px 25px rgba(59, 130, 246, 0.3)",
+                    "0 15px 35px rgba(59, 130, 246, 0.5)",
+                    "0 10px 25px rgba(59, 130, 246, 0.3)",
                   ],
                 }}
                 transition={{
-                  duration: 3,
+                  duration: 3.5,
                   repeat: Infinity,
                   ease: "easeInOut",
                   delay: 0,
