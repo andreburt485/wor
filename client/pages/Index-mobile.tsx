@@ -36,9 +36,6 @@ import {
   Clock,
   TrendingUp,
   Sparkles,
-  Hexagon,
-  Triangle,
-  Circle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
