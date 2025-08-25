@@ -640,10 +640,10 @@ export default function Index() {
                   boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
                 }}
               >
-                <span className="relative z-10 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="relative z-10 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                   View Portfolio
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
             </motion.div>
           </motion.div>
