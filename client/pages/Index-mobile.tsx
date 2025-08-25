@@ -571,14 +571,18 @@ export default function Index() {
 
             {/* Enhanced main title with multiple gradient layers */}
             <motion.h1
-              className="text-5xl md:text-6xl font-bold mb-6 mobile-premium-text relative"
+              className="text-5xl md:text-6xl font-bold mb-6 relative"
               variants={premiumVariants}
               style={{
-                textShadow:
-                  "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(37, 99, 235, 0.3)",
+                background: "linear-gradient(135deg, #ffffff 0%, #93c5fd 20%, #60a5fa 40%, #3b82f6 60%, #2563eb 80%, #1d4ed8 100%)",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                textShadow: "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(37, 99, 235, 0.3)",
+                filter: "drop-shadow(0 0 10px rgba(59, 130, 246, 0.3))"
               }}
             >
-              <span className="relative z-10 text-white">KOR</span>
+              KOR
               <div className="absolute inset-0 blur-lg bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent opacity-20 animate-pulse" />
             </motion.h1>
 
