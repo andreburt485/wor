@@ -533,25 +533,17 @@ export default function Index() {
       </AnimatePresence>
 
       {/* Enhanced Mobile Header */}
-      <header className="fixed top-0 left-0 right-0 z-30 mobile-premium-card">
-        <div className="flex items-center justify-between px-4 py-3">
-          <motion.button
-            onClick={() => setIsMobileMenuOpen(true)}
-            className="p-2 rounded-lg mobile-premium-card mobile-tilt-card"
-            whileTap={{ scale: 0.95 }}
-          >
-            <Menu className="w-6 h-6" />
-          </motion.button>
-
-          <h1 className="text-lg font-bold mobile-premium-text">kor</h1>
-
-          {/* Header right side - removed night/retro mode buttons */}
-          <div className="w-12 h-8"></div>
-        </div>
-      </header>
+      {/* Menu button in corner */}
+      <motion.button
+        onClick={() => setIsMobileMenuOpen(true)}
+        className="fixed top-4 left-4 z-30 p-2 rounded-lg mobile-premium-card mobile-tilt-card"
+        whileTap={{ scale: 0.95 }}
+      >
+        <Menu className="w-6 h-6" />
+      </motion.button>
 
       {/* Main Content */}
-      <main className="pt-16 relative z-10">
+      <main className="relative z-10">
         {/* Enhanced Hero Section */}
         <section
           id="home"
