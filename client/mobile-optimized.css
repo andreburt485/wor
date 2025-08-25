@@ -34,13 +34,18 @@
 
 /* Core mobile optimizations */
 @media (max-width: 768px) {
-  /* Disable heavy animations on mobile */
-  .heavy-animation,
-  .orb-pulse,
-  .glow-intensity,
+  /* Enable optimized animations on mobile for liveliness */
+  .heavy-animation {
+    animation-duration: 3s !important; /* Reduce duration for performance */
+  }
+  .orb-pulse {
+    animation-duration: 4s !important;
+  }
+  .glow-intensity {
+    animation-duration: 3s !important;
+  }
   .particle-effect {
-    animation: none !important;
-    transform: none !important;
+    animation-duration: 8s !important;
   }
   
   /* Performance optimizations */
