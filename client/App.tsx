@@ -73,6 +73,7 @@ const App = () => (
                         <Route path="/services" element={<Index />} />
                         <Route path="/portfolio" element={<Index />} />
                         <Route path="/contact" element={<Index />} />
+                        <Route path="/ribbon-test" element={<RibbonTest />} />
                         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                         <Route path="*" element={<NotFound />} />
                       </Routes>
