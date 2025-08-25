@@ -574,19 +574,19 @@ export default function Index() {
       {/* Animated Menu button in corner */}
       <motion.button
         onClick={() => setIsMobileMenuOpen(true)}
-        className="fixed top-4 left-4 z-30 p-3 rounded-xl mobile-premium-card mobile-tilt-card"
+        className="fixed top-4 left-4 z-30 p-3 rounded-xl mobile-premium-card mobile-tilt-card mobile-menu-enhanced mobile-fab mobile-touch-feedback relative overflow-hidden"
         whileHover={{
-          scale: 1.1,
-          rotate: 5,
-          boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)",
+          scale: 1.15,
+          rotate: 8,
+          boxShadow: "0 15px 35px rgba(59, 130, 246, 0.4)",
         }}
-        whileTap={{ scale: 0.9, rotate: -5 }}
+        whileTap={{ scale: 0.85, rotate: -8 }}
         animate={{
-          y: [0, -2, 0],
+          y: [0, -3, 0],
           boxShadow: [
-            "0 5px 15px rgba(59, 130, 246, 0.2)",
             "0 8px 20px rgba(59, 130, 246, 0.3)",
-            "0 5px 15px rgba(59, 130, 246, 0.2)",
+            "0 12px 30px rgba(59, 130, 246, 0.5)",
+            "0 8px 20px rgba(59, 130, 246, 0.3)",
           ],
         }}
         transition={{
@@ -595,15 +595,26 @@ export default function Index() {
           ease: "easeInOut",
         }}
       >
-        <Menu className="w-6 h-6" />
+        <Menu className="w-6 h-6 relative z-10" />
 
-        {/* Breathing border effect */}
+        {/* Enhanced pulse rings */}
+        <div className="mobile-pulse-ring" />
         <div
-          className="absolute inset-0 rounded-xl border border-blue-400/30"
+          className="mobile-pulse-ring"
+          style={{ animationDelay: "1s" }}
+        />
+
+        {/* Breathing border effect with glow */}
+        <div
+          className="absolute inset-0 rounded-xl border border-blue-400/40"
           style={{
             animation: "border-pulse 2s ease-in-out infinite",
+            boxShadow: "inset 0 0 20px rgba(59, 130, 246, 0.2)",
           }}
         />
+
+        {/* Sparkle effect */}
+        <div className="mobile-sparkle absolute top-0 right-0" />
       </motion.button>
 
       {/* Main Content */}
