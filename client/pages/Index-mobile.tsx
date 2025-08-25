@@ -482,7 +482,7 @@ export default function Index() {
             >
               <div className="flex items-center justify-between mb-8">
                 <h2 className="text-xl font-bold mobile-premium-text">
-                  KOR DIGITAL
+                  kor
                 </h2>
                 <motion.button
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -546,7 +546,7 @@ export default function Index() {
             <Menu className="w-6 h-6" />
           </motion.button>
 
-          <h1 className="text-lg font-bold mobile-premium-text">KOR DIGITAL</h1>
+          <h1 className="text-lg font-bold mobile-premium-text">kor</h1>
 
           {/* Header right side - removed night/retro mode buttons */}
           <div className="w-12 h-8"></div>
@@ -591,7 +591,7 @@ export default function Index() {
                   "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(37, 99, 235, 0.3)",
               }}
             >
-              <span className="relative z-10">KOR DIGITAL</span>
+              <span className="relative z-10">kor</span>
               <div className="absolute inset-0 blur-lg bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent opacity-30 animate-pulse" />
             </motion.h1>
 
@@ -1349,7 +1349,7 @@ export default function Index() {
               viewport={{ once: true }}
             >
               <h3 className="text-lg font-bold mobile-premium-text">
-                KOR DIGITAL
+                kor
               </h3>
             </motion.div>
 
