@@ -980,7 +980,7 @@ export default function Index() {
               Pricing
             </motion.h2>
 
-            <div className="space-y-6 mb-6">
+            <div className="space-y-8 mb-6">
               {pricingPlans.map((plan, index) => (
                 <motion.div
                   key={plan.name}
@@ -991,7 +991,7 @@ export default function Index() {
                   transition={{ delay: index * 0.1 }}
                   className={cn(
                     "mobile-premium-card mobile-tilt-card p-6 rounded-xl relative overflow-hidden",
-                    plan.popular && "ring-2 ring-primary/50",
+                    plan.popular && "ring-2 ring-blue-500/50 mt-4",
                   )}
                 >
                   <div
