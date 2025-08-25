@@ -1501,9 +1501,9 @@ export default function Index() {
                     setCurrentProjectPage(Math.max(0, currentProjectPage - 1))
                   }
                   disabled={currentProjectPage === 0}
-                  className="px-4 py-2 rounded-lg mobile-premium-card disabled:opacity-50 disabled:cursor-not-allowed mobile-tilt-card"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="px-4 py-2 rounded-lg mobile-premium-card mobile-button-enhanced mobile-touch-feedback disabled:opacity-50 disabled:cursor-not-allowed mobile-tilt-card"
+                  whileHover={{ scale: 1.08, y: -3 }}
+                  whileTap={{ scale: 0.92 }}
                 >
                   Previous
                 </motion.button>
