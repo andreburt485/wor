@@ -617,8 +617,8 @@
     90deg,
     transparent 0%,
     rgba(59, 130, 246, 0.3) 25%,
-    rgba(168, 85, 247, 0.3) 50%,
-    rgba(236, 72, 153, 0.3) 75%,
+    rgba(37, 99, 235, 0.3) 50%,
+    rgba(29, 78, 216, 0.3) 75%,
     transparent 100%
   );
   animation: mobile-section-line 4s ease-in-out infinite;
