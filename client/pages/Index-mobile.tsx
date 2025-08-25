@@ -615,7 +615,7 @@ export default function Index() {
                 }}
                 whileTap={{ scale: 0.98 }}
                 style={{
-                  background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
+                  background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
                   boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
                 }}
               >
