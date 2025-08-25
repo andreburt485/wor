@@ -570,11 +570,11 @@ export default function Index() {
               className="text-5xl md:text-6xl font-bold mb-6 mobile-premium-text relative"
               variants={premiumVariants}
               style={{
-                textShadow: "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(168, 85, 247, 0.3)"
+                textShadow: "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(37, 99, 235, 0.3)"
               }}
             >
               <span className="relative z-10">KOR DIGITAL</span>
-              <div className="absolute inset-0 blur-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent opacity-30 animate-pulse" />
+              <div className="absolute inset-0 blur-lg bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent opacity-30 animate-pulse" />
             </motion.h1>
 
             {/* Enhanced subtitle with glow */}
