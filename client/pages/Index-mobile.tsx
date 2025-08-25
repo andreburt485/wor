@@ -1013,17 +1013,12 @@ export default function Index() {
                   />
 
                   {plan.popular && (
-                    <motion.div
-                      className="absolute -top-2 left-1/2 transform -translate-x-1/2 z-20"
-                      initial={{ scale: 0, rotate: -12 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      transition={{ delay: 0.5, type: "spring" }}
-                    >
-                      <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg border border-blue-300">
+                    <div className="corner-ribbon">
+                      <span>
                         <Star className="w-3 h-3 inline mr-1" />
-                        Most Popular
+                        Popular
                       </span>
-                    </motion.div>
+                    </div>
                   )}
 
                   <div className="text-center mb-6 relative z-10">
