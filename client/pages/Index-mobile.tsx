@@ -19,6 +19,7 @@ import {
   Twitter,
   Linkedin,
   ArrowRight,
+  Zap,
   Star,
   Users,
   Code,
