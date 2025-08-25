@@ -28,7 +28,6 @@ import {
   BarChart3,
   CheckCircle2,
   ChevronDown,
-  Terminal,
   Instagram,
   MessageCircle,
   Send,
