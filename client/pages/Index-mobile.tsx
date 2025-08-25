@@ -1335,23 +1335,26 @@ export default function Index() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="mobile-premium-card mobile-tilt-card rounded-xl overflow-hidden relative"
+                    className="mobile-premium-card mobile-tilt-card mobile-touch-feedback mobile-button-enhanced rounded-xl overflow-hidden relative"
                     whileHover={{
-                      scale: 1.03,
-                      y: -8,
-                      boxShadow: "0 15px 30px rgba(73, 146, 255, 0.2)",
-                      rotateX: 3,
+                      scale: 1.06,
+                      y: -12,
+                      rotateY: 5,
+                      boxShadow: "0 20px 40px rgba(73, 146, 255, 0.3)",
+                      rotateX: 4,
                     }}
                     animate={{
-                      y: [0, -1, 0],
+                      y: [0, -2, 0],
+                      rotateZ: [0, 0.3, 0],
                       borderColor: [
-                        "rgba(73, 146, 255, 0.2)",
-                        "rgba(168, 85, 247, 0.2)",
-                        "rgba(73, 146, 255, 0.2)",
+                        "rgba(73, 146, 255, 0.3)",
+                        "rgba(168, 85, 247, 0.3)",
+                        "rgba(34, 197, 94, 0.3)",
+                        "rgba(73, 146, 255, 0.3)",
                       ],
                     }}
                     transition={{
-                      duration: 5 + (index % 3),
+                      duration: 6 + (index % 3),
                       repeat: Infinity,
                       ease: "easeInOut",
                       delay: index * 0.3,
