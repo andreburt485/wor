@@ -746,8 +746,8 @@
   content: "";
   position: absolute;
   top: 35px;
-  right: -35px;
-  width: 100px;
+  right: -52px;
+  width: 140px;
   height: 20px;
   background: rgba(0, 0, 0, 0.2);
   transform: rotate(45deg);
