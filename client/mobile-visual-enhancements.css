@@ -1,18 +1,20 @@
 /* Premium Mobile Visual Enhancements */
 /* High-end eye candy while maintaining 60fps performance */
 
-/* Animated Gradient Backgrounds */
+/* Beautiful Animated Gradient Backgrounds */
 .mobile-gradient-bg {
   background: linear-gradient(
     135deg,
     hsl(var(--background)) 0%,
-    hsl(var(--background)) 25%,
-    rgba(59, 130, 246, 0.05) 50%,
-    rgba(147, 51, 234, 0.03) 75%,
+    rgba(59, 130, 246, 0.03) 15%,
+    rgba(168, 85, 247, 0.02) 35%,
+    hsl(var(--background)) 50%,
+    rgba(34, 197, 94, 0.02) 65%,
+    rgba(236, 72, 153, 0.03) 85%,
     hsl(var(--background)) 100%
   );
   background-size: 400% 400%;
-  animation: mobile-gradient-shift 12s ease infinite;
+  animation: mobile-gradient-shift 15s ease infinite;
 }
 
 @keyframes mobile-gradient-shift {
@@ -31,13 +33,130 @@
   }
 }
 
-/* Floating Geometric Shapes */
-.mobile-floating-shape {
+@keyframes mobile-particle-float {
+  0% {
+    transform: translateY(100vh) translateX(0px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(90vh) translateX(10px) scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(10vh) translateX(-10px) scale(1);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(0px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes mobile-orbit-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Beautiful Floating Particles */
+.mobile-floating-particles {
   position: absolute;
   pointer-events: none;
-  opacity: 0.6;
-  filter: blur(1px);
-  animation: mobile-float-complex 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+.mobile-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.8) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: mobile-particle-float 20s linear infinite;
+}
+
+.mobile-particle:nth-child(2) {
+  animation-delay: -2s;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.6) 0%,
+    transparent 70%
+  );
+}
+
+.mobile-particle:nth-child(3) {
+  animation-delay: -4s;
+  background: radial-gradient(
+    circle,
+    rgba(34, 197, 94, 0.7) 0%,
+    transparent 70%
+  );
+}
+
+.mobile-particle:nth-child(4) {
+  animation-delay: -6s;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.5) 0%,
+    transparent 70%
+  );
+}
+
+.mobile-particle:nth-child(5) {
+  animation-delay: -8s;
+  background: radial-gradient(
+    circle,
+    rgba(251, 191, 36, 0.6) 0%,
+    transparent 70%
+  );
+}
+
+/* Orbital Background Elements */
+.mobile-orbital-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.mobile-orbit {
+  position: absolute;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  border-radius: 50%;
+  animation: mobile-orbit-rotate 30s linear infinite;
+}
+
+.mobile-orbit:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 20%;
+  animation-duration: 25s;
+}
+
+.mobile-orbit:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 15%;
+  animation-duration: 35s;
+  animation-direction: reverse;
+  border-color: rgba(168, 85, 247, 0.08);
+}
+
+.mobile-orbit:nth-child(3) {
+  width: 300px;
+  height: 300px;
+  top: 40%;
+  left: -50px;
+  animation-duration: 40s;
+  border-color: rgba(34, 197, 94, 0.06);
 }
 
 .mobile-floating-shape:nth-child(1) {
@@ -75,21 +194,22 @@
   }
 }
 
-/* Premium Card Effects */
+/* Enhanced Premium Card Effects */
 .mobile-premium-card {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.04) 50%,
-    rgba(255, 255, 255, 0.02) 100%
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.04) 100%
   );
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.12),
-    0 2px 8px rgba(59, 130, 246, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    0 4px 12px rgba(59, 130, 246, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
 }
@@ -216,19 +336,51 @@
   }
 }
 
-/* Floating Badges */
+/* Enhanced Floating Badges - Blue Theme */
 .mobile-floating-badge {
   background: linear-gradient(
     135deg,
-    rgba(59, 130, 246, 0.9) 0%,
-    rgba(29, 78, 216, 0.8) 100%
+    rgba(59, 130, 246, 0.95) 0%,
+    rgba(37, 99, 235, 0.9) 50%,
+    rgba(29, 78, 216, 0.95) 100%
   );
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow:
-    0 4px 16px rgba(59, 130, 246, 0.3),
-    0 0 24px rgba(59, 130, 246, 0.2);
-  animation: mobile-badge-float 4s ease-in-out infinite;
+    0 8px 25px rgba(59, 130, 246, 0.4),
+    0 0 40px rgba(37, 99, 235, 0.3),
+    0 0 60px rgba(29, 78, 216, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  animation: mobile-badge-float 6s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-floating-badge::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: mobile-badge-shimmer 3s linear infinite;
+}
+
+@keyframes mobile-badge-shimmer {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes mobile-badge-float {
@@ -247,41 +399,77 @@
   }
 }
 
-/* Mesh Gradient Backgrounds */
+/* Beautiful Mesh Background with Subtle Animation */
 .mobile-mesh-bg {
   background:
     radial-gradient(
       circle at 20% 20%,
-      rgba(59, 130, 246, 0.15) 0%,
-      transparent 50%
+      rgba(59, 130, 246, 0.08) 0%,
+      transparent 60%
     ),
     radial-gradient(
       circle at 80% 20%,
-      rgba(59, 130, 246, 0.08) 0%,
-      transparent 50%
+      rgba(168, 85, 247, 0.05) 0%,
+      transparent 60%
     ),
     radial-gradient(
-      circle at 40% 40%,
-      rgba(168, 85, 247, 0.1) 0%,
-      transparent 50%
+      circle at 40% 60%,
+      rgba(34, 197, 94, 0.04) 0%,
+      transparent 60%
     ),
     radial-gradient(
-      circle at 60% 80%,
-      rgba(239, 68, 68, 0.08) 0%,
-      transparent 50%
+      circle at 70% 80%,
+      rgba(236, 72, 153, 0.06) 0%,
+      transparent 60%
     ),
     radial-gradient(
-      circle at 90% 90%,
-      rgba(59, 130, 246, 0.12) 0%,
-      transparent 50%
+      circle at 10% 90%,
+      rgba(251, 191, 36, 0.03) 0%,
+      transparent 60%
     );
   background-size:
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%;
-  animation: mobile-mesh-shift 20s ease-in-out infinite;
+    150% 150%,
+    120% 120%,
+    180% 180%,
+    130% 130%,
+    160% 160%;
+  animation: mobile-mesh-drift 25s ease-in-out infinite;
+}
+
+@keyframes mobile-mesh-drift {
+  0%,
+  100% {
+    background-position:
+      0% 0%,
+      100% 0%,
+      50% 50%,
+      100% 100%,
+      0% 100%;
+  }
+  25% {
+    background-position:
+      10% 20%,
+      90% 10%,
+      40% 70%,
+      80% 90%,
+      20% 80%;
+  }
+  50% {
+    background-position:
+      20% 40%,
+      80% 30%,
+      60% 30%,
+      70% 70%,
+      30% 60%;
+  }
+  75% {
+    background-position:
+      15% 60%,
+      85% 50%,
+      45% 20%,
+      75% 80%,
+      25% 40%;
+  }
 }
 
 @keyframes mobile-mesh-shift {
@@ -344,22 +532,24 @@
   }
 }
 
-/* Enhanced Text Effects */
+/* Enhanced Premium Text Effects - Blue Theme */
 .mobile-premium-text {
   background: linear-gradient(
     135deg,
     #ffffff 0%,
-    #60a5fa 25%,
-    #3b82f6 50%,
-    #1d4ed8 75%,
-    #1e40af 100%
+    #93c5fd 20%,
+    #60a5fa 40%,
+    #3b82f6 60%,
+    #2563eb 80%,
+    #1d4ed8 100%
   );
-  background-size: 300% 300%;
+  background-size: 400% 400%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: mobile-text-shimmer 4s ease-in-out infinite;
+  animation: mobile-text-shimmer 6s ease-in-out infinite;
   position: relative;
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
 }
 
 .mobile-premium-text::after {
@@ -390,9 +580,160 @@
   100% {
     background-position: 0% 50%;
   }
+  25% {
+    background-position: 50% 25%;
+  }
   50% {
     background-position: 100% 50%;
   }
+  75% {
+    background-position: 50% 75%;
+  }
+}
+
+/* Subtle Ambient Glow */
+.mobile-ambient-glow {
+  position: relative;
+}
+
+.mobile-ambient-glow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.03) 0%,
+    rgba(37, 99, 235, 0.02) 25%,
+    rgba(29, 78, 216, 0.015) 50%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  animation: mobile-ambient-pulse 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes mobile-ambient-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Section Visual Enhancements */
+.mobile-section-enhanced {
+  position: relative;
+}
+
+.mobile-section-enhanced::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(59, 130, 246, 0.3) 25%,
+    rgba(37, 99, 235, 0.3) 50%,
+    rgba(29, 78, 216, 0.3) 75%,
+    transparent 100%
+  );
+  animation: mobile-section-line 4s ease-in-out infinite;
+}
+
+@keyframes mobile-section-line {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleX(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleX(1);
+  }
+}
+
+/* Corner Ribbon for Most Popular */
+.corner-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  overflow: hidden;
+  width: 90px;
+  height: 90px;
+  text-align: right;
+}
+
+.corner-ribbon span {
+  position: absolute;
+  top: 22px;
+  right: -25px;
+  display: inline-block;
+  width: 110px;
+  padding: 6px 0;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  box-shadow:
+    0 4px 12px rgba(59, 130, 246, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(45deg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.corner-ribbon span::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #1d4ed8;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #1d4ed8;
+}
+
+.corner-ribbon span::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #1d4ed8;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #1d4ed8;
+}
+
+/* Ribbon animation */
+@keyframes ribbon-entrance {
+  0% {
+    transform: rotate(45deg) translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(45deg) translateX(0);
+    opacity: 1;
+  }
+}
+
+.corner-ribbon span {
+  animation: ribbon-entrance 0.6s ease-out 0.3s both;
 }
 
 /* Interactive Tilt Effects */
@@ -428,21 +769,9 @@
   opacity: 1;
 }
 
-/* Pulsing Orbs */
+/* Pulsing Orbs - Disabled */
 .mobile-pulse-orb {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 30% 30%,
-    rgba(59, 130, 246, 0.8) 0%,
-    rgba(59, 130, 246, 0.4) 50%,
-    rgba(59, 130, 246, 0.1) 100%
-  );
-  animation: mobile-orb-pulse 3s ease-in-out infinite;
-  filter: blur(2px);
-  position: absolute;
-  pointer-events: none;
+  display: none; /* Completely hide pulse orbs */
 }
 
 @keyframes mobile-orb-pulse {
@@ -480,35 +809,9 @@
   }
 }
 
-/* Terminal Enhancement */
+/* Terminal Enhancement - Disabled (terminal removed) */
 .mobile-terminal-enhanced {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(15, 23, 42, 0.8) 100%
-  );
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  box-shadow:
-    0 0 20px rgba(34, 197, 94, 0.2),
-    inset 0 1px 0 rgba(34, 197, 94, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-.mobile-terminal-enhanced::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(34, 197, 94, 0.8) 50%,
-    transparent 100%
-  );
-  animation: mobile-terminal-scan 2s linear infinite;
+  display: none; /* Completely hide terminal */
 }
 
 @keyframes mobile-terminal-scan {
@@ -560,12 +863,7 @@
 
   /* Respect reduced motion preferences */
   @media (prefers-reduced-motion: reduce) {
-    .mobile-gradient-bg,
-    .mobile-floating-shape,
-    .mobile-mesh-bg,
-    .mobile-text-shimmer,
-    .mobile-orb-pulse,
-    .mobile-terminal-scan {
+    .mobile-text-shimmer {
       animation: none !important;
     }
 
@@ -598,12 +896,12 @@
   }
 }
 
-/* Print styles */
+/* Print styles - Most elements already hidden */
 @media print {
-  .mobile-floating-shape,
-  .mobile-pulse-orb,
-  .mobile-gradient-bg,
-  .mobile-mesh-bg {
-    display: none !important;
+  .mobile-premium-card,
+  .mobile-glow-button {
+    box-shadow: none !important;
+    background: white !important;
+    border: 1px solid black !important;
   }
 }

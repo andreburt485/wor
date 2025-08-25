@@ -1,9 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { RetroToggle } from "@/components/ui/retro-toggle";
-import { useTheme } from "@/hooks/use-theme";
-import { useRetroMode } from "@/hooks/use-retro-mode";
 import { useUnifiedNotifications } from "@/components/ui/unified-notification";
 import { useBrowserDetection } from "@/hooks/use-browser-detection";
 import {
@@ -24,7 +20,6 @@ import {
   Linkedin,
   ArrowRight,
   Zap,
-  Moon,
   Star,
   Users,
   Code,
@@ -34,7 +29,6 @@ import {
   BarChart3,
   CheckCircle2,
   ChevronDown,
-  Terminal,
   Instagram,
   MessageCircle,
   Send,
@@ -42,15 +36,10 @@ import {
   Clock,
   TrendingUp,
   Sparkles,
-  Hexagon,
-  Triangle,
-  Circle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Index() {
-  const { theme } = useTheme();
-  const { mode } = useRetroMode();
   const { showInfo } = useUnifiedNotifications();
   const { isMobileSafari, isIOS } = useBrowserDetection();
   const prefersReducedMotion = useReducedMotion();
@@ -311,48 +300,64 @@ export default function Index() {
       description: "Modern shopping experience with AI recommendations",
       tech: ["React", "Node.js", "AI/ML"],
       gradient: "from-blue-500/10 to-purple-500/10",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "Healthcare App",
       description: "Telemedicine platform connecting patients and doctors",
       tech: ["React Native", "Firebase", "WebRTC"],
       gradient: "from-green-500/10 to-blue-500/10",
+      image:
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "FinTech Dashboard",
       description: "Real-time financial analytics and trading platform",
       tech: ["Vue.js", "Python", "WebSocket"],
       gradient: "from-yellow-500/10 to-orange-500/10",
+      image:
+        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "Smart IoT System",
       description: "Connected devices management platform",
       tech: ["Angular", "IoT", "Cloud"],
       gradient: "from-purple-500/10 to-pink-500/10",
+      image:
+        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "AI Analytics Suite",
       description: "Machine learning powered business intelligence platform",
       tech: ["Python", "TensorFlow", "React"],
       gradient: "from-cyan-500/10 to-blue-500/10",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "Blockchain Wallet",
       description: "Secure cryptocurrency wallet with DeFi integration",
       tech: ["Solidity", "Web3.js", "Next.js"],
       gradient: "from-orange-500/10 to-red-500/10",
+      image:
+        "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "Video Streaming App",
       description: "High-performance video platform with live streaming",
       tech: ["React Native", "WebRTC", "Node.js"],
       gradient: "from-red-500/10 to-pink-500/10",
+      image:
+        "https://images.unsplash.com/photo-1626544827763-d516dce335e2?w=400&h=240&fit=crop&crop=center",
     },
     {
       title: "Cloud Monitoring Tool",
       description: "Real-time infrastructure monitoring and alerting system",
       tech: ["Go", "Docker", "Kubernetes"],
       gradient: "from-teal-500/10 to-green-500/10",
+      image:
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=240&fit=crop&crop=center",
     },
   ];
 
@@ -432,8 +437,30 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden mobile-gradient-bg">
-      {/* Enhanced Background Effects */}
+      {/* Beautiful Animated Background */}
       <div className="fixed inset-0 mobile-mesh-bg pointer-events-none z-0" />
+
+      {/* Orbital Background Elements */}
+      <div className="mobile-orbital-bg fixed inset-0 z-0">
+        <div className="mobile-orbit"></div>
+        <div className="mobile-orbit"></div>
+        <div className="mobile-orbit"></div>
+      </div>
+
+      {/* Floating Particles */}
+      <div className="mobile-floating-particles fixed inset-0 z-0">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <div
+            key={i}
+            className="mobile-particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${i * -4}s`,
+              animationDuration: `${20 + Math.random() * 10}s`,
+            }}
+          />
+        ))}
+      </div>
 
       {/* Mobile Navigation Overlay */}
       <AnimatePresence>
@@ -494,13 +521,6 @@ export default function Index() {
 
               <div className="absolute bottom-8 left-6 right-6 border-t border-border pt-6 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Theme</span>
-                  <div className="flex items-center space-x-2">
-                    <ThemeToggle />
-                    <RetroToggle />
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
                   <span className="text-sm text-muted-foreground">
                     Performance
                   </span>
@@ -528,22 +548,8 @@ export default function Index() {
 
           <h1 className="text-lg font-bold mobile-premium-text">KOR DIGITAL</h1>
 
-          <div className="flex items-center space-x-2">
-            <motion.button
-              className="p-2 rounded-lg mobile-premium-card mobile-tilt-card"
-              whileHover={{ scale: 1.05, rotate: 12 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Moon className="w-5 h-5 text-blue-400" />
-            </motion.button>
-            <motion.button
-              className="p-2 rounded-lg mobile-premium-card mobile-tilt-card"
-              whileHover={{ scale: 1.05, rotate: -12 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Zap className="w-5 h-5 text-green-400" />
-            </motion.button>
-          </div>
+          {/* Header right side - removed night/retro mode buttons */}
+          <div className="w-12 h-8"></div>
         </div>
       </header>
 
@@ -552,35 +558,9 @@ export default function Index() {
         {/* Enhanced Hero Section */}
         <section
           id="home"
-          className="min-h-screen flex items-center justify-center px-4 py-8 relative overflow-hidden"
+          className="min-h-screen flex items-center justify-center px-4 py-8 relative overflow-hidden mobile-ambient-glow"
         >
-          {/* Premium Floating Shapes */}
-          {!prefersReducedMotion && (
-            <>
-              <div
-                className="mobile-floating-shape mobile-pulse-orb"
-                style={{ top: "15%", left: "10%", animationDelay: "0s" }}
-              />
-              <div
-                className="mobile-floating-shape"
-                style={{ top: "25%", right: "15%", animationDelay: "2s" }}
-              >
-                <Hexagon className="w-8 h-8 text-blue-400/60" />
-              </div>
-              <div
-                className="mobile-floating-shape"
-                style={{ top: "70%", left: "20%", animationDelay: "4s" }}
-              >
-                <Triangle className="w-6 h-6 text-green-400/60" />
-              </div>
-              <div
-                className="mobile-floating-shape"
-                style={{ top: "60%", right: "25%", animationDelay: "6s" }}
-              >
-                <Circle className="w-7 h-7 text-purple-400/60" />
-              </div>
-            </>
-          )}
+          {/* Removed floating shapes */}
 
           <motion.div
             variants={premiumVariants}
@@ -588,101 +568,112 @@ export default function Index() {
             animate="visible"
             className="relative z-10 text-center max-w-md mx-auto"
           >
+            {/* Enhanced floating badge with glow */}
             <motion.div
-              className="mb-6 inline-block px-6 py-3 mobile-floating-badge rounded-full text-sm font-medium"
+              className="mb-8 inline-block px-6 py-3 mobile-floating-badge rounded-full text-sm font-medium relative"
               variants={floatingVariants}
+              style={{
+                boxShadow:
+                  "0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1)",
+              }}
             >
-              <Sparkles className="w-4 h-4 inline mr-2" />
+              <Sparkles className="w-4 h-4 inline mr-2 animate-pulse" />
               Future-Ready Solutions, Custom-Built
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-blue-600/20 animate-pulse" />
             </motion.div>
 
+            {/* Enhanced main title with multiple gradient layers */}
             <motion.h1
-              className="text-4xl md:text-5xl font-bold mb-4 mobile-premium-text"
+              className="text-5xl md:text-6xl font-bold mb-6 mobile-premium-text relative"
               variants={premiumVariants}
+              style={{
+                textShadow:
+                  "0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(37, 99, 235, 0.3)",
+              }}
             >
-              KOR DIGITAL
+              <span className="relative z-10">KOR DIGITAL</span>
+              <div className="absolute inset-0 blur-lg bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent opacity-30 animate-pulse" />
             </motion.h1>
 
+            {/* Enhanced subtitle with glow */}
             <motion.p
-              className="text-xl mb-2 text-muted-foreground font-semibold"
+              className="text-xl mb-3 text-muted-foreground font-semibold relative"
               variants={premiumVariants}
+              style={{
+                textShadow: "0 0 20px rgba(59, 130, 246, 0.2)",
+              }}
             >
-              Development Services
+              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                Development Services
+              </span>
             </motion.p>
 
+            {/* Enhanced description with better spacing */}
             <motion.p
-              className="text-base mb-8 text-muted-foreground leading-relaxed"
+              className="text-base mb-10 text-muted-foreground leading-relaxed px-4"
               variants={premiumVariants}
             >
               Cutting-edge web development, mobile apps, and cloud solutions
-              that drive your business forward.
+              that drive your business forward with modern AI integration.
             </motion.p>
 
-            {/* Enhanced Terminal Preview */}
-            <motion.div
-              className="mb-8 p-6 mobile-terminal-enhanced rounded-xl text-left text-sm font-mono text-green-400"
-              variants={premiumVariants}
-            >
-              <div className="mb-3 text-green-300 font-bold">
-                SYSTEM STATUS: OPERATIONAL
-              </div>
-              <div className="space-y-2 text-xs">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1, duration: 0.5 }}
-                >
-                  [ACTIVE] CUSTOM SOFTWARE SOLUTIONS
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.2, duration: 0.5 }}
-                >
-                  [ACTIVE] WEB APPLICATION DEVELOPMENT
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.4, duration: 0.5 }}
-                >
-                  [ACTIVE] AI/ML INTEGRATION SERVICES
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.6, duration: 0.5 }}
-                  className="text-yellow-400"
-                >
-                  [PRIORITY] LEGACY SYSTEM MODERNIZATION
-                </motion.div>
-              </div>
-            </motion.div>
+            {/* Removed terminal section */}
 
+            {/* Enhanced action buttons with better animations */}
             <motion.div
               className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
               variants={premiumVariants}
             >
               <motion.button
-                className="mobile-glow-button px-8 py-4 rounded-xl text-primary-foreground font-semibold relative overflow-hidden"
-                whileHover={{ y: -3, scale: 1.05 }}
+                className="mobile-glow-button px-10 py-4 rounded-2xl text-primary-foreground font-bold relative overflow-hidden group"
+                whileHover={{
+                  y: -5,
+                  scale: 1.05,
+                  boxShadow:
+                    "0 20px 40px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
+                }}
                 whileTap={{ scale: 0.98 }}
+                style={{
+                  background:
+                    "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
+                  boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
+                }}
               >
-                <span className="relative z-10">Get Started</span>
+                <span className="relative z-10 flex items-center justify-center">
+                  Get Started
+                  <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
               </motion.button>
+
               <motion.button
-                className="px-8 py-4 rounded-xl mobile-premium-card mobile-tilt-card text-foreground font-semibold"
-                whileHover={{ y: -3 }}
+                className="px-10 py-4 rounded-2xl mobile-premium-card text-foreground font-bold border-2 border-transparent relative overflow-hidden group"
+                whileHover={{
+                  y: -5,
+                  scale: 1.02,
+                  borderColor: "rgba(59, 130, 246, 0.5)",
+                }}
                 whileTap={{ scale: 0.98 }}
+                style={{
+                  background: "rgba(255, 255, 255, 0.05)",
+                  backdropFilter: "blur(20px)",
+                  boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)",
+                }}
               >
-                View Portfolio
+                <span className="relative z-10 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                  View Portfolio
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
             </motion.div>
           </motion.div>
         </section>
 
         {/* Enhanced About Us Section */}
-        <section id="about" className="px-4 py-16 relative">
+        <section
+          id="about"
+          className="px-4 py-16 relative mobile-section-enhanced"
+        >
           <div className="max-w-md mx-auto">
             <motion.h2
               className="text-3xl font-bold text-center mb-4 mobile-premium-text"
@@ -832,7 +823,10 @@ export default function Index() {
         </section>
 
         {/* Enhanced Services Section */}
-        <section id="services" className="px-4 py-16 relative">
+        <section
+          id="services"
+          className="px-4 py-16 relative mobile-section-enhanced"
+        >
           <div className="max-w-md mx-auto">
             <motion.h2
               className="text-3xl font-bold text-center mb-8 mobile-premium-text"
@@ -895,15 +889,9 @@ export default function Index() {
                           transition={{ duration: 0.3 }}
                           className="px-4 pb-4 relative z-10"
                         >
-                          <p className="text-sm text-muted-foreground mb-3">
+                          <p className="text-sm text-muted-foreground">
                             {service.description}
                           </p>
-                          <motion.button
-                            className="text-blue-400 text-sm font-medium flex items-center hover:text-blue-300 transition-colors"
-                            whileHover={{ x: 4 }}
-                          >
-                            Learn More <ArrowRight className="w-3 h-3 ml-1" />
-                          </motion.button>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -936,13 +924,25 @@ export default function Index() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="mobile-premium-card mobile-tilt-card p-6 rounded-xl relative overflow-hidden"
+                  className="mobile-premium-card mobile-tilt-card rounded-xl relative overflow-hidden"
                 >
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-30`}
                   />
 
-                  <div className="relative z-10">
+                  {/* Project Image */}
+                  <div className="relative">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover rounded-t-xl"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-t-xl" />
+                  </div>
+
+                  {/* Project Content */}
+                  <div className="relative z-10 p-6">
                     <h3 className="text-lg font-semibold mb-2">
                       {project.title}
                     </h3>
@@ -1012,7 +1012,7 @@ export default function Index() {
               Pricing
             </motion.h2>
 
-            <div className="space-y-6 mb-6">
+            <div className="space-y-8 mb-6">
               {pricingPlans.map((plan, index) => (
                 <motion.div
                   key={plan.name}
@@ -1022,8 +1022,10 @@ export default function Index() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className={cn(
-                    "mobile-premium-card mobile-tilt-card p-6 rounded-xl relative overflow-hidden",
-                    plan.popular && "ring-2 ring-primary/50",
+                    "mobile-premium-card mobile-tilt-card p-6 rounded-xl relative",
+                    plan.popular &&
+                      "ring-2 ring-blue-500/50 mt-4 overflow-hidden",
+                    !plan.popular && "overflow-hidden",
                   )}
                 >
                   <div
@@ -1031,17 +1033,12 @@ export default function Index() {
                   />
 
                   {plan.popular && (
-                    <motion.div
-                      className="absolute -top-3 left-1/2 transform -translate-x-1/2"
-                      initial={{ scale: 0, rotate: -12 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      transition={{ delay: 0.5, type: "spring" }}
-                    >
-                      <span className="mobile-floating-badge px-4 py-1 rounded-full text-xs font-bold">
+                    <div className="corner-ribbon">
+                      <span>
                         <Star className="w-3 h-3 inline mr-1" />
-                        Most Popular
+                        Popular
                       </span>
-                    </motion.div>
+                    </div>
                   )}
 
                   <div className="text-center mb-6 relative z-10">
