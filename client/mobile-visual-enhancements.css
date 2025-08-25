@@ -316,20 +316,20 @@
   }
 }
 
-/* Enhanced Floating Badges */
+/* Enhanced Floating Badges - Blue Theme */
 .mobile-floating-badge {
   background: linear-gradient(
     135deg,
     rgba(59, 130, 246, 0.95) 0%,
-    rgba(168, 85, 247, 0.85) 50%,
-    rgba(236, 72, 153, 0.9) 100%
+    rgba(37, 99, 235, 0.9) 50%,
+    rgba(29, 78, 216, 0.95) 100%
   );
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow:
     0 8px 25px rgba(59, 130, 246, 0.4),
-    0 0 40px rgba(168, 85, 247, 0.3),
-    0 0 60px rgba(236, 72, 153, 0.2),
+    0 0 40px rgba(37, 99, 235, 0.3),
+    0 0 60px rgba(29, 78, 216, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   animation: mobile-badge-float 6s ease-in-out infinite;
   position: relative;
