@@ -775,9 +775,9 @@ export default function Index() {
 
             {/* Removed terminal section */}
 
-            {/* Enhanced action buttons with better animations */}
+            {/* Enhanced action buttons with sophisticated desktop-level styling */}
             <motion.div
-              className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+              className="flex flex-col space-y-6 sm:flex-row sm:space-y-0 sm:space-x-6"
               variants={premiumVariants}
             >
               <motion.button
@@ -786,25 +786,32 @@ export default function Index() {
                     .getElementById("about")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="mobile-glow-button px-10 py-4 rounded-2xl text-primary-foreground font-bold relative overflow-hidden group"
+                className="font-poppins px-12 py-5 rounded-2xl text-white font-bold relative overflow-hidden group shadow-2xl"
                 whileHover={{
-                  y: -5,
+                  y: -8,
                   scale: 1.05,
-                  boxShadow:
-                    "0 20px 40px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
+                  boxShadow: "0 25px 50px rgba(59, 130, 246, 0.5), 0 0 80px rgba(59, 130, 246, 0.4)",
                 }}
-                whileTap={{ scale: 0.98 }}
+                whileTap={{ scale: 0.95 }}
                 style={{
-                  background:
-                    "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
-                  boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
+                  background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
+                  boxShadow: "0 15px 35px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)",
+                  filter: "drop-shadow(0 0 15px rgba(59, 130, 246, 0.3))",
+                  border: "1px solid rgba(59, 130, 246, 0.3)"
                 }}
               >
-                <span className="relative z-10 flex items-center justify-center">
-                  Get Started
-                  <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+                <span className="relative z-10 flex items-center justify-center text-lg">
+                  <span className="warm-glow-text">Get Started</span>
+                  <ArrowRight className="w-6 h-6 ml-3 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+
+                {/* Multiple layer effects */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                {/* Subtle sparkle effect */}
+                <div className="absolute top-2 right-4 w-2 h-2 bg-white/60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
+                <div className="absolute bottom-3 left-6 w-1 h-1 bg-blue-200/80 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" style={{ animationDelay: "0.2s" }} />
               </motion.button>
 
               <motion.button
@@ -813,23 +820,48 @@ export default function Index() {
                     .getElementById("portfolio")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="px-10 py-4 rounded-2xl mobile-premium-card text-foreground font-bold border-2 border-transparent relative overflow-hidden group"
+                className="font-poppins px-12 py-5 rounded-2xl font-bold border-2 relative overflow-hidden group backdrop-blur-xl"
                 whileHover={{
-                  y: -5,
+                  y: -8,
                   scale: 1.02,
-                  borderColor: "rgba(59, 130, 246, 0.5)",
+                  borderColor: "rgba(59, 130, 246, 0.6)",
+                  boxShadow: "0 20px 40px rgba(59, 130, 246, 0.2), 0 0 60px rgba(59, 130, 246, 0.1)"
                 }}
-                whileTap={{ scale: 0.98 }}
+                whileTap={{ scale: 0.95 }}
                 style={{
-                  background: "rgba(255, 255, 255, 0.05)",
-                  backdropFilter: "blur(20px)",
-                  boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)",
+                  background: "rgba(255, 255, 255, 0.08)",
+                  backdropFilter: "blur(25px)",
+                  boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                  borderColor: "rgba(59, 130, 246, 0.3)",
+                  filter: "drop-shadow(0 0 10px rgba(59, 130, 246, 0.2))"
                 }}
               >
-                <span className="relative z-10 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                  View Portfolio
+                <span className="relative z-10 text-lg">
+                  <span
+                    className="warm-glow-text font-semibold"
+                    style={{
+                      background: "linear-gradient(135deg, #60a5fa 0%, #34d399 50%, #a78bfa 100%)",
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      textShadow: "0 0 20px rgba(59, 130, 246, 0.5)"
+                    }}
+                  >
+                    View Portfolio
+                  </span>
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                {/* Glass effect layers */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-50" />
+
+                {/* Border glow effect */}
+                <div className="absolute inset-0 rounded-2xl border border-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                     style={{
+                       background: "linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(34, 211, 238, 0.3)) border-box",
+                       mask: "linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)",
+                       maskComposite: "subtract"
+                     }} />
               </motion.button>
             </motion.div>
           </motion.div>
