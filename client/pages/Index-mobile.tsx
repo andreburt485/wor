@@ -481,9 +481,7 @@ export default function Index() {
               className="fixed top-0 left-0 w-80 h-full mobile-premium-card z-50 p-6"
             >
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-xl font-bold mobile-premium-text">
-                  kor
-                </h2>
+                <h2 className="text-xl font-bold mobile-premium-text">kor</h2>
                 <motion.button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 rounded-lg hover:bg-accent transition-colors mobile-tilt-card"
@@ -615,7 +613,9 @@ export default function Index() {
             >
               <motion.button
                 onClick={() => {
-                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                  document
+                    .getElementById("about")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="mobile-glow-button px-10 py-4 rounded-2xl text-primary-foreground font-bold relative overflow-hidden group"
                 whileHover={{
@@ -640,7 +640,9 @@ export default function Index() {
 
               <motion.button
                 onClick={() => {
-                  document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+                  document
+                    .getElementById("portfolio")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="px-10 py-4 rounded-2xl mobile-premium-card text-foreground font-bold border-2 border-transparent relative overflow-hidden group"
                 whileHover={{
@@ -1343,9 +1345,7 @@ export default function Index() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-bold mobile-premium-text">
-                kor
-              </h3>
+              <h3 className="text-lg font-bold mobile-premium-text">kor</h3>
             </motion.div>
 
             <motion.div
@@ -1375,7 +1375,6 @@ export default function Index() {
                 </motion.a>
               ))}
             </motion.div>
-
           </div>
         </footer>
       </main>
