@@ -650,7 +650,7 @@ export default function Index() {
         </section>
 
         {/* Enhanced About Us Section */}
-        <section id="about" className="px-4 py-16 relative">
+        <section id="about" className="px-4 py-16 relative mobile-section-enhanced">
           <div className="max-w-md mx-auto">
             <motion.h2
               className="text-3xl font-bold text-center mb-4 mobile-premium-text"
