@@ -23,13 +23,9 @@
   }
 }
 
-/* Floating Geometric Shapes */
+/* Floating Geometric Shapes - Disabled */
 .mobile-floating-shape {
-  position: absolute;
-  pointer-events: none;
-  opacity: 0.6;
-  filter: blur(1px);
-  animation: mobile-float-complex 8s ease-in-out infinite;
+  display: none; /* Completely hide floating shapes */
 }
 
 .mobile-floating-shape:nth-child(1) {
