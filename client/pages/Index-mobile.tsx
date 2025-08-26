@@ -1566,7 +1566,7 @@ export default function Index() {
                     <div className="corner-ribbon">
                       <span>
                         <Star className="w-3 h-3 inline mr-1" />
-                        Popular
+                        {plan.name === "Websites" ? "Best Choice" : "Popular"}
                       </span>
                     </div>
                   )}
