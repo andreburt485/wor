@@ -65,7 +65,6 @@ export default function Index() {
   });
   const [isCounterVisible, setIsCounterVisible] = useState(false);
   const [isStatsAnimating, setIsStatsAnimating] = useState(false);
-  const [showDesktopSuggestion, setShowDesktopSuggestion] = useState(false);
   const hasShownWelcomeRef = useRef(false);
   const hasShownDesktopSuggestionRef = useRef(false);
 
@@ -167,29 +166,33 @@ export default function Index() {
     }
   }, [isCounterVisible]);
 
-  // Welcome notification - shows once
-  useEffect(() => {
-    if (!hasShownWelcomeRef.current) {
-      hasShownWelcomeRef.current = true;
-      setTimeout(() => {
-        showInfo(
-          "Welcome to KOR!",
-          "Premium mobile experience ready. Tap X to dismiss.",
-          0,
-        );
-      }, 1000);
-    }
-  }, [showInfo]);
+  // Welcome notification - disabled
+  // useEffect(() => {
+  //   if (!hasShownWelcomeRef.current) {
+  //     hasShownWelcomeRef.current = true;
+  //     setTimeout(() => {
+  //       showInfo(
+  //         "Welcome to KOR!",
+  //         "Premium mobile experience ready. Tap X to dismiss.",
+  //         0,
+  //       );
+  //     }, 1000);
+  //   }
+  // }, [showInfo]);
 
-  // Desktop suggestion modal - shows once after a delay
+  // Desktop suggestion notification - shows once after a delay for mobile/tablet users
   useEffect(() => {
     if (!hasShownDesktopSuggestionRef.current) {
       hasShownDesktopSuggestionRef.current = true;
       setTimeout(() => {
-        setShowDesktopSuggestion(true);
-      }, 3000); // Show after 3 seconds
+        showInfo(
+          "💻 Enhanced Desktop Experience Available!",
+          "🚀 Experience our site in full glory with premium 3D animations and enhanced layouts. Tap to open in new tab.",
+          8000, // Show for 8 seconds
+        );
+      }, 4000); // Show after 4 seconds
     }
-  }, []);
+  }, [showInfo]);
 
   // Enhanced mobile animations
   const premiumVariants = {
@@ -524,71 +527,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden mobile-gradient-bg mobile-optimized-animations">
-      {/* Desktop Version Suggestion Modal */}
-      <Dialog
-        open={showDesktopSuggestion}
-        onOpenChange={setShowDesktopSuggestion}
-      >
-        <DialogContent className="mobile-premium-card border-2 border-blue-400/50 bg-gradient-to-br from-slate-900/98 via-blue-900/95 to-slate-900/98 backdrop-blur-xl shadow-2xl shadow-blue-500/20">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <DialogHeader>
-              <DialogTitle className="text-xl font-bold mobile-premium-text flex items-center gap-2">
-                <motion.div
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                >
-                  <Monitor className="w-6 h-6 text-blue-400" />
-                </motion.div>
-                Enhanced Desktop Experience
-              </DialogTitle>
-              <DialogDescription className="text-blue-200 mt-3 leading-relaxed text-center">
-                🚀 Experience our site in{" "}
-                <strong className="text-blue-300 text-lg">full glory</strong>{" "}
-                with premium 3D animations, enhanced layouts, and stunning
-                visual effects!
-                <div className="flex justify-center items-center gap-4 mt-3 text-sm">
-                  <div className="flex items-center gap-1 text-green-400">
-                    <span>✅</span>
-                    <span>Better Performance</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-purple-400">
-                    <span>✨</span>
-                    <span>Rich Animations</span>
-                  </div>
-                </div>
-              </DialogDescription>
-            </DialogHeader>
-            <div className="flex flex-col gap-3 mt-6">
-              <motion.button
-                onClick={() => {
-                  window.open(window.location.href, "_blank");
-                  setShowDesktopSuggestion(false);
-                }}
-                className="w-full mobile-glow-button px-6 py-4 rounded-xl text-primary-foreground font-semibold flex items-center justify-center gap-2 relative overflow-hidden"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Monitor className="w-5 h-5" />
-                🚀 Open Desktop Version
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              <motion.button
-                onClick={() => setShowDesktopSuggestion(false)}
-                className="w-full mobile-premium-card border border-border hover:bg-accent px-6 py-3 rounded-xl font-medium transition-all duration-300"
-                whileHover={{ scale: 1.01, y: -1 }}
-                whileTap={{ scale: 0.99 }}
-              >
-                Continue on Mobile
-              </motion.button>
-            </div>
-          </motion.div>
-        </DialogContent>
-      </Dialog>
+      {/* Desktop Version Suggestion - Now handled via notification */}
 
       {/* Floating scroll indicator */}
       <motion.div
@@ -1576,7 +1515,9 @@ export default function Index() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className={cn(
-                    "mobile-premium-card mobile-tilt-card mobile-motion-override rounded-xl relative",
+                    plan.name === "Websites"
+                      ? "mobile-premium-card rounded-xl relative" // Remove hover classes for Websites card
+                      : "mobile-premium-card mobile-tilt-card mobile-motion-override rounded-xl relative",
                     plan.popular &&
                       "ring-4 ring-blue-400/70 ring-offset-2 ring-offset-slate-900 mt-6 mb-4 overflow-visible transform scale-105",
                     plan.popular &&
@@ -1585,21 +1526,14 @@ export default function Index() {
                     !plan.popular && "overflow-hidden p-6",
                     plan.popular && "p-8",
                   )}
-                  whileHover={{
-                    scale:
-                      plan.popular && plan.name === "Websites"
-                        ? 1.12
-                        : plan.popular
-                          ? 1.08
-                          : 1.05,
-                    y:
-                      plan.popular && plan.name === "Websites"
-                        ? -20
-                        : plan.popular
-                          ? -15
-                          : -10,
-                    rotateY: plan.popular && plan.name === "Websites" ? 5 : 0,
-                  }}
+                  whileHover={
+                    plan.name === "Websites"
+                      ? {} // No hover effect for Websites card to preserve glow
+                      : {
+                          scale: plan.popular ? 1.08 : 1.05,
+                          y: plan.popular ? -15 : -10,
+                        }
+                  }
                   animate={
                     plan.popular && plan.name === "Websites"
                       ? {
@@ -1634,25 +1568,7 @@ export default function Index() {
                         : `bg-gradient-to-br ${plan.gradient} opacity-40`,
                     )}
                   />
-                  {plan.name === "Websites" && (
-                    <>
-                      {/* Animated border glow for websites card */}
-                      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-indigo-600/20 animate-pulse" />
-                      {/* Sparkle effects */}
-                      <div
-                        className="absolute top-6 right-8 text-purple-400 animate-bounce"
-                        style={{ animationDelay: "0.5s" }}
-                      >
-                        ⭐
-                      </div>
-                      <div
-                        className="absolute bottom-8 left-6 text-blue-400 animate-bounce"
-                        style={{ animationDelay: "1s" }}
-                      >
-                        ���
-                      </div>
-                    </>
-                  )}
+                  {/* Removed shine effect and particle for Websites card */}
 
                   {plan.popular && plan.name !== "Websites" && (
                     <div className="corner-ribbon">
@@ -1692,6 +1608,11 @@ export default function Index() {
                   </div>
 
                   <motion.button
+                    onClick={() => {
+                      document
+                        .getElementById("contact")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
                     className={cn(
                       "w-full py-4 rounded-xl font-semibold transition-all duration-300 relative z-10 overflow-hidden",
                       plan.popular && plan.name === "Websites"
@@ -1700,14 +1621,14 @@ export default function Index() {
                           ? "mobile-glow-button text-primary-foreground"
                           : "mobile-premium-card mobile-motion-override border border-border hover:bg-accent",
                     )}
-                    whileHover={{
-                      y: plan.name === "Websites" ? -4 : -2,
-                      scale: plan.name === "Websites" ? 1.05 : 1.02,
-                      boxShadow:
-                        plan.name === "Websites"
-                          ? "0 15px 50px rgba(168, 85, 247, 0.6), 0 0 100px rgba(59, 130, 246, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)"
-                          : undefined,
-                    }}
+                    whileHover={
+                      plan.name === "Websites"
+                        ? {} // No hover effect for Websites button
+                        : {
+                            y: -2,
+                            scale: 1.02,
+                          }
+                    }
                     whileTap={{ scale: 0.98 }}
                     animate={
                       plan.name === "Websites"
@@ -1725,11 +1646,7 @@ export default function Index() {
                       hover: { duration: 0.2 },
                     }}
                   >
-                    {plan.name === "Websites" && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                    )}
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      {plan.name === "Websites" && <span>🚀</span>}
                       Get Started
                       {plan.name === "Websites" && <span>✨</span>}
                     </span>
