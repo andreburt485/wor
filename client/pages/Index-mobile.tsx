@@ -601,7 +601,6 @@ export default function Index() {
         whileHover={{
           scale: 1.15,
           rotate: 8,
-          boxShadow: "0 15px 35px rgba(59, 130, 246, 0.4)",
         }}
         whileTap={{ scale: 0.85, rotate: -8 }}
         animate={{
