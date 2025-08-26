@@ -46,8 +46,9 @@
     transform: translateZ(0);
   }
 
-  .mobile-premium-card:hover,
-  .mobile-premium-card:active {
+  /* Disable CSS hover effects for motion elements to prevent conflicts */
+  .mobile-premium-card:not([data-framer-motion]):hover,
+  .mobile-premium-card:not([data-framer-motion]):active {
     transform: translateY(-4px) scale(1.02) translateZ(0);
     box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
   }
