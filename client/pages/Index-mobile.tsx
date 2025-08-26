@@ -743,7 +743,6 @@ export default function Index() {
                 }}
                 whileHover={{
                   scale: 1.2,
-                  rotateZ: 10,
                   textShadow: "0 0 50px rgba(59, 130, 246, 1)",
                 }}
               >
@@ -759,7 +758,6 @@ export default function Index() {
                 }}
                 whileHover={{
                   scale: 1.2,
-                  rotateZ: -10,
                   textShadow: "0 0 50px rgba(168, 85, 247, 1)",
                 }}
               >
@@ -775,7 +773,6 @@ export default function Index() {
                 }}
                 whileHover={{
                   scale: 1.2,
-                  rotateZ: 15,
                   textShadow: "0 0 50px rgba(34, 197, 94, 1)",
                 }}
               >
