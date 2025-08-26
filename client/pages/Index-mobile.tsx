@@ -1535,7 +1535,6 @@ export default function Index() {
                   whileHover={{
                     y: -8,
                     scale: 1.05,
-                    rotateZ: 2,
                   }}
                 >
                   <contact.icon
@@ -1750,9 +1749,8 @@ export default function Index() {
                   whileHover={{
                     y: -8,
                     scale: 1.2,
-                    rotateZ: 5,
                   }}
-                  whileTap={{ scale: 0.8, rotateZ: -5 }}
+                  whileTap={{ scale: 0.8 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                 >
