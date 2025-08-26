@@ -597,23 +597,18 @@ export default function Index() {
               initial={{
                 x: "-100%",
                 opacity: 0,
-                scale: 0.95,
               }}
               animate={{
                 x: 0,
                 opacity: 1,
-                scale: 1,
               }}
               exit={{
                 x: "-100%",
                 opacity: 0,
-                scale: 0.95,
               }}
               transition={{
-                duration: 0.5,
-                ease: [0.16, 1, 0.3, 1],
-                scale: { duration: 0.4 },
-                opacity: { duration: 0.35 },
+                duration: 0.3,
+                ease: [0.25, 0.46, 0.45, 0.94],
               }}
               className="fixed top-0 left-0 w-80 h-full mobile-premium-card z-50 p-6"
             >
@@ -1706,7 +1701,7 @@ export default function Index() {
                   Final costs depend on complexity, features, and your specific
                   requirements.
                   <span className="text-yellow-200 font-semibold">
-                    Contact us for a detailed quote{" "}
+                    {" "}Contact us for a detailed quote{" "}
                   </span>
                   tailored perfectly to your project!
                 </p>
