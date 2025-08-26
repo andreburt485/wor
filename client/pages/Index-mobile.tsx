@@ -1068,14 +1068,13 @@ export default function Index() {
                 }}
                 className="font-poppins px-12 py-5 rounded-2xl text-white font-bold relative overflow-hidden group shadow-2xl mobile-button-enhanced mobile-fab mobile-touch-feedback"
                 whileHover={{
-                  y: -12,
-                  scale: 1.08,
+                  y: -8,
+                  scale: 1.05,
                 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
+                  duration: 0.3,
+                  ease: "easeOut",
                 }}
                 style={{
                   background:
