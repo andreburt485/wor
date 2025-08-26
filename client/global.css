@@ -832,23 +832,6 @@ body > div {
   }
 }
 
-@keyframes crystalline-shimmer {
-  0% {
-    background-position: -200% center;
-    opacity: 0.3;
-  }
-
-  50% {
-    background-position: 200% center;
-    opacity: 0.8;
-  }
-
-  100% {
-    background-position: 600% center;
-    opacity: 0.3;
-  }
-}
-
 /* Eye-catching utility classes */
 
 .rainbow-glow {
@@ -869,14 +852,10 @@ body > div {
 .crystalline-effect {
   background: linear-gradient(
     90deg,
-    transparent,
-    rgba(79, 209, 197, 0.4),
-    rgba(59, 130, 246, 0.4),
-    rgba(139, 92, 246, 0.4),
-    transparent
+    rgba(79, 209, 197, 0.2),
+    rgba(59, 130, 246, 0.2),
+    rgba(139, 92, 246, 0.2)
   );
-  background-size: 200% 100%;
-  animation: crystalline-shimmer 6s ease-in-out infinite;
 }
 
 /* Unique section backgrounds */
@@ -937,23 +916,6 @@ body > div {
   50% {
     opacity: 0.8;
     stroke-dashoffset: -20;
-  }
-}
-
-/* Gallery frame shimmer */
-@keyframes gallery-shimmer {
-  0% {
-    transform: translateX(-100%) rotate(45deg);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(200%) rotate(45deg);
-    opacity: 0;
   }
 }
 
