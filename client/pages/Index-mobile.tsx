@@ -1548,20 +1548,34 @@ export default function Index() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className={cn(
-                    "mobile-premium-card mobile-tilt-card mobile-motion-override p-6 rounded-xl relative",
+                    "mobile-premium-card mobile-tilt-card mobile-motion-override rounded-xl relative",
                     plan.popular &&
-                      "ring-2 ring-blue-500/50 mt-4 overflow-visible",
-                    !plan.popular && "overflow-hidden",
+                      "ring-4 ring-blue-400/70 ring-offset-2 ring-offset-slate-900 mt-6 mb-4 overflow-visible transform scale-105",
+                    plan.popular && plan.name === "Websites" &&
+                      "ring-purple-400/80 shadow-2xl shadow-purple-500/25",
+                    !plan.popular && "overflow-hidden p-6",
+                    plan.popular && "p-8"
                   )}
                   whileHover={{
-                    scale: plan.popular ? 1.08 : 1.05,
-                    y: plan.popular ? -15 : -10,
+                    scale: plan.popular && plan.name === "Websites" ? 1.12 : plan.popular ? 1.08 : 1.05,
+                    y: plan.popular && plan.name === "Websites" ? -20 : plan.popular ? -15 : -10,
+                    rotateY: plan.popular && plan.name === "Websites" ? 5 : 0,
                   }}
+                  animate={plan.popular && plan.name === "Websites" ? {
+                    boxShadow: [
+                      "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
+                      "0 0 50px rgba(168, 85, 247, 0.7), 0 0 80px rgba(59, 130, 246, 0.5)",
+                      "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)"
+                    ],
+                    scale: [1.05, 1.08, 1.05],
+                  } : {}}
                   transition={{
-                    duration: plan.popular ? 3 : 4,
+                    duration: plan.popular && plan.name === "Websites" ? 2.5 : plan.popular ? 3 : 4,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: index * 0.5,
+                    delay: index * 0.3,
+                    boxShadow: { duration: 3, repeat: Infinity },
+                    hover: { duration: 0.3 }
                   }}
                 >
                   <div
