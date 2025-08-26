@@ -1672,7 +1672,6 @@ export default function Index() {
                   className="mobile-premium-card mobile-tilt-card p-4 rounded-xl text-center hover:border-primary/50 transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
                   whileHover={{
                     y: -8,
                     scale: 1.05,
