@@ -98,6 +98,20 @@
     transform: none !important;
   }
 
+  /* Disable ALL animations and transforms for Framer Motion elements */
+  .mobile-motion-override * {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .mobile-motion-override *:hover,
+  .mobile-motion-override *:active,
+  .mobile-motion-override *:focus {
+    transform: none !important;
+    animation: none !important;
+  }
+
   /* Enhanced text effects with subtle glow */
   .mobile-premium-text {
     background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #3b82f6 100%);
