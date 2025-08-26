@@ -1571,17 +1571,6 @@ export default function Index() {
                   animate={{
                     y: [0, plan.popular ? -5 : -2, 0],
                     scale: [1, plan.popular ? 1.02 : 1.01, 1],
-                    boxShadow: plan.popular
-                      ? [
-                          "0 15px 30px rgba(59, 130, 246, 0.4)",
-                          "0 20px 40px rgba(59, 130, 246, 0.6)",
-                          "0 15px 30px rgba(59, 130, 246, 0.4)",
-                        ]
-                      : [
-                          "0 10px 20px rgba(73, 146, 255, 0.2)",
-                          "0 15px 30px rgba(73, 146, 255, 0.3)",
-                          "0 10px 20px rgba(73, 146, 255, 0.2)",
-                        ],
                   }}
                   transition={{
                     duration: plan.popular ? 3 : 4,
