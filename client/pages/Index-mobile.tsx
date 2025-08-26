@@ -1047,23 +1047,15 @@ export default function Index() {
                 className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override relative overflow-hidden"
                 whileHover={{
                   scale: 1.05,
-                  y: -5,
+                  y: -4,
                 }}
                 transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
+                  duration: 0.3,
+                  ease: "easeOut",
                 }}
               >
                 <motion.div
                   className="text-3xl font-bold mobile-stat-counter mb-2"
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 0.6,
-                  }}
                 >
                   {counters.years}+
                 </motion.div>
