@@ -1614,7 +1614,7 @@ export default function Index() {
                       <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-indigo-600/20 animate-pulse" />
                       {/* Sparkle effects */}
                       <div className="absolute top-6 right-8 text-purple-400 animate-bounce" style={{ animationDelay: '0.5s' }}>⭐</div>
-                      <div className="absolute bottom-8 left-6 text-blue-400 animate-bounce" style={{ animationDelay: '1s' }}>💎</div>
+                      <div className="absolute bottom-8 left-6 text-blue-400 animate-bounce" style={{ animationDelay: '1s' }}>���</div>
                     </>
                   )}
 
@@ -1698,7 +1698,7 @@ export default function Index() {
             </div>
 
             <motion.div
-              className="mobile-premium-card border-2 border-orange-400/50 bg-gradient-to-r from-orange-500/20 via-yellow-500/15 to-orange-500/20 p-6 rounded-xl relative overflow-hidden"
+              className="mobile-premium-card border-2 border-orange-400/50 bg-gradient-to-r from-orange-500/20 via-yellow-500/15 to-orange-500/20 p-4 rounded-lg relative overflow-hidden"
               variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
@@ -1740,24 +1740,12 @@ export default function Index() {
                   </motion.span>
                 </div>
 
-                <p className="text-base text-center text-orange-100 font-medium leading-relaxed">
-                  <strong className="text-orange-200 text-lg">💡 Pricing is customized</strong><br />
+                <p className="text-sm text-center text-orange-100 font-medium leading-relaxed">
+                  <strong className="text-orange-200">💡 Pricing is customized</strong><br />
                   Final costs depend on complexity, features, and your specific requirements.
-                  <span className="text-yellow-200 font-semibold">Contact us for a detailed quote</span>
+                  <span className="text-yellow-200 font-semibold">Contact us for a detailed quote </span>
                   tailored perfectly to your project!
                 </p>
-
-                <div className="mt-4 flex items-center justify-center">
-                  <motion.div
-                    className="flex items-center gap-2 text-sm text-orange-300 font-medium"
-                    animate={{ opacity: [0.7, 1, 0.7] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <span>📞</span>
-                    <span>Get your free consultation</span>
-                    <span>✨</span>
-                  </motion.div>
-                </div>
               </div>
             </motion.div>
           </div>
