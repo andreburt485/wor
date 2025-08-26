@@ -663,11 +663,6 @@ export default function Index() {
                 border: "2px solid transparent",
                 backgroundClip: "padding-box",
               }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
               whileHover={{
                 scale: 1.05,
               }}
