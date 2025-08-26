@@ -472,28 +472,32 @@ export default function Index() {
 
       {/* Enhanced Floating Particles with More Life */}
       <div className="mobile-floating-particles fixed inset-0 z-0">
-        {Array.from({ length: 15 }).map((_, i) => (
-          <div
-            key={i}
-            className="mobile-particle mobile-optimized-animations"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * -2}s`,
-              animationDuration: `${12 + Math.random() * 6}s`,
-              width: `${4 + Math.random() * 6}px`,
-              height: `${4 + Math.random() * 6}px`,
-              background: [
-                "radial-gradient(circle, rgba(59, 130, 246, 0.9) 0%, transparent 70%)",
-                "radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, transparent 70%)",
-                "radial-gradient(circle, rgba(34, 197, 94, 0.8) 0%, transparent 70%)",
-                "radial-gradient(circle, rgba(236, 72, 153, 0.7) 0%, transparent 70%)",
-                "radial-gradient(circle, rgba(34, 211, 238, 0.8) 0%, transparent 70%)",
-                "radial-gradient(circle, rgba(245, 158, 11, 0.7) 0%, transparent 70%)",
-              ][i % 6],
-            }}
-          />
-        ))}
+        {Array.from({ length: 15 }).map((_, i) => {
+          const particleBackgrounds = [
+            "radial-gradient(circle, rgba(59, 130, 246, 0.9) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(34, 197, 94, 0.8) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(236, 72, 153, 0.7) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(34, 211, 238, 0.8) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(245, 158, 11, 0.7) 0%, transparent 70%)",
+          ];
+
+          return (
+            <div
+              key={i}
+              className="mobile-particle mobile-optimized-animations"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${i * -2}s`,
+                animationDuration: `${12 + Math.random() * 6}s`,
+                width: `${4 + Math.random() * 6}px`,
+                height: `${4 + Math.random() * 6}px`,
+                background: particleBackgrounds[i % 6],
+              }}
+            />
+          );
+        })}
       </div>
 
       {/* Enhanced Breathing Background Orbs */}
