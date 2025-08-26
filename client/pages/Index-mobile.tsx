@@ -59,6 +59,58 @@ export default function Index() {
   const [isStatsAnimating, setIsStatsAnimating] = useState(false);
   const hasShownWelcomeRef = useRef(false);
 
+  // Stable particle data to prevent position jumping during re-renders
+  const particleData = useMemo(() => {
+    const particles = [];
+    const particleBackgrounds = [
+      "radial-gradient(circle, rgba(59, 130, 246, 0.9) 0%, transparent 70%)",
+      "radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, transparent 70%)",
+      "radial-gradient(circle, rgba(34, 197, 94, 0.8) 0%, transparent 70%)",
+      "radial-gradient(circle, rgba(236, 72, 153, 0.7) 0%, transparent 70%)",
+      "radial-gradient(circle, rgba(34, 211, 238, 0.8) 0%, transparent 70%)",
+      "radial-gradient(circle, rgba(245, 158, 11, 0.7) 0%, transparent 70%)",
+    ];
+
+    for (let i = 0; i < 15; i++) {
+      particles.push({
+        id: i,
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        width: 4 + Math.random() * 6,
+        height: 4 + Math.random() * 6,
+        background: particleBackgrounds[i % 6],
+      });
+    }
+    return particles;
+  }, []);
+
+  // Stable orb data to prevent position jumping during re-renders
+  const orbData = useMemo(() => {
+    const orbs = [];
+    const orbBackgrounds = [
+      "radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%)",
+      "radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%)",
+      "radial-gradient(circle, rgba(34, 197, 94, 0.13) 0%, transparent 70%)",
+      "radial-gradient(circle, rgba(236, 72, 153, 0.11) 0%, transparent 70%)",
+      "radial-gradient(circle, rgba(34, 211, 238, 0.12) 0%, transparent 70%)",
+      "radial-gradient(circle, rgba(245, 158, 11, 0.10) 0%, transparent 70%)",
+      "radial-gradient(circle, rgba(139, 92, 246, 0.11) 0%, transparent 70%)",
+      "radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%)",
+    ];
+
+    for (let i = 0; i < 8; i++) {
+      orbs.push({
+        id: i,
+        left: 15 + ((i * 12) % 70),
+        top: 25 + ((i * 18) % 50),
+        width: 80 + i * 40,
+        height: 80 + i * 40,
+        background: orbBackgrounds[i],
+      });
+    }
+    return orbs;
+  }, []);
+
   // Animated counters effect
   useEffect(() => {
     if (isCounterVisible) {
@@ -483,30 +535,21 @@ export default function Index() {
 
       {/* Enhanced Floating Particles with More Life */}
       <div className={cn("mobile-floating-particles fixed inset-0 z-0", isStatsAnimating && "stats-animating")}>
-        {Array.from({ length: isStatsAnimating ? 8 : 15 }).map((_, i) => {
-          const particleBackgrounds = [
-            "radial-gradient(circle, rgba(59, 130, 246, 0.9) 0%, transparent 70%)",
-            "radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, transparent 70%)",
-            "radial-gradient(circle, rgba(34, 197, 94, 0.8) 0%, transparent 70%)",
-            "radial-gradient(circle, rgba(236, 72, 153, 0.7) 0%, transparent 70%)",
-            "radial-gradient(circle, rgba(34, 211, 238, 0.8) 0%, transparent 70%)",
-            "radial-gradient(circle, rgba(245, 158, 11, 0.7) 0%, transparent 70%)",
-          ];
-
-          return (
+        {particleData
+          .slice(0, isStatsAnimating ? 8 : 15)
+          .map((particle) => (
             <div
-              key={i}
+              key={particle.id}
               className="mobile-particle mobile-optimized-animations"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                width: `${4 + Math.random() * 6}px`,
-                height: `${4 + Math.random() * 6}px`,
-                background: particleBackgrounds[i % 6],
+                left: `${particle.left}%`,
+                top: `${particle.top}%`,
+                width: `${particle.width}px`,
+                height: `${particle.height}px`,
+                background: particle.background,
               }}
             />
-          );
-        })}
+          ))}
       </div>
 
       {/* Enhanced Breathing Background Orbs */}
