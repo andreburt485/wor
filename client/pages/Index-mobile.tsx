@@ -1903,7 +1903,6 @@ export default function Index() {
                     y: -8,
                     scale: 1.2,
                     rotateZ: 5,
-                    color: "rgb(59, 130, 246)",
                   }}
                   whileTap={{ scale: 0.8, rotateZ: -5 }}
                   initial={{ opacity: 0, y: 20 }}
