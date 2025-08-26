@@ -1050,10 +1050,7 @@ export default function Index() {
                   {counters.clients}+
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Clients</div>
-                <div
-                  className="absolute inset-0 border border-purple-400/30 rounded-lg animate-pulse"
-                  style={{ animationDelay: "0.5s" }}
-                />
+                <div className="absolute inset-0 border border-purple-400/30 rounded-lg animate-pulse" />
               </motion.div>
 
               <motion.div
