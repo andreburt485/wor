@@ -65,7 +65,6 @@ export default function Index() {
   });
   const [isCounterVisible, setIsCounterVisible] = useState(false);
   const [isStatsAnimating, setIsStatsAnimating] = useState(false);
-  const [showDesktopSuggestion, setShowDesktopSuggestion] = useState(false);
   const hasShownWelcomeRef = useRef(false);
   const hasShownDesktopSuggestionRef = useRef(false);
 
