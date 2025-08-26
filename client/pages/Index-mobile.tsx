@@ -843,45 +843,78 @@ export default function Index() {
               {/* Individual letter animations with enhanced liveliness */}
               <motion.span
                 className="inline-block relative warm-glow-text"
+                animate={{
+                  y: [0, -8, 0],
+                  scale: [1, 1.05, 1],
+                  textShadow: [
+                    "0 0 30px rgba(59, 130, 246, 0.6)",
+                    "0 0 50px rgba(59, 130, 246, 0.9)",
+                    "0 0 30px rgba(59, 130, 246, 0.6)"
+                  ],
+                }}
                 transition={{
-                  duration: 3,
+                  duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut",
                   delay: 0,
                 }}
                 whileHover={{
-                  scale: 1.2,
-                  textShadow: "0 0 50px rgba(59, 130, 246, 1)",
+                  scale: 1.3,
+                  y: -15,
+                  textShadow: "0 0 60px rgba(59, 130, 246, 1)",
+                  transition: { duration: 0.3 }
                 }}
               >
                 K
               </motion.span>
               <motion.span
                 className="inline-block relative warm-glow-text"
+                animate={{
+                  y: [0, -12, 0],
+                  scale: [1, 1.08, 1],
+                  textShadow: [
+                    "0 0 30px rgba(168, 85, 247, 0.6)",
+                    "0 0 50px rgba(168, 85, 247, 0.9)",
+                    "0 0 30px rgba(168, 85, 247, 0.6)"
+                  ],
+                }}
                 transition={{
-                  duration: 3.5,
+                  duration: 4.5,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 0.3,
+                  delay: 0.5,
                 }}
                 whileHover={{
-                  scale: 1.2,
-                  textShadow: "0 0 50px rgba(168, 85, 247, 1)",
+                  scale: 1.3,
+                  y: -15,
+                  textShadow: "0 0 60px rgba(168, 85, 247, 1)",
+                  transition: { duration: 0.3 }
                 }}
               >
                 o
               </motion.span>
               <motion.span
                 className="inline-block relative warm-glow-text"
+                animate={{
+                  y: [0, -6, 0],
+                  scale: [1, 1.06, 1],
+                  textShadow: [
+                    "0 0 30px rgba(34, 197, 94, 0.6)",
+                    "0 0 50px rgba(34, 197, 94, 0.9)",
+                    "0 0 30px rgba(34, 197, 94, 0.6)"
+                  ],
+                }}
                 transition={{
-                  duration: 4,
+                  duration: 5,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 0.6,
+                  delay: 1,
                 }}
                 whileHover={{
-                  scale: 1.2,
-                  textShadow: "0 0 50px rgba(34, 197, 94, 1)",
+                  scale: 1.3,
+                  y: -15,
+                  textShadow: "0 0 60px rgba(34, 197, 94, 1)",
+                  transition: { duration: 0.3 }
                 }}
               >
                 r
