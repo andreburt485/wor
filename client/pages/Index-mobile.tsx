@@ -1101,7 +1101,7 @@ export default function Index() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 }}
-                  className="mobile-premium-card mobile-tilt-card mobile-touch-feedback mobile-button-enhanced p-6 rounded-xl relative overflow-hidden"
+                  className="mobile-premium-card mobile-tilt-card mobile-motion-override mobile-touch-feedback mobile-button-enhanced p-6 rounded-xl relative overflow-hidden"
                   whileHover={{
                     scale: 1.05,
                     y: -8,
@@ -1197,7 +1197,7 @@ export default function Index() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="mobile-premium-card mobile-tilt-card mobile-touch-feedback mobile-button-enhanced rounded-xl overflow-hidden relative"
+                    className="mobile-premium-card mobile-tilt-card mobile-motion-override mobile-touch-feedback mobile-button-enhanced rounded-xl overflow-hidden relative"
                     whileHover={{
                       scale: 1.06,
                       y: -12,
@@ -1280,7 +1280,7 @@ export default function Index() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="mobile-premium-card mobile-tilt-card mobile-touch-feedback mobile-button-enhanced rounded-xl relative overflow-hidden"
+                  className="mobile-premium-card mobile-tilt-card mobile-motion-override mobile-touch-feedback mobile-button-enhanced rounded-xl relative overflow-hidden"
                   whileHover={{
                     scale: 1.08,
                     y: -15,
@@ -1338,7 +1338,7 @@ export default function Index() {
                     setCurrentProjectPage(Math.max(0, currentProjectPage - 1))
                   }
                   disabled={currentProjectPage === 0}
-                  className="px-4 py-2 rounded-lg mobile-premium-card mobile-button-enhanced mobile-touch-feedback disabled:opacity-50 disabled:cursor-not-allowed mobile-tilt-card"
+                  className="px-4 py-2 rounded-lg mobile-premium-card mobile-button-enhanced mobile-touch-feedback disabled:opacity-50 disabled:cursor-not-allowed mobile-tilt-card mobile-motion-override"
                   whileHover={{ scale: 1.08, y: -3 }}
                   whileTap={{ scale: 0.92 }}
                 >
@@ -1354,7 +1354,7 @@ export default function Index() {
                     )
                   }
                   disabled={currentProjectPage === totalPages - 1}
-                  className="px-4 py-2 rounded-lg mobile-premium-card mobile-button-enhanced mobile-touch-feedback disabled:opacity-50 disabled:cursor-not-allowed mobile-tilt-card"
+                  className="px-4 py-2 rounded-lg mobile-premium-card mobile-button-enhanced mobile-touch-feedback disabled:opacity-50 disabled:cursor-not-allowed mobile-tilt-card mobile-motion-override"
                   whileHover={{ scale: 1.08, y: -3 }}
                   whileTap={{ scale: 0.92 }}
                 >
