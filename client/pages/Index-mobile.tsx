@@ -1636,15 +1636,41 @@ export default function Index() {
 
                   <motion.button
                     className={cn(
-                      "w-full py-4 rounded-lg font-semibold transition-all duration-300 relative z-10",
-                      plan.popular
+                      "w-full py-4 rounded-xl font-semibold transition-all duration-300 relative z-10 overflow-hidden",
+                      plan.popular && plan.name === "Websites"
+                        ? "bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg"
+                        : plan.popular
                         ? "mobile-glow-button text-primary-foreground"
                         : "mobile-premium-card mobile-motion-override border border-border hover:bg-accent",
                     )}
-                    whileHover={{ y: -2, scale: 1.02 }}
+                    whileHover={{
+                      y: plan.name === "Websites" ? -4 : -2,
+                      scale: plan.name === "Websites" ? 1.05 : 1.02,
+                      boxShadow: plan.name === "Websites"
+                        ? "0 10px 40px rgba(168, 85, 247, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)"
+                        : undefined
+                    }}
                     whileTap={{ scale: 0.98 }}
+                    animate={plan.name === "Websites" ? {
+                      boxShadow: [
+                        "0 4px 20px rgba(168, 85, 247, 0.3)",
+                        "0 8px 30px rgba(168, 85, 247, 0.5)",
+                        "0 4px 20px rgba(168, 85, 247, 0.3)"
+                      ],
+                    } : {}}
+                    transition={{
+                      boxShadow: { duration: 2, repeat: Infinity },
+                      hover: { duration: 0.2 }
+                    }}
                   >
-                    Get Started
+                    {plan.name === "Websites" && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                    )}
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      {plan.name === "Websites" && <span>🚀</span>}
+                      Get Started
+                      {plan.name === "Websites" && <span>✨</span>}
+                    </span>
                   </motion.button>
                 </motion.div>
               ))}
