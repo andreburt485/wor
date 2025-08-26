@@ -671,10 +671,6 @@ export default function Index() {
                 backgroundClip: "padding-box",
                 boxShadow: "0 0 30px rgba(59, 130, 246, 0.2)",
               }}
-              animate={{
-                y: [0, -8, 0],
-                scale: [1, 1.02, 1],
-              }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
