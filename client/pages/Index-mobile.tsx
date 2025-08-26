@@ -917,11 +917,6 @@ export default function Index() {
                   rotateX: 5,
                 }}
                 whileTap={{ scale: 0.95, rotateX: -5 }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
                 style={{
                   background: "rgba(255, 255, 255, 0.08)",
                   backdropFilter: "blur(25px)",
