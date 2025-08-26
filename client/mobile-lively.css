@@ -99,10 +99,21 @@
   }
 
   /* Disable ALL animations and transforms for Framer Motion elements */
+  .mobile-motion-override {
+    transform: none !important;
+    transform-style: auto !important;
+    perspective: none !important;
+    backface-visibility: visible !important;
+  }
+
   .mobile-motion-override * {
     transition: none !important;
     animation: none !important;
     transform: none !important;
+    transform-style: auto !important;
+    perspective: none !important;
+    backface-visibility: visible !important;
+    will-change: auto !important;
   }
 
   .mobile-motion-override *:hover,
@@ -110,6 +121,8 @@
   .mobile-motion-override *:focus {
     transform: none !important;
     animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
   }
 
   /* Enhanced text effects with subtle glow */
