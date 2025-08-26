@@ -1590,7 +1590,7 @@ export default function Index() {
                       "w-full py-4 rounded-lg font-semibold transition-all duration-300 relative z-10",
                       plan.popular
                         ? "mobile-glow-button text-primary-foreground"
-                        : "mobile-premium-card border border-border hover:bg-accent",
+                        : "mobile-premium-card mobile-motion-override border border-border hover:bg-accent",
                     )}
                     whileHover={{ y: -2, scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
