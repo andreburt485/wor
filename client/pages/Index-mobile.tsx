@@ -546,9 +546,19 @@ export default function Index() {
                 </motion.div>
                 Enhanced Desktop Experience
               </DialogTitle>
-              <DialogDescription className="text-muted-foreground mt-3 leading-relaxed">
-                🚀 Get the <strong className="text-blue-300">full premium experience</strong> with enhanced 3D animations,
-                better layouts, and interactive effects on desktop!
+              <DialogDescription className="text-blue-200 mt-3 leading-relaxed text-center">
+                🚀 Experience our site in <strong className="text-blue-300 text-lg">full glory</strong> with premium 3D animations, enhanced layouts, and stunning visual effects!
+
+                <div className="flex justify-center items-center gap-4 mt-3 text-sm">
+                  <div className="flex items-center gap-1 text-green-400">
+                    <span>✅</span>
+                    <span>Better Performance</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-purple-400">
+                    <span>✨</span>
+                    <span>Rich Animations</span>
+                  </div>
+                </div>
               </DialogDescription>
             </DialogHeader>
             <div className="flex flex-col gap-3 mt-6">
