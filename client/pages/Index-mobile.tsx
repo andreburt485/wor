@@ -611,9 +611,6 @@ export default function Index() {
           rotate: 8,
         }}
         whileTap={{ scale: 0.85, rotate: -8 }}
-        animate={{
-          y: [0, -3, 0],
-        }}
         transition={{
           duration: 3,
           repeat: Infinity,
