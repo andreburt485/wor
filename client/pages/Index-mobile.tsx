@@ -1616,22 +1616,67 @@ export default function Index() {
             </div>
 
             <motion.div
-              className="mobile-premium-card border border-orange-400/30 bg-orange-500/10 p-4 rounded-lg"
+              className="mobile-premium-card border-2 border-orange-400/50 bg-gradient-to-r from-orange-500/20 via-yellow-500/15 to-orange-500/20 p-6 rounded-xl relative overflow-hidden"
               variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.03, y: -2 }}
+              animate={{
+                boxShadow: [
+                  "0 0 20px rgba(251, 146, 60, 0.3)",
+                  "0 0 30px rgba(251, 146, 60, 0.5)",
+                  "0 0 20px rgba(251, 146, 60, 0.3)"
+                ],
+              }}
+              transition={{
+                boxShadow: { duration: 2, repeat: Infinity },
+                hover: { duration: 0.2 }
+              }}
             >
-              <p className="text-sm text-center text-orange-300 font-medium flex items-start gap-2">
-                <span className="text-orange-400 text-lg leading-none">⚠️</span>
-                <span>
-                  <strong className="text-orange-200">Note:</strong> Final
-                  pricing depends on the complexity, features, and specific
-                  requirements of your project. Contact us for a detailed quote
-                  tailored to your needs.
-                </span>
-              </p>
+              {/* Animated background accent */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-400/10 to-transparent animate-pulse" />
+
+              <div className="relative z-10">
+                <div className="flex items-center justify-center mb-3">
+                  <motion.span
+                    className="text-2xl mr-2"
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    ⚠️
+                  </motion.span>
+                  <span className="text-lg font-bold text-orange-200 uppercase tracking-wider">
+                    Important Note
+                  </span>
+                  <motion.span
+                    className="text-2xl ml-2"
+                    animate={{ rotate: [0, -10, 10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                  >
+                    ⚠️
+                  </motion.span>
+                </div>
+
+                <p className="text-base text-center text-orange-100 font-medium leading-relaxed">
+                  <strong className="text-orange-200 text-lg">💡 Pricing is customized</strong><br />
+                  Final costs depend on complexity, features, and your specific requirements.
+                  <span className="text-yellow-200 font-semibold">Contact us for a detailed quote</span>
+                  tailored perfectly to your project!
+                </p>
+
+                <div className="mt-4 flex items-center justify-center">
+                  <motion.div
+                    className="flex items-center gap-2 text-sm text-orange-300 font-medium"
+                    animate={{ opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <span>📞</span>
+                    <span>Get your free consultation</span>
+                    <span>✨</span>
+                  </motion.div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
