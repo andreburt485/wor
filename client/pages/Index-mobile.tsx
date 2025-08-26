@@ -952,36 +952,39 @@ export default function Index() {
               <motion.span
                 className="inline-block relative warm-glow-text"
                 animate={{
-                  y: [0, -10, 12, -5, 0],
-                  scale: [1, 1.06, 0.96, 1.04, 1],
-                  rotateZ: [0, 3, -2, 2, 0],
+                  y: [0, -14, 18, -8, 3, 0],
+                  x: [0, 1, -3, 2, -1, 0],
+                  scale: [1, 1.09, 0.93, 1.06, 1.01, 1],
+                  rotateZ: [0, 5, -3, 4, -1, 0],
                   textShadow: [
                     "0 0 30px rgba(34, 197, 94, 0.6), 0 0 60px rgba(16, 185, 129, 0.3)",
-                    "0 0 50px rgba(34, 197, 94, 0.9), 0 0 80px rgba(16, 185, 129, 0.6)",
-                    "0 0 25px rgba(34, 197, 94, 0.5), 0 0 50px rgba(16, 185, 129, 0.2)",
-                    "0 0 40px rgba(34, 197, 94, 0.8), 0 0 70px rgba(16, 185, 129, 0.4)",
+                    "0 0 65px rgba(34, 197, 94, 1), 0 0 105px rgba(16, 185, 129, 0.8)",
+                    "0 0 18px rgba(34, 197, 94, 0.4), 0 0 38px rgba(16, 185, 129, 0.2)",
+                    "0 0 52px rgba(34, 197, 94, 0.9), 0 0 85px rgba(16, 185, 129, 0.6)",
+                    "0 0 38px rgba(34, 197, 94, 0.7), 0 0 68px rgba(16, 185, 129, 0.4)",
                     "0 0 30px rgba(34, 197, 94, 0.6), 0 0 60px rgba(16, 185, 129, 0.3)",
                   ],
                   filter: [
                     "brightness(1) saturate(1) contrast(1)",
+                    "brightness(1.4) saturate(1.3) contrast(1.15)",
+                    "brightness(0.8) saturate(0.7) contrast(0.85)",
                     "brightness(1.3) saturate(1.2) contrast(1.1)",
-                    "brightness(0.9) saturate(0.8) contrast(0.9)",
-                    "brightness(1.2) saturate(1.1) contrast(1.05)",
+                    "brightness(1.1) saturate(1.05) contrast(1.02)",
                     "brightness(1) saturate(1) contrast(1)",
                   ],
                 }}
                 transition={{
-                  duration: 8,
+                  duration: 6,
                   repeat: Infinity,
                   ease: [0.34, 1.56, 0.64, 1],
-                  delay: 1.5,
+                  delay: 2,
                 }}
                 whileHover={{
-                  scale: 1.4,
-                  y: -20,
-                  rotateZ: 8,
-                  textShadow: "0 0 80px rgba(34, 197, 94, 1), 0 0 120px rgba(16, 185, 129, 0.8)",
-                  filter: "brightness(1.5) saturate(1.3) contrast(1.2)",
+                  scale: 1.5,
+                  y: -25,
+                  rotateZ: 12,
+                  textShadow: "0 0 100px rgba(34, 197, 94, 1), 0 0 150px rgba(16, 185, 129, 0.9)",
+                  filter: "brightness(1.6) saturate(1.4) contrast(1.3)",
                   transition: { duration: 0.3, ease: "easeOut" },
                 }}
               >
