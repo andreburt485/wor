@@ -88,6 +88,16 @@
     transform: perspective(1000px) rotateX(3deg) rotateY(5deg) translateZ(20px);
   }
 
+  /* Disable tilt for motion elements */
+  .mobile-motion-override.mobile-tilt-card {
+    transform-style: auto !important;
+    transition: none !important;
+  }
+
+  .mobile-motion-override.mobile-tilt-card:hover {
+    transform: none !important;
+  }
+
   /* Enhanced text effects with subtle glow */
   .mobile-premium-text {
     background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #3b82f6 100%);
