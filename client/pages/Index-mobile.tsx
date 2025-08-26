@@ -1580,12 +1580,6 @@ export default function Index() {
                     scale: 1.05,
                     rotateZ: 2,
                   }}
-                  transition={{
-                    duration: 3 + (index % 2),
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: index * 0.4,
-                  }}
                 >
                   <contact.icon
                     className={cn("w-6 h-6 mx-auto mb-2", contact.color)}
