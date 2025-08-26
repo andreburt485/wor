@@ -687,7 +687,12 @@ export default function Index() {
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
+                          transition={{
+                            duration: 0.35,
+                            ease: [0.23, 1, 0.32, 1],
+                            height: { duration: 0.35 },
+                            opacity: { duration: 0.25, delay: 0.05 }
+                          }}
                           className="px-4 pb-4 relative z-10"
                         >
                           <p className="text-sm text-muted-foreground mb-3">{service.description}</p>
