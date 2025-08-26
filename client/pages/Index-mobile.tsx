@@ -1515,7 +1515,9 @@ export default function Index() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className={cn(
-                    "mobile-premium-card mobile-tilt-card mobile-motion-override rounded-xl relative",
+                    plan.name === "Websites"
+                      ? "mobile-premium-card rounded-xl relative" // Remove hover classes for Websites card
+                      : "mobile-premium-card mobile-tilt-card mobile-motion-override rounded-xl relative",
                     plan.popular &&
                       "ring-4 ring-blue-400/70 ring-offset-2 ring-offset-slate-900 mt-6 mb-4 overflow-visible transform scale-105",
                     plan.popular &&
@@ -1626,14 +1628,14 @@ export default function Index() {
                           ? "mobile-glow-button text-primary-foreground"
                           : "mobile-premium-card mobile-motion-override border border-border hover:bg-accent",
                     )}
-                    whileHover={{
-                      y: plan.name === "Websites" ? -4 : -2,
-                      scale: plan.name === "Websites" ? 1.05 : 1.02,
-                      boxShadow:
-                        plan.name === "Websites"
-                          ? "0 15px 50px rgba(168, 85, 247, 0.6), 0 0 100px rgba(59, 130, 246, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)"
-                          : undefined,
-                    }}
+                    whileHover={
+                      plan.name === "Websites"
+                        ? {} // No hover effect for Websites button
+                        : {
+                            y: -2,
+                            scale: 1.02,
+                          }
+                    }
                     whileTap={{ scale: 0.98 }}
                     animate={
                       plan.name === "Websites"
