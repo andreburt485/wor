@@ -775,11 +775,6 @@ export default function Index() {
               </motion.span>
               <motion.span
                 className="inline-block relative warm-glow-text"
-                animate={{
-                  y: [0, -8, 0],
-                  rotateZ: [0, -2, 0],
-                  scale: [1, 1.08, 1],
-                }}
                 transition={{
                   duration: 3.5,
                   repeat: Infinity,
