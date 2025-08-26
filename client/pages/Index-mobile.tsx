@@ -1106,9 +1106,6 @@ export default function Index() {
               >
                 <motion.div
                   className="text-3xl font-bold mobile-stat-counter mb-2"
-                  animate={{
-                    scale: [1, 1.12, 1],
-                  }}
                   transition={{
                     duration: 3,
                     repeat: Infinity,
