@@ -1545,17 +1545,23 @@ export default function Index() {
               ))}
             </div>
 
-            <motion.p
-              className="text-xs text-center text-muted-foreground"
+            <motion.div
+              className="mobile-premium-card border border-orange-400/30 bg-orange-500/10 p-4 rounded-lg"
               variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
             >
-              *Note: Final pricing depends on the complexity, features, and
-              specific requirements of your project. Contact us for a detailed
-              quote tailored to your needs.
-            </motion.p>
+              <p className="text-sm text-center text-orange-300 font-medium flex items-start gap-2">
+                <span className="text-orange-400 text-lg leading-none">⚠️</span>
+                <span>
+                  <strong className="text-orange-200">Note:</strong> Final pricing depends on the complexity, features, and
+                  specific requirements of your project. Contact us for a detailed
+                  quote tailored to your needs.
+                </span>
+              </p>
+            </motion.div>
           </div>
         </section>
 
