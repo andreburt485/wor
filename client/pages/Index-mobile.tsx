@@ -1144,7 +1144,7 @@ export default function Index() {
               onViewportEnter={() => setIsCounterVisible(true)}
             >
               <motion.div
-                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override mobile-touch-feedback mobile-fab relative overflow-hidden"
+                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override mobile-touch-feedback mobile-fab relative overflow-hidden rounded-3xl"
                 whileHover={{
                   scale: 1.05,
                   y: -4,
