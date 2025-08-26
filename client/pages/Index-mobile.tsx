@@ -1372,14 +1372,14 @@ export default function Index() {
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.div
-                          initial={{ maxHeight: 0, opacity: 0 }}
-                          animate={{ maxHeight: 200, opacity: 1 }}
-                          exit={{ maxHeight: 0, opacity: 0 }}
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
                           transition={{
-                            duration: 0.4,
-                            ease: [0.04, 0.62, 0.23, 0.98],
-                            maxHeight: { duration: 0.4 },
-                            opacity: { duration: 0.25, delay: 0.1 }
+                            duration: 0.35,
+                            ease: [0.23, 1, 0.32, 1],
+                            height: { duration: 0.35 },
+                            opacity: { duration: 0.25, delay: 0.05 }
                           }}
                           className="px-4 pb-4 relative z-10 overflow-hidden"
                         >
