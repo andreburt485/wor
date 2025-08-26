@@ -1378,7 +1378,6 @@ export default function Index() {
                     y: -15,
                     rotateY: 8,
                     rotateX: 3,
-                    boxShadow: "0 30px 60px rgba(73, 146, 255, 0.5)",
                   }}
                   animate={{
                     y: [0, -4, 0],
