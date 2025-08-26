@@ -470,16 +470,9 @@
     transition: transform 0.1s ease;
   }
 
-  /* Loading states with shimmer */
+  /* Loading states */
   .mobile-loading-shimmer {
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(59, 130, 246, 0.1),
-      transparent
-    );
-    background-size: 200% 100%;
-    animation: mobile-shimmer 1.5s infinite;
+    background: rgba(59, 130, 246, 0.1);
   }
 
   /* Progress indicators */
