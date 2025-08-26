@@ -920,8 +920,6 @@ export default function Index() {
                 style={{
                   background: "rgba(255, 255, 255, 0.08)",
                   backdropFilter: "blur(25px)",
-                  borderColor: "rgba(59, 130, 246, 0.3)",
-                  filter: "drop-shadow(0 0 10px rgba(59, 130, 246, 0.2))",
                 }}
               >
                 <span className="relative z-10 text-lg">
