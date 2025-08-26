@@ -525,7 +525,10 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden mobile-gradient-bg mobile-optimized-animations">
       {/* Desktop Version Suggestion Modal */}
-      <Dialog open={showDesktopSuggestion} onOpenChange={setShowDesktopSuggestion}>
+      <Dialog
+        open={showDesktopSuggestion}
+        onOpenChange={setShowDesktopSuggestion}
+      >
         <DialogContent className="mobile-premium-card border border-blue-400/30 bg-slate-900/95 backdrop-blur-xl">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold mobile-premium-text flex items-center gap-2">
@@ -533,14 +536,15 @@ export default function Index() {
               Desktop Experience Available
             </DialogTitle>
             <DialogDescription className="text-muted-foreground mt-3">
-              For the best visual experience with enhanced animations and layouts,
-              consider viewing our website on a desktop or laptop computer.
+              For the best visual experience with enhanced animations and
+              layouts, consider viewing our website on a desktop or laptop
+              computer.
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-3 mt-4">
             <button
               onClick={() => {
-                window.open(window.location.href, '_blank');
+                window.open(window.location.href, "_blank");
                 setShowDesktopSuggestion(false);
               }}
               className="w-full mobile-glow-button px-6 py-3 rounded-lg text-primary-foreground font-semibold flex items-center justify-center gap-2"
@@ -592,43 +596,49 @@ export default function Index() {
       </div>
 
       {/* Enhanced Floating Particles with More Life */}
-      <div className={cn("mobile-floating-particles fixed inset-0 z-0", isStatsAnimating && "stats-animating")}>
-        {particleData
-          .slice(0, isStatsAnimating ? 8 : 15)
-          .map((particle) => (
-            <div
-              key={particle.id}
-              className="mobile-particle mobile-optimized-animations"
-              style={{
-                left: `${particle.left}%`,
-                top: `${particle.top}%`,
-                width: `${particle.width}px`,
-                height: `${particle.height}px`,
-                background: particle.background,
-              }}
-            />
-          ))}
+      <div
+        className={cn(
+          "mobile-floating-particles fixed inset-0 z-0",
+          isStatsAnimating && "stats-animating",
+        )}
+      >
+        {particleData.slice(0, isStatsAnimating ? 8 : 15).map((particle) => (
+          <div
+            key={particle.id}
+            className="mobile-particle mobile-optimized-animations"
+            style={{
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
+              width: `${particle.width}px`,
+              height: `${particle.height}px`,
+              background: particle.background,
+            }}
+          />
+        ))}
       </div>
 
       {/* Enhanced Breathing Background Orbs */}
-      <div className={cn("fixed inset-0 z-0 pointer-events-none", isStatsAnimating && "stats-animating")}>
-        {orbData
-          .slice(0, isStatsAnimating ? 4 : 8)
-          .map((orb) => (
-            <div
-              key={`orb-${orb.id}`}
-              className="absolute rounded-full mobile-breathing-orb mobile-optimized-animations"
-              style={{
-                left: `${orb.left}%`,
-                top: `${orb.top}%`,
-                width: `${orb.width}px`,
-                height: `${orb.height}px`,
-                background: orb.background,
-                filter: "blur(25px)",
-                transform: "translateZ(0)",
-              }}
-            />
-          ))}
+      <div
+        className={cn(
+          "fixed inset-0 z-0 pointer-events-none",
+          isStatsAnimating && "stats-animating",
+        )}
+      >
+        {orbData.slice(0, isStatsAnimating ? 4 : 8).map((orb) => (
+          <div
+            key={`orb-${orb.id}`}
+            className="absolute rounded-full mobile-breathing-orb mobile-optimized-animations"
+            style={{
+              left: `${orb.left}%`,
+              top: `${orb.top}%`,
+              width: `${orb.width}px`,
+              height: `${orb.height}px`,
+              background: orb.background,
+              filter: "blur(25px)",
+              transform: "translateZ(0)",
+            }}
+          />
+        ))}
       </div>
 
       {/* Mobile Navigation Overlay */}
@@ -650,7 +660,7 @@ export default function Index() {
               transition={{
                 duration: 0.4,
                 ease: [0.25, 0.46, 0.45, 0.94],
-                opacity: { duration: 0.3 }
+                opacity: { duration: 0.3 },
               }}
               className="fixed top-0 left-0 w-80 h-full mobile-premium-card z-50 p-6"
             >
@@ -723,9 +733,7 @@ export default function Index() {
           <div className="mobile-pulse-ring" />
 
           {/* Breathing border effect with glow */}
-          <div
-            className="absolute inset-0 rounded-xl border border-blue-400/40"
-          />
+          <div className="absolute inset-0 rounded-xl border border-blue-400/40" />
         </motion.button>
 
         {/* Sparkle effect - now outside button container */}
@@ -741,8 +749,14 @@ export default function Index() {
         >
           {/* Enhanced wave background layers */}
           <div className="mobile-wave-bg absolute inset-0 z-0" />
-          <div className="mobile-wave-bg absolute inset-0 z-0" style={{ opacity: 0.7 }} />
-          <div className="mobile-wave-bg absolute inset-0 z-0" style={{ opacity: 0.5 }} />
+          <div
+            className="mobile-wave-bg absolute inset-0 z-0"
+            style={{ opacity: 0.7 }}
+          />
+          <div
+            className="mobile-wave-bg absolute inset-0 z-0"
+            style={{ opacity: 0.5 }}
+          />
           {/* Removed floating shapes */}
 
           <motion.div
@@ -849,7 +863,7 @@ export default function Index() {
                   textShadow: [
                     "0 0 30px rgba(59, 130, 246, 0.6)",
                     "0 0 50px rgba(59, 130, 246, 0.9)",
-                    "0 0 30px rgba(59, 130, 246, 0.6)"
+                    "0 0 30px rgba(59, 130, 246, 0.6)",
                   ],
                 }}
                 transition={{
@@ -862,7 +876,7 @@ export default function Index() {
                   scale: 1.3,
                   y: -15,
                   textShadow: "0 0 60px rgba(59, 130, 246, 1)",
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
               >
                 K
@@ -875,7 +889,7 @@ export default function Index() {
                   textShadow: [
                     "0 0 30px rgba(168, 85, 247, 0.6)",
                     "0 0 50px rgba(168, 85, 247, 0.9)",
-                    "0 0 30px rgba(168, 85, 247, 0.6)"
+                    "0 0 30px rgba(168, 85, 247, 0.6)",
                   ],
                 }}
                 transition={{
@@ -888,7 +902,7 @@ export default function Index() {
                   scale: 1.3,
                   y: -15,
                   textShadow: "0 0 60px rgba(168, 85, 247, 1)",
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
               >
                 o
@@ -901,7 +915,7 @@ export default function Index() {
                   textShadow: [
                     "0 0 30px rgba(34, 197, 94, 0.6)",
                     "0 0 50px rgba(34, 197, 94, 0.9)",
-                    "0 0 30px rgba(34, 197, 94, 0.6)"
+                    "0 0 30px rgba(34, 197, 94, 0.6)",
                   ],
                 }}
                 transition={{
@@ -914,7 +928,7 @@ export default function Index() {
                   scale: 1.3,
                   y: -15,
                   textShadow: "0 0 60px rgba(34, 197, 94, 1)",
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
               >
                 r
@@ -943,10 +957,7 @@ export default function Index() {
                 >
                   <span className="warm-glow-text animate-warm-glow-pulse">
                     {"Development Services".split("").map((letter, i) => (
-                      <span
-                        key={i}
-                        className="inline-block"
-                      >
+                      <span key={i} className="inline-block">
                         {letter === " " ? "\u00A0" : letter}
                       </span>
                     ))}
@@ -1143,9 +1154,7 @@ export default function Index() {
                   ease: "easeOut",
                 }}
               >
-                <motion.div
-                  className="text-3xl font-bold mobile-stat-counter mb-2"
-                >
+                <motion.div className="text-3xl font-bold mobile-stat-counter mb-2">
                   {counters.projects}+
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Projects</div>
@@ -1164,9 +1173,7 @@ export default function Index() {
                   ease: "easeOut",
                 }}
               >
-                <motion.div
-                  className="text-3xl font-bold mobile-stat-counter mb-2"
-                >
+                <motion.div className="text-3xl font-bold mobile-stat-counter mb-2">
                   {counters.clients}+
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Clients</div>
@@ -1184,9 +1191,7 @@ export default function Index() {
                   ease: "easeOut",
                 }}
               >
-                <motion.div
-                  className="text-3xl font-bold mobile-stat-counter mb-2"
-                >
+                <motion.div className="text-3xl font-bold mobile-stat-counter mb-2">
                   {counters.years}+
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Years</div>
@@ -1589,9 +1594,10 @@ export default function Index() {
               <p className="text-sm text-center text-orange-300 font-medium flex items-start gap-2">
                 <span className="text-orange-400 text-lg leading-none">⚠️</span>
                 <span>
-                  <strong className="text-orange-200">Note:</strong> Final pricing depends on the complexity, features, and
-                  specific requirements of your project. Contact us for a detailed
-                  quote tailored to your needs.
+                  <strong className="text-orange-200">Note:</strong> Final
+                  pricing depends on the complexity, features, and specific
+                  requirements of your project. Contact us for a detailed quote
+                  tailored to your needs.
                 </span>
               </p>
             </motion.div>
