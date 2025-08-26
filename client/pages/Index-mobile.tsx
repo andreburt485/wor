@@ -808,10 +808,6 @@ export default function Index() {
                       <span
                         key={i}
                         className="inline-block"
-                        style={{
-                          animationDelay: `${i * 0.1}s`,
-                          animation: "gentle-float 4s ease-in-out infinite",
-                        }}
                       >
                         {letter === " " ? "\u00A0" : letter}
                       </span>
