@@ -968,16 +968,6 @@ export default function Index() {
                 whileTap={{ scale: 0.95, rotateX: -5 }}
                 animate={{
                   y: [0, -2, 0],
-                  borderColor: [
-                    "rgba(59, 130, 246, 0.3)",
-                    "rgba(59, 130, 246, 0.5)",
-                    "rgba(59, 130, 246, 0.3)",
-                  ],
-                  boxShadow: [
-                    "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
-                    "0 15px 40px rgba(59, 130, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)",
-                    "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
-                  ],
                 }}
                 transition={{
                   duration: 4,
@@ -987,8 +977,6 @@ export default function Index() {
                 style={{
                   background: "rgba(255, 255, 255, 0.08)",
                   backdropFilter: "blur(25px)",
-                  boxShadow:
-                    "0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
                   borderColor: "rgba(59, 130, 246, 0.3)",
                   filter: "drop-shadow(0 0 10px rgba(59, 130, 246, 0.2))",
                 }}
