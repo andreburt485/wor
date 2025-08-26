@@ -1568,19 +1568,7 @@ export default function Index() {
                         : `bg-gradient-to-br ${plan.gradient} opacity-40`,
                     )}
                   />
-                  {plan.name === "Websites" && (
-                    <>
-                      {/* Animated border glow for websites card */}
-                      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-indigo-600/20 animate-pulse" />
-                      {/* Sparkle effects */}
-                      <div
-                        className="absolute bottom-8 left-6 text-blue-400 animate-bounce"
-                        style={{ animationDelay: "1s" }}
-                      >
-                        ���
-                      </div>
-                    </>
-                  )}
+                  {/* Removed shine effect and particle for Websites card */}
 
                   {plan.popular && plan.name !== "Websites" && (
                     <div className="corner-ribbon">
