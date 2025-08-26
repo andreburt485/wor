@@ -895,9 +895,6 @@ export default function Index() {
                   rotateX: 5,
                 }}
                 whileTap={{ scale: 0.95, rotateX: -5 }}
-                animate={{
-                  y: [0, -3, 0],
-                }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
