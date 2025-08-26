@@ -3,6 +3,13 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { useUnifiedNotifications } from "@/components/ui/unified-notification";
 import { useBrowserDetection } from "@/hooks/use-browser-detection";
 import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import {
   Menu,
   X,
   Home,
@@ -36,6 +43,7 @@ import {
   Clock,
   TrendingUp,
   Sparkles,
+  Monitor,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -57,7 +65,9 @@ export default function Index() {
   });
   const [isCounterVisible, setIsCounterVisible] = useState(false);
   const [isStatsAnimating, setIsStatsAnimating] = useState(false);
+  const [showDesktopSuggestion, setShowDesktopSuggestion] = useState(false);
   const hasShownWelcomeRef = useRef(false);
+  const hasShownDesktopSuggestionRef = useRef(false);
 
   // Stable particle data to prevent position jumping during re-renders
   const particleData = useMemo(() => {
