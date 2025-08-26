@@ -749,17 +749,13 @@ export default function Index() {
           id="home"
           className="min-h-screen flex items-start justify-center px-4 pt-8 pb-8 relative overflow-hidden mobile-ambient-glow mobile-section-enhanced"
         >
-          {/* Enhanced wave background layers */}
-          <div className="mobile-wave-bg absolute inset-0 z-0" />
+          {/* Subtle background accent */}
           <div
-            className="mobile-wave-bg absolute inset-0 z-0"
-            style={{ opacity: 0.7 }}
+            className="absolute inset-0 z-0 opacity-30"
+            style={{
+              background: "radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)"
+            }}
           />
-          <div
-            className="mobile-wave-bg absolute inset-0 z-0"
-            style={{ opacity: 0.5 }}
-          />
-          {/* Removed floating shapes */}
 
           <motion.div
             variants={premiumVariants}
