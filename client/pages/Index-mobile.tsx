@@ -1284,8 +1284,6 @@ export default function Index() {
                   whileHover={{
                     scale: 1.08,
                     y: -15,
-                    rotateY: 8,
-                    rotateX: 3,
                   }}
                   transition={{
                     duration: 5 + (index % 2),
@@ -1398,7 +1396,6 @@ export default function Index() {
                   whileHover={{
                     scale: plan.popular ? 1.08 : 1.05,
                     y: plan.popular ? -15 : -10,
-                    rotateY: plan.popular ? 8 : 5,
                   }}
                   transition={{
                     duration: plan.popular ? 3 : 4,
