@@ -605,11 +605,6 @@ export default function Index() {
         whileTap={{ scale: 0.85, rotate: -8 }}
         animate={{
           y: [0, -3, 0],
-          boxShadow: [
-            "0 8px 20px rgba(59, 130, 246, 0.3)",
-            "0 12px 30px rgba(59, 130, 246, 0.5)",
-            "0 8px 20px rgba(59, 130, 246, 0.3)",
-          ],
         }}
         transition={{
           duration: 3,
