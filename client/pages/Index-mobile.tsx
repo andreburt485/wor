@@ -529,36 +529,64 @@ export default function Index() {
         open={showDesktopSuggestion}
         onOpenChange={setShowDesktopSuggestion}
       >
-        <DialogContent className="mobile-premium-card border border-blue-400/30 bg-slate-900/95 backdrop-blur-xl">
-          <DialogHeader>
-            <DialogTitle className="text-xl font-bold mobile-premium-text flex items-center gap-2">
-              <Monitor className="w-6 h-6 text-blue-400" />
-              Desktop Experience Available
-            </DialogTitle>
-            <DialogDescription className="text-muted-foreground mt-3">
-              For the best visual experience with enhanced animations and
-              layouts, consider viewing our website on a desktop or laptop
-              computer.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="flex flex-col gap-3 mt-4">
-            <button
-              onClick={() => {
-                window.open(window.location.href, "_blank");
-                setShowDesktopSuggestion(false);
-              }}
-              className="w-full mobile-glow-button px-6 py-3 rounded-lg text-primary-foreground font-semibold flex items-center justify-center gap-2"
-            >
-              <Monitor className="w-4 h-4" />
-              Open in Desktop Mode
-            </button>
-            <button
-              onClick={() => setShowDesktopSuggestion(false)}
-              className="w-full mobile-premium-card border border-border hover:bg-accent px-6 py-3 rounded-lg font-medium transition-colors"
-            >
-              Continue on Mobile
-            </button>
-          </div>
+        <DialogContent className="mobile-premium-card border-2 border-blue-400/50 bg-gradient-to-br from-slate-900/98 via-blue-900/95 to-slate-900/98 backdrop-blur-xl shadow-2xl shadow-blue-500/20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <DialogHeader>
+              <DialogTitle className="text-xl font-bold mobile-premium-text flex items-center gap-2">
+                <motion.div
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                >
+                  <Monitor className="w-6 h-6 text-blue-400" />
+                </motion.div>
+                Enhanced Desktop Experience
+              </DialogTitle>
+              <DialogDescription className="text-blue-200 mt-3 leading-relaxed text-center">
+                🚀 Experience our site in{" "}
+                <strong className="text-blue-300 text-lg">full glory</strong>{" "}
+                with premium 3D animations, enhanced layouts, and stunning
+                visual effects!
+                <div className="flex justify-center items-center gap-4 mt-3 text-sm">
+                  <div className="flex items-center gap-1 text-green-400">
+                    <span>✅</span>
+                    <span>Better Performance</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-purple-400">
+                    <span>✨</span>
+                    <span>Rich Animations</span>
+                  </div>
+                </div>
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex flex-col gap-3 mt-6">
+              <motion.button
+                onClick={() => {
+                  window.open(window.location.href, "_blank");
+                  setShowDesktopSuggestion(false);
+                }}
+                className="w-full mobile-glow-button px-6 py-4 rounded-xl text-primary-foreground font-semibold flex items-center justify-center gap-2 relative overflow-hidden"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Monitor className="w-5 h-5" />
+                🚀 Open Desktop Version
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+              <motion.button
+                onClick={() => setShowDesktopSuggestion(false)}
+                className="w-full mobile-premium-card border border-border hover:bg-accent px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                whileHover={{ scale: 1.01, y: -1 }}
+                whileTap={{ scale: 0.99 }}
+              >
+                Continue on Mobile
+              </motion.button>
+            </div>
+          </motion.div>
         </DialogContent>
       </Dialog>
 
@@ -585,57 +613,27 @@ export default function Index() {
         <ChevronDown className="w-5 h-5 text-blue-400" />
         <div className="mobile-pulse-ring" />
       </motion.div>
-      {/* Beautiful Animated Background */}
+      {/* Simplified Clean Background */}
       <div className="fixed inset-0 mobile-mesh-bg pointer-events-none z-0" />
 
-      {/* Orbital Background Elements */}
-      <div className="mobile-orbital-bg fixed inset-0 z-0">
-        <div className="mobile-orbit"></div>
-        <div className="mobile-orbit"></div>
-        <div className="mobile-orbit"></div>
-      </div>
-
-      {/* Enhanced Floating Particles with More Life */}
+      {/* Minimal Floating Particles - Reduced for cleaner look */}
       <div
         className={cn(
           "mobile-floating-particles fixed inset-0 z-0",
           isStatsAnimating && "stats-animating",
         )}
       >
-        {particleData.slice(0, isStatsAnimating ? 8 : 15).map((particle) => (
+        {particleData.slice(0, isStatsAnimating ? 3 : 6).map((particle) => (
           <div
             key={particle.id}
             className="mobile-particle mobile-optimized-animations"
             style={{
               left: `${particle.left}%`,
               top: `${particle.top}%`,
-              width: `${particle.width}px`,
-              height: `${particle.height}px`,
+              width: `${Math.max(2, particle.width * 0.6)}px`,
+              height: `${Math.max(2, particle.height * 0.6)}px`,
               background: particle.background,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Enhanced Breathing Background Orbs */}
-      <div
-        className={cn(
-          "fixed inset-0 z-0 pointer-events-none",
-          isStatsAnimating && "stats-animating",
-        )}
-      >
-        {orbData.slice(0, isStatsAnimating ? 4 : 8).map((orb) => (
-          <div
-            key={`orb-${orb.id}`}
-            className="absolute rounded-full mobile-breathing-orb mobile-optimized-animations"
-            style={{
-              left: `${orb.left}%`,
-              top: `${orb.top}%`,
-              width: `${orb.width}px`,
-              height: `${orb.height}px`,
-              background: orb.background,
-              filter: "blur(25px)",
-              transform: "translateZ(0)",
+              opacity: 0.4,
             }}
           />
         ))}
@@ -649,18 +647,34 @@ export default function Index() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={{
+                duration: 0.25,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.nav
-              initial={{ x: "-100%", opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: "-100%", opacity: 0 }}
+              initial={{
+                x: "-100%",
+                opacity: 0,
+                scale: 0.95,
+              }}
+              animate={{
+                x: 0,
+                opacity: 1,
+                scale: 1,
+              }}
+              exit={{
+                x: "-100%",
+                opacity: 0,
+                scale: 0.95,
+              }}
               transition={{
-                duration: 0.4,
-                ease: [0.25, 0.46, 0.45, 0.94],
-                opacity: { duration: 0.3 },
+                duration: 0.5,
+                ease: [0.16, 1, 0.3, 1],
+                scale: { duration: 0.4 },
+                opacity: { duration: 0.35 },
               }}
               className="fixed top-0 left-0 w-80 h-full mobile-premium-card z-50 p-6"
             >
@@ -716,10 +730,10 @@ export default function Index() {
 
       {/* Enhanced Mobile Header */}
       {/* Animated Menu button in corner with external sparkle */}
-      <div className="fixed top-4 left-4 z-30">
+      <div className="fixed top-4 left-4 z-30 relative">
         <motion.button
           onClick={() => setIsMobileMenuOpen(true)}
-          className="p-3 rounded-xl mobile-premium-card mobile-tilt-card mobile-motion-override mobile-menu-enhanced mobile-fab mobile-touch-feedback relative overflow-hidden"
+          className="p-3 rounded-xl mobile-premium-card mobile-tilt-card mobile-motion-override mobile-menu-enhanced mobile-fab mobile-touch-feedback relative"
           whileHover={{
             scale: 1.15,
             rotate: 8,
@@ -736,8 +750,8 @@ export default function Index() {
           <div className="absolute inset-0 rounded-xl border border-blue-400/40" />
         </motion.button>
 
-        {/* Sparkle effect - now outside button container */}
-        <div className="mobile-sparkle absolute -top-1 -right-1 pointer-events-none" />
+        {/* Sparkle effect - positioned on top of the button */}
+        <div className="mobile-sparkle absolute top-1 right-1 pointer-events-none z-40" />
       </div>
 
       {/* Main Content */}
@@ -747,17 +761,14 @@ export default function Index() {
           id="home"
           className="min-h-screen flex items-start justify-center px-4 pt-8 pb-8 relative overflow-hidden mobile-ambient-glow mobile-section-enhanced"
         >
-          {/* Enhanced wave background layers */}
-          <div className="mobile-wave-bg absolute inset-0 z-0" />
+          {/* Subtle background accent */}
           <div
-            className="mobile-wave-bg absolute inset-0 z-0"
-            style={{ opacity: 0.7 }}
+            className="absolute inset-0 z-0 opacity-30"
+            style={{
+              background:
+                "radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)",
+            }}
           />
-          <div
-            className="mobile-wave-bg absolute inset-0 z-0"
-            style={{ opacity: 0.5 }}
-          />
-          {/* Removed floating shapes */}
 
           <motion.div
             variants={premiumVariants}
@@ -843,7 +854,7 @@ export default function Index() {
               </span>
             </motion.div>
 
-            {/* Enhanced main title with lively animations */}
+            {/* Enhanced main title with premium desktop-level animations */}
             <motion.h1
               className="font-poppins text-6xl sm:text-7xl md:text-8xl font-bold mb-6 relative text-white tracking-tight"
               variants={premiumVariants}
@@ -854,81 +865,133 @@ export default function Index() {
                   "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(37, 99, 235, 0.4)",
               }}
             >
-              {/* Individual letter animations with enhanced liveliness */}
+              {/* K - Enhanced with sophisticated desktop-level animations */}
               <motion.span
                 className="inline-block relative warm-glow-text"
                 animate={{
-                  y: [0, -8, 0],
-                  scale: [1, 1.05, 1],
+                  y: [0, -18, 12, -8, 4, 0],
+                  x: [0, 3, -2, 1, -1, 0],
+                  scale: [1, 1.12, 0.95, 1.08, 1.02, 1],
+                  rotateZ: [0, 4, -2, 3, -1, 0],
                   textShadow: [
-                    "0 0 30px rgba(59, 130, 246, 0.6)",
-                    "0 0 50px rgba(59, 130, 246, 0.9)",
-                    "0 0 30px rgba(59, 130, 246, 0.6)",
+                    "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(73, 146, 255, 0.3)",
+                    "0 0 60px rgba(59, 130, 246, 1), 0 0 100px rgba(73, 146, 255, 0.8)",
+                    "0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(73, 146, 255, 0.2)",
+                    "0 0 50px rgba(59, 130, 246, 0.9), 0 0 80px rgba(73, 146, 255, 0.6)",
+                    "0 0 35px rgba(59, 130, 246, 0.7), 0 0 65px rgba(73, 146, 255, 0.4)",
+                    "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(73, 146, 255, 0.3)",
+                  ],
+                  filter: [
+                    "brightness(1) saturate(1)",
+                    "brightness(1.4) saturate(1.3)",
+                    "brightness(0.8) saturate(0.7)",
+                    "brightness(1.3) saturate(1.2)",
+                    "brightness(1.1) saturate(1.05)",
+                    "brightness(1) saturate(1)",
                   ],
                 }}
                 transition={{
                   duration: 4,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  ease: [0.25, 0.46, 0.45, 0.94],
                   delay: 0,
                 }}
                 whileHover={{
-                  scale: 1.3,
-                  y: -15,
-                  textShadow: "0 0 60px rgba(59, 130, 246, 1)",
-                  transition: { duration: 0.3 },
+                  scale: 1.5,
+                  y: -25,
+                  rotateZ: 8,
+                  textShadow:
+                    "0 0 100px rgba(59, 130, 246, 1), 0 0 150px rgba(73, 146, 255, 0.9)",
+                  filter: "brightness(1.6) saturate(1.4)",
+                  transition: { duration: 0.3, ease: "easeOut" },
                 }}
               >
                 K
               </motion.span>
+
+              {/* O - Enhanced with complex animations */}
               <motion.span
                 className="inline-block relative warm-glow-text"
                 animate={{
-                  y: [0, -12, 0],
-                  scale: [1, 1.08, 1],
+                  y: [0, -20, 15, -10, 5, 0],
+                  x: [0, -2, 4, -1, 2, 0],
+                  scale: [1, 1.15, 0.92, 1.1, 1.03, 1],
+                  rotateZ: [0, -3, 5, -2, 1, 0],
                   textShadow: [
-                    "0 0 30px rgba(168, 85, 247, 0.6)",
-                    "0 0 50px rgba(168, 85, 247, 0.9)",
-                    "0 0 30px rgba(168, 85, 247, 0.6)",
+                    "0 0 30px rgba(168, 85, 247, 0.6), 0 0 60px rgba(147, 51, 234, 0.3)",
+                    "0 0 70px rgba(168, 85, 247, 1), 0 0 110px rgba(147, 51, 234, 0.8)",
+                    "0 0 15px rgba(168, 85, 247, 0.3), 0 0 35px rgba(147, 51, 234, 0.1)",
+                    "0 0 55px rgba(168, 85, 247, 0.9), 0 0 90px rgba(147, 51, 234, 0.7)",
+                    "0 0 40px rgba(168, 85, 247, 0.7), 0 0 70px rgba(147, 51, 234, 0.4)",
+                    "0 0 30px rgba(168, 85, 247, 0.6), 0 0 60px rgba(147, 51, 234, 0.3)",
                   ],
-                }}
-                transition={{
-                  duration: 4.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5,
-                }}
-                whileHover={{
-                  scale: 1.3,
-                  y: -15,
-                  textShadow: "0 0 60px rgba(168, 85, 247, 1)",
-                  transition: { duration: 0.3 },
-                }}
-              >
-                o
-              </motion.span>
-              <motion.span
-                className="inline-block relative warm-glow-text"
-                animate={{
-                  y: [0, -6, 0],
-                  scale: [1, 1.06, 1],
-                  textShadow: [
-                    "0 0 30px rgba(34, 197, 94, 0.6)",
-                    "0 0 50px rgba(34, 197, 94, 0.9)",
-                    "0 0 30px rgba(34, 197, 94, 0.6)",
+                  filter: [
+                    "brightness(1) saturate(1) hue-rotate(0deg)",
+                    "brightness(1.5) saturate(1.4) hue-rotate(8deg)",
+                    "brightness(0.7) saturate(0.6) hue-rotate(-5deg)",
+                    "brightness(1.4) saturate(1.3) hue-rotate(5deg)",
+                    "brightness(1.2) saturate(1.1) hue-rotate(2deg)",
+                    "brightness(1) saturate(1) hue-rotate(0deg)",
                   ],
                 }}
                 transition={{
                   duration: 5,
                   repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
+                  ease: [0.16, 1, 0.3, 1],
+                  delay: 1.2,
                 }}
                 whileHover={{
-                  scale: 1.3,
-                  y: -15,
-                  textShadow: "0 0 60px rgba(34, 197, 94, 1)",
-                  transition: { duration: 0.3 },
+                  scale: 1.5,
+                  y: -25,
+                  rotateZ: -12,
+                  textShadow:
+                    "0 0 100px rgba(168, 85, 247, 1), 0 0 150px rgba(147, 51, 234, 0.9)",
+                  filter: "brightness(1.7) saturate(1.5) hue-rotate(15deg)",
+                  transition: { duration: 0.3, ease: "easeOut" },
+                }}
+              >
+                o
+              </motion.span>
+
+              {/* R - Enhanced with sophisticated movements */}
+              <motion.span
+                className="inline-block relative warm-glow-text"
+                animate={{
+                  y: [0, -14, 18, -8, 3, 0],
+                  x: [0, 1, -3, 2, -1, 0],
+                  scale: [1, 1.09, 0.93, 1.06, 1.01, 1],
+                  rotateZ: [0, 5, -3, 4, -1, 0],
+                  textShadow: [
+                    "0 0 30px rgba(34, 197, 94, 0.6), 0 0 60px rgba(16, 185, 129, 0.3)",
+                    "0 0 65px rgba(34, 197, 94, 1), 0 0 105px rgba(16, 185, 129, 0.8)",
+                    "0 0 18px rgba(34, 197, 94, 0.4), 0 0 38px rgba(16, 185, 129, 0.2)",
+                    "0 0 52px rgba(34, 197, 94, 0.9), 0 0 85px rgba(16, 185, 129, 0.6)",
+                    "0 0 38px rgba(34, 197, 94, 0.7), 0 0 68px rgba(16, 185, 129, 0.4)",
+                    "0 0 30px rgba(34, 197, 94, 0.6), 0 0 60px rgba(16, 185, 129, 0.3)",
+                  ],
+                  filter: [
+                    "brightness(1) saturate(1) contrast(1)",
+                    "brightness(1.4) saturate(1.3) contrast(1.15)",
+                    "brightness(0.8) saturate(0.7) contrast(0.85)",
+                    "brightness(1.3) saturate(1.2) contrast(1.1)",
+                    "brightness(1.1) saturate(1.05) contrast(1.02)",
+                    "brightness(1) saturate(1) contrast(1)",
+                  ],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: [0.34, 1.56, 0.64, 1],
+                  delay: 2,
+                }}
+                whileHover={{
+                  scale: 1.5,
+                  y: -25,
+                  rotateZ: 12,
+                  textShadow:
+                    "0 0 100px rgba(34, 197, 94, 1), 0 0 150px rgba(16, 185, 129, 0.9)",
+                  filter: "brightness(1.6) saturate(1.4) contrast(1.3)",
+                  transition: { duration: 0.3, ease: "easeOut" },
                 }}
               >
                 r
@@ -1010,15 +1073,18 @@ export default function Index() {
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="font-poppins px-12 py-5 rounded-2xl text-white font-bold relative overflow-hidden group shadow-2xl mobile-button-enhanced mobile-fab mobile-touch-feedback"
+                animate={{
+                  y: [0, -3, 0],
+                }}
                 whileHover={{
-                  y: -12,
-                  scale: 1.08,
+                  y: -8,
+                  scale: 1.05,
                 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
+                  y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                  hover: { duration: 0.3, ease: "easeOut" },
+                  tap: { duration: 0.1 },
                 }}
                 style={{
                   background:
@@ -1510,27 +1576,85 @@ export default function Index() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className={cn(
-                    "mobile-premium-card mobile-tilt-card mobile-motion-override p-6 rounded-xl relative",
+                    "mobile-premium-card mobile-tilt-card mobile-motion-override rounded-xl relative",
                     plan.popular &&
-                      "ring-2 ring-blue-500/50 mt-4 overflow-hidden",
-                    !plan.popular && "overflow-hidden",
+                      "ring-4 ring-blue-400/70 ring-offset-2 ring-offset-slate-900 mt-6 mb-4 overflow-visible transform scale-105",
+                    plan.popular &&
+                      plan.name === "Websites" &&
+                      "ring-purple-400/80 shadow-2xl shadow-purple-500/25",
+                    !plan.popular && "overflow-hidden p-6",
+                    plan.popular && "p-8",
                   )}
                   whileHover={{
-                    scale: plan.popular ? 1.08 : 1.05,
-                    y: plan.popular ? -15 : -10,
+                    scale:
+                      plan.popular && plan.name === "Websites"
+                        ? 1.12
+                        : plan.popular
+                          ? 1.08
+                          : 1.05,
+                    y:
+                      plan.popular && plan.name === "Websites"
+                        ? -20
+                        : plan.popular
+                          ? -15
+                          : -10,
+                    rotateY: plan.popular && plan.name === "Websites" ? 5 : 0,
                   }}
+                  animate={
+                    plan.popular && plan.name === "Websites"
+                      ? {
+                          boxShadow: [
+                            "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
+                            "0 0 50px rgba(168, 85, 247, 0.7), 0 0 80px rgba(59, 130, 246, 0.5)",
+                            "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
+                          ],
+                          scale: [1.05, 1.08, 1.05],
+                        }
+                      : {}
+                  }
                   transition={{
-                    duration: plan.popular ? 3 : 4,
+                    duration:
+                      plan.popular && plan.name === "Websites"
+                        ? 2.5
+                        : plan.popular
+                          ? 3
+                          : 4,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: index * 0.5,
+                    delay: index * 0.3,
+                    boxShadow: { duration: 3, repeat: Infinity },
+                    hover: { duration: 0.3 },
                   }}
                 >
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${plan.gradient} opacity-40`}
+                    className={cn(
+                      "absolute inset-0 rounded-xl",
+                      plan.name === "Websites"
+                        ? "bg-gradient-to-br from-purple-500/30 via-blue-500/25 to-indigo-500/30 opacity-50"
+                        : `bg-gradient-to-br ${plan.gradient} opacity-40`,
+                    )}
                   />
+                  {plan.name === "Websites" && (
+                    <>
+                      {/* Animated border glow for websites card */}
+                      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-indigo-600/20 animate-pulse" />
+                      {/* Sparkle effects */}
+                      <div
+                        className="absolute top-6 right-8 text-purple-400 animate-bounce"
+                        style={{ animationDelay: "0.5s" }}
+                      >
+                        ⭐
+                      </div>
+                      <div
+                        className="absolute bottom-8 left-6 text-blue-400 animate-bounce"
+                        style={{ animationDelay: "1s" }}
+                      >
+                        ���
+                      </div>
+                    </>
+                  )}
 
-                  {plan.popular && (
+                  {plan.popular && plan.name !== "Websites" && (
                     <div className="corner-ribbon">
                       <span>
                         <Star className="w-3 h-3 inline mr-1" />
@@ -1569,37 +1693,107 @@ export default function Index() {
 
                   <motion.button
                     className={cn(
-                      "w-full py-4 rounded-lg font-semibold transition-all duration-300 relative z-10",
-                      plan.popular
-                        ? "mobile-glow-button text-primary-foreground"
-                        : "mobile-premium-card mobile-motion-override border border-border hover:bg-accent",
+                      "w-full py-4 rounded-xl font-semibold transition-all duration-300 relative z-10 overflow-hidden",
+                      plan.popular && plan.name === "Websites"
+                        ? "bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg"
+                        : plan.popular
+                          ? "mobile-glow-button text-primary-foreground"
+                          : "mobile-premium-card mobile-motion-override border border-border hover:bg-accent",
                     )}
-                    whileHover={{ y: -2, scale: 1.02 }}
+                    whileHover={{
+                      y: plan.name === "Websites" ? -4 : -2,
+                      scale: plan.name === "Websites" ? 1.05 : 1.02,
+                      boxShadow:
+                        plan.name === "Websites"
+                          ? "0 15px 50px rgba(168, 85, 247, 0.6), 0 0 100px rgba(59, 130, 246, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)"
+                          : undefined,
+                    }}
                     whileTap={{ scale: 0.98 }}
+                    animate={
+                      plan.name === "Websites"
+                        ? {
+                            boxShadow: [
+                              "0 4px 20px rgba(168, 85, 247, 0.3)",
+                              "0 8px 30px rgba(168, 85, 247, 0.5)",
+                              "0 4px 20px rgba(168, 85, 247, 0.3)",
+                            ],
+                          }
+                        : {}
+                    }
+                    transition={{
+                      boxShadow: { duration: 2, repeat: Infinity },
+                      hover: { duration: 0.2 },
+                    }}
                   >
-                    Get Started
+                    {plan.name === "Websites" && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                    )}
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      {plan.name === "Websites" && <span>🚀</span>}
+                      Get Started
+                      {plan.name === "Websites" && <span>✨</span>}
+                    </span>
                   </motion.button>
                 </motion.div>
               ))}
             </div>
 
             <motion.div
-              className="mobile-premium-card border border-orange-400/30 bg-orange-500/10 p-4 rounded-lg"
+              className="mobile-premium-card border-2 border-orange-400/50 bg-gradient-to-r from-orange-500/20 via-yellow-500/15 to-orange-500/20 p-4 rounded-lg relative overflow-hidden"
               variants={premiumVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.03, y: -2 }}
+              animate={{
+                boxShadow: [
+                  "0 0 20px rgba(251, 146, 60, 0.3)",
+                  "0 0 30px rgba(251, 146, 60, 0.5)",
+                  "0 0 20px rgba(251, 146, 60, 0.3)",
+                ],
+              }}
+              transition={{
+                boxShadow: { duration: 2, repeat: Infinity },
+                hover: { duration: 0.2 },
+              }}
             >
-              <p className="text-sm text-center text-orange-300 font-medium flex items-start gap-2">
-                <span className="text-orange-400 text-lg leading-none">⚠️</span>
-                <span>
-                  <strong className="text-orange-200">Note:</strong> Final
-                  pricing depends on the complexity, features, and specific
-                  requirements of your project. Contact us for a detailed quote
-                  tailored to your needs.
-                </span>
-              </p>
+              {/* Animated background accent */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-400/10 to-transparent animate-pulse" />
+
+              <div className="relative z-10">
+                <div className="flex items-center justify-center mb-3">
+                  <motion.span
+                    className="text-2xl mr-2"
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    ⚠️
+                  </motion.span>
+                  <span className="text-lg font-bold text-orange-200 uppercase tracking-wider">
+                    Important Note
+                  </span>
+                  <motion.span
+                    className="text-2xl ml-2"
+                    animate={{ rotate: [0, -10, 10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                  >
+                    ⚠️
+                  </motion.span>
+                </div>
+
+                <p className="text-sm text-center text-orange-100 font-medium leading-relaxed">
+                  <strong className="text-orange-200">
+                    💡 Pricing is customized
+                  </strong>
+                  <br />
+                  Final costs depend on complexity, features, and your specific
+                  requirements.
+                  <span className="text-yellow-200 font-semibold">
+                    Contact us for a detailed quote{" "}
+                  </span>
+                  tailored perfectly to your project!
+                </p>
+              </div>
             </motion.div>
           </div>
         </section>
