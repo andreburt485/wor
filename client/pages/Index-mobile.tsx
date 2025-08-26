@@ -629,10 +629,6 @@ export default function Index() {
         {/* Breathing border effect with glow */}
         <div
           className="absolute inset-0 rounded-xl border border-blue-400/40"
-          style={{
-            animation: "border-pulse 2s ease-in-out infinite",
-            boxShadow: "inset 0 0 20px rgba(59, 130, 246, 0.2)",
-          }}
         />
 
         {/* Sparkle effect */}
