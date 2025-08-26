@@ -489,8 +489,6 @@ export default function Index() {
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${i * -2}s`,
-                animationDuration: `${12 + Math.random() * 6}s`,
                 width: `${4 + Math.random() * 6}px`,
                 height: `${4 + Math.random() * 6}px`,
                 background: particleBackgrounds[i % 6],
