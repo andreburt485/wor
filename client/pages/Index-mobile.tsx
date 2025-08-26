@@ -442,11 +442,6 @@ export default function Index() {
         className="fixed bottom-8 right-4 z-20 p-3 rounded-full mobile-premium-card mobile-fab mobile-scroll-hint"
         animate={{
           y: [0, -10, 0],
-          boxShadow: [
-            "0 4px 15px rgba(59, 130, 246, 0.3)",
-            "0 8px 25px rgba(59, 130, 246, 0.5)",
-            "0 4px 15px rgba(59, 130, 246, 0.3)",
-          ],
         }}
         transition={{
           duration: 3,
