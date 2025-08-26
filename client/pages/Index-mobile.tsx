@@ -597,28 +597,34 @@ export default function Index() {
               initial={{
                 x: "-100%",
                 opacity: 0,
-                scale: 0.95,
               }}
               animate={{
                 x: 0,
                 opacity: 1,
-                scale: 1,
               }}
               exit={{
                 x: "-100%",
                 opacity: 0,
-                scale: 0.95,
               }}
               transition={{
-                duration: 0.5,
-                ease: [0.16, 1, 0.3, 1],
-                scale: { duration: 0.4 },
-                opacity: { duration: 0.35 },
+                duration: 0.3,
+                ease: [0.25, 0.46, 0.45, 0.94],
               }}
               className="fixed top-0 left-0 w-80 h-full mobile-premium-card z-50 p-6"
             >
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-xl font-bold mobile-premium-text">kor</h2>
+                <h2
+                  className="text-xl font-bold"
+                  style={{
+                    background: "linear-gradient(135deg, #60a5fa 0%, #22d3ee 100%)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    color: "transparent"
+                  }}
+                >
+                  kor
+                </h2>
                 <motion.button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 rounded-lg hover:bg-accent transition-colors mobile-tilt-card mobile-motion-override"
@@ -1149,7 +1155,7 @@ export default function Index() {
               onViewportEnter={() => setIsCounterVisible(true)}
             >
               <motion.div
-                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override mobile-touch-feedback mobile-fab relative overflow-hidden"
+                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override mobile-touch-feedback mobile-fab relative overflow-hidden rounded-3xl"
                 whileHover={{
                   scale: 1.05,
                   y: -4,
@@ -1164,11 +1170,11 @@ export default function Index() {
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Projects</div>
                 {/* Animated border */}
-                <div className="absolute inset-0 border border-blue-400/30 rounded-lg animate-pulse" />
+                <div className="absolute inset-0 border border-blue-400/30 rounded-3xl animate-pulse" />
               </motion.div>
 
               <motion.div
-                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override relative overflow-hidden"
+                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override relative overflow-hidden rounded-3xl"
                 whileHover={{
                   scale: 1.05,
                   y: -4,
@@ -1182,11 +1188,11 @@ export default function Index() {
                   {counters.clients}+
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Clients</div>
-                <div className="absolute inset-0 border border-purple-400/30 rounded-lg animate-pulse" />
+                <div className="absolute inset-0 border border-purple-400/30 rounded-3xl animate-pulse" />
               </motion.div>
 
               <motion.div
-                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override relative overflow-hidden"
+                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override relative overflow-hidden rounded-3xl"
                 whileHover={{
                   scale: 1.05,
                   y: -4,
@@ -1200,7 +1206,7 @@ export default function Index() {
                   {counters.years}+
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Years</div>
-                <div className="absolute inset-0 border border-green-400/30 rounded-lg animate-pulse" />
+                <div className="absolute inset-0 border border-green-400/30 rounded-3xl animate-pulse" />
               </motion.div>
             </motion.div>
           </div>
@@ -1366,11 +1372,16 @@ export default function Index() {
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="px-4 pb-4 relative z-10"
+                          initial={{ maxHeight: 0, opacity: 0 }}
+                          animate={{ maxHeight: 200, opacity: 1 }}
+                          exit={{ maxHeight: 0, opacity: 0 }}
+                          transition={{
+                            duration: 0.4,
+                            ease: [0.04, 0.62, 0.23, 0.98],
+                            maxHeight: { duration: 0.4 },
+                            opacity: { duration: 0.25, delay: 0.1 }
+                          }}
+                          className="px-4 pb-4 relative z-10 overflow-hidden"
                         >
                           <p className="text-sm text-muted-foreground">
                             {service.description}
@@ -1706,7 +1717,7 @@ export default function Index() {
                   Final costs depend on complexity, features, and your specific
                   requirements.
                   <span className="text-yellow-200 font-semibold">
-                    Contact us for a detailed quote{" "}
+                    {" "}Contact us for a detailed quote{" "}
                   </span>
                   tailored perfectly to your project!
                 </p>
