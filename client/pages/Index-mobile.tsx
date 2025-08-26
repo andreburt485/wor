@@ -875,7 +875,7 @@ export default function Index() {
               </span>
             </motion.div>
 
-            {/* Enhanced main title with lively animations */}
+            {/* Enhanced main title with premium desktop-level animations */}
             <motion.h1
               className="font-poppins text-6xl sm:text-7xl md:text-8xl font-bold mb-6 relative text-white tracking-tight"
               variants={premiumVariants}
@@ -886,81 +886,121 @@ export default function Index() {
                   "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(37, 99, 235, 0.4)",
               }}
             >
-              {/* Individual letter animations with enhanced liveliness */}
+              {/* K - Enhanced with sophisticated desktop-level animations */}
               <motion.span
                 className="inline-block relative warm-glow-text"
                 animate={{
-                  y: [0, -8, 0],
-                  scale: [1, 1.05, 1],
+                  y: [0, -12, 8, -6, 0],
+                  scale: [1, 1.08, 0.98, 1.05, 1],
+                  rotateZ: [0, 2, -1, 1, 0],
                   textShadow: [
-                    "0 0 30px rgba(59, 130, 246, 0.6)",
-                    "0 0 50px rgba(59, 130, 246, 0.9)",
-                    "0 0 30px rgba(59, 130, 246, 0.6)",
+                    "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(73, 146, 255, 0.3)",
+                    "0 0 50px rgba(59, 130, 246, 0.9), 0 0 80px rgba(73, 146, 255, 0.6)",
+                    "0 0 25px rgba(59, 130, 246, 0.5), 0 0 50px rgba(73, 146, 255, 0.2)",
+                    "0 0 40px rgba(59, 130, 246, 0.8), 0 0 70px rgba(73, 146, 255, 0.4)",
+                    "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(73, 146, 255, 0.3)",
+                  ],
+                  filter: [
+                    "brightness(1) saturate(1)",
+                    "brightness(1.3) saturate(1.2)",
+                    "brightness(0.9) saturate(0.8)",
+                    "brightness(1.2) saturate(1.1)",
+                    "brightness(1) saturate(1)",
                   ],
                 }}
                 transition={{
-                  duration: 4,
+                  duration: 6,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  ease: [0.25, 0.46, 0.45, 0.94],
                   delay: 0,
                 }}
                 whileHover={{
-                  scale: 1.3,
-                  y: -15,
-                  textShadow: "0 0 60px rgba(59, 130, 246, 1)",
-                  transition: { duration: 0.3 },
+                  scale: 1.4,
+                  y: -20,
+                  rotateZ: 5,
+                  textShadow: "0 0 80px rgba(59, 130, 246, 1), 0 0 120px rgba(73, 146, 255, 0.8)",
+                  filter: "brightness(1.5) saturate(1.3)",
+                  transition: { duration: 0.3, ease: "easeOut" },
                 }}
               >
                 K
               </motion.span>
+
+              {/* O - Enhanced with complex animations */}
               <motion.span
                 className="inline-block relative warm-glow-text"
                 animate={{
-                  y: [0, -12, 0],
-                  scale: [1, 1.08, 1],
+                  y: [0, -15, 10, -8, 0],
+                  scale: [1, 1.12, 0.95, 1.08, 1],
+                  rotateZ: [0, -2, 3, -1, 0],
                   textShadow: [
-                    "0 0 30px rgba(168, 85, 247, 0.6)",
-                    "0 0 50px rgba(168, 85, 247, 0.9)",
-                    "0 0 30px rgba(168, 85, 247, 0.6)",
+                    "0 0 30px rgba(168, 85, 247, 0.6), 0 0 60px rgba(147, 51, 234, 0.3)",
+                    "0 0 55px rgba(168, 85, 247, 0.9), 0 0 85px rgba(147, 51, 234, 0.6)",
+                    "0 0 20px rgba(168, 85, 247, 0.4), 0 0 45px rgba(147, 51, 234, 0.2)",
+                    "0 0 45px rgba(168, 85, 247, 0.8), 0 0 75px rgba(147, 51, 234, 0.5)",
+                    "0 0 30px rgba(168, 85, 247, 0.6), 0 0 60px rgba(147, 51, 234, 0.3)",
+                  ],
+                  filter: [
+                    "brightness(1) saturate(1) hue-rotate(0deg)",
+                    "brightness(1.4) saturate(1.3) hue-rotate(5deg)",
+                    "brightness(0.8) saturate(0.7) hue-rotate(-3deg)",
+                    "brightness(1.3) saturate(1.2) hue-rotate(3deg)",
+                    "brightness(1) saturate(1) hue-rotate(0deg)",
                   ],
                 }}
                 transition={{
-                  duration: 4.5,
+                  duration: 7,
                   repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5,
+                  ease: [0.16, 1, 0.3, 1],
+                  delay: 0.8,
                 }}
                 whileHover={{
-                  scale: 1.3,
-                  y: -15,
-                  textShadow: "0 0 60px rgba(168, 85, 247, 1)",
-                  transition: { duration: 0.3 },
+                  scale: 1.4,
+                  y: -20,
+                  rotateZ: -8,
+                  textShadow: "0 0 80px rgba(168, 85, 247, 1), 0 0 120px rgba(147, 51, 234, 0.8)",
+                  filter: "brightness(1.6) saturate(1.4) hue-rotate(10deg)",
+                  transition: { duration: 0.3, ease: "easeOut" },
                 }}
               >
                 o
               </motion.span>
+
+              {/* R - Enhanced with sophisticated movements */}
               <motion.span
                 className="inline-block relative warm-glow-text"
                 animate={{
-                  y: [0, -6, 0],
-                  scale: [1, 1.06, 1],
+                  y: [0, -10, 12, -5, 0],
+                  scale: [1, 1.06, 0.96, 1.04, 1],
+                  rotateZ: [0, 3, -2, 2, 0],
                   textShadow: [
-                    "0 0 30px rgba(34, 197, 94, 0.6)",
-                    "0 0 50px rgba(34, 197, 94, 0.9)",
-                    "0 0 30px rgba(34, 197, 94, 0.6)",
+                    "0 0 30px rgba(34, 197, 94, 0.6), 0 0 60px rgba(16, 185, 129, 0.3)",
+                    "0 0 50px rgba(34, 197, 94, 0.9), 0 0 80px rgba(16, 185, 129, 0.6)",
+                    "0 0 25px rgba(34, 197, 94, 0.5), 0 0 50px rgba(16, 185, 129, 0.2)",
+                    "0 0 40px rgba(34, 197, 94, 0.8), 0 0 70px rgba(16, 185, 129, 0.4)",
+                    "0 0 30px rgba(34, 197, 94, 0.6), 0 0 60px rgba(16, 185, 129, 0.3)",
+                  ],
+                  filter: [
+                    "brightness(1) saturate(1) contrast(1)",
+                    "brightness(1.3) saturate(1.2) contrast(1.1)",
+                    "brightness(0.9) saturate(0.8) contrast(0.9)",
+                    "brightness(1.2) saturate(1.1) contrast(1.05)",
+                    "brightness(1) saturate(1) contrast(1)",
                   ],
                 }}
                 transition={{
-                  duration: 5,
+                  duration: 8,
                   repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
+                  ease: [0.34, 1.56, 0.64, 1],
+                  delay: 1.5,
                 }}
                 whileHover={{
-                  scale: 1.3,
-                  y: -15,
-                  textShadow: "0 0 60px rgba(34, 197, 94, 1)",
-                  transition: { duration: 0.3 },
+                  scale: 1.4,
+                  y: -20,
+                  rotateZ: 8,
+                  textShadow: "0 0 80px rgba(34, 197, 94, 1), 0 0 120px rgba(16, 185, 129, 0.8)",
+                  filter: "brightness(1.5) saturate(1.3) contrast(1.2)",
+                  transition: { duration: 0.3, ease: "easeOut" },
                 }}
               >
                 r
