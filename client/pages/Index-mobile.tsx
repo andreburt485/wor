@@ -1821,7 +1821,7 @@ export default function Index() {
                         "p-3 rounded-lg text-xs border transition-all duration-300",
                         selectedBudget === budget
                           ? "mobile-glow-button text-primary-foreground border-primary"
-                          : "mobile-premium-card border-border hover:border-primary/50",
+                          : "mobile-premium-card mobile-motion-override border-border hover:border-primary/50",
                       )}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
