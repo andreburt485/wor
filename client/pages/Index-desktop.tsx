@@ -868,7 +868,7 @@ export default function Index() {
 ������� �����█╔����█��╔═══���█╗█���������═�������╗
 █████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██╔══█��╗
-█���║  ██��╚█�������█������█╔╝�����║  █��║
+█���║  ██��╚█�������█������█╔╝�������║  █��║
 ��������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
@@ -10106,11 +10106,6 @@ const PricingSection = React.forwardRef<HTMLDivElement, SectionProps>(
                       delay: 0.2 + index * 0.2,
                       type: "spring",
                       stiffness: 120,
-                    }}
-                    whileHover={{
-                      scale: plan.popular ? 1.08 : 1.03,
-                      y: -8,
-                      transition: { duration: 0.3 },
                     }}
                   >
                     {/* Popular Badge */}
