@@ -1798,12 +1798,6 @@ export default function Index() {
                   whileTap={{ scale: 0.8, rotateZ: -5 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 4 + index,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: index * 0.6,
-                  }}
                 >
                   <Icon className="w-5 h-5" />
                 </motion.a>
