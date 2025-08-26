@@ -1669,7 +1669,7 @@ export default function Index() {
                       y: plan.name === "Websites" ? -4 : -2,
                       scale: plan.name === "Websites" ? 1.05 : 1.02,
                       boxShadow: plan.name === "Websites"
-                        ? "0 10px 40px rgba(168, 85, 247, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)"
+                        ? "0 15px 50px rgba(168, 85, 247, 0.6), 0 0 100px rgba(59, 130, 246, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)"
                         : undefined
                     }}
                     whileTap={{ scale: 0.98 }}
