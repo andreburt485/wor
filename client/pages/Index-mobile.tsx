@@ -1081,11 +1081,6 @@ export default function Index() {
                 animate={{
                   y: [0, -4, 0],
                   rotateZ: [0, 1, 0],
-                  boxShadow: [
-                    "0 10px 25px rgba(59, 130, 246, 0.3)",
-                    "0 15px 35px rgba(59, 130, 246, 0.5)",
-                    "0 10px 25px rgba(59, 130, 246, 0.3)",
-                  ],
                 }}
                 transition={{
                   duration: 3.5,
