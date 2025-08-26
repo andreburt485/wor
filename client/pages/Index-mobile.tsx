@@ -554,34 +554,23 @@ export default function Index() {
 
       {/* Enhanced Breathing Background Orbs */}
       <div className={cn("fixed inset-0 z-0 pointer-events-none", isStatsAnimating && "stats-animating")}>
-        {Array.from({ length: isStatsAnimating ? 4 : 8 }).map((_, i) => {
-          const orbBackgrounds = [
-            "radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%)",
-            "radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%)",
-            "radial-gradient(circle, rgba(34, 197, 94, 0.13) 0%, transparent 70%)",
-            "radial-gradient(circle, rgba(236, 72, 153, 0.11) 0%, transparent 70%)",
-            "radial-gradient(circle, rgba(34, 211, 238, 0.12) 0%, transparent 70%)",
-            "radial-gradient(circle, rgba(245, 158, 11, 0.10) 0%, transparent 70%)",
-            "radial-gradient(circle, rgba(139, 92, 246, 0.11) 0%, transparent 70%)",
-            "radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%)",
-          ];
-
-          return (
+        {orbData
+          .slice(0, isStatsAnimating ? 4 : 8)
+          .map((orb) => (
             <div
-              key={`orb-${i}`}
+              key={`orb-${orb.id}`}
               className="absolute rounded-full mobile-breathing-orb mobile-optimized-animations"
               style={{
-                left: `${15 + ((i * 12) % 70)}%`,
-                top: `${25 + ((i * 18) % 50)}%`,
-                width: `${80 + i * 40}px`,
-                height: `${80 + i * 40}px`,
-                background: orbBackgrounds[i],
+                left: `${orb.left}%`,
+                top: `${orb.top}%`,
+                width: `${orb.width}px`,
+                height: `${orb.height}px`,
+                background: orb.background,
                 filter: "blur(25px)",
                 transform: "translateZ(0)",
               }}
             />
-          );
-        })}
+          ))}
       </div>
 
       {/* Mobile Navigation Overlay */}
