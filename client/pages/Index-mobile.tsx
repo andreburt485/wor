@@ -1756,7 +1756,7 @@ export default function Index() {
                 <motion.a
                   key={index}
                   href={href}
-                  className="text-muted-foreground hover:text-blue-400 transition-colors mobile-tilt-card p-2 rounded-lg"
+                  className="text-muted-foreground hover:text-blue-400 transition-colors mobile-tilt-card mobile-motion-override p-2 rounded-lg"
                   whileHover={{
                     y: -8,
                     scale: 1.2,
