@@ -616,10 +616,7 @@ export default function Index() {
 
         {/* Enhanced pulse rings */}
         <div className="mobile-pulse-ring" />
-        <div
-          className="mobile-pulse-ring"
-          style={{ animationDelay: "1s" }}
-        />
+        <div className="mobile-pulse-ring" />
 
         {/* Breathing border effect with glow */}
         <div
