@@ -529,7 +529,7 @@ export default function Index() {
         open={showDesktopSuggestion}
         onOpenChange={setShowDesktopSuggestion}
       >
-        <DialogContent className="mobile-premium-card border border-blue-400/30 bg-slate-900/95 backdrop-blur-xl">
+        <DialogContent className="mobile-premium-card border-2 border-blue-400/50 bg-gradient-to-br from-slate-900/98 via-blue-900/95 to-slate-900/98 backdrop-blur-xl shadow-2xl shadow-blue-500/20">
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
