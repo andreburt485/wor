@@ -1388,7 +1388,7 @@ export default function Index() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className={cn(
-                    "mobile-premium-card mobile-tilt-card p-6 rounded-xl relative",
+                    "mobile-premium-card mobile-tilt-card mobile-motion-override p-6 rounded-xl relative",
                     plan.popular &&
                       "ring-2 ring-blue-500/50 mt-4 overflow-hidden",
                     !plan.popular && "overflow-hidden",
