@@ -124,14 +124,18 @@ export default function Index() {
       ) => {
         activeAnimations++;
         const start = Date.now();
-        const increment = target / (duration / 16);
+        let lastUpdate = 0;
 
         const updateCounter = () => {
           const elapsed = Date.now() - start;
           const progress = Math.min(elapsed / duration, 1);
           const current = Math.floor(target * progress);
 
-          setCounters((prev) => ({ ...prev, [key]: current }));
+          // Only update state every 50ms to reduce re-renders
+          if (elapsed - lastUpdate >= 50 || progress >= 1) {
+            setCounters((prev) => ({ ...prev, [key]: current }));
+            lastUpdate = elapsed;
+          }
 
           if (progress < 1) {
             requestAnimationFrame(updateCounter);
