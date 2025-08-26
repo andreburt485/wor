@@ -666,38 +666,40 @@
 /* Enhanced 3D Corner Ribbon for Most Popular */
 .corner-ribbon {
   position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 20;
-  overflow: hidden;
+  top: -2px;
+  right: -2px;
+  z-index: 30;
+  overflow: visible;
   width: 100px;
   height: 100px;
   text-align: right;
   perspective: 200px;
+  pointer-events: none;
 }
 
 .corner-ribbon span {
   position: absolute;
-  top: 20px;
-  right: -45px;
+  top: 22px;
+  right: -42px;
   display: inline-block;
-  width: 160px;
-  padding: 8px 0;
+  width: 140px;
+  padding: 6px 0;
   background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
   box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
   color: #fff;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
-  transform: rotate(45deg) perspective(100px) rotateY(-5deg);
+  transform: rotate(45deg) perspective(100px) rotateY(-3deg);
   transform-style: preserve-3d;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   letter-spacing: 0.5px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
 }
 
 /* Left fold effect */
