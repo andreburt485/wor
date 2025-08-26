@@ -1524,25 +1524,14 @@ export default function Index() {
                     !plan.popular && "overflow-hidden p-6",
                     plan.popular && "p-8",
                   )}
-                  whileHover={{
-                    scale:
-                      plan.popular && plan.name === "Websites"
-                        ? 1.12
-                        : plan.popular
-                          ? 1.08
-                          : 1.05,
-                    y:
-                      plan.popular && plan.name === "Websites"
-                        ? -20
-                        : plan.popular
-                          ? -15
-                          : -10,
-                    rotateY: plan.popular && plan.name === "Websites" ? 5 : 0,
-                    boxShadow:
-                      plan.popular && plan.name === "Websites"
-                        ? "0 0 50px rgba(168, 85, 247, 0.7), 0 0 80px rgba(59, 130, 246, 0.5)"
-                        : undefined,
-                  }}
+                  whileHover={
+                    plan.name === "Websites"
+                      ? {} // No hover effect for Websites card to preserve glow
+                      : {
+                          scale: plan.popular ? 1.08 : 1.05,
+                          y: plan.popular ? -15 : -10,
+                        }
+                  }
                   animate={
                     plan.popular && plan.name === "Websites"
                       ? {
