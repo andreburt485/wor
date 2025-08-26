@@ -674,7 +674,6 @@ export default function Index() {
               }}
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 0 50px rgba(59, 130, 246, 0.5)",
               }}
             >
               {/* Dynamic Border Effect */}
