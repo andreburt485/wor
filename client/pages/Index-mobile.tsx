@@ -1166,11 +1166,6 @@ export default function Index() {
                   className="text-3xl font-bold mobile-stat-counter mb-2"
                   animate={{
                     scale: [1, 1.12, 1],
-                    color: [
-                      "rgb(34, 197, 94)",
-                      "rgb(236, 72, 153)",
-                      "rgb(34, 197, 94)",
-                    ],
                   }}
                   transition={{
                     duration: 3,
