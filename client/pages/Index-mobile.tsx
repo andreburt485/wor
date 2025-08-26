@@ -1733,11 +1733,6 @@ export default function Index() {
                   animate={{
                     y: [0, -2, 0],
                     scale: [1, 1.01, 1],
-                    boxShadow: [
-                      "0 5px 15px rgba(73, 146, 255, 0.2)",
-                      "0 8px 20px rgba(73, 146, 255, 0.3)",
-                      "0 5px 15px rgba(73, 146, 255, 0.2)",
-                    ],
                   }}
                   transition={{
                     duration: 3 + (index % 2),
