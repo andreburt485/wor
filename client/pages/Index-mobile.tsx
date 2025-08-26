@@ -748,8 +748,8 @@ export default function Index() {
           <div className="absolute inset-0 rounded-xl border border-blue-400/40" />
         </motion.button>
 
-        {/* Sparkle effect - positioned outside button with proper spacing */}
-        <div className="mobile-sparkle absolute -top-2 -right-2 pointer-events-none z-40" />
+        {/* Sparkle effect - positioned on top of the button */}
+        <div className="mobile-sparkle absolute top-1 right-1 pointer-events-none z-40" />
       </div>
 
       {/* Main Content */}
