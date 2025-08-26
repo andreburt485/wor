@@ -146,7 +146,12 @@
   .mobile-stat-counter {
     color: #60a5fa;
     text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-    animation: mobile-counter-pulse 2s ease-in-out infinite;
+    animation: mobile-counter-pulse 3s ease-in-out infinite;
+  }
+
+  /* Disable counter animation when stats are animating for performance */
+  .stats-animating .mobile-stat-counter {
+    animation: none;
   }
 
   /* Enhanced menu button with breathing effect */
@@ -296,12 +301,12 @@
 
 @keyframes mobile-counter-pulse {
   0%, 100% {
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
     text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
   }
   50% {
-    transform: scale(1.05);
-    text-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+    transform: scale(1.02) translateZ(0);
+    text-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
   }
 }
 
