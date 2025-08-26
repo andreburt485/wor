@@ -62,11 +62,15 @@ export default function Index() {
   // Animated counters effect
   useEffect(() => {
     if (isCounterVisible) {
+      setIsStatsAnimating(true);
+      let activeAnimations = 0;
+
       const animateCounter = (
         target: number,
         key: keyof typeof counters,
         duration: number,
       ) => {
+        activeAnimations++;
         const start = Date.now();
         const increment = target / (duration / 16);
 
@@ -79,6 +83,12 @@ export default function Index() {
 
           if (progress < 1) {
             requestAnimationFrame(updateCounter);
+          } else {
+            activeAnimations--;
+            if (activeAnimations === 0) {
+              // All counter animations finished, restore normal particle performance
+              setTimeout(() => setIsStatsAnimating(false), 500);
+            }
           }
         };
 
@@ -472,8 +482,8 @@ export default function Index() {
       </div>
 
       {/* Enhanced Floating Particles with More Life */}
-      <div className="mobile-floating-particles fixed inset-0 z-0">
-        {Array.from({ length: 15 }).map((_, i) => {
+      <div className={cn("mobile-floating-particles fixed inset-0 z-0", isStatsAnimating && "stats-animating")}>
+        {Array.from({ length: isStatsAnimating ? 8 : 15 }).map((_, i) => {
           const particleBackgrounds = [
             "radial-gradient(circle, rgba(59, 130, 246, 0.9) 0%, transparent 70%)",
             "radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, transparent 70%)",
