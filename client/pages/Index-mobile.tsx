@@ -1448,10 +1448,6 @@ export default function Index() {
                     y: plan.popular ? -15 : -10,
                     rotateY: plan.popular ? 8 : 5,
                   }}
-                  animate={{
-                    y: [0, plan.popular ? -5 : -2, 0],
-                    scale: [1, plan.popular ? 1.02 : 1.01, 1],
-                  }}
                   transition={{
                     duration: plan.popular ? 3 : 4,
                     repeat: Infinity,
