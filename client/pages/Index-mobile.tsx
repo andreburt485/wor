@@ -759,11 +759,6 @@ export default function Index() {
               {/* Individual letter animations with enhanced liveliness */}
               <motion.span
                 className="inline-block relative warm-glow-text"
-                animate={{
-                  y: [0, -5, 0],
-                  rotateZ: [0, 2, 0],
-                  scale: [1, 1.05, 1],
-                }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
