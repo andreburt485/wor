@@ -524,6 +524,40 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden mobile-gradient-bg mobile-optimized-animations">
+      {/* Desktop Version Suggestion Modal */}
+      <Dialog open={showDesktopSuggestion} onOpenChange={setShowDesktopSuggestion}>
+        <DialogContent className="mobile-premium-card border border-blue-400/30 bg-slate-900/95 backdrop-blur-xl">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold mobile-premium-text flex items-center gap-2">
+              <Monitor className="w-6 h-6 text-blue-400" />
+              Desktop Experience Available
+            </DialogTitle>
+            <DialogDescription className="text-muted-foreground mt-3">
+              For the best visual experience with enhanced animations and layouts,
+              consider viewing our website on a desktop or laptop computer.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col gap-3 mt-4">
+            <button
+              onClick={() => {
+                window.open(window.location.href, '_blank');
+                setShowDesktopSuggestion(false);
+              }}
+              className="w-full mobile-glow-button px-6 py-3 rounded-lg text-primary-foreground font-semibold flex items-center justify-center gap-2"
+            >
+              <Monitor className="w-4 h-4" />
+              Open in Desktop Mode
+            </button>
+            <button
+              onClick={() => setShowDesktopSuggestion(false)}
+              className="w-full mobile-premium-card border border-border hover:bg-accent px-6 py-3 rounded-lg font-medium transition-colors"
+            >
+              Continue on Mobile
+            </button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
       {/* Floating scroll indicator */}
       <motion.div
         className="fixed bottom-8 right-4 z-20 p-3 rounded-full mobile-premium-card mobile-fab mobile-scroll-hint"
