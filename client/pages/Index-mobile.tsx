@@ -167,19 +167,19 @@ export default function Index() {
     }
   }, [isCounterVisible]);
 
-  // Welcome notification - shows once
-  useEffect(() => {
-    if (!hasShownWelcomeRef.current) {
-      hasShownWelcomeRef.current = true;
-      setTimeout(() => {
-        showInfo(
-          "Welcome to KOR!",
-          "Premium mobile experience ready. Tap X to dismiss.",
-          0,
-        );
-      }, 1000);
-    }
-  }, [showInfo]);
+  // Welcome notification - disabled
+  // useEffect(() => {
+  //   if (!hasShownWelcomeRef.current) {
+  //     hasShownWelcomeRef.current = true;
+  //     setTimeout(() => {
+  //       showInfo(
+  //         "Welcome to KOR!",
+  //         "Premium mobile experience ready. Tap X to dismiss.",
+  //         0,
+  //       );
+  //     }, 1000);
+  //   }
+  // }, [showInfo]);
 
   // Desktop suggestion modal - shows once after a delay
   useEffect(() => {
@@ -529,7 +529,7 @@ export default function Index() {
         open={showDesktopSuggestion}
         onOpenChange={setShowDesktopSuggestion}
       >
-        <DialogContent className="mobile-premium-card border-2 border-blue-400/50 bg-gradient-to-br from-slate-900/98 via-blue-900/95 to-slate-900/98 backdrop-blur-xl shadow-2xl shadow-blue-500/20 flex items-center justify-center text-center max-w-sm mx-auto">
+        <DialogContent className="mobile-premium-card border-2 border-blue-400/50 bg-gradient-to-br from-slate-900/98 via-blue-900/95 to-slate-900/98 backdrop-blur-xl shadow-2xl shadow-blue-500/20 w-[calc(100vw-2rem)] max-w-sm mx-auto my-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
