@@ -1619,11 +1619,11 @@ export default function Index() {
                     </>
                   )}
 
-                  {plan.popular && (
+                  {plan.popular && plan.name !== "Websites" && (
                     <div className="corner-ribbon">
                       <span>
                         <Star className="w-3 h-3 inline mr-1" />
-                        {plan.name === "Websites" ? "Best Choice" : "Popular"}
+                        Popular
                       </span>
                     </div>
                   )}
