@@ -1544,7 +1544,7 @@ export default function Index() {
                   className={cn(
                     "mobile-premium-card mobile-tilt-card mobile-motion-override p-6 rounded-xl relative",
                     plan.popular &&
-                      "ring-2 ring-blue-500/50 mt-4 overflow-hidden",
+                      "ring-2 ring-blue-500/50 mt-4 overflow-visible",
                     !plan.popular && "overflow-hidden",
                   )}
                   whileHover={{
