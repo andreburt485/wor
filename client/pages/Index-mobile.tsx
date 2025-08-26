@@ -1066,9 +1066,6 @@ export default function Index() {
                   scale: 1.05,
                   y: -5,
                 }}
-                animate={{
-                  y: [0, -4, 0],
-                }}
                 transition={{
                   duration: 3.5,
                   repeat: Infinity,
