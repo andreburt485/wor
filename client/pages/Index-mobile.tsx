@@ -611,11 +611,6 @@ export default function Index() {
           rotate: 8,
         }}
         whileTap={{ scale: 0.85, rotate: -8 }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
       >
         <Menu className="w-6 h-6 relative z-10" />
 
