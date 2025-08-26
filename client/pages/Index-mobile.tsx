@@ -1078,10 +1078,7 @@ export default function Index() {
                   {counters.years}+
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Years</div>
-                <div
-                  className="absolute inset-0 border border-green-400/30 rounded-lg animate-pulse"
-                  style={{ animationDelay: "1s" }}
-                />
+                <div className="absolute inset-0 border border-green-400/30 rounded-lg animate-pulse" />
               </motion.div>
             </motion.div>
           </div>
