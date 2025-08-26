@@ -529,7 +529,7 @@ export default function Index() {
         open={showDesktopSuggestion}
         onOpenChange={setShowDesktopSuggestion}
       >
-        <DialogContent className="mobile-premium-card border-2 border-blue-400/50 bg-gradient-to-br from-slate-900/98 via-blue-900/95 to-slate-900/98 backdrop-blur-xl shadow-2xl shadow-blue-500/20">
+        <DialogContent className="mobile-premium-card border-2 border-blue-400/50 bg-gradient-to-br from-slate-900/98 via-blue-900/95 to-slate-900/98 backdrop-blur-xl shadow-2xl shadow-blue-500/20 flex items-center justify-center text-center max-w-sm mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -1599,6 +1599,10 @@ export default function Index() {
                           ? -15
                           : -10,
                     rotateY: plan.popular && plan.name === "Websites" ? 5 : 0,
+                    boxShadow:
+                      plan.popular && plan.name === "Websites"
+                        ? "0 0 50px rgba(168, 85, 247, 0.7), 0 0 80px rgba(59, 130, 246, 0.5)"
+                        : undefined,
                   }}
                   animate={
                     plan.popular && plan.name === "Websites"
@@ -1639,12 +1643,6 @@ export default function Index() {
                       {/* Animated border glow for websites card */}
                       <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-indigo-600/20 animate-pulse" />
                       {/* Sparkle effects */}
-                      <div
-                        className="absolute top-6 right-8 text-purple-400 animate-bounce"
-                        style={{ animationDelay: "0.5s" }}
-                      >
-                        ⭐
-                      </div>
                       <div
                         className="absolute bottom-8 left-6 text-blue-400 animate-bounce"
                         style={{ animationDelay: "1s" }}
