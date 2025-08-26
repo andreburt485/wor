@@ -646,30 +646,32 @@ export default function Index() {
       </AnimatePresence>
 
       {/* Enhanced Mobile Header */}
-      {/* Animated Menu button in corner */}
-      <motion.button
-        onClick={() => setIsMobileMenuOpen(true)}
-        className="fixed top-4 left-4 z-30 p-3 rounded-xl mobile-premium-card mobile-tilt-card mobile-motion-override mobile-menu-enhanced mobile-fab mobile-touch-feedback relative overflow-hidden"
-        whileHover={{
-          scale: 1.15,
-          rotate: 8,
-        }}
-        whileTap={{ scale: 0.85, rotate: -8 }}
-      >
-        <Menu className="w-6 h-6 relative z-10" />
+      {/* Animated Menu button in corner with external sparkle */}
+      <div className="fixed top-4 left-4 z-30">
+        <motion.button
+          onClick={() => setIsMobileMenuOpen(true)}
+          className="p-3 rounded-xl mobile-premium-card mobile-tilt-card mobile-motion-override mobile-menu-enhanced mobile-fab mobile-touch-feedback relative overflow-hidden"
+          whileHover={{
+            scale: 1.15,
+            rotate: 8,
+          }}
+          whileTap={{ scale: 0.85, rotate: -8 }}
+        >
+          <Menu className="w-6 h-6 relative z-10" />
 
-        {/* Enhanced pulse rings */}
-        <div className="mobile-pulse-ring" />
-        <div className="mobile-pulse-ring" />
+          {/* Enhanced pulse rings */}
+          <div className="mobile-pulse-ring" />
+          <div className="mobile-pulse-ring" />
 
-        {/* Breathing border effect with glow */}
-        <div
-          className="absolute inset-0 rounded-xl border border-blue-400/40"
-        />
+          {/* Breathing border effect with glow */}
+          <div
+            className="absolute inset-0 rounded-xl border border-blue-400/40"
+          />
+        </motion.button>
 
-        {/* Sparkle effect */}
-        <div className="mobile-sparkle absolute top-0 right-0" />
-      </motion.button>
+        {/* Sparkle effect - now outside button container */}
+        <div className="mobile-sparkle absolute -top-1 -right-1 pointer-events-none" />
+      </div>
 
       {/* Main Content */}
       <main className="relative z-10">
