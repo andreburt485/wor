@@ -941,9 +941,6 @@ export default function Index() {
                 whileHover={{
                   y: -12,
                   scale: 1.05,
-                  borderColor: "rgba(59, 130, 246, 0.8)",
-                  boxShadow:
-                    "0 25px 50px rgba(59, 130, 246, 0.3), 0 0 80px rgba(59, 130, 246, 0.2)",
                   rotateX: 5,
                 }}
                 whileTap={{ scale: 0.95, rotateX: -5 }}
