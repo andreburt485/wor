@@ -1620,6 +1620,11 @@ export default function Index() {
                   </div>
 
                   <motion.button
+                    onClick={() => {
+                      document
+                        .getElementById("contact")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
                     className={cn(
                       "w-full py-4 rounded-xl font-semibold transition-all duration-300 relative z-10 overflow-hidden",
                       plan.popular && plan.name === "Websites"
@@ -1653,11 +1658,7 @@ export default function Index() {
                       hover: { duration: 0.2 },
                     }}
                   >
-                    {plan.name === "Websites" && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                    )}
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      {plan.name === "Websites" && <span>🚀</span>}
                       Get Started
                       {plan.name === "Websites" && <span>✨</span>}
                     </span>
