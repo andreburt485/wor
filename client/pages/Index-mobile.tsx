@@ -613,7 +613,7 @@ export default function Index() {
               className="fixed top-0 left-0 w-80 h-full mobile-premium-card z-50 p-6"
             >
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-xl font-bold mobile-premium-text">kor</h2>
+                <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">kor</h2>
                 <motion.button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 rounded-lg hover:bg-accent transition-colors mobile-tilt-card mobile-motion-override"
