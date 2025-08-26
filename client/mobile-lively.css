@@ -46,11 +46,21 @@
     transform: translateZ(0);
   }
 
-  /* Disable CSS hover effects for motion elements to prevent conflicts */
-  .mobile-premium-card:not([data-framer-motion]):hover,
-  .mobile-premium-card:not([data-framer-motion]):active {
+  .mobile-premium-card:hover,
+  .mobile-premium-card:active {
     transform: translateY(-4px) scale(1.02) translateZ(0);
     box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+  }
+
+  /* Override CSS animations for motion elements to prevent conflicts */
+  .mobile-motion-override.mobile-premium-card {
+    transition: none !important;
+  }
+
+  .mobile-motion-override.mobile-premium-card:hover,
+  .mobile-motion-override.mobile-premium-card:active {
+    transform: translateZ(0) !important;
+    box-shadow: none !important;
   }
 
   /* Tilt effect for cards */
