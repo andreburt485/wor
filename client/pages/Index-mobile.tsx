@@ -638,9 +638,9 @@ export default function Index() {
           className="min-h-screen flex items-start justify-center px-4 pt-8 pb-8 relative overflow-hidden mobile-ambient-glow mobile-section-enhanced"
         >
           {/* Enhanced wave background layers */}
-          <div className="mobile-wave-bg absolute inset-0 z-0" style={{ animationDelay: "0s" }} />
-          <div className="mobile-wave-bg absolute inset-0 z-0" style={{ animationDelay: "-5s", animationDirection: "reverse" }} />
-          <div className="mobile-wave-bg absolute inset-0 z-0" style={{ animationDelay: "-10s", opacity: 0.5 }} />
+          <div className="mobile-wave-bg absolute inset-0 z-0" />
+          <div className="mobile-wave-bg absolute inset-0 z-0" style={{ opacity: 0.7 }} />
+          <div className="mobile-wave-bg absolute inset-0 z-0" style={{ opacity: 0.5 }} />
           {/* Removed floating shapes */}
 
           <motion.div
