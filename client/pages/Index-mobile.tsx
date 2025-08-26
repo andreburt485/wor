@@ -662,7 +662,6 @@ export default function Index() {
                 background: "rgba(255, 255, 255, 0.1)",
                 border: "2px solid transparent",
                 backgroundClip: "padding-box",
-                boxShadow: "0 0 30px rgba(59, 130, 246, 0.2)",
               }}
               transition={{
                 duration: 4,
