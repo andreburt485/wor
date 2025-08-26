@@ -523,7 +523,6 @@ export default function Index() {
                 height: `${80 + i * 40}px`,
                 background: orbBackgrounds[i],
                 filter: "blur(25px)",
-                animationDelay: `${i * 1.2}s`,
                 transform: "translateZ(0)",
               }}
             />
