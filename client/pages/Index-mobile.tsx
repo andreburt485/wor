@@ -1579,8 +1579,23 @@ export default function Index() {
                   }}
                 >
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${plan.gradient} opacity-40`}
+                    className={cn(
+                      "absolute inset-0 rounded-xl",
+                      plan.name === "Websites"
+                        ? "bg-gradient-to-br from-purple-500/30 via-blue-500/25 to-indigo-500/30 opacity-50"
+                        : `bg-gradient-to-br ${plan.gradient} opacity-40`
+                    )}
                   />
+                  {plan.name === "Websites" && (
+                    <>
+                      {/* Animated border glow for websites card */}
+                      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-indigo-600/20 animate-pulse" />
+                      {/* Sparkle effects */}
+                      <div className="absolute top-4 left-4 text-yellow-400 animate-bounce" style={{ animationDelay: '0s' }}>✨</div>
+                      <div className="absolute top-6 right-8 text-purple-400 animate-bounce" style={{ animationDelay: '0.5s' }}>⭐</div>
+                      <div className="absolute bottom-8 left-6 text-blue-400 animate-bounce" style={{ animationDelay: '1s' }}>💎</div>
+                    </>
+                  )}
 
                   {plan.popular && (
                     <div className="corner-ribbon">
