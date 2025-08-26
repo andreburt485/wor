@@ -181,6 +181,16 @@ export default function Index() {
     }
   }, [showInfo]);
 
+  // Desktop suggestion modal - shows once after a delay
+  useEffect(() => {
+    if (!hasShownDesktopSuggestionRef.current) {
+      hasShownDesktopSuggestionRef.current = true;
+      setTimeout(() => {
+        setShowDesktopSuggestion(true);
+      }, 3000); // Show after 3 seconds
+    }
+  }, []);
+
   // Enhanced mobile animations
   const premiumVariants = {
     hidden: { opacity: 0, y: 30, scale: 0.95 },
