@@ -1201,8 +1201,6 @@ export default function Index() {
                     whileHover={{
                       scale: 1.06,
                       y: -12,
-                      rotateY: 5,
-                      rotateX: 4,
                     }}
                     transition={{
                       duration: 6 + (index % 3),
