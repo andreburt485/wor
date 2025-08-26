@@ -1089,7 +1089,6 @@ export default function Index() {
                 whileHover={{
                   scale: 1.05,
                   y: -5,
-                  boxShadow: "0 15px 30px rgba(168, 85, 247, 0.3)",
                 }}
                 animate={{
                   y: [0, -4, 0],
