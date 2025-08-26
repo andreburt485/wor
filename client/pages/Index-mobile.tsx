@@ -861,9 +861,8 @@ export default function Index() {
                 whileHover={{
                   y: -12,
                   scale: 1.08,
-                  rotateX: 5,
                 }}
-                whileTap={{ scale: 0.95, rotateX: -5 }}
+                whileTap={{ scale: 0.95 }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
@@ -896,9 +895,8 @@ export default function Index() {
                 whileHover={{
                   y: -12,
                   scale: 1.05,
-                  rotateX: 5,
                 }}
-                whileTap={{ scale: 0.95, rotateX: -5 }}
+                whileTap={{ scale: 0.95 }}
                 style={{
                   background: "rgba(255, 255, 255, 0.08)",
                   backdropFilter: "blur(25px)",
