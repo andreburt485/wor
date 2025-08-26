@@ -530,35 +530,51 @@ export default function Index() {
         onOpenChange={setShowDesktopSuggestion}
       >
         <DialogContent className="mobile-premium-card border border-blue-400/30 bg-slate-900/95 backdrop-blur-xl">
-          <DialogHeader>
-            <DialogTitle className="text-xl font-bold mobile-premium-text flex items-center gap-2">
-              <Monitor className="w-6 h-6 text-blue-400" />
-              Desktop Experience Available
-            </DialogTitle>
-            <DialogDescription className="text-muted-foreground mt-3">
-              For the best visual experience with enhanced animations and
-              layouts, consider viewing our website on a desktop or laptop
-              computer.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="flex flex-col gap-3 mt-4">
-            <button
-              onClick={() => {
-                window.open(window.location.href, "_blank");
-                setShowDesktopSuggestion(false);
-              }}
-              className="w-full mobile-glow-button px-6 py-3 rounded-lg text-primary-foreground font-semibold flex items-center justify-center gap-2"
-            >
-              <Monitor className="w-4 h-4" />
-              Open in Desktop Mode
-            </button>
-            <button
-              onClick={() => setShowDesktopSuggestion(false)}
-              className="w-full mobile-premium-card border border-border hover:bg-accent px-6 py-3 rounded-lg font-medium transition-colors"
-            >
-              Continue on Mobile
-            </button>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <DialogHeader>
+              <DialogTitle className="text-xl font-bold mobile-premium-text flex items-center gap-2">
+                <motion.div
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                >
+                  <Monitor className="w-6 h-6 text-blue-400" />
+                </motion.div>
+                Enhanced Desktop Experience
+              </DialogTitle>
+              <DialogDescription className="text-muted-foreground mt-3 leading-relaxed">
+                🚀 Get the <strong className="text-blue-300">full premium experience</strong> with enhanced 3D animations,
+                better layouts, and interactive effects on desktop!
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex flex-col gap-3 mt-6">
+              <motion.button
+                onClick={() => {
+                  window.open(window.location.href, "_blank");
+                  setShowDesktopSuggestion(false);
+                }}
+                className="w-full mobile-glow-button px-6 py-4 rounded-xl text-primary-foreground font-semibold flex items-center justify-center gap-2 relative overflow-hidden"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Monitor className="w-4 h-4" />
+                View Desktop Version
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </motion.button>
+              <motion.button
+                onClick={() => setShowDesktopSuggestion(false)}
+                className="w-full mobile-premium-card border border-border hover:bg-accent px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                whileHover={{ scale: 1.01, y: -1 }}
+                whileTap={{ scale: 0.99 }}
+              >
+                Continue on Mobile
+              </motion.button>
+            </div>
+          </motion.div>
         </DialogContent>
       </Dialog>
 
