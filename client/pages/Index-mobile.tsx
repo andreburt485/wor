@@ -1613,7 +1613,6 @@ export default function Index() {
                       {/* Animated border glow for websites card */}
                       <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-indigo-600/20 animate-pulse" />
                       {/* Sparkle effects */}
-                      <div className="absolute top-4 left-4 text-yellow-400 animate-bounce" style={{ animationDelay: '0s' }}>✨</div>
                       <div className="absolute top-6 right-8 text-purple-400 animate-bounce" style={{ animationDelay: '0.5s' }}>⭐</div>
                       <div className="absolute bottom-8 left-6 text-blue-400 animate-bounce" style={{ animationDelay: '1s' }}>💎</div>
                     </>
