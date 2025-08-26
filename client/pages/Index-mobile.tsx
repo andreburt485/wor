@@ -927,11 +927,6 @@ export default function Index() {
                 whileTap={{ scale: 0.95, rotateX: -5 }}
                 animate={{
                   y: [0, -3, 0],
-                  boxShadow: [
-                    "0 15px 35px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)",
-                    "0 20px 45px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.3)",
-                    "0 15px 35px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)",
-                  ],
                 }}
                 transition={{
                   duration: 3,
@@ -941,8 +936,6 @@ export default function Index() {
                 style={{
                   background:
                     "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
-                  boxShadow:
-                    "0 15px 35px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)",
                   filter: "drop-shadow(0 0 15px rgba(59, 130, 246, 0.3))",
                   border: "1px solid rgba(59, 130, 246, 0.3)",
                 }}
