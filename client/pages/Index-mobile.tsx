@@ -552,7 +552,7 @@ export default function Index() {
                 <h2 className="text-xl font-bold mobile-premium-text">kor</h2>
                 <motion.button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="p-2 rounded-lg hover:bg-accent transition-colors mobile-tilt-card"
+                  className="p-2 rounded-lg hover:bg-accent transition-colors mobile-tilt-card mobile-motion-override"
                   whileTap={{ scale: 0.9 }}
                 >
                   <X className="w-6 h-6" />
@@ -602,7 +602,7 @@ export default function Index() {
       {/* Animated Menu button in corner */}
       <motion.button
         onClick={() => setIsMobileMenuOpen(true)}
-        className="fixed top-4 left-4 z-30 p-3 rounded-xl mobile-premium-card mobile-tilt-card mobile-menu-enhanced mobile-fab mobile-touch-feedback relative overflow-hidden"
+        className="fixed top-4 left-4 z-30 p-3 rounded-xl mobile-premium-card mobile-tilt-card mobile-motion-override mobile-menu-enhanced mobile-fab mobile-touch-feedback relative overflow-hidden"
         whileHover={{
           scale: 1.15,
           rotate: 8,
@@ -992,7 +992,7 @@ export default function Index() {
               onViewportEnter={() => setIsCounterVisible(true)}
             >
               <motion.div
-                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-touch-feedback mobile-fab relative overflow-hidden"
+                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override mobile-touch-feedback mobile-fab relative overflow-hidden"
                 whileHover={{
                   scale: 1.08,
                   y: -8,
@@ -1021,7 +1021,7 @@ export default function Index() {
               </motion.div>
 
               <motion.div
-                className="text-center p-6 mobile-premium-card mobile-tilt-card relative overflow-hidden"
+                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override relative overflow-hidden"
                 whileHover={{
                   scale: 1.05,
                   y: -5,
@@ -1049,7 +1049,7 @@ export default function Index() {
               </motion.div>
 
               <motion.div
-                className="text-center p-6 mobile-premium-card mobile-tilt-card relative overflow-hidden"
+                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override relative overflow-hidden"
                 whileHover={{
                   scale: 1.05,
                   y: -5,
