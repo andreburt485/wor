@@ -1159,7 +1159,7 @@ export default function Index() {
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Projects</div>
                 {/* Animated border */}
-                <div className="absolute inset-0 border border-blue-400/30 rounded-lg animate-pulse" />
+                <div className="absolute inset-0 border border-blue-400/30 rounded-3xl animate-pulse" />
               </motion.div>
 
               <motion.div
@@ -1177,7 +1177,7 @@ export default function Index() {
                   {counters.clients}+
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Clients</div>
-                <div className="absolute inset-0 border border-purple-400/30 rounded-lg animate-pulse" />
+                <div className="absolute inset-0 border border-purple-400/30 rounded-3xl animate-pulse" />
               </motion.div>
 
               <motion.div
@@ -1195,7 +1195,7 @@ export default function Index() {
                   {counters.years}+
                 </motion.div>
                 <div className="text-sm text-muted-foreground">Years</div>
-                <div className="absolute inset-0 border border-green-400/30 rounded-lg animate-pulse" />
+                <div className="absolute inset-0 border border-green-400/30 rounded-3xl animate-pulse" />
               </motion.div>
             </motion.div>
           </div>
@@ -1361,11 +1361,16 @@ export default function Index() {
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="px-4 pb-4 relative z-10"
+                          initial={{ maxHeight: 0, opacity: 0 }}
+                          animate={{ maxHeight: 200, opacity: 1 }}
+                          exit={{ maxHeight: 0, opacity: 0 }}
+                          transition={{
+                            duration: 0.4,
+                            ease: [0.04, 0.62, 0.23, 0.98],
+                            maxHeight: { duration: 0.4 },
+                            opacity: { duration: 0.25, delay: 0.1 }
+                          }}
+                          className="px-4 pb-4 relative z-10 overflow-hidden"
                         >
                           <p className="text-sm text-muted-foreground">
                             {service.description}
