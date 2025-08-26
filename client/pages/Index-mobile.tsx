@@ -547,8 +547,10 @@ export default function Index() {
                 Enhanced Desktop Experience
               </DialogTitle>
               <DialogDescription className="text-blue-200 mt-3 leading-relaxed text-center">
-                🚀 Experience our site in <strong className="text-blue-300 text-lg">full glory</strong> with premium 3D animations, enhanced layouts, and stunning visual effects!
-
+                🚀 Experience our site in{" "}
+                <strong className="text-blue-300 text-lg">full glory</strong>{" "}
+                with premium 3D animations, enhanced layouts, and stunning
+                visual effects!
                 <div className="flex justify-center items-center gap-4 mt-3 text-sm">
                   <div className="flex items-center gap-1 text-green-400">
                     <span>✅</span>
@@ -647,7 +649,7 @@ export default function Index() {
               exit={{ opacity: 0 }}
               transition={{
                 duration: 0.25,
-                ease: [0.16, 1, 0.3, 1]
+                ease: [0.16, 1, 0.3, 1],
               }}
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -656,17 +658,17 @@ export default function Index() {
               initial={{
                 x: "-100%",
                 opacity: 0,
-                scale: 0.95
+                scale: 0.95,
               }}
               animate={{
                 x: 0,
                 opacity: 1,
-                scale: 1
+                scale: 1,
               }}
               exit={{
                 x: "-100%",
                 opacity: 0,
-                scale: 0.95
+                scale: 0.95,
               }}
               transition={{
                 duration: 0.5,
@@ -763,7 +765,8 @@ export default function Index() {
           <div
             className="absolute inset-0 z-0 opacity-30"
             style={{
-              background: "radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)"
+              background:
+                "radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)",
             }}
           />
 
@@ -897,7 +900,8 @@ export default function Index() {
                   scale: 1.5,
                   y: -25,
                   rotateZ: 8,
-                  textShadow: "0 0 100px rgba(59, 130, 246, 1), 0 0 150px rgba(73, 146, 255, 0.9)",
+                  textShadow:
+                    "0 0 100px rgba(59, 130, 246, 1), 0 0 150px rgba(73, 146, 255, 0.9)",
                   filter: "brightness(1.6) saturate(1.4)",
                   transition: { duration: 0.3, ease: "easeOut" },
                 }}
@@ -911,7 +915,7 @@ export default function Index() {
                 animate={{
                   y: [0, -20, 15, -10, 5, 0],
                   x: [0, -2, 4, -1, 2, 0],
-                  scale: [1, 1.15, 0.92, 1.10, 1.03, 1],
+                  scale: [1, 1.15, 0.92, 1.1, 1.03, 1],
                   rotateZ: [0, -3, 5, -2, 1, 0],
                   textShadow: [
                     "0 0 30px rgba(168, 85, 247, 0.6), 0 0 60px rgba(147, 51, 234, 0.3)",
@@ -940,7 +944,8 @@ export default function Index() {
                   scale: 1.5,
                   y: -25,
                   rotateZ: -12,
-                  textShadow: "0 0 100px rgba(168, 85, 247, 1), 0 0 150px rgba(147, 51, 234, 0.9)",
+                  textShadow:
+                    "0 0 100px rgba(168, 85, 247, 1), 0 0 150px rgba(147, 51, 234, 0.9)",
                   filter: "brightness(1.7) saturate(1.5) hue-rotate(15deg)",
                   transition: { duration: 0.3, ease: "easeOut" },
                 }}
@@ -983,7 +988,8 @@ export default function Index() {
                   scale: 1.5,
                   y: -25,
                   rotateZ: 12,
-                  textShadow: "0 0 100px rgba(34, 197, 94, 1), 0 0 150px rgba(16, 185, 129, 0.9)",
+                  textShadow:
+                    "0 0 100px rgba(34, 197, 94, 1), 0 0 150px rgba(16, 185, 129, 0.9)",
                   filter: "brightness(1.6) saturate(1.4) contrast(1.3)",
                   transition: { duration: 0.3, ease: "easeOut" },
                 }}
@@ -1573,31 +1579,51 @@ export default function Index() {
                     "mobile-premium-card mobile-tilt-card mobile-motion-override rounded-xl relative",
                     plan.popular &&
                       "ring-4 ring-blue-400/70 ring-offset-2 ring-offset-slate-900 mt-6 mb-4 overflow-visible transform scale-105",
-                    plan.popular && plan.name === "Websites" &&
+                    plan.popular &&
+                      plan.name === "Websites" &&
                       "ring-purple-400/80 shadow-2xl shadow-purple-500/25",
                     !plan.popular && "overflow-hidden p-6",
-                    plan.popular && "p-8"
+                    plan.popular && "p-8",
                   )}
                   whileHover={{
-                    scale: plan.popular && plan.name === "Websites" ? 1.12 : plan.popular ? 1.08 : 1.05,
-                    y: plan.popular && plan.name === "Websites" ? -20 : plan.popular ? -15 : -10,
+                    scale:
+                      plan.popular && plan.name === "Websites"
+                        ? 1.12
+                        : plan.popular
+                          ? 1.08
+                          : 1.05,
+                    y:
+                      plan.popular && plan.name === "Websites"
+                        ? -20
+                        : plan.popular
+                          ? -15
+                          : -10,
                     rotateY: plan.popular && plan.name === "Websites" ? 5 : 0,
                   }}
-                  animate={plan.popular && plan.name === "Websites" ? {
-                    boxShadow: [
-                      "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
-                      "0 0 50px rgba(168, 85, 247, 0.7), 0 0 80px rgba(59, 130, 246, 0.5)",
-                      "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)"
-                    ],
-                    scale: [1.05, 1.08, 1.05],
-                  } : {}}
+                  animate={
+                    plan.popular && plan.name === "Websites"
+                      ? {
+                          boxShadow: [
+                            "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
+                            "0 0 50px rgba(168, 85, 247, 0.7), 0 0 80px rgba(59, 130, 246, 0.5)",
+                            "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
+                          ],
+                          scale: [1.05, 1.08, 1.05],
+                        }
+                      : {}
+                  }
                   transition={{
-                    duration: plan.popular && plan.name === "Websites" ? 2.5 : plan.popular ? 3 : 4,
+                    duration:
+                      plan.popular && plan.name === "Websites"
+                        ? 2.5
+                        : plan.popular
+                          ? 3
+                          : 4,
                     repeat: Infinity,
                     ease: "easeInOut",
                     delay: index * 0.3,
                     boxShadow: { duration: 3, repeat: Infinity },
-                    hover: { duration: 0.3 }
+                    hover: { duration: 0.3 },
                   }}
                 >
                   <div
@@ -1605,7 +1631,7 @@ export default function Index() {
                       "absolute inset-0 rounded-xl",
                       plan.name === "Websites"
                         ? "bg-gradient-to-br from-purple-500/30 via-blue-500/25 to-indigo-500/30 opacity-50"
-                        : `bg-gradient-to-br ${plan.gradient} opacity-40`
+                        : `bg-gradient-to-br ${plan.gradient} opacity-40`,
                     )}
                   />
                   {plan.name === "Websites" && (
@@ -1613,8 +1639,18 @@ export default function Index() {
                       {/* Animated border glow for websites card */}
                       <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-indigo-600/20 animate-pulse" />
                       {/* Sparkle effects */}
-                      <div className="absolute top-6 right-8 text-purple-400 animate-bounce" style={{ animationDelay: '0.5s' }}>⭐</div>
-                      <div className="absolute bottom-8 left-6 text-blue-400 animate-bounce" style={{ animationDelay: '1s' }}>���</div>
+                      <div
+                        className="absolute top-6 right-8 text-purple-400 animate-bounce"
+                        style={{ animationDelay: "0.5s" }}
+                      >
+                        ⭐
+                      </div>
+                      <div
+                        className="absolute bottom-8 left-6 text-blue-400 animate-bounce"
+                        style={{ animationDelay: "1s" }}
+                      >
+                        ���
+                      </div>
                     </>
                   )}
 
@@ -1661,27 +1697,32 @@ export default function Index() {
                       plan.popular && plan.name === "Websites"
                         ? "bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg"
                         : plan.popular
-                        ? "mobile-glow-button text-primary-foreground"
-                        : "mobile-premium-card mobile-motion-override border border-border hover:bg-accent",
+                          ? "mobile-glow-button text-primary-foreground"
+                          : "mobile-premium-card mobile-motion-override border border-border hover:bg-accent",
                     )}
                     whileHover={{
                       y: plan.name === "Websites" ? -4 : -2,
                       scale: plan.name === "Websites" ? 1.05 : 1.02,
-                      boxShadow: plan.name === "Websites"
-                        ? "0 15px 50px rgba(168, 85, 247, 0.6), 0 0 100px rgba(59, 130, 246, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)"
-                        : undefined
+                      boxShadow:
+                        plan.name === "Websites"
+                          ? "0 15px 50px rgba(168, 85, 247, 0.6), 0 0 100px rgba(59, 130, 246, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)"
+                          : undefined,
                     }}
                     whileTap={{ scale: 0.98 }}
-                    animate={plan.name === "Websites" ? {
-                      boxShadow: [
-                        "0 4px 20px rgba(168, 85, 247, 0.3)",
-                        "0 8px 30px rgba(168, 85, 247, 0.5)",
-                        "0 4px 20px rgba(168, 85, 247, 0.3)"
-                      ],
-                    } : {}}
+                    animate={
+                      plan.name === "Websites"
+                        ? {
+                            boxShadow: [
+                              "0 4px 20px rgba(168, 85, 247, 0.3)",
+                              "0 8px 30px rgba(168, 85, 247, 0.5)",
+                              "0 4px 20px rgba(168, 85, 247, 0.3)",
+                            ],
+                          }
+                        : {}
+                    }
                     transition={{
                       boxShadow: { duration: 2, repeat: Infinity },
-                      hover: { duration: 0.2 }
+                      hover: { duration: 0.2 },
                     }}
                   >
                     {plan.name === "Websites" && (
@@ -1708,12 +1749,12 @@ export default function Index() {
                 boxShadow: [
                   "0 0 20px rgba(251, 146, 60, 0.3)",
                   "0 0 30px rgba(251, 146, 60, 0.5)",
-                  "0 0 20px rgba(251, 146, 60, 0.3)"
+                  "0 0 20px rgba(251, 146, 60, 0.3)",
                 ],
               }}
               transition={{
                 boxShadow: { duration: 2, repeat: Infinity },
-                hover: { duration: 0.2 }
+                hover: { duration: 0.2 },
               }}
             >
               {/* Animated background accent */}
@@ -1741,9 +1782,15 @@ export default function Index() {
                 </div>
 
                 <p className="text-sm text-center text-orange-100 font-medium leading-relaxed">
-                  <strong className="text-orange-200">💡 Pricing is customized</strong><br />
-                  Final costs depend on complexity, features, and your specific requirements.
-                  <span className="text-yellow-200 font-semibold">Contact us for a detailed quote </span>
+                  <strong className="text-orange-200">
+                    💡 Pricing is customized
+                  </strong>
+                  <br />
+                  Final costs depend on complexity, features, and your specific
+                  requirements.
+                  <span className="text-yellow-200 font-semibold">
+                    Contact us for a detailed quote{" "}
+                  </span>
                   tailored perfectly to your project!
                 </p>
               </div>
