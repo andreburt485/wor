@@ -716,10 +716,10 @@ export default function Index() {
 
       {/* Enhanced Mobile Header */}
       {/* Animated Menu button in corner with external sparkle */}
-      <div className="fixed top-4 left-4 z-30">
+      <div className="fixed top-4 left-4 z-30 relative">
         <motion.button
           onClick={() => setIsMobileMenuOpen(true)}
-          className="p-3 rounded-xl mobile-premium-card mobile-tilt-card mobile-motion-override mobile-menu-enhanced mobile-fab mobile-touch-feedback relative overflow-hidden"
+          className="p-3 rounded-xl mobile-premium-card mobile-tilt-card mobile-motion-override mobile-menu-enhanced mobile-fab mobile-touch-feedback relative"
           whileHover={{
             scale: 1.15,
             rotate: 8,
@@ -736,8 +736,8 @@ export default function Index() {
           <div className="absolute inset-0 rounded-xl border border-blue-400/40" />
         </motion.button>
 
-        {/* Sparkle effect - now outside button container */}
-        <div className="mobile-sparkle absolute -top-1 -right-1 pointer-events-none" />
+        {/* Sparkle effect - positioned outside button with proper spacing */}
+        <div className="mobile-sparkle absolute -top-2 -right-2 pointer-events-none z-40" />
       </div>
 
       {/* Main Content */}
