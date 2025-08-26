@@ -601,57 +601,27 @@ export default function Index() {
         <ChevronDown className="w-5 h-5 text-blue-400" />
         <div className="mobile-pulse-ring" />
       </motion.div>
-      {/* Beautiful Animated Background */}
+      {/* Simplified Clean Background */}
       <div className="fixed inset-0 mobile-mesh-bg pointer-events-none z-0" />
 
-      {/* Orbital Background Elements */}
-      <div className="mobile-orbital-bg fixed inset-0 z-0">
-        <div className="mobile-orbit"></div>
-        <div className="mobile-orbit"></div>
-        <div className="mobile-orbit"></div>
-      </div>
-
-      {/* Enhanced Floating Particles with More Life */}
+      {/* Minimal Floating Particles - Reduced for cleaner look */}
       <div
         className={cn(
           "mobile-floating-particles fixed inset-0 z-0",
           isStatsAnimating && "stats-animating",
         )}
       >
-        {particleData.slice(0, isStatsAnimating ? 8 : 15).map((particle) => (
+        {particleData.slice(0, isStatsAnimating ? 3 : 6).map((particle) => (
           <div
             key={particle.id}
             className="mobile-particle mobile-optimized-animations"
             style={{
               left: `${particle.left}%`,
               top: `${particle.top}%`,
-              width: `${particle.width}px`,
-              height: `${particle.height}px`,
+              width: `${Math.max(2, particle.width * 0.6)}px`,
+              height: `${Math.max(2, particle.height * 0.6)}px`,
               background: particle.background,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Enhanced Breathing Background Orbs */}
-      <div
-        className={cn(
-          "fixed inset-0 z-0 pointer-events-none",
-          isStatsAnimating && "stats-animating",
-        )}
-      >
-        {orbData.slice(0, isStatsAnimating ? 4 : 8).map((orb) => (
-          <div
-            key={`orb-${orb.id}`}
-            className="absolute rounded-full mobile-breathing-orb mobile-optimized-animations"
-            style={{
-              left: `${orb.left}%`,
-              top: `${orb.top}%`,
-              width: `${orb.width}px`,
-              height: `${orb.height}px`,
-              background: orb.background,
-              filter: "blur(25px)",
-              transform: "translateZ(0)",
+              opacity: 0.4,
             }}
           />
         ))}
