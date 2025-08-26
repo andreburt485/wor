@@ -832,7 +832,6 @@ body > div {
   }
 }
 
-
 /* Eye-catching utility classes */
 
 .rainbow-glow {
@@ -919,7 +918,6 @@ body > div {
     stroke-dashoffset: -20;
   }
 }
-
 
 /* Enhanced KOR text size for large screens */
 @media (min-width: 992px) {

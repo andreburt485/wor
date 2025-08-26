@@ -242,7 +242,6 @@
     animation: mobile-button-breathe 4s ease-in-out infinite;
   }
 
-
   /* Enhanced form inputs */
   .mobile-input-enhanced {
     transition: all 0.3s ease;
@@ -449,7 +448,6 @@
     border-color: rgba(59, 130, 246, 0.4);
   }
 }
-
 
 @keyframes mobile-grid-item-in {
   0% {
