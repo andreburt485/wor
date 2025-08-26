@@ -1669,7 +1669,7 @@ export default function Index() {
                 <motion.a
                   key={contact.label}
                   href={contact.href}
-                  className="mobile-premium-card mobile-tilt-card p-4 rounded-xl text-center hover:border-primary/50 transition-all duration-300"
+                  className="mobile-premium-card mobile-tilt-card mobile-motion-override p-4 rounded-xl text-center hover:border-primary/50 transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   whileHover={{
