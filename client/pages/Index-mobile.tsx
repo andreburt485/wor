@@ -1495,9 +1495,6 @@ export default function Index() {
                     scale: plan.popular ? 1.08 : 1.05,
                     y: plan.popular ? -15 : -10,
                     rotateY: plan.popular ? 8 : 5,
-                    boxShadow: plan.popular
-                      ? "0 30px 60px rgba(59, 130, 246, 0.5)"
-                      : "0 20px 40px rgba(73, 146, 255, 0.3)",
                   }}
                   animate={{
                     y: [0, plan.popular ? -5 : -2, 0],
