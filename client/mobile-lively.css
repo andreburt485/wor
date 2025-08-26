@@ -154,6 +154,11 @@
     animation: none;
   }
 
+  /* Disable pulse borders during stats animation for performance */
+  .stats-animating .animate-pulse {
+    animation: none;
+  }
+
   /* Enhanced menu button with breathing effect */
   .mobile-menu-enhanced {
     animation: mobile-menu-breath 3s ease-in-out infinite;
