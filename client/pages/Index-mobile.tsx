@@ -1067,14 +1067,18 @@ export default function Index() {
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="font-poppins px-12 py-5 rounded-2xl text-white font-bold relative overflow-hidden group shadow-2xl mobile-button-enhanced mobile-fab mobile-touch-feedback"
+                animate={{
+                  y: [0, -3, 0],
+                }}
                 whileHover={{
                   y: -8,
                   scale: 1.05,
                 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{
-                  duration: 0.3,
-                  ease: "easeOut",
+                  y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                  hover: { duration: 0.3, ease: "easeOut" },
+                  tap: { duration: 0.1 },
                 }}
                 style={{
                   background:
