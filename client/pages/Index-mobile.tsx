@@ -1121,11 +1121,6 @@ export default function Index() {
                 }}
                 animate={{
                   y: [0, -4, 0],
-                  boxShadow: [
-                    "0 8px 20px rgba(168, 85, 247, 0.2)",
-                    "0 12px 25px rgba(168, 85, 247, 0.3)",
-                    "0 8px 20px rgba(168, 85, 247, 0.2)",
-                  ],
                 }}
                 transition={{
                   duration: 3.5,
