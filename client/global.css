@@ -869,14 +869,10 @@ body > div {
 .crystalline-effect {
   background: linear-gradient(
     90deg,
-    transparent,
-    rgba(79, 209, 197, 0.4),
-    rgba(59, 130, 246, 0.4),
-    rgba(139, 92, 246, 0.4),
-    transparent
+    rgba(79, 209, 197, 0.2),
+    rgba(59, 130, 246, 0.2),
+    rgba(139, 92, 246, 0.2)
   );
-  background-size: 200% 100%;
-  animation: crystalline-shimmer 6s ease-in-out infinite;
 }
 
 /* Unique section backgrounds */
