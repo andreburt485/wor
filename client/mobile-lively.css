@@ -269,12 +269,18 @@
 @keyframes mobile-orb-breath {
   0%, 100% {
     transform: scale(1) translateZ(0);
-    opacity: 0.3;
+    opacity: 0.2;
   }
   50% {
-    transform: scale(1.4) translateZ(0);
-    opacity: 0.7;
+    transform: scale(1.2) translateZ(0);
+    opacity: 0.5;
   }
+}
+
+/* Reduce orb animation when stats are animating */
+.stats-animating .mobile-breathing-orb {
+  animation-duration: 12s;
+  opacity: 0.1;
 }
 
 @keyframes mobile-text-glow {

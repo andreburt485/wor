@@ -56,6 +56,7 @@ export default function Index() {
     years: 0,
   });
   const [isCounterVisible, setIsCounterVisible] = useState(false);
+  const [isStatsAnimating, setIsStatsAnimating] = useState(false);
   const hasShownWelcomeRef = useRef(false);
 
   // Animated counters effect
