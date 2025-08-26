@@ -1181,7 +1181,7 @@ export default function Index() {
               </motion.div>
 
               <motion.div
-                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override relative overflow-hidden"
+                className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override relative overflow-hidden rounded-3xl"
                 whileHover={{
                   scale: 1.05,
                   y: -4,
