@@ -4,6 +4,7 @@
 @import "./sticky-navigation.css";
 @import "./mobile-optimized.css";
 @import "./mobile-visual-enhancements.css";
+@import "./mobile-lively.css";
 
 @tailwind base;
 @tailwind components;
