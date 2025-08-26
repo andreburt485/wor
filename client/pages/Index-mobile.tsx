@@ -1154,10 +1154,6 @@ export default function Index() {
                     rotateY: 4,
                     rotateX: 2,
                   }}
-                  animate={{
-                    y: [0, -3, 0],
-                    rotateZ: [0, 0.5, 0],
-                  }}
                   transition={{
                     duration: 4 + index,
                     repeat: Infinity,
