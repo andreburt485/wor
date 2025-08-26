@@ -571,9 +571,9 @@ export default function Index() {
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Monitor className="w-4 h-4" />
-                View Desktop Version
-                <ArrowRight className="w-4 h-4 ml-1" />
+                <Monitor className="w-5 h-5" />
+                🚀 Open Desktop Version
+                <ArrowRight className="w-5 h-5" />
               </motion.button>
               <motion.button
                 onClick={() => setShowDesktopSuggestion(false)}
