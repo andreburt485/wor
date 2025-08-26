@@ -510,8 +510,8 @@ export default function Index() {
       </div>
 
       {/* Enhanced Breathing Background Orbs */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        {Array.from({ length: 8 }).map((_, i) => {
+      <div className={cn("fixed inset-0 z-0 pointer-events-none", isStatsAnimating && "stats-animating")}>
+        {Array.from({ length: isStatsAnimating ? 4 : 8 }).map((_, i) => {
           const orbBackgrounds = [
             "radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%)",
             "radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%)",
@@ -1005,15 +1005,12 @@ export default function Index() {
               <motion.div
                 className="text-center p-6 mobile-premium-card mobile-tilt-card mobile-motion-override mobile-touch-feedback mobile-fab relative overflow-hidden"
                 whileHover={{
-                  scale: 1.08,
-                  y: -8,
-                  rotateY: 5,
+                  scale: 1.05,
+                  y: -4,
                 }}
                 transition={{
-                  duration: 3.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0,
+                  duration: 0.3,
+                  ease: "easeOut",
                 }}
               >
                 <motion.div
