@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSimpleView } from "@/hooks/use-simple-view";
 
 // Import both components directly
@@ -7,6 +7,18 @@ import IndexDesktop from "./Index-desktop";
 
 export default function Index() {
   const { isSimpleView } = useSimpleView();
+
+  useEffect(() => {
+    // Update CSS custom property when simple view changes
+    document.documentElement.style.setProperty(
+      '--simple-view-display',
+      isSimpleView ? 'block' : 'none'
+    );
+    document.documentElement.style.setProperty(
+      '--desktop-view-display',
+      isSimpleView ? 'none' : 'block'
+    );
+  }, [isSimpleView]);
 
   return (
     <>
@@ -19,37 +31,6 @@ export default function Index() {
       <div className="desktop-version">
         <IndexDesktop />
       </div>
-
-      {/* CSS to control responsive behavior with simple view toggle */}
-      <style jsx global>{`
-        /* Hide both by default */
-        .mobile-version,
-        .desktop-version {
-          display: none;
-        }
-
-        /* Show mobile version ONLY on mobile devices (≤768px) */
-        @media (max-width: 768px) {
-          .mobile-version {
-            display: block !important;
-          }
-
-          .desktop-version {
-            display: none !important;
-          }
-        }
-
-        /* On desktop/tablet (>768px), show version based on simple view toggle */
-        @media (min-width: 769px) {
-          .mobile-version {
-            display: ${isSimpleView ? "block" : "none"} !important;
-          }
-
-          .desktop-version {
-            display: ${isSimpleView ? "none" : "block"} !important;
-          }
-        }
-      `}</style>
     </>
   );
 }
