@@ -865,7 +865,7 @@ export default function Index() {
                     fontSize: "1.2rem",
                   }}
                 >
-                  {`��█╗  █���������� █████������ ██������������██╗
+                  {`��█╗  █���������� █████������� ██������������██╗
 ������� �����█╔����█��╔═══���█╗█���������═�������╗
 █████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██���══█��╗
@@ -10549,10 +10549,10 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                       : "0 0 8px rgba(59, 130, 246, 0.4)",
                 }}
                 animate={{
-                  y: ["-20px", screenSize === "mobile" ? "-60vh" : "-100vh"],
+                  y: [-20, screenSize === "mobile" ? -window.innerHeight * 0.6 : -window.innerHeight],
                   x: [
-                    `0px`,
-                    `${(Math.random() - 0.5) * (screenSize === "mobile" ? 100 : 200)}px`,
+                    0,
+                    (Math.random() - 0.5) * (screenSize === "mobile" ? 100 : 200),
                   ],
                   scale: [1, 1.3, 0.8],
                   opacity: [0.8, 1, 0],
@@ -10700,7 +10700,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   top: `${35 + i * (screenSize === "mobile" ? 18 : 12)}%`,
                 }}
                 animate={{
-                  x: ["0px", "112vw"],
+                  x: [0, window.innerWidth * 1.12],
                   y: [
                     0,
                     -Math.sin(i + 1) * (screenSize === "mobile" ? 20 : 30),
@@ -11319,7 +11319,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           <motion.div
                             className={`h-full ${lang.color} rounded-full`}
                             initial={{ width: "0%" }}
-                            animate={{ width: `${lang.percent}%` }}
+                            animate={{ width: lang.percent + "%" }}
                             transition={{ duration: 2, delay: langIndex * 0.3 }}
                           />
                         </div>
