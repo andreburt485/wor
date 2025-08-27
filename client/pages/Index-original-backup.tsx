@@ -11936,11 +11936,12 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                               <div className="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
                                 <motion.div
                                   className="h-full bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"
-                                  initial={{ width: "0%" }}
+                                  style={{ transformOrigin: "left" }}
+                                  initial={{ scaleX: 0 }}
                                   animate={
                                     isVisible
-                                      ? { width: "75%" }
-                                      : { width: "0%" }
+                                      ? { scaleX: 0.75 }
+                                      : { scaleX: 0 }
                                   }
                                   transition={{
                                     duration: 2,

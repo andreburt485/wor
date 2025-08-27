@@ -684,9 +684,10 @@ export default function Index() {
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
+                          layout
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
                           transition={{
                             duration: 0.3,
                             ease: [0.25, 0.46, 0.45, 0.94]
@@ -1125,7 +1126,7 @@ export default function Index() {
               viewport={{ once: true }}
             >
               <div>COPYRIGHT (C) 2024 KOR SYSTEMS - ALL RIGHTS RESERVED</div>
-              <div>contact@kor.dev • <a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a></div>
+              <div>contact@kor.dev �� <a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a></div>
             </motion.div>
           </div>
         </footer>
