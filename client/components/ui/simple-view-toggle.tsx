@@ -22,8 +22,9 @@ export function SimpleViewToggle() {
             size="icon"
             onClick={() => {
               if (mode === "retro") return; // Disable in retro mode
-              console.log("Simple view toggle clicked!");
+              console.log("Simple view toggle clicked! Current state:", isSimpleView);
               toggleSimpleView();
+              console.log("After toggle, new state should be:", !isSimpleView);
             }}
             className={`h-10 w-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 transition-all duration-300 ${
               mode === "retro"
