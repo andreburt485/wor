@@ -1586,11 +1586,8 @@ export default function Index() {
                     animate={
                       plan.name === "Websites"
                         ? {
-                            boxShadow: [
-                              "0 4px 20px rgba(168, 85, 247, 0.3)",
-                              "0 8px 30px rgba(168, 85, 247, 0.5)",
-                              "0 4px 20px rgba(168, 85, 247, 0.3)",
-                            ],
+                            opacity: [1, 0.9, 1],
+                            scale: [1, 1.01, 1],
                           }
                         : {}
                     }
