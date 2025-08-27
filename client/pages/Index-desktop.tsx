@@ -6606,7 +6606,7 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                         : "0 0 10px rgba(73, 146, 255, 0.4)",
                   }}
                   animate={{
-                    y: ["-50px", "calc(100vh + 50px)"],
+                    y: [-50, window.innerHeight + 50],
                   }}
                   transition={{
                     duration:
