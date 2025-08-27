@@ -22,3 +22,17 @@
   color: rgb(255, 255, 255);
   font-weight: inherit;
 }
+
+/* Website card glow animation using CSS instead of Framer Motion boxShadow array */
+.website-card-glow {
+  animation: website-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes website-glow {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(168, 85, 247, 0.5);
+  }
+}
