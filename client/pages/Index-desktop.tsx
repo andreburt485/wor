@@ -870,7 +870,7 @@ export default function Index() {
 █████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║█������══█��╗
 █���║  ██��╚█�������█������█╔╝�������║  █��║
-����������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
+����������������╝  ╚═╝ ����������������════╝ ╚�����╝  ����═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
               </motion.div>
@@ -3839,16 +3839,15 @@ export default function Index() {
                 className="absolute inset-0 pointer-events-none overflow-hidden"
                 initial={{
                   opacity: 0,
-                  filter: "blur(10px)",
                 }}
                 animate={
                   animationStep >= 4
                     ? {
                         opacity: 1,
-                        filter: "blur(0px)",
                       }
                     : {}
                 }
+                className={animationStep >= 4 ? "filter-blur-in" : "filter-blur-out"}
                 transition={{
                   duration: 1.5,
                   ease: [0.16, 1, 0.3, 1],
