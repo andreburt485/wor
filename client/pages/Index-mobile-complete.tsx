@@ -240,9 +240,9 @@ export default function Index() {
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.nav
-              initial={{ x: "-100%" }}
+              initial={{ x: -320 }}
               animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
+              exit={{ x: -320 }}
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed top-0 left-0 w-80 h-full bg-card/95 backdrop-blur-lg border-r border-border z-50 p-6"
             >
@@ -562,9 +562,10 @@ export default function Index() {
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
+                          layout
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
                           className="px-4 pb-4"
                         >
                           <p className="text-sm text-muted-foreground mb-3">{service.description}</p>

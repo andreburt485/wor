@@ -240,9 +240,9 @@ export default function Index() {
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.nav
-              initial={{ x: "-100%" }}
+              initial={{ x: -320 }}
               animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
+              exit={{ x: -320 }}
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed top-0 left-0 w-80 h-full bg-card/95 backdrop-blur-lg border-r border-border z-50 p-6"
             >
@@ -562,15 +562,22 @@ export default function Index() {
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          className="px-4 pb-4"
+                          layout
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{
+                            duration: 0.3,
+                            ease: [0.25, 0.46, 0.45, 0.94]
+                          }}
+                          style={{ overflow: "hidden" }}
                         >
-                          <p className="text-sm text-muted-foreground mb-3">{service.description}</p>
-                          <button className="text-blue-400 text-sm font-medium flex items-center">
-                            Learn More <ArrowRight className="w-3 h-3 ml-1" />
-                          </button>
+                          <div className="px-4 py-3">
+                            <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{service.description}</p>
+                            <button className="text-blue-400 text-sm font-medium flex items-center">
+                              Learn More <ArrowRight className="w-3 h-3 ml-1" />
+                            </button>
+                          </div>
                         </motion.div>
                       )}
                     </AnimatePresence>

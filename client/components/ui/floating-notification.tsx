@@ -236,7 +236,6 @@ const FloatingNotificationItem = React.forwardRef<
         scale: isMobile ? 0.9 : 0.8,
         x: isMobile ? 50 : 100,
         y: isMobile ? -20 : 0,
-        filter: isMobile ? "blur(2px)" : "blur(10px)",
       }}
       animate={
         isClosing
@@ -245,7 +244,6 @@ const FloatingNotificationItem = React.forwardRef<
               scale: isMobile ? 0.85 : 0.9,
               x: isMobile ? 30 : 60,
               y: isMobile ? -10 : 0,
-              filter: isMobile ? "blur(1px)" : "blur(4px)",
               transition: {
                 duration: isMobile ? 0.2 : 0.35,
                 ease: "easeInOut",
@@ -256,7 +254,6 @@ const FloatingNotificationItem = React.forwardRef<
               scale: 1,
               x: 0,
               y: 0,
-              filter: "blur(0px)",
             }
       }
       exit={{
@@ -264,7 +261,6 @@ const FloatingNotificationItem = React.forwardRef<
         scale: isMobile ? 0.75 : 0.8,
         x: isMobile ? 80 : 120,
         y: isMobile ? -15 : 0,
-        filter: isMobile ? "blur(3px)" : "blur(6px)",
         transition: {
           duration: isMobile ? 0.2 : 0.35,
           ease: "easeInOut",

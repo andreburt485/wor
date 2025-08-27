@@ -1,0 +1,58 @@
+/* Simple View on Desktop Optimizations */
+
+/* When simple view is active on desktop, center the mobile layout */
+@media (min-width: 769px) {
+  .mobile-version {
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--background);
+  }
+  
+  /* Add some padding around the mobile view on desktop */
+  .mobile-version > * {
+    background: inherit;
+  }
+  
+  /* Ensure mobile sections look good in desktop viewport */
+  .mobile-version #services,
+  .mobile-version section {
+    background: inherit;
+  }
+  
+  /* Add subtle mobile frame effect on desktop */
+  .mobile-version::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, 
+      rgba(59, 130, 246, 0.05) 0%, 
+      rgba(59, 130, 246, 0.02) 50%, 
+      transparent 100%);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+/* Ensure the mobile version scrolls properly when shown on desktop */
+@media (min-width: 769px) {
+  .mobile-version {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Add a subtle indication when in simple view mode */
+@media (min-width: 769px) {
+  body:has(.mobile-version[style*="block"]) {
+    background: linear-gradient(135deg, 
+      var(--background) 0%, 
+      rgba(59, 130, 246, 0.05) 100%);
+  }
+}
