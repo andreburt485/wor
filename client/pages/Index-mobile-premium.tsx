@@ -684,22 +684,25 @@ export default function Index() {
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.div
-                          initial={{ maxHeight: 0, opacity: 0 }}
-                          animate={{ maxHeight: 300, opacity: 1 }}
-                          exit={{ maxHeight: 0, opacity: 0 }}
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
                           transition={{
                             duration: 0.3,
                             ease: [0.25, 0.46, 0.45, 0.94]
                           }}
-                          className="px-4 pb-4 relative z-10"
+                          className="relative z-10"
+                          style={{ overflow: "hidden" }}
                         >
-                          <p className="text-sm text-muted-foreground mb-3">{service.description}</p>
-                          <motion.button 
-                            className="text-blue-400 text-sm font-medium flex items-center hover:text-blue-300 transition-colors"
-                            whileHover={{ x: 4 }}
-                          >
-                            Learn More <ArrowRight className="w-3 h-3 ml-1" />
-                          </motion.button>
+                          <div className="px-4 py-3">
+                            <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{service.description}</p>
+                            <motion.button
+                              className="text-blue-400 text-sm font-medium flex items-center hover:text-blue-300 transition-colors"
+                              whileHover={{ x: 4 }}
+                            >
+                              Learn More <ArrowRight className="w-3 h-3 ml-1" />
+                            </motion.button>
+                          </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
