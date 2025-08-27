@@ -1613,11 +1613,8 @@ export default function Index() {
               viewport={{ once: true }}
               whileHover={{ scale: 1.03, y: -2 }}
               animate={{
-                boxShadow: [
-                  "0 0 20px rgba(251, 146, 60, 0.3)",
-                  "0 0 30px rgba(251, 146, 60, 0.5)",
-                  "0 0 20px rgba(251, 146, 60, 0.3)",
-                ],
+                opacity: [0.9, 1, 0.9],
+                scale: [1, 1.02, 1],
               }}
               transition={{
                 boxShadow: { duration: 2, repeat: Infinity },
