@@ -292,9 +292,9 @@ export default function Index() {
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.nav
-              initial={{ x: "-100%" }}
+              initial={{ x: -320 }}
               animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
+              exit={{ x: -320 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed top-0 left-0 w-80 h-full mobile-premium-card z-50 p-6"
             >
