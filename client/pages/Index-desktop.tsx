@@ -866,11 +866,11 @@ export default function Index() {
                   }}
                 >
                   {`��█╗  █���������� █████������� ██������������██╗
-������� �����█╔����█��╔═══���█╗█���������═�������╗
+������� �����█╔�����█��╔═══���█╗█���������═�������╗
 █████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║█������══█��╗
 █���║  ██��╚█�������█������█╔╝�������║  █��║
-����������������╝  ╚═╝ ����������������════╝ ╚�����╝  ����═╝`}
+����������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
               </motion.div>
@@ -6940,17 +6940,16 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
             initial={{
               opacity: 0,
               y: 80,
-              filter: "blur(10px)",
             }}
             animate={
               isVisible
                 ? {
                     opacity: 1,
                     y: 0,
-                    filter: "blur(0px)",
                   }
                 : {}
             }
+            className={`relative z-10 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto section-content pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 lg:pb-16 ${isVisible ? "filter-blur-in" : "filter-blur-out"}`}
             transition={{
               duration: 1.2,
               ease: [0.16, 1, 0.3, 1],
@@ -9254,17 +9253,16 @@ const ServicesSection = React.forwardRef<HTMLDivElement, SectionProps>(
             initial={{
               opacity: 0,
               y: 80,
-              filter: "blur(10px)",
             }}
             animate={
               isVisible
                 ? {
                     opacity: 1,
                     y: 0,
-                    filter: "blur(0px)",
                   }
                 : {}
             }
+            className={`relative z-10 px-4 sm:px-6 lg:px-8 text-center max-w-6xl mx-auto section-content pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 lg:pb-16 ${isVisible ? "filter-blur-in" : "filter-blur-out"}`}
             transition={{
               duration: 1.2,
               ease: [0.16, 1, 0.3, 1],
@@ -12391,7 +12389,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
             { icon: "��", delay: 4, x: 25, y: 80, size: 22, duration: 7 },
             { icon: "🌐", delay: 1, x: 75, y: 70, size: 26, duration: 9 },
             {
-              icon: "�������������",
+              icon: "��������������",
               delay: 3,
               x: 10,
               y: 60,
