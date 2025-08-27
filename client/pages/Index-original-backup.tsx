@@ -937,7 +937,7 @@ export default function Index() {
                       className="text-xs text-green-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      CPU: ���██���█████���███����█���█���███████���███����█████
+                      CPU: ���██������████���███����█���█���███████���███����█████
                       60%
                     </div>
                     <div
@@ -9906,8 +9906,8 @@ const PricingSection = React.forwardRef<HTMLDivElement, SectionProps>(
         <div className="relative min-h-screen py-4 sm:py-6 lg:py-8 section-container">
           <motion.div
             className="relative z-10 px-4 sm:px-6 lg:px-8 text-center max-w-7xl mx-auto section-content pt-20 sm:pt-24 lg:pt-28 pb-8 sm:pb-12"
-            initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
-            animate={isVisible ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 80 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             {/* Pricing Title */}
@@ -10500,7 +10500,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   filter: `blur(${3 + (i % 2) * (screenSize === "mobile" ? 1 : 3)}px)`,
                 }}
                 animate={{
-                  x: ["-20%", "120%"],
+                  x: [-window.innerWidth * 0.2, window.innerWidth * 1.2],
                   scaleY: [1, 1.2, 1],
                   opacity: [0.3, 0.7, 0.3],
                 }}
@@ -11530,8 +11530,8 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
         <div className="relative min-h-screen py-4 sm:py-6 lg:py-8 section-container">
           <motion.div
             className="relative z-10 px-3 sm:px-6 lg:px-8 text-center max-w-6xl mx-auto section-content pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-20"
-            initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
-            animate={isVisible ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 80 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             {/* Portfolio Title */}
@@ -12247,8 +12247,8 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                     "0 0 10px #ffffff, 0 0 20px #3b82f6, 0 0 30px #1d4ed8",
                 }}
                 animate={{
-                  x: ["-10%", "110%"],
-                  y: ["0%", "20%"],
+                  x: [-window.innerWidth * 0.1, window.innerWidth * 1.1],
+                  y: [0, window.innerHeight * 0.2],
                   opacity: [0, 1, 1, 0],
                   scale: [0, 1, 1, 0],
                 }}
@@ -12375,7 +12375,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         {/* Floating Communication Icons - Contact specific */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-5">
           {[
-            { icon: "���️", delay: 0, x: 15, y: 20, size: 24, duration: 8 },
+            { icon: "����️", delay: 0, x: 15, y: 20, size: 24, duration: 8 },
             { icon: "📧", delay: 2, x: 85, y: 15, size: 20, duration: 6 },
             { icon: "��", delay: 4, x: 25, y: 80, size: 22, duration: 7 },
             { icon: "🌐", delay: 1, x: 75, y: 70, size: 26, duration: 9 },
@@ -12672,8 +12672,8 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         <div className="relative min-h-screen py-2 sm:py-4 lg:py-6 section-container">
           <motion.div
             className="relative z-10 px-3 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto section-content pt-20 sm:pt-24 lg:pt-28 pb-4"
-            initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
-            animate={isVisible ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 80 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             {/* Contact Title */}
