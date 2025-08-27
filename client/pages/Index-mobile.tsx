@@ -187,7 +187,7 @@ export default function Index() {
       setTimeout(() => {
         showInfo(
           "💻 Enhanced Desktop Experience Available!",
-          "🚀 Experience our site in full glory with premium 3D animations and enhanced layouts. Tap to open in new tab.",
+          "��� Experience our site in full glory with premium 3D animations and enhanced layouts. Tap to open in new tab.",
           8000, // Show for 8 seconds
         );
       }, 4000); // Show after 4 seconds
@@ -1362,18 +1362,21 @@ export default function Index() {
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.div
-                          initial={{ maxHeight: 0, opacity: 0 }}
-                          animate={{ maxHeight: 300, opacity: 1 }}
-                          exit={{ maxHeight: 0, opacity: 0 }}
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
                           transition={{
                             duration: 0.3,
                             ease: [0.25, 0.46, 0.45, 0.94]
                           }}
-                          className="px-4 pb-4 relative z-10 overflow-hidden"
+                          className="relative z-10"
+                          style={{ overflow: "hidden" }}
                         >
-                          <p className="text-sm text-muted-foreground">
-                            {service.description}
-                          </p>
+                          <div className="px-4 py-3">
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              {service.description}
+                            </p>
+                          </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
