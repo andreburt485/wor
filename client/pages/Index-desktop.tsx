@@ -12464,8 +12464,9 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                 <motion.circle
                   r="4"
                   fill="rgba(63, 186, 255, 0.8)"
-                  initial={{ "--offset-distance": "0%" }}
-                  animate={{ "--offset-distance": ["0%", "100%"] }}
+                  animate={{
+                    opacity: [0, 1, 0],
+                  }}
                   transition={{
                     duration: 5,
                     delay: line.delay,
@@ -12473,8 +12474,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                     repeatDelay: 6,
                   }}
                   style={{
-                    offsetPath: `path('${line.path}')`,
-                    offsetDistance: "var(--offset-distance)",
+                    transformOrigin: "center",
                   }}
                 />
                 \n{" "}
