@@ -18,9 +18,9 @@
 }
 
 /* Optimize expandable content */
-#services .mobile-premium-card [style*="max-height"] {
-  contain: size layout;
-  will-change: max-height, opacity;
+#services .mobile-premium-card [style*="overflow"] {
+  contain: layout;
+  will-change: height, opacity;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
