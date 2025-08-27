@@ -5884,7 +5884,7 @@ const ORB_BUTTON_CONFIG = {
 // Change: xOffset: 0  →  xOffset: 50
 //
 // To move "About us" button 30px up:
-// Change: yOffset: 0  ����  yOffset: -30
+// Change: yOffset: 0  �����  yOffset: -30
 //
 // To make all buttons closer to center on mobile:
 // Change: mobileRadiusMultiplier: 0.5  →  mobileRadiusMultiplier: 0.3
@@ -12684,8 +12684,8 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         <div className="relative min-h-screen py-2 sm:py-4 lg:py-6 section-container">
           <motion.div
             className="relative z-10 px-3 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto section-content pt-20 sm:pt-24 lg:pt-28 pb-4"
-            initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
-            animate={isVisible ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 80 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             {/* Contact Title */}
