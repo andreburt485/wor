@@ -3344,7 +3344,6 @@ export default function Index() {
                       opacity: 0,
                       scale: 0,
                       y: -100,
-                      filter: "blur(15px)",
                     }}
                     animate={
                       animationStep >= 2
@@ -3352,10 +3351,10 @@ export default function Index() {
                             opacity: 1,
                             scale: 1,
                             y: 0,
-                            filter: "blur(0px)",
                           }
                         : {}
                     }
+                    className={animationStep >= 2 ? "filter-blur-in" : "filter-blur-out"}
                     transition={{
                       duration: 0.8,
                       ease: "easeOut",
@@ -11317,7 +11316,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                         <div className="w-8 h-1 bg-white/20 rounded-full overflow-hidden">
                           <motion.div
                             className={`h-full ${lang.color} rounded-full`}
-                            initial={{ width: "0%" }}
+                            initial={{ scaleX: 0 }}
                             animate={{ scaleX: lang.percent / 100 }}
                             style={{ transformOrigin: "left" }}
                             transition={{ duration: 2, delay: langIndex * 0.3 }}
