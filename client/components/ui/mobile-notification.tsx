@@ -199,14 +199,12 @@ const MobileNotificationItem = React.forwardRef<
         scale: isMobile ? 0.95 : 0.8,
         x: isMobile ? 0 : 100,
         y: isMobile ? -10 : 0,
-        filter: isMobile ? "blur(1px)" : "blur(4px)",
       }}
       animate={{
         opacity: 1,
         scale: 1,
         x: 0,
         y: 0,
-        filter: "blur(0px)",
       }}
       exit={{
         opacity: 0,
