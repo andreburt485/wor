@@ -336,10 +336,11 @@ export default function Index() {
                   <span className="text-blue-400 font-bold">99.8%</span>
                 </div>
                 <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
-                  <motion.div 
+                  <motion.div
                     className="h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "99.8%" }}
+                    style={{ transformOrigin: "left" }}
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 0.998 }}
                     transition={{ duration: 1, delay: 0.5 }}
                     viewport={{ once: true }}
                   />
