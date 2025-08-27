@@ -11906,8 +11906,8 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           {/* Scanning effect */}
                           <motion.div
                             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                            initial={{ x: "-100%" }}
-                            animate={isVisible ? { x: "100%" } : { x: "-100%" }}
+                            initial={{ x: -400 }}
+                            animate={isVisible ? { x: 400 } : { x: -400 }}
                             transition={{
                               duration: 1.5,
                               delay: 0.8 + index * 0.2,
@@ -13115,7 +13115,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           {
                             name: "Instagram",
                             url: "https://instagram.com",
-                            icon: "���",
+                            icon: "�����",
                             color: "from-pink-500 to-purple-500",
                           },
                           {

@@ -595,17 +595,17 @@ export default function Index() {
             />
             <motion.nav
               initial={{
-                x: "-100%",
-                opacity: 0,
-              }}
-              animate={{
-                x: 0,
-                opacity: 1,
-              }}
-              exit={{
-                x: "-100%",
-                opacity: 0,
-              }}
+              x: -320,
+              opacity: 0,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+            }}
+            exit={{
+              x: -320,
+              opacity: 0,
+            }}
               transition={{
                 duration: 0.3,
                 ease: [0.25, 0.46, 0.45, 0.94],
