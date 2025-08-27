@@ -6666,8 +6666,9 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
                     <motion.div
                       className="h-full bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
-                      initial={{ width: "0%" }}
-                      animate={{ width: "100%" }}
+                      style={{ transformOrigin: "left" }}
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
                       transition={{ duration: 2, delay: 1.5 }}
                     />
                   </div>
@@ -11917,8 +11918,8 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           {/* Scanning effect */}
                           <motion.div
                             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                            initial={{ x: "-100%" }}
-                            animate={isVisible ? { x: "100%" } : { x: "-100%" }}
+                            initial={{ x: -400 }}
+                            animate={isVisible ? { x: 400 } : { x: -400 }}
                             transition={{
                               duration: 1.5,
                               delay: 0.8 + index * 0.2,
@@ -11947,11 +11948,12 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                               <div className="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
                                 <motion.div
                                   className="h-full bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"
-                                  initial={{ width: "0%" }}
+                                  style={{ transformOrigin: "left" }}
+                                  initial={{ scaleX: 0 }}
                                   animate={
                                     isVisible
-                                      ? { width: "75%" }
-                                      : { width: "0%" }
+                                      ? { scaleX: 0.75 }
+                                      : { scaleX: 0 }
                                   }
                                   transition={{
                                     duration: 2,
