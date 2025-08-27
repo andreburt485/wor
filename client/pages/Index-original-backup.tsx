@@ -7898,21 +7898,44 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
         ))}
 
         {/* Crystal Resonance Waves */}
-        <motion.div
-          className="absolute inset-0 opacity-15"
-          animate={{
-            background: [
-              "radial-gradient(ellipse 60% 40% at 25% 30%, rgba(16, 185, 129, 0.3) 0%, transparent 70%)",
-              "radial-gradient(ellipse 50% 60% at 75% 60%, rgba(59, 130, 246, 0.2) 0%, transparent 60%)",
-              "radial-gradient(ellipse 70% 30% at 50% 80%, rgba(236, 72, 153, 0.25) 0%, transparent 80%)",
-            ],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
+        <div className="absolute inset-0 opacity-15">
+          <motion.div
+            className="absolute inset-0"
+            style={{
+              background: "radial-gradient(ellipse 60% 40% at 25% 30%, rgba(16, 185, 129, 0.3) 0%, transparent 70%)",
+            }}
+            animate={{ opacity: [1, 0, 0] }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute inset-0"
+            style={{
+              background: "radial-gradient(ellipse 50% 60% at 75% 60%, rgba(59, 130, 246, 0.2) 0%, transparent 60%)",
+            }}
+            animate={{ opacity: [0, 1, 0] }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute inset-0"
+            style={{
+              background: "radial-gradient(ellipse 70% 30% at 50% 80%, rgba(236, 72, 153, 0.25) 0%, transparent 80%)",
+            }}
+            animate={{ opacity: [0, 0, 1] }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
 
         {/* Wave Animations - exactly like home page */}
         <div className="absolute inset-0">
