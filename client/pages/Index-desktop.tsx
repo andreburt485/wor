@@ -841,7 +841,7 @@ export default function Index() {
                 >
                   {/* Original Toggle Buttons */}
                   <div className="flex flex-col gap-2 sm:gap-3">
-                    <RetroToggle />
+                    {/* <RetroToggle /> */}
                   </div>
                 </div>
               </div>
@@ -2615,7 +2615,7 @@ export default function Index() {
                           },
                         }}
                       >
-                        <RetroToggle />
+                        {/* <RetroToggle /> */}
                       </motion.div>
                       <motion.div
                         whileTap={{ scale: 0.95 }}
@@ -5891,7 +5891,7 @@ const ORB_BUTTON_CONFIG = {
 // Change: angle: 125  →  angle: -90
 //
 // To make buttons grow more on hover:
-// Change: hoverScale: 1.05  ————��——→  hoverScale: 1.15
+// Change: hoverScale: 1.05  ——���—��——→  hoverScale: 1.15
 //
 // ========================================
 
