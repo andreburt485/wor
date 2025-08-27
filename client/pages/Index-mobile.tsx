@@ -830,11 +830,9 @@ export default function Index() {
                   scale: 1.5,
                   y: -25,
                   rotateZ: 8,
-                  textShadow:
-                    "0 0 100px rgba(59, 130, 246, 1), 0 0 150px rgba(73, 146, 255, 0.9)",
-                  filter: "brightness(1.6) saturate(1.4)",
                   transition: { duration: 0.3, ease: "easeOut" },
                 }}
+                className="inline-block relative warm-glow-text hover:brightness-150 hover:saturate-150"
               >
                 K
               </motion.span>
