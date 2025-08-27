@@ -12,7 +12,7 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { RetroToggle } from "@/components/ui/retro-toggle";
+// import { RetroToggle } from "@/components/ui/retro-toggle";
 import { SimpleViewToggle } from "@/components/ui/simple-view-toggle";
 import { useTheme } from "@/hooks/use-theme";
 import { useRetroMode } from "@/hooks/use-retro-mode";
@@ -5891,7 +5891,7 @@ const ORB_BUTTON_CONFIG = {
 // Change: angle: 125  →  angle: -90
 //
 // To make buttons grow more on hover:
-// Change: hoverScale: 1.05  ——���—��——→  hoverScale: 1.15
+// Change: hoverScale: 1.05  ————��——→  hoverScale: 1.15
 //
 // ========================================
 
