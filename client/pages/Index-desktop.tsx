@@ -865,7 +865,7 @@ export default function Index() {
                     fontSize: "1.2rem",
                   }}
                 >
-                  {`��█╗  █���������� █████����� ██������������██╗
+                  {`��█╗  █������������ █████����� ██������������██╗
 ������� �����█╔����█��╔═══���█╗█���������═�������╗
 █████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██���══█��╗
@@ -10511,7 +10511,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   filter: `blur(${3 + (i % 2) * (screenSize === "mobile" ? 1 : 3)}px)`,
                 }}
                 animate={{
-                  x: ["-20%", "120%"],
+                  translateX: ["-20%", "120%"],
                   scaleY: [1, 1.2, 1],
                   opacity: [0.3, 0.7, 0.3],
                 }}
