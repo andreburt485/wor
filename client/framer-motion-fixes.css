@@ -36,3 +36,21 @@
     box-shadow: 0 8px 30px rgba(168, 85, 247, 0.5);
   }
 }
+
+/* CSS blur animations to replace problematic Framer Motion filter animations */
+.filter-blur-in {
+  animation: blur-in 1.2s ease-out forwards;
+}
+
+.filter-blur-out {
+  filter: blur(10px);
+}
+
+@keyframes blur-in {
+  from {
+    filter: blur(10px);
+  }
+  to {
+    filter: blur(0px);
+  }
+}
