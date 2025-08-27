@@ -6589,7 +6589,7 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                         : "0 0 10px rgba(73, 146, 255, 0.4)",
                   }}
                   animate={{
-                    y: ["-50px", "calc(100vh + 50px)"],
+                    y: [-50, window.innerHeight + 50],
                   }}
                   transition={{
                     duration:
@@ -10499,7 +10499,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   filter: `blur(${3 + (i % 2) * (screenSize === "mobile" ? 1 : 3)}px)`,
                 }}
                 animate={{
-                  x: ["-20%", "120%"],
+                  translateX: ["-20%", "120%"],
                   scaleY: [1, 1.2, 1],
                   opacity: [0.3, 0.7, 0.3],
                 }}
@@ -10537,7 +10537,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                       : "0 0 8px rgba(59, 130, 246, 0.4)",
                 }}
                 animate={{
-                  y: ["-20px", screenSize === "mobile" ? "-60vh" : "-100vh"],
+                  y: [-20, screenSize === "mobile" ? -window.innerHeight * 0.6 : -window.innerHeight],
                   x: [
                     `0px`,
                     `${(Math.random() - 0.5) * (screenSize === "mobile" ? 100 : 200)}px`,
@@ -10574,7 +10574,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   prefersReducedMotion
                     ? {}
                     : {
-                        x: ["0px", "115vw"],
+                        x: [0, window.innerWidth * 1.15],
                         y: [
                           0,
                           Math.sin(i) * (screenSize === "mobile" ? 15 : 25),
@@ -10688,7 +10688,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   top: `${35 + i * (screenSize === "mobile" ? 18 : 12)}%`,
                 }}
                 animate={{
-                  x: ["0px", "112vw"],
+                  x: [0, window.innerWidth * 1.12],
                   y: [
                     0,
                     -Math.sin(i + 1) * (screenSize === "mobile" ? 20 : 30),
@@ -10778,7 +10778,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   top: `${50 + i * (screenSize === "mobile" ? 25 : 20)}%`,
                 }}
                 animate={{
-                  x: ["0px", "110vw"],
+                  x: [0, window.innerWidth * 1.10],
                   y: [
                     0,
                     Math.cos(i + 2) * (screenSize === "mobile" ? 25 : 35),
@@ -10883,7 +10883,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   top: `${10 + i * 5}%`,
                 }}
                 animate={{
-                  x: ["0px", "108vw"],
+                  x: [0, window.innerWidth * 1.08],
                   y: [
                     0,
                     Math.sin(i * 0.5) * (screenSize === "mobile" ? 10 : 15),
@@ -11307,7 +11307,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           <motion.div
                             className={`h-full ${lang.color} rounded-full`}
                             initial={{ width: "0%" }}
-                            animate={{ width: `${lang.percent}%` }}
+                            animate={{ width: lang.percent + "%" }}
                             transition={{ duration: 2, delay: langIndex * 0.3 }}
                           />
                         </div>
@@ -12245,8 +12245,8 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                     "0 0 10px #ffffff, 0 0 20px #3b82f6, 0 0 30px #1d4ed8",
                 }}
                 animate={{
-                  x: ["-10%", "110%"],
-                  y: ["0%", "20%"],
+                  translateX: ["-10%", "110%"],
+                  translateY: ["0%", "20%"],
                   opacity: [0, 1, 1, 0],
                   scale: [0, 1, 1, 0],
                 }}
