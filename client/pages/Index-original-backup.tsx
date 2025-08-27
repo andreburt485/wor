@@ -10500,7 +10500,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   filter: `blur(${3 + (i % 2) * (screenSize === "mobile" ? 1 : 3)}px)`,
                 }}
                 animate={{
-                  translateX: ["-20%", "120%"],
+                  x: ["-20%", "120%"],
                   scaleY: [1, 1.2, 1],
                   opacity: [0.3, 0.7, 0.3],
                 }}
@@ -11308,7 +11308,8 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           <motion.div
                             className={`h-full ${lang.color} rounded-full`}
                             initial={{ width: "0%" }}
-                            animate={{ width: lang.percent + "%" }}
+                            animate={{ scaleX: lang.percent / 100 }}
+                            style={{ transformOrigin: "left" }}
                             transition={{ duration: 2, delay: langIndex * 0.3 }}
                           />
                         </div>
@@ -11907,8 +11908,8 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           {/* Scanning effect */}
                           <motion.div
                             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                            initial={{ translateX: "-100%" }}
-                            animate={isVisible ? { translateX: "100%" } : { translateX: "-100%" }}
+                            initial={{ x: "-100%" }}
+                            animate={isVisible ? { x: "100%" } : { x: "-100%" }}
                             transition={{
                               duration: 1.5,
                               delay: 0.8 + index * 0.2,
@@ -12246,8 +12247,8 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                     "0 0 10px #ffffff, 0 0 20px #3b82f6, 0 0 30px #1d4ed8",
                 }}
                 animate={{
-                  translateX: ["-10%", "110%"],
-                  translateY: ["0%", "20%"],
+                  x: ["-10%", "110%"],
+                  y: ["0%", "20%"],
                   opacity: [0, 1, 1, 0],
                   scale: [0, 1, 1, 0],
                 }}
