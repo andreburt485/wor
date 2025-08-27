@@ -384,9 +384,12 @@ const MobileNotificationItem = React.forwardRef<
         {notification.duration && notification.duration > 0 ? (
           <motion.div
             className="absolute bottom-0 left-0 h-1 rounded-b-xl"
-            style={{ background: colors.accent }}
-            initial={{ width: "100%" }}
-            animate={{ width: "0%" }}
+            style={{
+              background: colors.accent,
+              transformOrigin: "left"
+            }}
+            initial={{ scaleX: 1 }}
+            animate={{ scaleX: 0 }}
             transition={{
               duration: notification.duration / 1000,
               ease: "linear",
