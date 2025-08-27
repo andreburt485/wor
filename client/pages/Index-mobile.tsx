@@ -595,17 +595,17 @@ export default function Index() {
             />
             <motion.nav
               initial={{
-                x: "-100%",
-                opacity: 0,
-              }}
-              animate={{
-                x: 0,
-                opacity: 1,
-              }}
-              exit={{
-                x: "-100%",
-                opacity: 0,
-              }}
+              x: -320,
+              opacity: 0,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+            }}
+            exit={{
+              x: -320,
+              opacity: 0,
+            }}
               transition={{
                 duration: 0.3,
                 ease: [0.25, 0.46, 0.45, 0.94],
@@ -818,22 +818,7 @@ export default function Index() {
                   x: [0, 3, -2, 1, -1, 0],
                   scale: [1, 1.12, 0.95, 1.08, 1.02, 1],
                   rotateZ: [0, 4, -2, 3, -1, 0],
-                  textShadow: [
-                    "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(73, 146, 255, 0.3)",
-                    "0 0 60px rgba(59, 130, 246, 1), 0 0 100px rgba(73, 146, 255, 0.8)",
-                    "0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(73, 146, 255, 0.2)",
-                    "0 0 50px rgba(59, 130, 246, 0.9), 0 0 80px rgba(73, 146, 255, 0.6)",
-                    "0 0 35px rgba(59, 130, 246, 0.7), 0 0 65px rgba(73, 146, 255, 0.4)",
-                    "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(73, 146, 255, 0.3)",
-                  ],
-                  filter: [
-                    "brightness(1) saturate(1)",
-                    "brightness(1.4) saturate(1.3)",
-                    "brightness(0.8) saturate(0.7)",
-                    "brightness(1.3) saturate(1.2)",
-                    "brightness(1.1) saturate(1.05)",
-                    "brightness(1) saturate(1)",
-                  ],
+                  opacity: [0.8, 1, 0.6, 0.9, 0.85, 0.8],
                 }}
                 transition={{
                   duration: 4,
@@ -845,11 +830,9 @@ export default function Index() {
                   scale: 1.5,
                   y: -25,
                   rotateZ: 8,
-                  textShadow:
-                    "0 0 100px rgba(59, 130, 246, 1), 0 0 150px rgba(73, 146, 255, 0.9)",
-                  filter: "brightness(1.6) saturate(1.4)",
                   transition: { duration: 0.3, ease: "easeOut" },
                 }}
+                className="inline-block relative warm-glow-text hover:brightness-150 hover:saturate-150"
               >
                 K
               </motion.span>
@@ -862,22 +845,7 @@ export default function Index() {
                   x: [0, -2, 4, -1, 2, 0],
                   scale: [1, 1.15, 0.92, 1.1, 1.03, 1],
                   rotateZ: [0, -3, 5, -2, 1, 0],
-                  textShadow: [
-                    "0 0 30px rgba(168, 85, 247, 0.6), 0 0 60px rgba(147, 51, 234, 0.3)",
-                    "0 0 70px rgba(168, 85, 247, 1), 0 0 110px rgba(147, 51, 234, 0.8)",
-                    "0 0 15px rgba(168, 85, 247, 0.3), 0 0 35px rgba(147, 51, 234, 0.1)",
-                    "0 0 55px rgba(168, 85, 247, 0.9), 0 0 90px rgba(147, 51, 234, 0.7)",
-                    "0 0 40px rgba(168, 85, 247, 0.7), 0 0 70px rgba(147, 51, 234, 0.4)",
-                    "0 0 30px rgba(168, 85, 247, 0.6), 0 0 60px rgba(147, 51, 234, 0.3)",
-                  ],
-                  filter: [
-                    "brightness(1) saturate(1) hue-rotate(0deg)",
-                    "brightness(1.5) saturate(1.4) hue-rotate(8deg)",
-                    "brightness(0.7) saturate(0.6) hue-rotate(-5deg)",
-                    "brightness(1.4) saturate(1.3) hue-rotate(5deg)",
-                    "brightness(1.2) saturate(1.1) hue-rotate(2deg)",
-                    "brightness(1) saturate(1) hue-rotate(0deg)",
-                  ],
+                  opacity: [0.8, 1, 0.6, 0.95, 0.85, 0.8],
                 }}
                 transition={{
                   duration: 5,
@@ -906,22 +874,7 @@ export default function Index() {
                   x: [0, 1, -3, 2, -1, 0],
                   scale: [1, 1.09, 0.93, 1.06, 1.01, 1],
                   rotateZ: [0, 5, -3, 4, -1, 0],
-                  textShadow: [
-                    "0 0 30px rgba(34, 197, 94, 0.6), 0 0 60px rgba(16, 185, 129, 0.3)",
-                    "0 0 65px rgba(34, 197, 94, 1), 0 0 105px rgba(16, 185, 129, 0.8)",
-                    "0 0 18px rgba(34, 197, 94, 0.4), 0 0 38px rgba(16, 185, 129, 0.2)",
-                    "0 0 52px rgba(34, 197, 94, 0.9), 0 0 85px rgba(16, 185, 129, 0.6)",
-                    "0 0 38px rgba(34, 197, 94, 0.7), 0 0 68px rgba(16, 185, 129, 0.4)",
-                    "0 0 30px rgba(34, 197, 94, 0.6), 0 0 60px rgba(16, 185, 129, 0.3)",
-                  ],
-                  filter: [
-                    "brightness(1) saturate(1) contrast(1)",
-                    "brightness(1.4) saturate(1.3) contrast(1.15)",
-                    "brightness(0.8) saturate(0.7) contrast(0.85)",
-                    "brightness(1.3) saturate(1.2) contrast(1.1)",
-                    "brightness(1.1) saturate(1.05) contrast(1.02)",
-                    "brightness(1) saturate(1) contrast(1)",
-                  ],
+                  opacity: [0.8, 1, 0.6, 0.95, 0.85, 0.8],
                 }}
                 transition={{
                   duration: 6,
@@ -1362,9 +1315,10 @@ export default function Index() {
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
+                          layout
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
                           transition={{
                             duration: 0.3,
                             ease: [0.25, 0.46, 0.45, 0.94]
@@ -1539,12 +1493,8 @@ export default function Index() {
                   animate={
                     plan.popular && plan.name === "Websites"
                       ? {
-                          boxShadow: [
-                            "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
-                            "0 0 50px rgba(168, 85, 247, 0.7), 0 0 80px rgba(59, 130, 246, 0.5)",
-                            "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
-                          ],
                           scale: [1.05, 1.08, 1.05],
+                          opacity: [0.9, 1, 0.9],
                         }
                       : {}
                   }
@@ -1635,11 +1585,8 @@ export default function Index() {
                     animate={
                       plan.name === "Websites"
                         ? {
-                            boxShadow: [
-                              "0 4px 20px rgba(168, 85, 247, 0.3)",
-                              "0 8px 30px rgba(168, 85, 247, 0.5)",
-                              "0 4px 20px rgba(168, 85, 247, 0.3)",
-                            ],
+                            opacity: [1, 0.9, 1],
+                            scale: [1, 1.01, 1],
                           }
                         : {}
                     }
@@ -1665,11 +1612,8 @@ export default function Index() {
               viewport={{ once: true }}
               whileHover={{ scale: 1.03, y: -2 }}
               animate={{
-                boxShadow: [
-                  "0 0 20px rgba(251, 146, 60, 0.3)",
-                  "0 0 30px rgba(251, 146, 60, 0.5)",
-                  "0 0 20px rgba(251, 146, 60, 0.3)",
-                ],
+                opacity: [0.9, 1, 0.9],
+                scale: [1, 1.02, 1],
               }}
               transition={{
                 boxShadow: { duration: 2, repeat: Infinity },

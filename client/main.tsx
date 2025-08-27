@@ -3,6 +3,9 @@ import App from "./App";
 import "./performance-optimization.css";
 import "./mobile-services-animation-fix.css";
 import "./services-smooth-animation.css";
+import "./simple-view-desktop.css";
+import "./simple-view-responsive.css";
+import "./framer-motion-fixes.css";
 
 // Performance monitoring
 if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {

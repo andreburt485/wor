@@ -869,7 +869,7 @@ export default function Index() {
 █████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██╔══█��╗
 █���║  ██��╚█�������█������█╔╝�����║  █��║
-��������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
+�����������������  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
               </motion.div>
@@ -3327,7 +3327,6 @@ export default function Index() {
                       opacity: 0,
                       scale: 0,
                       y: -100,
-                      filter: "blur(15px)",
                     }}
                     animate={
                       animationStep >= 2
@@ -3335,10 +3334,10 @@ export default function Index() {
                             opacity: 1,
                             scale: 1,
                             y: 0,
-                            filter: "blur(0px)",
                           }
                         : {}
                     }
+                    className={animationStep >= 2 ? "filter-blur-in" : "filter-blur-out"}
                     transition={{
                       duration: 0.8,
                       ease: "easeOut",
@@ -3822,16 +3821,15 @@ export default function Index() {
                 className="absolute inset-0 pointer-events-none overflow-hidden"
                 initial={{
                   opacity: 0,
-                  filter: "blur(10px)",
                 }}
                 animate={
                   animationStep >= 4
                     ? {
                         opacity: 1,
-                        filter: "blur(0px)",
                       }
                     : {}
                 }
+                className={animationStep >= 4 ? "filter-blur-in" : "filter-blur-out"}
                 transition={{
                   duration: 1.5,
                   ease: [0.16, 1, 0.3, 1],
@@ -6589,7 +6587,7 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                         : "0 0 10px rgba(73, 146, 255, 0.4)",
                   }}
                   animate={{
-                    y: ["-50px", "calc(100vh + 50px)"],
+                    y: [-50, window.innerHeight + 50],
                   }}
                   transition={{
                     duration:
@@ -6637,8 +6635,9 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
                     <motion.div
                       className="h-full bg-gradient-to-r from-green-400 to-blue-400 rounded-full"
-                      initial={{ width: "0%" }}
-                      animate={{ width: "99%" }}
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 0.99 }}
+                      style={{ transformOrigin: "left" }}
                       transition={{ duration: 2, delay: 1 }}
                     />
                   </div>
@@ -6649,8 +6648,9 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
                     <motion.div
                       className="h-full bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
-                      initial={{ width: "0%" }}
-                      animate={{ width: "100%" }}
+                      style={{ transformOrigin: "left" }}
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
                       transition={{ duration: 2, delay: 1.5 }}
                     />
                   </div>
@@ -6923,17 +6923,16 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
             initial={{
               opacity: 0,
               y: 80,
-              filter: "blur(10px)",
             }}
             animate={
               isVisible
                 ? {
                     opacity: 1,
                     y: 0,
-                    filter: "blur(0px)",
                   }
                 : {}
             }
+            className={`relative z-10 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto section-content pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 lg:pb-16 ${isVisible ? "filter-blur-in" : "filter-blur-out"}`}
             transition={{
               duration: 1.2,
               ease: [0.16, 1, 0.3, 1],
@@ -7898,21 +7897,44 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
         ))}
 
         {/* Crystal Resonance Waves */}
-        <motion.div
-          className="absolute inset-0 opacity-15"
-          animate={{
-            background: [
-              "radial-gradient(ellipse 60% 40% at 25% 30%, rgba(16, 185, 129, 0.3) 0%, transparent 70%)",
-              "radial-gradient(ellipse 50% 60% at 75% 60%, rgba(59, 130, 246, 0.2) 0%, transparent 60%)",
-              "radial-gradient(ellipse 70% 30% at 50% 80%, rgba(236, 72, 153, 0.25) 0%, transparent 80%)",
-            ],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
+        <div className="absolute inset-0 opacity-15">
+          <motion.div
+            className="absolute inset-0"
+            style={{
+              background: "radial-gradient(ellipse 60% 40% at 25% 30%, rgba(16, 185, 129, 0.3) 0%, transparent 70%)",
+            }}
+            animate={{ opacity: [1, 0, 0] }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute inset-0"
+            style={{
+              background: "radial-gradient(ellipse 50% 60% at 75% 60%, rgba(59, 130, 246, 0.2) 0%, transparent 60%)",
+            }}
+            animate={{ opacity: [0, 1, 0] }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute inset-0"
+            style={{
+              background: "radial-gradient(ellipse 70% 30% at 50% 80%, rgba(236, 72, 153, 0.25) 0%, transparent 80%)",
+            }}
+            animate={{ opacity: [0, 0, 1] }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
 
         {/* Wave Animations - exactly like home page */}
         <div className="absolute inset-0">
@@ -9214,17 +9236,16 @@ const ServicesSection = React.forwardRef<HTMLDivElement, SectionProps>(
             initial={{
               opacity: 0,
               y: 80,
-              filter: "blur(10px)",
             }}
             animate={
               isVisible
                 ? {
                     opacity: 1,
                     y: 0,
-                    filter: "blur(0px)",
                   }
                 : {}
             }
+            className={`relative z-10 px-4 sm:px-6 lg:px-8 text-center max-w-6xl mx-auto section-content pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 lg:pb-16 ${isVisible ? "filter-blur-in" : "filter-blur-out"}`}
             transition={{
               duration: 1.2,
               ease: [0.16, 1, 0.3, 1],
@@ -9882,8 +9903,8 @@ const PricingSection = React.forwardRef<HTMLDivElement, SectionProps>(
         <div className="relative min-h-screen py-4 sm:py-6 lg:py-8 section-container">
           <motion.div
             className="relative z-10 px-4 sm:px-6 lg:px-8 text-center max-w-7xl mx-auto section-content pt-20 sm:pt-24 lg:pt-28 pb-8 sm:pb-12"
-            initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
-            animate={isVisible ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 80 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             {/* Pricing Title */}
@@ -10476,7 +10497,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   filter: `blur(${3 + (i % 2) * (screenSize === "mobile" ? 1 : 3)}px)`,
                 }}
                 animate={{
-                  x: ["-20%", "120%"],
+                  x: [-window.innerWidth * 0.2, window.innerWidth * 1.2],
                   scaleY: [1, 1.2, 1],
                   opacity: [0.3, 0.7, 0.3],
                 }}
@@ -10514,10 +10535,10 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                       : "0 0 8px rgba(59, 130, 246, 0.4)",
                 }}
                 animate={{
-                  y: ["-20px", screenSize === "mobile" ? "-60vh" : "-100vh"],
+                  y: [-20, screenSize === "mobile" ? -window.innerHeight * 0.6 : -window.innerHeight],
                   x: [
-                    `0px`,
-                    `${(Math.random() - 0.5) * (screenSize === "mobile" ? 100 : 200)}px`,
+                    0,
+                    (Math.random() - 0.5) * (screenSize === "mobile" ? 100 : 200),
                   ],
                   scale: [1, 1.3, 0.8],
                   opacity: [0.8, 1, 0],
@@ -10551,7 +10572,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   prefersReducedMotion
                     ? {}
                     : {
-                        x: ["0px", "115vw"],
+                        x: [0, window.innerWidth * 1.15],
                         y: [
                           0,
                           Math.sin(i) * (screenSize === "mobile" ? 15 : 25),
@@ -10665,7 +10686,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   top: `${35 + i * (screenSize === "mobile" ? 18 : 12)}%`,
                 }}
                 animate={{
-                  x: ["0px", "112vw"],
+                  x: [0, window.innerWidth * 1.12],
                   y: [
                     0,
                     -Math.sin(i + 1) * (screenSize === "mobile" ? 20 : 30),
@@ -10755,7 +10776,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   top: `${50 + i * (screenSize === "mobile" ? 25 : 20)}%`,
                 }}
                 animate={{
-                  x: ["0px", "110vw"],
+                  x: [0, window.innerWidth * 1.10],
                   y: [
                     0,
                     Math.cos(i + 2) * (screenSize === "mobile" ? 25 : 35),
@@ -10860,7 +10881,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   top: `${10 + i * 5}%`,
                 }}
                 animate={{
-                  x: ["0px", "108vw"],
+                  x: [0, window.innerWidth * 1.08],
                   y: [
                     0,
                     Math.sin(i * 0.5) * (screenSize === "mobile" ? 10 : 15),
@@ -11282,11 +11303,12 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                       <div className="flex items-center space-x-1">
                         <div className="w-8 h-1 bg-white/20 rounded-full overflow-hidden">
                           <motion.div
-                            className={`h-full ${lang.color} rounded-full`}
-                            initial={{ width: "0%" }}
-                            animate={{ width: `${lang.percent}%` }}
-                            transition={{ duration: 2, delay: langIndex * 0.3 }}
-                          />
+            className={`h-full ${lang.color} rounded-full`}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: lang.percent / 100 }}
+            style={{ transformOrigin: "left" }}
+            transition={{ duration: 2, delay: langIndex * 0.3 }}
+          />
                         </div>
                         <span className="text-white/50">{lang.percent}%</span>
                       </div>
@@ -11505,8 +11527,8 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
         <div className="relative min-h-screen py-4 sm:py-6 lg:py-8 section-container">
           <motion.div
             className="relative z-10 px-3 sm:px-6 lg:px-8 text-center max-w-6xl mx-auto section-content pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-20"
-            initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
-            animate={isVisible ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 80 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             {/* Portfolio Title */}
@@ -11883,8 +11905,8 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           {/* Scanning effect */}
                           <motion.div
                             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                            initial={{ x: "-100%" }}
-                            animate={isVisible ? { x: "100%" } : { x: "-100%" }}
+                            initial={{ x: -400 }}
+                            animate={isVisible ? { x: 400 } : { x: -400 }}
                             transition={{
                               duration: 1.5,
                               delay: 0.8 + index * 0.2,
@@ -11913,11 +11935,12 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                               <div className="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
                                 <motion.div
                                   className="h-full bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"
-                                  initial={{ width: "0%" }}
+                                  style={{ transformOrigin: "left" }}
+                                  initial={{ scaleX: 0 }}
                                   animate={
                                     isVisible
-                                      ? { width: "75%" }
-                                      : { width: "0%" }
+                                      ? { scaleX: 0.75 }
+                                      : { scaleX: 0 }
                                   }
                                   transition={{
                                     duration: 2,
@@ -12222,8 +12245,8 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                     "0 0 10px #ffffff, 0 0 20px #3b82f6, 0 0 30px #1d4ed8",
                 }}
                 animate={{
-                  x: ["-10%", "110%"],
-                  y: ["0%", "20%"],
+                  x: [-window.innerWidth * 0.1, window.innerWidth * 1.1],
+                  y: [0, window.innerHeight * 0.2],
                   opacity: [0, 1, 1, 0],
                   scale: [0, 1, 1, 0],
                 }}
@@ -12429,8 +12452,9 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                 <motion.circle
                   r="4"
                   fill="rgba(63, 186, 255, 0.8)"
-                  initial={{ "--offset-distance": "0%" }}
-                  animate={{ "--offset-distance": ["0%", "100%"] }}
+                  animate={{
+                    opacity: [0, 1, 0],
+                  }}
                   transition={{
                     duration: 5,
                     delay: line.delay,
@@ -12438,8 +12462,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                     repeatDelay: 6,
                   }}
                   style={{
-                    offsetPath: `path('${line.path}')`,
-                    offsetDistance: "var(--offset-distance)",
+                    transformOrigin: "center",
                   }}
                 />
                 \n{" "}
@@ -12647,8 +12670,8 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         <div className="relative min-h-screen py-2 sm:py-4 lg:py-6 section-container">
           <motion.div
             className="relative z-10 px-3 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto section-content pt-20 sm:pt-24 lg:pt-28 pb-4"
-            initial={{ opacity: 0, y: 80, filter: "blur(10px)" }}
-            animate={isVisible ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 80 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             {/* Contact Title */}
@@ -13092,7 +13115,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           {
                             name: "Instagram",
                             url: "https://instagram.com",
-                            icon: "���",
+                            icon: "�����",
                             color: "from-pink-500 to-purple-500",
                           },
                           {

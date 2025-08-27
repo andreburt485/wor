@@ -199,14 +199,12 @@ const MobileNotificationItem = React.forwardRef<
         scale: isMobile ? 0.95 : 0.8,
         x: isMobile ? 0 : 100,
         y: isMobile ? -10 : 0,
-        filter: isMobile ? "blur(1px)" : "blur(4px)",
       }}
       animate={{
         opacity: 1,
         scale: 1,
         x: 0,
         y: 0,
-        filter: "blur(0px)",
       }}
       exit={{
         opacity: 0,
@@ -386,9 +384,12 @@ const MobileNotificationItem = React.forwardRef<
         {notification.duration && notification.duration > 0 ? (
           <motion.div
             className="absolute bottom-0 left-0 h-1 rounded-b-xl"
-            style={{ background: colors.accent }}
-            initial={{ width: "100%" }}
-            animate={{ width: "0%" }}
+            style={{
+              background: colors.accent,
+              transformOrigin: "left"
+            }}
+            initial={{ scaleX: 1 }}
+            animate={{ scaleX: 0 }}
             transition={{
               duration: notification.duration / 1000,
               ease: "linear",
