@@ -1330,17 +1330,7 @@ export default function Index() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="mobile-premium-card mobile-tilt-card mobile-motion-override mobile-touch-feedback mobile-button-enhanced rounded-xl overflow-hidden relative"
-                    whileHover={{
-                      scale: 1.06,
-                      y: -12,
-                    }}
-                    transition={{
-                      duration: 6 + (index % 3),
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: index * 0.3,
-                    }}
+                    className="mobile-premium-card mobile-motion-override rounded-xl overflow-hidden relative"
                   >
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-50`}
