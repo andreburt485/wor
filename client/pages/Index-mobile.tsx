@@ -818,22 +818,7 @@ export default function Index() {
                   x: [0, 3, -2, 1, -1, 0],
                   scale: [1, 1.12, 0.95, 1.08, 1.02, 1],
                   rotateZ: [0, 4, -2, 3, -1, 0],
-                  textShadow: [
-                    "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(73, 146, 255, 0.3)",
-                    "0 0 60px rgba(59, 130, 246, 1), 0 0 100px rgba(73, 146, 255, 0.8)",
-                    "0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(73, 146, 255, 0.2)",
-                    "0 0 50px rgba(59, 130, 246, 0.9), 0 0 80px rgba(73, 146, 255, 0.6)",
-                    "0 0 35px rgba(59, 130, 246, 0.7), 0 0 65px rgba(73, 146, 255, 0.4)",
-                    "0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(73, 146, 255, 0.3)",
-                  ],
-                  filter: [
-                    "brightness(1) saturate(1)",
-                    "brightness(1.4) saturate(1.3)",
-                    "brightness(0.8) saturate(0.7)",
-                    "brightness(1.3) saturate(1.2)",
-                    "brightness(1.1) saturate(1.05)",
-                    "brightness(1) saturate(1)",
-                  ],
+                  opacity: [0.8, 1, 0.6, 0.9, 0.85, 0.8],
                 }}
                 transition={{
                   duration: 4,
