@@ -1494,12 +1494,8 @@ export default function Index() {
                   animate={
                     plan.popular && plan.name === "Websites"
                       ? {
-                          boxShadow: [
-                            "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
-                            "0 0 50px rgba(168, 85, 247, 0.7), 0 0 80px rgba(59, 130, 246, 0.5)",
-                            "0 0 30px rgba(168, 85, 247, 0.4), 0 0 60px rgba(59, 130, 246, 0.3)",
-                          ],
                           scale: [1.05, 1.08, 1.05],
+                          opacity: [0.9, 1, 0.9],
                         }
                       : {}
                   }
