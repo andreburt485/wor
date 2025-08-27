@@ -870,7 +870,7 @@ export default function Index() {
 █████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██���══█��╗
 █���║  ██��╚█�������█������█╔╝�������║  █��║
-��������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
+����������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
               </motion.div>
@@ -6654,8 +6654,9 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
                     <motion.div
                       className="h-full bg-gradient-to-r from-green-400 to-blue-400 rounded-full"
-                      initial={{ width: "0%" }}
-                      animate={{ width: "99%" }}
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 0.99 }}
+                      style={{ transformOrigin: "left" }}
                       transition={{ duration: 2, delay: 1 }}
                     />
                   </div>
@@ -11918,8 +11919,8 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           {/* Scanning effect */}
                           <motion.div
                             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                            initial={{ x: "-100%" }}
-                            animate={isVisible ? { x: "100%" } : { x: "-100%" }}
+                            initial={{ translateX: "-100%" }}
+                            animate={isVisible ? { translateX: "100%" } : { translateX: "-100%" }}
                             transition={{
                               duration: 1.5,
                               delay: 0.8 + index * 0.2,
