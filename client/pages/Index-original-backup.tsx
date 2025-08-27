@@ -937,7 +937,7 @@ export default function Index() {
                       className="text-xs text-green-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      CPU: ���██������████���███����█���█���███████���███����█████
+                      CPU: ���██���█████���███����█���█���███████���███����█████
                       60%
                     </div>
                     <div
@@ -3822,16 +3822,15 @@ export default function Index() {
                 className="absolute inset-0 pointer-events-none overflow-hidden"
                 initial={{
                   opacity: 0,
-                  filter: "blur(10px)",
                 }}
                 animate={
                   animationStep >= 4
                     ? {
                         opacity: 1,
-                        filter: "blur(0px)",
                       }
                     : {}
                 }
+                className={animationStep >= 4 ? "filter-blur-in" : "filter-blur-out"}
                 transition={{
                   duration: 1.5,
                   ease: [0.16, 1, 0.3, 1],
@@ -6924,17 +6923,16 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
             initial={{
               opacity: 0,
               y: 80,
-              filter: "blur(10px)",
             }}
             animate={
               isVisible
                 ? {
                     opacity: 1,
                     y: 0,
-                    filter: "blur(0px)",
                   }
                 : {}
             }
+            className={`relative z-10 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto section-content pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 lg:pb-16 ${isVisible ? "filter-blur-in" : "filter-blur-out"}`}
             transition={{
               duration: 1.2,
               ease: [0.16, 1, 0.3, 1],
@@ -9238,17 +9236,16 @@ const ServicesSection = React.forwardRef<HTMLDivElement, SectionProps>(
             initial={{
               opacity: 0,
               y: 80,
-              filter: "blur(10px)",
             }}
             animate={
               isVisible
                 ? {
                     opacity: 1,
                     y: 0,
-                    filter: "blur(0px)",
                   }
                 : {}
             }
+            className={`relative z-10 px-4 sm:px-6 lg:px-8 text-center max-w-6xl mx-auto section-content pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 lg:pb-16 ${isVisible ? "filter-blur-in" : "filter-blur-out"}`}
             transition={{
               duration: 1.2,
               ease: [0.16, 1, 0.3, 1],
@@ -12375,7 +12372,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         {/* Floating Communication Icons - Contact specific */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-5">
           {[
-            { icon: "����️", delay: 0, x: 15, y: 20, size: 24, duration: 8 },
+            { icon: "���️", delay: 0, x: 15, y: 20, size: 24, duration: 8 },
             { icon: "📧", delay: 2, x: 85, y: 15, size: 20, duration: 6 },
             { icon: "��", delay: 4, x: 25, y: 80, size: 22, duration: 7 },
             { icon: "🌐", delay: 1, x: 75, y: 70, size: 26, duration: 9 },
