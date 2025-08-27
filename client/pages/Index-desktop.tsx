@@ -938,7 +938,7 @@ export default function Index() {
                       className="text-xs text-green-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      CPU: ���██���█████���███����█���█���███████���███����█████
+                      CPU: ���██���█████���███����█����█���███████���███����█████
                       60%
                     </div>
                     <div
@@ -2252,7 +2252,7 @@ export default function Index() {
                   boxShadow: "0 0 15px rgba(73, 146, 255, 0.3)",
                 }}
               >
-                ← Click dots to jump to any section
+                ��� Click dots to jump to any section
               </div>
             </div>
           )}
@@ -10586,7 +10586,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   prefersReducedMotion
                     ? {}
                     : {
-                        x: ["0px", "115vw"],
+                        x: [0, window.innerWidth * 1.15],
                         y: [
                           0,
                           Math.sin(i) * (screenSize === "mobile" ? 15 : 25),
@@ -10790,7 +10790,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   top: `${50 + i * (screenSize === "mobile" ? 25 : 20)}%`,
                 }}
                 animate={{
-                  x: ["0px", "110vw"],
+                  x: [0, window.innerWidth * 1.10],
                   y: [
                     0,
                     Math.cos(i + 2) * (screenSize === "mobile" ? 25 : 35),
@@ -10895,7 +10895,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   top: `${10 + i * 5}%`,
                 }}
                 animate={{
-                  x: ["0px", "108vw"],
+                  x: [0, window.innerWidth * 1.08],
                   y: [
                     0,
                     Math.sin(i * 0.5) * (screenSize === "mobile" ? 10 : 15),
