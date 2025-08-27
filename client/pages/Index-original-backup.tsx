@@ -11303,12 +11303,12 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                       <div className="flex items-center space-x-1">
                         <div className="w-8 h-1 bg-white/20 rounded-full overflow-hidden">
                           <motion.div
-                            className={`h-full ${lang.color} rounded-full`}
-                            initial={{ width: "0%" }}
-                            animate={{ scaleX: lang.percent / 100 }}
-                            style={{ transformOrigin: "left" }}
-                            transition={{ duration: 2, delay: langIndex * 0.3 }}
-                          />
+            className={`h-full ${lang.color} rounded-full`}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: lang.percent / 100 }}
+            style={{ transformOrigin: "left" }}
+            transition={{ duration: 2, delay: langIndex * 0.3 }}
+          />
                         </div>
                         <span className="text-white/50">{lang.percent}%</span>
                       </div>
