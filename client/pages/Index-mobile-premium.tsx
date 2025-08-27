@@ -685,10 +685,10 @@ export default function Index() {
                       {isExpanded && (
                         <motion.div
                           initial={{ maxHeight: 0, opacity: 0 }}
-                          animate={{ maxHeight: 150, opacity: 1 }}
+                          animate={{ maxHeight: 300, opacity: 1 }}
                           exit={{ maxHeight: 0, opacity: 0 }}
                           transition={{
-                            duration: 0.25,
+                            duration: 0.3,
                             ease: [0.25, 0.46, 0.45, 0.94]
                           }}
                           className="px-4 pb-4 relative z-10"
