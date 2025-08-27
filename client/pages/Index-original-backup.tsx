@@ -865,7 +865,7 @@ export default function Index() {
                   }}
                 >
                   {`��█╗  █���������� █████����� ██������������██╗
-������� �����█╔����█��╔═══���█╗█���������═�������╗
+������� �����█╔����█��╔═══���█╗█�����������═�������╗
 █████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║██╔══█��╗
 █���║  ██��╚█�������█������█╔╝�����║  █��║
@@ -944,7 +944,7 @@ export default function Index() {
                       className="text-xs text-amber-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      RAM: ������█�����██���██�����███���██����██████����█ 50%
+                      RAM: ������█�����██���██�����███���██����██��███����█ 50%
                     </div>
                     <div className="text-xs text-green-400 mt-1">
                       NETWORK: {systemStats.networkUp}GB/s ↑ |{" "}
@@ -10539,8 +10539,8 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                 animate={{
                   y: [-20, screenSize === "mobile" ? -window.innerHeight * 0.6 : -window.innerHeight],
                   x: [
-                    `0px`,
-                    `${(Math.random() - 0.5) * (screenSize === "mobile" ? 100 : 200)}px`,
+                    0,
+                    (Math.random() - 0.5) * (screenSize === "mobile" ? 100 : 200),
                   ],
                   scale: [1, 1.3, 0.8],
                   opacity: [0.8, 1, 0],
