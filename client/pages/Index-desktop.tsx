@@ -12,7 +12,7 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { RetroToggle } from "@/components/ui/retro-toggle";
+// import { RetroToggle } from "@/components/ui/retro-toggle";
 import { SimpleViewToggle } from "@/components/ui/simple-view-toggle";
 import { useTheme } from "@/hooks/use-theme";
 import { useRetroMode } from "@/hooks/use-retro-mode";
@@ -841,7 +841,7 @@ export default function Index() {
                 >
                   {/* Original Toggle Buttons */}
                   <div className="flex flex-col gap-2 sm:gap-3">
-                    <RetroToggle />
+                    {/* <RetroToggle /> */}
                   </div>
                 </div>
               </div>
@@ -938,8 +938,8 @@ export default function Index() {
                       className="text-xs text-green-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      CPU: ���██���█████���███����█����█���███████���███����█████
-                      60%
+                      CPU:
+                      ���██���█████���███����█����█���███████���███����█████ 60%
                     </div>
                     <div
                       className="text-xs text-amber-400 mb-1"
@@ -2615,7 +2615,7 @@ export default function Index() {
                           },
                         }}
                       >
-                        <RetroToggle />
+                        {/* <RetroToggle /> */}
                       </motion.div>
                       <motion.div
                         whileTap={{ scale: 0.95 }}
@@ -3354,7 +3354,9 @@ export default function Index() {
                           }
                         : {}
                     }
-                    className={animationStep >= 2 ? "filter-blur-in" : "filter-blur-out"}
+                    className={
+                      animationStep >= 2 ? "filter-blur-in" : "filter-blur-out"
+                    }
                     transition={{
                       duration: 0.8,
                       ease: "easeOut",
@@ -3846,7 +3848,9 @@ export default function Index() {
                       }
                     : {}
                 }
-                className={animationStep >= 4 ? "filter-blur-in" : "filter-blur-out"}
+                className={
+                  animationStep >= 4 ? "filter-blur-in" : "filter-blur-out"
+                }
                 transition={{
                   duration: 1.5,
                   ease: [0.16, 1, 0.3, 1],
@@ -7918,7 +7922,8 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
           <motion.div
             className="absolute inset-0"
             style={{
-              background: "radial-gradient(ellipse 60% 40% at 25% 30%, rgba(16, 185, 129, 0.3) 0%, transparent 70%)",
+              background:
+                "radial-gradient(ellipse 60% 40% at 25% 30%, rgba(16, 185, 129, 0.3) 0%, transparent 70%)",
             }}
             animate={{ opacity: [1, 0, 0] }}
             transition={{
@@ -7930,7 +7935,8 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
           <motion.div
             className="absolute inset-0"
             style={{
-              background: "radial-gradient(ellipse 50% 60% at 75% 60%, rgba(59, 130, 246, 0.2) 0%, transparent 60%)",
+              background:
+                "radial-gradient(ellipse 50% 60% at 75% 60%, rgba(59, 130, 246, 0.2) 0%, transparent 60%)",
             }}
             animate={{ opacity: [0, 1, 0] }}
             transition={{
@@ -7942,7 +7948,8 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
           <motion.div
             className="absolute inset-0"
             style={{
-              background: "radial-gradient(ellipse 70% 30% at 50% 80%, rgba(236, 72, 153, 0.25) 0%, transparent 80%)",
+              background:
+                "radial-gradient(ellipse 70% 30% at 50% 80%, rgba(236, 72, 153, 0.25) 0%, transparent 80%)",
             }}
             animate={{ opacity: [0, 0, 1] }}
             transition={{
@@ -10547,10 +10554,16 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                       : "0 0 8px rgba(59, 130, 246, 0.4)",
                 }}
                 animate={{
-                  y: [-20, screenSize === "mobile" ? -window.innerHeight * 0.6 : -window.innerHeight],
+                  y: [
+                    -20,
+                    screenSize === "mobile"
+                      ? -window.innerHeight * 0.6
+                      : -window.innerHeight,
+                  ],
                   x: [
                     0,
-                    (Math.random() - 0.5) * (screenSize === "mobile" ? 100 : 200),
+                    (Math.random() - 0.5) *
+                      (screenSize === "mobile" ? 100 : 200),
                   ],
                   scale: [1, 1.3, 0.8],
                   opacity: [0.8, 1, 0],
@@ -10788,7 +10801,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                   top: `${50 + i * (screenSize === "mobile" ? 25 : 20)}%`,
                 }}
                 animate={{
-                  x: [0, window.innerWidth * 1.10],
+                  x: [0, window.innerWidth * 1.1],
                   y: [
                     0,
                     Math.cos(i + 2) * (screenSize === "mobile" ? 25 : 35),
@@ -11950,9 +11963,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                                   style={{ transformOrigin: "left" }}
                                   initial={{ scaleX: 0 }}
                                   animate={
-                                    isVisible
-                                      ? { scaleX: 0.75 }
-                                      : { scaleX: 0 }
+                                    isVisible ? { scaleX: 0.75 } : { scaleX: 0 }
                                   }
                                   transition={{
                                     duration: 2,

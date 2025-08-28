@@ -17,7 +17,7 @@
   .mobile-version {
     display: block !important;
   }
-  
+
   .desktop-version {
     display: none !important;
   }
@@ -28,7 +28,7 @@
   .mobile-version {
     display: var(--simple-view-display) !important;
   }
-  
+
   .desktop-version {
     display: var(--desktop-view-display) !important;
   }
