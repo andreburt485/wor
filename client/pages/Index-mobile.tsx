@@ -1479,7 +1479,7 @@ export default function Index() {
                       "ring-4 ring-blue-400/70 ring-offset-2 ring-offset-slate-900 mt-6 mb-4 overflow-visible transform scale-105",
                     plan.popular &&
                       plan.name === "Websites" &&
-                      "ring-purple-400/80 shadow-2xl shadow-purple-500/25",
+                      "ring-4 ring-blue-500/90 ring-offset-4 ring-offset-slate-900 shadow-2xl shadow-blue-500/40 animate-pulse border-2 border-blue-400/50",
                     !plan.popular && "overflow-hidden p-6",
                     plan.popular && "p-8",
                   )}
@@ -1494,8 +1494,13 @@ export default function Index() {
                   animate={
                     plan.popular && plan.name === "Websites"
                       ? {
-                          scale: [1.05, 1.08, 1.05],
-                          opacity: [0.9, 1, 0.9],
+                          scale: [1.05, 1.1, 1.05],
+                          y: [0, -5, 0],
+                          boxShadow: [
+                            "0 25px 50px -12px rgba(59, 130, 246, 0.4)",
+                            "0 25px 50px -12px rgba(59, 130, 246, 0.6)",
+                            "0 25px 50px -12px rgba(59, 130, 246, 0.4)"
+                          ],
                         }
                       : {}
                   }
@@ -1517,7 +1522,7 @@ export default function Index() {
                     className={cn(
                       "absolute inset-0 rounded-xl",
                       plan.name === "Websites"
-                        ? "bg-gradient-to-br from-purple-500/30 via-blue-500/25 to-indigo-500/30 opacity-50"
+                        ? "bg-gradient-to-br from-blue-500/40 via-cyan-400/30 to-blue-600/35 opacity-60"
                         : `bg-gradient-to-br ${plan.gradient} opacity-40`,
                     )}
                   />
@@ -1569,7 +1574,7 @@ export default function Index() {
                     className={cn(
                       "w-full py-4 rounded-xl font-semibold transition-all duration-300 relative z-10 overflow-hidden",
                       plan.popular && plan.name === "Websites"
-                        ? "bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg"
+                        ? "bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white font-bold text-lg shadow-xl shadow-blue-500/30 transform hover:scale-105 transition-all duration-300"
                         : plan.popular
                           ? "mobile-glow-button text-primary-foreground"
                           : "mobile-premium-card mobile-motion-override border border-border hover:bg-accent",
