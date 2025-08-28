@@ -1499,7 +1499,7 @@ export default function Index() {
                           boxShadow: [
                             "0 25px 50px -12px rgba(59, 130, 246, 0.4)",
                             "0 25px 50px -12px rgba(59, 130, 246, 0.6)",
-                            "0 25px 50px -12px rgba(59, 130, 246, 0.4)"
+                            "0 25px 50px -12px rgba(59, 130, 246, 0.4)",
                           ],
                         }
                       : {}
