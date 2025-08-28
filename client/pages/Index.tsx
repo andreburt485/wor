@@ -11,12 +11,12 @@ export default function Index() {
   useEffect(() => {
     // Update CSS custom property when simple view changes
     document.documentElement.style.setProperty(
-      '--simple-view-display',
-      isSimpleView ? 'block' : 'none'
+      "--simple-view-display",
+      isSimpleView ? "block" : "none",
     );
     document.documentElement.style.setProperty(
-      '--desktop-view-display',
-      isSimpleView ? 'none' : 'block'
+      "--desktop-view-display",
+      isSimpleView ? "none" : "block",
     );
   }, [isSimpleView]);
 
