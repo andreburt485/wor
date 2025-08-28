@@ -1479,7 +1479,7 @@ export default function Index() {
                       "ring-4 ring-blue-400/70 ring-offset-2 ring-offset-slate-900 mt-6 mb-4 overflow-visible transform scale-105",
                     plan.popular &&
                       plan.name === "Websites" &&
-                      "ring-4 ring-blue-500/90 ring-offset-4 ring-offset-slate-900 shadow-2xl shadow-blue-500/40 animate-pulse border-2 border-blue-400/50",
+                      "ring-4 ring-blue-500/90 ring-offset-4 ring-offset-slate-900 shadow-2xl shadow-blue-500/40 border-2 border-blue-400/50",
                     !plan.popular && "overflow-hidden p-6",
                     plan.popular && "p-8",
                   )}
