@@ -1024,11 +1024,11 @@ export default function Index() {
                     className="warm-glow-text font-semibold"
                     style={{
                       background:
-                        "linear-gradient(135deg, #60a5fa 0%, #34d399 50%, #a78bfa 100%)",
+                        "linear-gradient(90deg, #3B82F6 0%, #06B6D4 100%)",
                       backgroundClip: "text",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
-                      textShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
+                      textShadow: "0 0 15px rgba(59, 130, 246, 0.4)",
                     }}
                   >
                     View Portfolio
