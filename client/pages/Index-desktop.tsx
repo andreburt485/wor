@@ -11305,21 +11305,21 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {[
               {
-                icon: "��",
+                icon: "🏆",
                 label: "Award",
                 x: 8,
                 y: 15,
                 color: "from-yellow-500 to-orange-500",
               },
               {
-                icon: "��",
+                icon: "⭐",
                 label: "Featured",
                 x: 88,
                 y: 18,
                 color: "from-blue-500 to-purple-500",
               },
               {
-                icon: "���������",
+                icon: "🚀",
                 label: "Launch",
                 x: 12,
                 y: 85,
@@ -12340,19 +12340,19 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         {/* Floating Communication Icons - Contact specific */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-5">
           {[
-            { icon: "���️", delay: 0, x: 15, y: 20, size: 24, duration: 8 },
+            { icon: "✉️", delay: 0, x: 15, y: 20, size: 24, duration: 8 },
             { icon: "📧", delay: 2, x: 85, y: 15, size: 20, duration: 6 },
-            { icon: "��", delay: 4, x: 25, y: 80, size: 22, duration: 7 },
+            { icon: "💬", delay: 4, x: 25, y: 80, size: 22, duration: 7 },
             { icon: "🌐", delay: 1, x: 75, y: 70, size: 26, duration: 9 },
             {
-              icon: "��������������",
+              icon: "📱",
               delay: 3,
               x: 10,
               y: 60,
               size: 18,
               duration: 8,
             },
-            { icon: "����", delay: 5, x: 90, y: 40, size: 20, duration: 7 },
+            { icon: "📞", delay: 5, x: 90, y: 40, size: 20, duration: 7 },
           ].map((item, i) => (
             <motion.div
               key={`comm-icon-${i}`}
@@ -12441,10 +12441,10 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         {/* Floating Contact Cards */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {[
-            { type: "email", x: 15, y: 35, icon: "��️" },
+            { type: "email", x: 15, y: 35, icon: "✉️" },
             { type: "call", x: 75, y: 25, icon: "📞" },
-            { type: "chat", x: 25, y: 70, icon: "���" },
-            { type: "meet", x: 80, y: 65, icon: "����" },
+            { type: "chat", x: 25, y: 70, icon: "💬" },
+            { type: "meet", x: 80, y: 65, icon: "📹" },
           ].map((card, i) => (
             <motion.div
               key={`contact-card-${i}`}
@@ -13082,7 +13082,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           {
                             name: "Instagram",
                             url: "https://instagram.com",
-                            icon: "���",
+                            icon: "📷",
                             color: "from-pink-500 to-purple-500",
                           },
                           {
@@ -13243,7 +13243,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                         name: "Telegram",
                         subtitle: "Quick messaging",
                         url: "https://telegram.org",
-                        icon: "✈����",
+                        icon: "✈️",
                         color: "from-blue-500 via-cyan-500 to-teal-500",
                         shadowColor: "rgba(34, 211, 238, 0.3)",
                       },
@@ -13251,7 +13251,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                         name: "Email",
                         subtitle: "contact@kor.dev",
                         url: "mailto:contact@kor.dev",
-                        icon: "✉���",
+                        icon: "✉️",
                         color: "from-emerald-500 via-green-500 to-lime-500",
                         shadowColor: "rgba(16, 185, 129, 0.3)",
                       },
