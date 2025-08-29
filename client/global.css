@@ -17,6 +17,9 @@
 section h1, section h2, .section-title { box-shadow: none !important; filter: none !important; background: none !important; }
 .mobile-premium-text { filter: none !important; box-shadow: none !important; background: none !important; text-shadow: 0 0 15px rgba(73, 146, 255, 0.6), 0 0 25px rgba(63, 186, 255, 0.4), 0 0 35px rgba(57, 135, 227, 0.3) !important; -webkit-text-fill-color: currentColor !important; }
 
+/* Remove box-like background glow behind Services subtitle */
+[data-section="services"] .absolute.inset-0.blur-3xl.opacity-30.animate-pulse-glow { display: none !important; }
+
 /* Global horizontal scrollbar prevention */
 html,
 body {
