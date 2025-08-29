@@ -867,7 +867,7 @@ export default function Index() {
                 >
                   {`��█╗  █���������� █████������� ██������������██╗
 ������� �����█╔�����█��╔═══���█╗█���������═�������╗
-█████��╝ ██║   ██║███�������█╔���
+█████��╝ ██║   ██║███���������█╔���
 █��╔�����█╗ █���║   ██║█������══█��╗
 █���║  ██��╚█�������█���������╔╝�������║  █��║
 ����������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
@@ -6899,40 +6899,6 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
           </svg>
         </div>
 
-        {/* Breathing Orbs */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={`breath-orb-${i}`}
-              className="absolute rounded-full"
-              style={{
-                left: `${15 + ((i * 80) % 70)}%`,
-                top: `${20 + ((i * 60) % 60)}%`,
-                width: `${20 + (i % 3) * 15}px`,
-                height: `${20 + (i % 3) * 15}px`,
-                background: `radial-gradient(circle, rgba(${73 + i * 10}, ${146 + i * 5}, 255, 0.3) 0%, transparent 70%)`,
-                animation: `breath ${6 + (i % 4)}s ease-in-out infinite ${i * 0.4}s`,
-                filter: `blur(${2 + (i % 3)}px)`,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Dynamic Background Waves */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-20"
-            style={{
-              background: `
-                radial-gradient(circle at 20% 80%, rgba(73, 146, 255, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(63, 186, 255, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(57, 135, 227, 0.1) 0%, transparent 50%)
-              `,
-              animation: "subtle-glow 12s ease-in-out infinite alternate",
-            }}
-          />
-        </div>
-
         {/* Main Content Container */}
         <div className="relative min-h-screen py-4 sm:py-6 lg:py-8 section-container">
           {/* Text Content */}
@@ -11354,7 +11320,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                 color: "from-yellow-500 to-orange-500",
               },
               {
-                icon: "���",
+                icon: "��",
                 label: "Featured",
                 x: 88,
                 y: 18,
