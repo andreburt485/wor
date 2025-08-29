@@ -1126,7 +1126,7 @@ export default function Index() {
               viewport={{ once: true }}
             >
               <div>COPYRIGHT (C) 2024 KOR SYSTEMS - ALL RIGHTS RESERVED</div>
-              <div>contact@kor.dev �� <a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a></div>
+              <div>contact@kor.dev • <a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a></div>
             </motion.div>
           </div>
         </footer>
