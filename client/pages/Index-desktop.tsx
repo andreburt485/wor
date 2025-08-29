@@ -6933,9 +6933,6 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
           />
         </div>
 
-        {/* Aurora-like Moving Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden"></div>
-
         {/* Main Content Container */}
         <div className="relative min-h-screen py-4 sm:py-6 lg:py-8 section-container">
           {/* Text Content */}
@@ -11357,7 +11354,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                 color: "from-yellow-500 to-orange-500",
               },
               {
-                icon: "��",
+                icon: "���",
                 label: "Featured",
                 x: 88,
                 y: 18,
