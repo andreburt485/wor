@@ -9002,64 +9002,6 @@ const ServicesSection = React.forwardRef<HTMLDivElement, SectionProps>(
           </div>
         )}
 
-        {/* Technology Stack Visualization */}
-        <div className="absolute top-10 left-4 sm:left-6 lg:left-10 hidden sm:block pointer-events-none">
-          <motion.div
-            className="relative"
-            animate={{
-              rotateY: [0, 10, 0, -10, 0],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-            }}
-          >
-            <div
-              className="w-40 h-32 rounded-xl backdrop-blur-lg border opacity-70"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(30, 30, 50, 0.8), rgba(10, 10, 30, 0.8))",
-                border: "2px solid rgba(73, 146, 255, 0.3)",
-                boxShadow: "0 0 40px rgba(73, 146, 255, 0.3)",
-              }}
-            >
-              <div className="p-3">
-                <div className="text-xs text-cyan-400 font-mono mb-2">
-                  TECH STACK
-                </div>
-                <div className="grid grid-cols-3 gap-1">
-                  {[
-                    { name: "React", color: "bg-blue-400" },
-                    { name: "Node", color: "bg-green-400" },
-                    { name: "AI", color: "bg-purple-400" },
-                    { name: "Cloud", color: "bg-cyan-400" },
-                    { name: "Mobile", color: "bg-pink-400" },
-                    { name: "Design", color: "bg-yellow-400" },
-                  ].map((tech, techIndex) => (
-                    <motion.div
-                      key={tech.name}
-                      className={`w-6 h-6 ${tech.color} rounded-md flex items-center justify-center text-white text-xs font-bold`}
-                      animate={{
-                        scale: [1, 1.1, 1],
-                        rotateZ: [0, 5, 0],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        delay: techIndex * 0.2,
-                      }}
-                      style={{
-                        boxShadow: "0 0 10px rgba(73, 146, 255, 0.3)",
-                      }}
-                    >
-                      {tech.name.slice(0, 2)}
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
 
         {/* Floating Digital Elements */}
         <div
@@ -12472,33 +12414,6 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
           ))}
         </div>
 
-        {/* Live Status Indicators */}
-        <div className="absolute top-10 right-10 pointer-events-none">
-          <div className="flex flex-col space-y-2 opacity-40">
-            {[
-              { label: "Online", color: "bg-green-400" },
-              { label: "Response: &lt; 24h", color: "bg-blue-400" },
-              { label: "Available", color: "bg-purple-400" },
-            ].map((status, i) => (
-              <motion.div
-                key={`status-${i}`}
-                className="flex items-center space-x-2 text-xs text-white"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: [0.4, 0.8, 0.4], x: 0 }}
-                transition={{
-                  duration: 3,
-                  delay: i * 0.5,
-                  repeat: Infinity,
-                }}
-              >
-                <div
-                  className={`w-2 h-2 rounded-full ${status.color} animate-pulse`}
-                />
-                <span>{status.label}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
 
         {/* Colorful Floating Particles - Mobile Optimized */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
