@@ -1,10 +1,32 @@
-/* Mobile Only View - Desktop Version Removed */
+/* Normal Responsive Behavior - NO Simple View Toggle */
 
-/* Always show mobile version on all devices */
+/* Desktop version by default */
 .mobile-version {
-  display: block !important;
+  display: none;
 }
 
 .desktop-version {
-  display: none !important;
+  display: block;
+}
+
+/* Mobile devices (≤768px) - show mobile version */
+@media (max-width: 768px) {
+  .mobile-version {
+    display: block !important;
+  }
+
+  .desktop-version {
+    display: none !important;
+  }
+}
+
+/* Desktop/tablet devices (>768px) - show desktop version */
+@media (min-width: 769px) {
+  .mobile-version {
+    display: none !important;
+  }
+
+  .desktop-version {
+    display: block !important;
+  }
 }
