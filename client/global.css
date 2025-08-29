@@ -10,6 +10,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hide aurora curtain ovals on desktop */
+.aurora-curtain-1, .aurora-curtain-2, .aurora-curtain-3 { display: none !important; }
+
 /* Global horizontal scrollbar prevention */
 html,
 body {
