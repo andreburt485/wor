@@ -870,7 +870,7 @@ export default function Index() {
 █████��╝ ██║   ██║███���������█╔���
 █��╔�����█╗ █���║   ██║█������══█��╗
 █���║  ██��╚█�������█���������╔╝�������║  █��║
-����������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
+����������������╝  ╚═╝ ���������������════╝ ╚������╝  ����═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
               </motion.div>
@@ -1722,6 +1722,17 @@ export default function Index() {
 
         {/* Custom Scrollbar Styling with Desktop Optimizations */}
         <style>{`
+        /* Remove header text outlines/borders on desktop non-home sections */
+        @media (min-width: 1025px) {
+          div[data-section]:not([data-section="home"]) h1,
+          div[data-section]:not([data-section="home"]) h2,
+          div[data-section]:not([data-section="home"]) h3,
+          div[data-section]:not([data-section="home"]) .warm-glow-text {
+            outline: none !important;
+            border: none !important;
+          }
+        }
+
         /* Custom scrollbar for sections with content overflow */
         div[data-section]:not([data-section="home"]) {
           scrollbar-width: thin;
