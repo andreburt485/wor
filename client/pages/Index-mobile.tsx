@@ -209,11 +209,9 @@ export default function Index() {
   };
 
   const floatingVariants = {
-    hidden: { opacity: 0, y: 50, rotate: 0 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
-      rotate: 360,
       transition: {
         duration: prefersReducedMotion ? 0.01 : 1.2,
         ease: "easeOut",
@@ -717,9 +715,12 @@ export default function Index() {
           />
 
           <motion.div
-            variants={premiumVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: prefersReducedMotion ? 0.01 : 0.6,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
             className="relative z-10 text-center max-w-md mx-auto mt-8"
           >
             {/* Enhanced floating badge with lively animations */}
