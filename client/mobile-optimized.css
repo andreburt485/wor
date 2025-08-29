@@ -1,13 +1,35 @@
 /* Mobile-Optimized KOR Digital Styles */
 /* Preserves dark theme while optimizing for mobile performance */
 
-/* Always show mobile version - desktop version removed */
+/* Show appropriate version based on screen size - NO simple view toggle */
 .mobile-version {
-  display: block !important;
+  display: none;
 }
 
 .desktop-version {
-  display: none !important;
+  display: block;
+}
+
+/* Mobile devices (≤768px) - show mobile version only */
+@media (max-width: 768px) {
+  .mobile-version {
+    display: block !important;
+  }
+
+  .desktop-version {
+    display: none !important;
+  }
+}
+
+/* Desktop/tablet devices (>768px) - show desktop version only */
+@media (min-width: 769px) {
+  .mobile-version {
+    display: none !important;
+  }
+
+  .desktop-version {
+    display: block !important;
+  }
 }
 
 /* Core mobile optimizations */
