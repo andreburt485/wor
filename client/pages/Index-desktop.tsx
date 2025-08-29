@@ -939,7 +939,7 @@ export default function Index() {
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
                       CPU:
-                      ���██���█████���███����█����█���███████���███����█████ 60%
+                      ���██���██���██���███����█����█���███████���███����█████ 60%
                     </div>
                     <div
                       className="text-xs text-amber-400 mb-1"
@@ -1946,9 +1946,9 @@ export default function Index() {
           overflow: visible !important;
         }
 
-        /* Clip all absolute positioned children to prevent overflow */
+        /* Remove clipping to avoid rectangular glow edges */
         [data-section="services"] > * {
-          clip-path: inset(0) !important;
+          clip-path: none !important;
         }
       `}</style>
       </div>
@@ -7027,12 +7027,7 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                     className={`relative inline-block ${
                       theme === "light" ? "text-gray-900" : "text-white"
                     }`}
-                    style={{
-                      filter:
-                        theme === "light"
-                          ? `drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 30px rgba(147, 51, 234, 0.4))`
-                          : `drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))`,
-                    }}
+                    style={{}}
                   >
                     <span className="warm-glow-text animate-warm-glow-pulse text-smooth glow-120hz">
                       {"Crafting Digital Excellence"
@@ -8120,6 +8115,7 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               className={`text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight font-poppins mb-8 ${
                 theme === "light" ? "text-gray-900" : "text-white"
               } warm-glow-text animate-warm-glow-pulse`}
+              style={{ boxShadow: "none", outline: "none" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -9372,12 +9368,7 @@ const ServicesSection = React.forwardRef<HTMLDivElement, SectionProps>(
                     className={`relative inline-block ${
                       theme === "light" ? "text-gray-900" : "text-white"
                     }`}
-                    style={{
-                      filter:
-                        theme === "light"
-                          ? `drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 30px rgba(147, 51, 234, 0.4))`
-                          : `drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))`,
-                    }}
+                    style={{}}
                   >
                     <span className="warm-glow-text animate-warm-glow-pulse text-smooth glow-120hz">
                       {"Digital Innovation Solutions"
@@ -10004,12 +9995,7 @@ const PricingSection = React.forwardRef<HTMLDivElement, SectionProps>(
                 >
                   <span
                     className={`relative inline-block ${theme === "light" ? "text-gray-900" : "text-white"}`}
-                    style={{
-                      filter:
-                        theme === "light"
-                          ? `drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 30px rgba(147, 51, 234, 0.4))`
-                          : `drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(147, 51, 234, 0.5))`,
-                    }}
+                    style={{}}
                   >
                     <span className="warm-glow-text animate-warm-glow-pulse text-smooth glow-120hz">
                       {"Choose Your Perfect Plan".split("").map((letter, i) => (
@@ -11646,12 +11632,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                 <div className="font-poppins text-lg sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold relative z-10">
                   <span
                     className={`relative inline-block ${theme === "light" ? "text-gray-900" : "text-white"}`}
-                    style={{
-                      filter:
-                        theme === "light"
-                          ? `drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 30px rgba(147, 51, 234, 0.4))`
-                          : `drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))`,
-                    }}
+                    style={{}}
                   >
                     <span className="warm-glow-text animate-warm-glow-pulse text-smooth glow-120hz">
                       {"Our Featured Work".split("").map((letter, i) => (
