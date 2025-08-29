@@ -867,9 +867,9 @@ export default function Index() {
                 >
                   {`��█╗  █���������� █████������� ██������������██╗
 ������� �����█╔�����█��╔═══���█╗█���������═�������╗
-█████��╝ ██║   ██║███�������█╔���
+█████��╝ ██║   ██║███���������█╔���
 █��╔�����█╗ █���║   ██║█������══█��╗
-█���║  ██��╚█�������█������█╔╝�������║  █��║
+█���║  ██��╚█�������█���������╔╝�������║  █��║
 ����������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
@@ -6899,43 +6899,6 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
           </svg>
         </div>
 
-        {/* Breathing Orbs */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={`breath-orb-${i}`}
-              className="absolute rounded-full"
-              style={{
-                left: `${15 + ((i * 80) % 70)}%`,
-                top: `${20 + ((i * 60) % 60)}%`,
-                width: `${20 + (i % 3) * 15}px`,
-                height: `${20 + (i % 3) * 15}px`,
-                background: `radial-gradient(circle, rgba(${73 + i * 10}, ${146 + i * 5}, 255, 0.3) 0%, transparent 70%)`,
-                animation: `breath ${6 + (i % 4)}s ease-in-out infinite ${i * 0.4}s`,
-                filter: `blur(${2 + (i % 3)}px)`,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Dynamic Background Waves */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-20"
-            style={{
-              background: `
-                radial-gradient(circle at 20% 80%, rgba(73, 146, 255, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(63, 186, 255, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(57, 135, 227, 0.1) 0%, transparent 50%)
-              `,
-              animation: "subtle-glow 12s ease-in-out infinite alternate",
-            }}
-          />
-        </div>
-
-        {/* Aurora-like Moving Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden"></div>
-
         {/* Main Content Container */}
         <div className="relative min-h-screen py-4 sm:py-6 lg:py-8 section-container">
           {/* Text Content */}
@@ -8157,12 +8120,6 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               className={`text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight font-poppins mb-8 ${
                 theme === "light" ? "text-gray-900" : "text-white"
               } warm-glow-text animate-warm-glow-pulse`}
-              style={{
-                filter:
-                  "drop-shadow(0px 4px 12px rgba(16, 185, 129, 0.4)) drop-shadow(0px 2px 8px rgba(59, 130, 246, 0.3)) drop-shadow(0px 1px 4px rgba(236, 72, 153, 0.2))",
-                textShadow:
-                  "0 0 20px rgba(16, 185, 129, 0.5), 0 0 40px rgba(59, 130, 246, 0.3), 0 0 60px rgba(236, 72, 153, 0.2)",
-              }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.4 }}

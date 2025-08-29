@@ -10,11 +10,19 @@ import "./framer-motion-fixes.css";
 // Performance monitoring
 if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
   // Simple performance logging for development
-  window.addEventListener('load', () => {
-    const perfData = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-    console.log(`Page Load Time: ${perfData.loadEventEnd - perfData.fetchStart}ms`);
-    console.log(`DOM Content Loaded: ${perfData.domContentLoadedEventEnd - perfData.fetchStart}ms`);
-    console.log(`First Paint: ${performance.getEntriesByType('paint').find(p => p.name === 'first-paint')?.startTime}ms`);
+  window.addEventListener("load", () => {
+    const perfData = performance.getEntriesByType(
+      "navigation",
+    )[0] as PerformanceNavigationTiming;
+    console.log(
+      `Page Load Time: ${perfData.loadEventEnd - perfData.fetchStart}ms`,
+    );
+    console.log(
+      `DOM Content Loaded: ${perfData.domContentLoadedEventEnd - perfData.fetchStart}ms`,
+    );
+    console.log(
+      `First Paint: ${performance.getEntriesByType("paint").find((p) => p.name === "first-paint")?.startTime}ms`,
+    );
   });
 }
 

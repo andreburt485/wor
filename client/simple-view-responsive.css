@@ -1,18 +1,15 @@
-/* Simple View Toggle Responsive Behavior */
+/* Normal Responsive Behavior - NO Simple View Toggle */
 
-/* Initialize CSS custom properties */
-:root {
-  --simple-view-display: none;
-  --desktop-view-display: block;
-}
-
-/* Hide both by default */
-.mobile-version,
-.desktop-version {
+/* Desktop version by default */
+.mobile-version {
   display: none;
 }
 
-/* Show mobile version ONLY on mobile devices (≤768px) */
+.desktop-version {
+  display: block;
+}
+
+/* Mobile devices (≤768px) - show mobile version */
 @media (max-width: 768px) {
   .mobile-version {
     display: block !important;
@@ -23,13 +20,13 @@
   }
 }
 
-/* On desktop/tablet (>768px), show version based on simple view toggle */
+/* Desktop/tablet devices (>768px) - show desktop version */
 @media (min-width: 769px) {
   .mobile-version {
-    display: var(--simple-view-display) !important;
+    display: none !important;
   }
 
   .desktop-version {
-    display: var(--desktop-view-display) !important;
+    display: block !important;
   }
 }

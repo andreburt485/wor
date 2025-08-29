@@ -1,7 +1,7 @@
 /* Mobile-Optimized KOR Digital Styles */
 /* Preserves dark theme while optimizing for mobile performance */
 
-/* Responsive behavior - ensure mobile styles only apply on mobile devices */
+/* Show appropriate version based on screen size - NO simple view toggle */
 .mobile-version {
   display: none;
 }
@@ -10,7 +10,7 @@
   display: block;
 }
 
-/* Show mobile version only on mobile devices (≤768px) */
+/* Mobile devices (≤768px) - show mobile version only */
 @media (max-width: 768px) {
   .mobile-version {
     display: block !important;
@@ -21,7 +21,7 @@
   }
 }
 
-/* Ensure desktop version shows on tablets and larger */
+/* Desktop/tablet devices (>768px) - show desktop version only */
 @media (min-width: 769px) {
   .mobile-version {
     display: none !important;
