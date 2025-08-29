@@ -187,7 +187,7 @@ export default function Index() {
       setTimeout(() => {
         showInfo(
           "💻 Enhanced Desktop Experience Available!",
-          "��� Experience our site in full glory with premium 3D animations and enhanced layouts. Tap to open in new tab.",
+          "Experience our site in full glory with premium 3D animations and enhanced layouts. Tap to open in new tab.",
           8000, // Show for 8 seconds
         );
       }, 4000); // Show after 4 seconds
