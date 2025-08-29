@@ -815,7 +815,7 @@ export default function Index() {
                         delay: i * 0.1,
                       }}
                     >
-                      ����•••
+                      ...
                     </motion.span>
                   ))}
                   <span className="text-green-400 font-mono text-sm">]</span>
@@ -865,12 +865,7 @@ export default function Index() {
                     fontSize: "1.2rem",
                   }}
                 >
-                  {`��█╗  █���������� █████������� ██������������██╗
-������� �����█╔�����█��╔═══���█╗█���������═�������╗
-█████��╝ ██║   ██║███���������█╔���
-█��╔�����█╗ █���║   ██║█������══█��╗
-█���║  ██��╚█�������█���������╔╝�������║  █��║
-����������������╝  ╚═╝ ���������������════╝ ╚������╝  ����═╝`}
+                  {`KOR`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
               </motion.div>
@@ -939,16 +934,16 @@ export default function Index() {
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
                       CPU:
-                      ���██���██���██���███����█����█���███████���███����█████ 60%
+                      ██████████░░ 60%
                     </div>
                     <div
                       className="text-xs text-amber-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      RAM: ������█�����██���██�����███���██����██████����█ 50%
+                      RAM: ████████░░ 50%
                     </div>
                     <div className="text-xs text-green-400 mt-1">
-                      NETWORK: {systemStats.networkUp}GB/s �� |{" "}
+                      NETWORK: {systemStats.networkUp}GB/s ↑ |{" "}
                       {systemStats.networkDown}MB/s ↓
                     </div>
                   </div>
@@ -1017,13 +1012,13 @@ export default function Index() {
 
                 <div className="continue-prompt">
                   <span className="text-cyan-400">[SYSTEM READY]</span>
-                  <span className="text-green-400 ml-4">��◆�����◄�����◆◆◆</span>
+                  <span className="text-green-400 ml-4">◆◆◆</span>
                 </div>
 
                 <div className="loading-indicators">
-                  <span>█��▒��</span>
+                  <span>█▒░</span>
                   <span className="text-amber-400">PROCESSING...</span>
-                  <span>░▒���█</span>
+                  <span>░▒█</span>
                 </div>
               </motion.div>
 
@@ -1242,7 +1237,7 @@ export default function Index() {
           }
 
           .ascii-logo::after {
-            content: "��";
+            content: "█";
             color: #00ff41;
             animation: terminal-cursor 1s infinite;
             margin-left: 8px;
@@ -2244,7 +2239,7 @@ export default function Index() {
                   onClick={() => setShowNavigationHints(false)}
                   className="ml-2 text-xs opacity-60 hover:opacity-100"
                 >
-                  ��
+                  ×
                 </button>
               </div>
             </div>
@@ -2263,7 +2258,7 @@ export default function Index() {
                   boxShadow: "0 0 15px rgba(73, 146, 255, 0.3)",
                 }}
               >
-                ��� Click dots to jump to any section
+                ● Click dots to jump to any section
               </div>
             </div>
           )}
@@ -8110,7 +8105,7 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               ease: "easeInOut",
             }}
           >
-            excellence �� delivery
+            excellence → delivery
           </motion.div>
         </div>
 
