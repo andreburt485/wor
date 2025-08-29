@@ -1946,9 +1946,9 @@ export default function Index() {
           overflow: visible !important;
         }
 
-        /* Clip all absolute positioned children to prevent overflow */
+        /* Remove clipping to avoid rectangular glow edges */
         [data-section="services"] > * {
-          clip-path: inset(0) !important;
+          clip-path: none !important;
         }
       `}</style>
       </div>
