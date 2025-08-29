@@ -1,5 +1,4 @@
-import { Smartphone, Monitor } from "lucide-react";
-import { useSimpleView } from "@/hooks/use-simple-view";
+import { Smartphone } from "lucide-react";
 import { useRetroMode } from "@/hooks/use-retro-mode";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,7 +9,6 @@ import {
 } from "@/components/ui/tooltip";
 
 export function SimpleViewToggle() {
-  const { isSimpleView, toggleSimpleView } = useSimpleView();
   const { mode } = useRetroMode();
 
   return (
@@ -21,36 +19,17 @@ export function SimpleViewToggle() {
             variant="ghost"
             size="icon"
             onClick={() => {
-              if (mode === "retro") return; // Disable in retro mode
-              console.log(
-                "Simple view toggle clicked! Current state:",
-                isSimpleView,
-              );
-              toggleSimpleView();
-              console.log("After toggle, new state should be:", !isSimpleView);
+              // Simple view toggle is disabled - only mobile version available
+              console.log("Simple view toggle is disabled - mobile version only");
             }}
-            className={`h-10 w-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 transition-all duration-300 ${
-              mode === "retro"
-                ? "opacity-50 cursor-not-allowed"
-                : "hover:bg-white/20 hover:scale-110 cursor-pointer"
-            } ${isSimpleView ? "bg-cyan-500/20 border-cyan-400/40" : ""}`}
+            className="h-10 w-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 transition-all duration-300 opacity-50 cursor-not-allowed bg-cyan-500/20 border-cyan-400/40"
           >
-            {isSimpleView ? (
-              <Smartphone className="h-5 w-5 text-cyan-400 transition-all" />
-            ) : (
-              <Monitor className="h-5 w-5 text-white/80 transition-all" />
-            )}
-            <span className="sr-only">Toggle view mode</span>
+            <Smartphone className="h-5 w-5 text-cyan-400 transition-all" />
+            <span className="sr-only">Mobile view only</span>
           </Button>
         </TooltipTrigger>
         <TooltipContent side="bottom">
-          <span>
-            {mode === "retro"
-              ? "View toggle disabled in retro mode"
-              : isSimpleView
-                ? "Switch to desktop view"
-                : "Switch to simple view"}
-          </span>
+          <span>Mobile version only - desktop view removed</span>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
