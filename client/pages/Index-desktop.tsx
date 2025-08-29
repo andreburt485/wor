@@ -939,7 +939,7 @@ export default function Index() {
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
                       CPU:
-                      ���██���█████���███����█����█���███████���███����█████ 60%
+                      ���██���██���██���███����█����█���███████���███����█████ 60%
                     </div>
                     <div
                       className="text-xs text-amber-400 mb-1"
@@ -8120,6 +8120,7 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               className={`text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight font-poppins mb-8 ${
                 theme === "light" ? "text-gray-900" : "text-white"
               } warm-glow-text animate-warm-glow-pulse`}
+              style={{ boxShadow: "none", outline: "none" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.4 }}
