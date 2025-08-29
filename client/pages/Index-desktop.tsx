@@ -869,7 +869,7 @@ export default function Index() {
 ������� �����█╔�����█��╔═══���█╗█���������═�������╗
 █████��╝ ██║   ██║███�������█╔���
 █��╔�����█╗ █���║   ██║█������══█��╗
-█���║  ██��╚█�������█������█╔╝�������║  █��║
+█���║  ██��╚█�������█���������╔╝�������║  █��║
 ����������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
@@ -8157,12 +8157,6 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               className={`text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight font-poppins mb-8 ${
                 theme === "light" ? "text-gray-900" : "text-white"
               } warm-glow-text animate-warm-glow-pulse`}
-              style={{
-                filter:
-                  "drop-shadow(0px 4px 12px rgba(16, 185, 129, 0.4)) drop-shadow(0px 2px 8px rgba(59, 130, 246, 0.3)) drop-shadow(0px 1px 4px rgba(236, 72, 153, 0.2))",
-                textShadow:
-                  "0 0 20px rgba(16, 185, 129, 0.5), 0 0 40px rgba(59, 130, 246, 0.3), 0 0 60px rgba(236, 72, 153, 0.2)",
-              }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.4 }}
