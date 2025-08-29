@@ -866,7 +866,7 @@ export default function Index() {
                   }}
                 >
                   {`��█╗  █���������� █████������� ██������������██╗
-�������� �����█╔�����█��╔═══���█╗█���������═�������╗
+������� �����█╔�����█��╔═══���█╗█���������═�������╗
 █████��╝ ██║   ██║███���������█╔���
 █��╔�����█╗ █���║   ██║█������══█��╗
 █���║  ██��╚█�������█���������╔╝�������║  █��║
@@ -9995,12 +9995,7 @@ const PricingSection = React.forwardRef<HTMLDivElement, SectionProps>(
                 >
                   <span
                     className={`relative inline-block ${theme === "light" ? "text-gray-900" : "text-white"}`}
-                    style={{
-                      filter:
-                        theme === "light"
-                          ? `drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 30px rgba(147, 51, 234, 0.4))`
-                          : `drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(147, 51, 234, 0.5))`,
-                    }}
+                    style={{}}
                   >
                     <span className="warm-glow-text animate-warm-glow-pulse text-smooth glow-120hz">
                       {"Choose Your Perfect Plan".split("").map((letter, i) => (
