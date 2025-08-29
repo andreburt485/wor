@@ -866,7 +866,7 @@ export default function Index() {
                   }}
                 >
                   {`��█╗  █���������� █████������� ██������������██╗
-������� �����█╔�����█��╔═══���█╗█���������═�������╗
+�������� �����█╔�����█��╔═══���█╗█���������═�������╗
 █████��╝ ██║   ██║███���������█╔���
 █��╔�����█╗ █���║   ██║█������══█��╗
 █���║  ██��╚█�������█���������╔╝�������║  █��║
@@ -7027,12 +7027,7 @@ const AboutUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                     className={`relative inline-block ${
                       theme === "light" ? "text-gray-900" : "text-white"
                     }`}
-                    style={{
-                      filter:
-                        theme === "light"
-                          ? `drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 30px rgba(147, 51, 234, 0.4))`
-                          : `drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))`,
-                    }}
+                    style={{}}
                   >
                     <span className="warm-glow-text animate-warm-glow-pulse text-smooth glow-120hz">
                       {"Crafting Digital Excellence"
@@ -9373,12 +9368,7 @@ const ServicesSection = React.forwardRef<HTMLDivElement, SectionProps>(
                     className={`relative inline-block ${
                       theme === "light" ? "text-gray-900" : "text-white"
                     }`}
-                    style={{
-                      filter:
-                        theme === "light"
-                          ? `drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 30px rgba(147, 51, 234, 0.4))`
-                          : `drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))`,
-                    }}
+                    style={{}}
                   >
                     <span className="warm-glow-text animate-warm-glow-pulse text-smooth glow-120hz">
                       {"Digital Innovation Solutions"
@@ -11647,12 +11637,7 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
                 <div className="font-poppins text-lg sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold relative z-10">
                   <span
                     className={`relative inline-block ${theme === "light" ? "text-gray-900" : "text-white"}`}
-                    style={{
-                      filter:
-                        theme === "light"
-                          ? `drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 30px rgba(147, 51, 234, 0.4))`
-                          : `drop-shadow(0 0 20px rgba(73, 146, 255, 0.8)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.5))`,
-                    }}
+                    style={{}}
                   >
                     <span className="warm-glow-text animate-warm-glow-pulse text-smooth glow-120hz">
                       {"Our Featured Work".split("").map((letter, i) => (
