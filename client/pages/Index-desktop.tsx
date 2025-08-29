@@ -12137,50 +12137,6 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
             })}
           </div>
 
-          {/* Shooting Stars */}
-          <div className="absolute inset-0">
-            {[...Array(8)].map((_, i) => (
-              <motion.div
-                key={`shooting-star-${i}`}
-                className="absolute"
-                style={{
-                  left: "-10%",
-                  top: `${10 + i * 12}%`,
-                  width: "2px",
-                  height: "2px",
-                  background: "#ffffff",
-                  borderRadius: "50%",
-                  boxShadow:
-                    "0 0 10px #ffffff, 0 0 20px #3b82f6, 0 0 30px #1d4ed8",
-                }}
-                animate={{
-                  x: [-window.innerWidth * 0.1, window.innerWidth * 1.1],
-                  y: [0, window.innerHeight * 0.2],
-                  opacity: [0, 1, 1, 0],
-                  scale: [0, 1, 1, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: i * 2.5,
-                  ease: "easeOut",
-                  repeatDelay: 15,
-                }}
-              >
-                {/* Shooting star trail */}
-                <div
-                  className="absolute left-0 top-0"
-                  style={{
-                    width: "150px",
-                    height: "2px",
-                    background:
-                      "linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.8) 30%, rgba(255, 255, 255, 1) 100%)",
-                    transform: "translateX(-150px)",
-                  }}
-                />
-              </motion.div>
-            ))}
-          </div>
 
           {/* Floating Planets */}
           <div className="absolute inset-0">
