@@ -933,8 +933,7 @@ export default function Index() {
                       className="text-xs text-green-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      CPU:
-                      ██████████░░ 60%
+                      CPU: ██████████░░ 60%
                     </div>
                     <div
                       className="text-xs text-amber-400 mb-1"
@@ -9002,7 +9001,6 @@ const ServicesSection = React.forwardRef<HTMLDivElement, SectionProps>(
           </div>
         )}
 
-
         {/* Floating Digital Elements */}
         <div
           className="absolute inset-0 pointer-events-none overflow-hidden"
@@ -12137,7 +12135,6 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
             })}
           </div>
 
-
           {/* Floating Planets */}
           <div className="absolute inset-0">
             {[...Array(6)].map((_, i) => (
@@ -12369,7 +12366,6 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
             </motion.div>
           ))}
         </div>
-
 
         {/* Colorful Floating Particles - Mobile Optimized */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
