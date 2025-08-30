@@ -187,7 +187,7 @@ export default function Index() {
       setTimeout(() => {
         showInfo(
           "💻 Enhanced Desktop Experience Available!",
-          "��� Experience our site in full glory with premium 3D animations and enhanced layouts. Tap to open in new tab.",
+          "Experience our site in full glory with premium 3D animations and enhanced layouts. Tap to open in new tab.",
           8000, // Show for 8 seconds
         );
       }, 4000); // Show after 4 seconds
@@ -209,11 +209,9 @@ export default function Index() {
   };
 
   const floatingVariants = {
-    hidden: { opacity: 0, y: 50, rotate: 0 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
-      rotate: 360,
       transition: {
         duration: prefersReducedMotion ? 0.01 : 1.2,
         ease: "easeOut",
@@ -717,9 +715,12 @@ export default function Index() {
           />
 
           <motion.div
-            variants={premiumVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: prefersReducedMotion ? 0.01 : 0.6,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
             className="relative z-10 text-center max-w-md mx-auto mt-8"
           >
             {/* Enhanced floating badge with lively animations */}

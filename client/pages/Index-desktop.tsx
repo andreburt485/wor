@@ -815,7 +815,7 @@ export default function Index() {
                         delay: i * 0.1,
                       }}
                     >
-                      ����•••
+                      ...
                     </motion.span>
                   ))}
                   <span className="text-green-400 font-mono text-sm">]</span>
@@ -865,12 +865,7 @@ export default function Index() {
                     fontSize: "1.2rem",
                   }}
                 >
-                  {`��█╗  █���������� █████������� ██������������██╗
-������� �����█╔�����█��╔═══���█╗█���������═�������╗
-█████��╝ ██║   ██║███���������█╔���
-█��╔�����█╗ █���║   ██║█������══█��╗
-█���║  ██��╚█�������█���������╔╝�������║  █��║
-����������������╝  ╚═╝ ���������������════╝ ╚�����╝  ����═╝`}
+                  {`KOR`}
                 </pre>
                 <div className="retro-subtitle">RETRO DEVELOPMENT SYSTEMS</div>
               </motion.div>
@@ -938,17 +933,16 @@ export default function Index() {
                       className="text-xs text-green-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      CPU:
-                      ���██���██���██���███����█����█���███████���███����█████ 60%
+                      CPU: ██████████░░ 60%
                     </div>
                     <div
                       className="text-xs text-amber-400 mb-1"
                       style={{ lineHeight: "1.2", fontFamily: "monospace" }}
                     >
-                      RAM: ������█�����██���██�����███���██����██████����█ 50%
+                      RAM: ████████░░ 50%
                     </div>
                     <div className="text-xs text-green-400 mt-1">
-                      NETWORK: {systemStats.networkUp}GB/s �� |{" "}
+                      NETWORK: {systemStats.networkUp}GB/s ↑ |{" "}
                       {systemStats.networkDown}MB/s ↓
                     </div>
                   </div>
@@ -1017,13 +1011,13 @@ export default function Index() {
 
                 <div className="continue-prompt">
                   <span className="text-cyan-400">[SYSTEM READY]</span>
-                  <span className="text-green-400 ml-4">��◆�����◄�����◆◆◆</span>
+                  <span className="text-green-400 ml-4">◆◆◆</span>
                 </div>
 
                 <div className="loading-indicators">
-                  <span>█��▒��</span>
+                  <span>█▒░</span>
                   <span className="text-amber-400">PROCESSING...</span>
-                  <span>░▒���█</span>
+                  <span>░▒█</span>
                 </div>
               </motion.div>
 
@@ -1242,7 +1236,7 @@ export default function Index() {
           }
 
           .ascii-logo::after {
-            content: "��";
+            content: "█";
             color: #00ff41;
             animation: terminal-cursor 1s infinite;
             margin-left: 8px;
@@ -1722,6 +1716,17 @@ export default function Index() {
 
         {/* Custom Scrollbar Styling with Desktop Optimizations */}
         <style>{`
+        /* Remove header text outlines/borders on desktop non-home sections */
+        @media (min-width: 1025px) {
+          div[data-section]:not([data-section="home"]) h1,
+          div[data-section]:not([data-section="home"]) h2,
+          div[data-section]:not([data-section="home"]) h3,
+          div[data-section]:not([data-section="home"]) .warm-glow-text {
+            outline: none !important;
+            border: none !important;
+          }
+        }
+
         /* Custom scrollbar for sections with content overflow */
         div[data-section]:not([data-section="home"]) {
           scrollbar-width: thin;
@@ -2233,7 +2238,7 @@ export default function Index() {
                   onClick={() => setShowNavigationHints(false)}
                   className="ml-2 text-xs opacity-60 hover:opacity-100"
                 >
-                  ��
+                  ×
                 </button>
               </div>
             </div>
@@ -2252,7 +2257,7 @@ export default function Index() {
                   boxShadow: "0 0 15px rgba(73, 146, 255, 0.3)",
                 }}
               >
-                ��� Click dots to jump to any section
+                ● Click dots to jump to any section
               </div>
             </div>
           )}
@@ -8099,7 +8104,7 @@ const WhatWeDoSection = React.forwardRef<HTMLDivElement, WhatWeDoSectionProps>(
               ease: "easeInOut",
             }}
           >
-            excellence �� delivery
+            excellence → delivery
           </motion.div>
         </div>
 
@@ -8995,65 +9000,6 @@ const ServicesSection = React.forwardRef<HTMLDivElement, SectionProps>(
             ))}
           </div>
         )}
-
-        {/* Technology Stack Visualization */}
-        <div className="absolute top-10 left-4 sm:left-6 lg:left-10 hidden sm:block pointer-events-none">
-          <motion.div
-            className="relative"
-            animate={{
-              rotateY: [0, 10, 0, -10, 0],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-            }}
-          >
-            <div
-              className="w-40 h-32 rounded-xl backdrop-blur-lg border opacity-70"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(30, 30, 50, 0.8), rgba(10, 10, 30, 0.8))",
-                border: "2px solid rgba(73, 146, 255, 0.3)",
-                boxShadow: "0 0 40px rgba(73, 146, 255, 0.3)",
-              }}
-            >
-              <div className="p-3">
-                <div className="text-xs text-cyan-400 font-mono mb-2">
-                  TECH STACK
-                </div>
-                <div className="grid grid-cols-3 gap-1">
-                  {[
-                    { name: "React", color: "bg-blue-400" },
-                    { name: "Node", color: "bg-green-400" },
-                    { name: "AI", color: "bg-purple-400" },
-                    { name: "Cloud", color: "bg-cyan-400" },
-                    { name: "Mobile", color: "bg-pink-400" },
-                    { name: "Design", color: "bg-yellow-400" },
-                  ].map((tech, techIndex) => (
-                    <motion.div
-                      key={tech.name}
-                      className={`w-6 h-6 ${tech.color} rounded-md flex items-center justify-center text-white text-xs font-bold`}
-                      animate={{
-                        scale: [1, 1.1, 1],
-                        rotateZ: [0, 5, 0],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        delay: techIndex * 0.2,
-                      }}
-                      style={{
-                        boxShadow: "0 0 10px rgba(73, 146, 255, 0.3)",
-                      }}
-                    >
-                      {tech.name.slice(0, 2)}
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
 
         {/* Floating Digital Elements */}
         <div
@@ -11299,21 +11245,21 @@ const PortfolioSection = React.forwardRef<HTMLDivElement, SectionProps>(
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {[
               {
-                icon: "��",
+                icon: "🏆",
                 label: "Award",
                 x: 8,
                 y: 15,
                 color: "from-yellow-500 to-orange-500",
               },
               {
-                icon: "��",
+                icon: "⭐",
                 label: "Featured",
                 x: 88,
                 y: 18,
                 color: "from-blue-500 to-purple-500",
               },
               {
-                icon: "���������",
+                icon: "🚀",
                 label: "Launch",
                 x: 12,
                 y: 85,
@@ -12189,51 +12135,6 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
             })}
           </div>
 
-          {/* Shooting Stars */}
-          <div className="absolute inset-0">
-            {[...Array(8)].map((_, i) => (
-              <motion.div
-                key={`shooting-star-${i}`}
-                className="absolute"
-                style={{
-                  left: "-10%",
-                  top: `${10 + i * 12}%`,
-                  width: "2px",
-                  height: "2px",
-                  background: "#ffffff",
-                  borderRadius: "50%",
-                  boxShadow:
-                    "0 0 10px #ffffff, 0 0 20px #3b82f6, 0 0 30px #1d4ed8",
-                }}
-                animate={{
-                  x: [-window.innerWidth * 0.1, window.innerWidth * 1.1],
-                  y: [0, window.innerHeight * 0.2],
-                  opacity: [0, 1, 1, 0],
-                  scale: [0, 1, 1, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: i * 2.5,
-                  ease: "easeOut",
-                  repeatDelay: 15,
-                }}
-              >
-                {/* Shooting star trail */}
-                <div
-                  className="absolute left-0 top-0"
-                  style={{
-                    width: "150px",
-                    height: "2px",
-                    background:
-                      "linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.8) 30%, rgba(255, 255, 255, 1) 100%)",
-                    transform: "translateX(-150px)",
-                  }}
-                />
-              </motion.div>
-            ))}
-          </div>
-
           {/* Floating Planets */}
           <div className="absolute inset-0">
             {[...Array(6)].map((_, i) => (
@@ -12334,19 +12235,19 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         {/* Floating Communication Icons - Contact specific */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-5">
           {[
-            { icon: "���️", delay: 0, x: 15, y: 20, size: 24, duration: 8 },
+            { icon: "✉️", delay: 0, x: 15, y: 20, size: 24, duration: 8 },
             { icon: "📧", delay: 2, x: 85, y: 15, size: 20, duration: 6 },
-            { icon: "��", delay: 4, x: 25, y: 80, size: 22, duration: 7 },
+            { icon: "💬", delay: 4, x: 25, y: 80, size: 22, duration: 7 },
             { icon: "🌐", delay: 1, x: 75, y: 70, size: 26, duration: 9 },
             {
-              icon: "��������������",
+              icon: "📱",
               delay: 3,
               x: 10,
               y: 60,
               size: 18,
               duration: 8,
             },
-            { icon: "����", delay: 5, x: 90, y: 40, size: 20, duration: 7 },
+            { icon: "📞", delay: 5, x: 90, y: 40, size: 20, duration: 7 },
           ].map((item, i) => (
             <motion.div
               key={`comm-icon-${i}`}
@@ -12435,10 +12336,10 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
         {/* Floating Contact Cards */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {[
-            { type: "email", x: 15, y: 35, icon: "��️" },
+            { type: "email", x: 15, y: 35, icon: "✉️" },
             { type: "call", x: 75, y: 25, icon: "📞" },
-            { type: "chat", x: 25, y: 70, icon: "���" },
-            { type: "meet", x: 80, y: 65, icon: "����" },
+            { type: "chat", x: 25, y: 70, icon: "💬" },
+            { type: "meet", x: 80, y: 65, icon: "📹" },
           ].map((card, i) => (
             <motion.div
               key={`contact-card-${i}`}
@@ -12464,34 +12365,6 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
               <span className="text-2xl">{card.icon}</span>
             </motion.div>
           ))}
-        </div>
-
-        {/* Live Status Indicators */}
-        <div className="absolute top-10 right-10 pointer-events-none">
-          <div className="flex flex-col space-y-2 opacity-40">
-            {[
-              { label: "Online", color: "bg-green-400" },
-              { label: "Response: &lt; 24h", color: "bg-blue-400" },
-              { label: "Available", color: "bg-purple-400" },
-            ].map((status, i) => (
-              <motion.div
-                key={`status-${i}`}
-                className="flex items-center space-x-2 text-xs text-white"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: [0.4, 0.8, 0.4], x: 0 }}
-                transition={{
-                  duration: 3,
-                  delay: i * 0.5,
-                  repeat: Infinity,
-                }}
-              >
-                <div
-                  className={`w-2 h-2 rounded-full ${status.color} animate-pulse`}
-                />
-                <span>{status.label}</span>
-              </motion.div>
-            ))}
-          </div>
         </div>
 
         {/* Colorful Floating Particles - Mobile Optimized */}
@@ -13076,7 +12949,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                           {
                             name: "Instagram",
                             url: "https://instagram.com",
-                            icon: "���",
+                            icon: "📷",
                             color: "from-pink-500 to-purple-500",
                           },
                           {
@@ -13237,7 +13110,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                         name: "Telegram",
                         subtitle: "Quick messaging",
                         url: "https://telegram.org",
-                        icon: "✈����",
+                        icon: "✈️",
                         color: "from-blue-500 via-cyan-500 to-teal-500",
                         shadowColor: "rgba(34, 211, 238, 0.3)",
                       },
@@ -13245,7 +13118,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement, SectionProps>(
                         name: "Email",
                         subtitle: "contact@kor.dev",
                         url: "mailto:contact@kor.dev",
-                        icon: "✉���",
+                        icon: "✉️",
                         color: "from-emerald-500 via-green-500 to-lime-500",
                         shadowColor: "rgba(16, 185, 129, 0.3)",
                       },
